@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck66t5102odf3"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_f6qva"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_dmd_display.gd" id="2_k4yqg"]
+[ext_resource type="Script" path="res://slides/label.gd" id="3_7pn8l"]
+
+[node name="Attract" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_f6qva")
+
+[node name="zedmd" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 32.0
+script = ExtResource("2_k4yqg")
+
+[node name="ColorRect" type="ColorRect" parent="zedmd"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 32.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="zedmd/ColorRect"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(1, 0.281971, 0.113353, 1)
+theme_override_font_sizes/font_size = 21
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_7pn8l")
