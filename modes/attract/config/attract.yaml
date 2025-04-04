@@ -5,3 +5,8 @@
 
 slide_player:
   mode_attract_started: attract
+
+sound_player:
+  mode_attract_started:
+    nu-metal-tribute-to-saint-michael-the-archangel-265109:
+      bus: music
