@@ -7,27 +7,18 @@
 # include everything here, or create sub-config files to be
 # imported and merged with this one.
 
-modes:
-  - attract
-  - base
-  - bumpers
-
-hardware:
-  rgb_dmd: zedmd
-
-zedmd:
-  width: 128
-  height: 32
-
-rgb_dmds:
-  zedmd:
-    hardware_brightness: .4
 
 config:
   - config_ball_devices.yaml
   - config_coils.yaml
   - config_switches.yaml
+  - config_hardware.yaml
 
+modes:
+  - attract
+  - base
+  - bumpers
+  - hurryup
 
 playfields:
   playfield:
@@ -38,4 +29,5 @@ virtual_platform_start_active_switches:
   - s_trough_1
   - s_trough_2
   - s_trough_3
+
 

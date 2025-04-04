@@ -1,0 +1,12 @@
+#config_version=6
+
+hardware:
+  rgb_dmd: zedmd
+
+rgb_dmds:
+  zedmd:
+    hardware_brightness: .4
+
+zedmd:
+  width: 128
+  height: 32
