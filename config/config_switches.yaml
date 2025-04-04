@@ -1,6 +1,16 @@
 #config_version=6
 
 switches:
+  # Playfield Switches
+  s_bumper_1:
+    number:
+  s_bumper_2:
+    number:
+  s_bumper_3:
+    number:
+  s_left_lane:
+    number:
+
   # Cabinet Switches
   s_flipper_left:
     number:
@@ -8,14 +18,18 @@ switches:
   s_flipper_right:
     number:
     tags: right_flipper
+  s_start:
+    number:
+    tags: start
+
   # Trough Switches
+  s_plunger_lane:
+    number:
   s_trough_1:
     number:
   s_trough_2:
     number:
   s_trough_3:
-    number:
-  s_plunger_lane:
     number:
 
 

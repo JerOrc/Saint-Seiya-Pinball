@@ -10,28 +10,40 @@
 [node name="Attract" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 32.0
 script = ExtResource("1_f6qva")
 
 [node name="zedmd" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 128.0
-offset_bottom = 32.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2_k4yqg")
 
 [node name="ColorRect" type="ColorRect" parent="zedmd"]
-layout_mode = 0
-offset_right = 128.0
-offset_bottom = 32.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="MPFCarousel" type="Control" parent="zedmd"]
-anchors_preset = 0
-offset_right = 128.0
-offset_bottom = 32.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("3_s41nb")
 carousel_name = "attract"
 
 [node name="title" type="Label" parent="zedmd/MPFCarousel"]
+visible = false
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 32.0
@@ -43,9 +55,13 @@ vertical_alignment = 1
 script = ExtResource("3_7pn8l")
 
 [node name="credits" type="Label" parent="zedmd/MPFCarousel"]
-layout_mode = 0
-offset_right = 128.0
-offset_bottom = 32.0
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.282353, 0.113725, 1)
 theme_override_font_sizes/font_size = 10
 text = "Sample credits"
@@ -56,6 +72,7 @@ variable_type = 2
 variable_name = "credits_string"
 
 [node name="mpf_logo" type="Sprite2D" parent="zedmd/MPFCarousel"]
-position = Vector2(67.6406, 16.375)
+visible = false
+position = Vector2(64, 16)
 scale = Vector2(0.179687, 0.179687)
 texture = ExtResource("4_rgcsh")
