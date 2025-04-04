@@ -7,18 +7,39 @@
 # include everything here, or create sub-config files to be
 # imported and merged with this one.
 
-modes:
-  - attract
-  - base
+#config_version=6
+
+## MPF Main Machine Config File
+#
+# This file defines your system-wide properties like switches,
+# drivers, ball devices, hardware platforms, and more. You can
+# include everything here, or create sub-config files to be
+# imported and merged with this one.
 
 hardware:
-  platform: zedmd
+  rgb_dmd: zedmd
 
 zedmd:
   width: 128
   height: 32
 
-rgb_dmds:  
+rgb_dmds:
   zedmd:
-    label: ZeDMD
     hardware_brightness: .4
+
+modes:
+  - attract
+  - base
+
+config:
+  - config_ball_devices.yaml
+  - config_coils.yaml
+  - config_switches.yaml
+
+
+playfields:
+  playfield:
+    default_source_device: bd_trough
+    tags: default
+
+
