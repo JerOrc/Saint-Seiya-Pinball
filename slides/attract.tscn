@@ -32,6 +32,27 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="Label" type="Label" parent="zedmd/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -11.5
+offset_right = 57.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0890118
+pivot_offset = Vector2(64, 16)
+theme_override_colors/font_color = Color(1, 0.282353, 0.113725, 1)
+theme_override_font_sizes/font_size = 10
+text = "JÉRÔME PRESENTS..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MPFCarousel" type="Control" parent="zedmd"]
 layout_mode = 1
 anchors_preset = 15
@@ -42,20 +63,38 @@ grow_vertical = 2
 script = ExtResource("3_s41nb")
 carousel_name = "attract"
 
-[node name="title" type="Label" parent="zedmd/MPFCarousel"]
+[node name="title" type="ColorRect" parent="zedmd/MPFCarousel"]
 visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="title_label" type="Label" parent="zedmd/MPFCarousel/title"]
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 32.0
 theme_override_colors/font_color = Color(1, 0.281971, 0.113353, 1)
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 17
 text = "Sample title"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_7pn8l")
 
-[node name="credits" type="Label" parent="zedmd/MPFCarousel"]
+[node name="credits" type="ColorRect" parent="zedmd/MPFCarousel"]
 visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="credits_var" type="Label" parent="zedmd/MPFCarousel/credits"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -71,8 +110,17 @@ script = ExtResource("4_ye0s5")
 variable_type = 2
 variable_name = "credits_string"
 
-[node name="mpf_logo" type="Sprite2D" parent="zedmd/MPFCarousel"]
+[node name="mpf_logo" type="ColorRect" parent="zedmd/MPFCarousel"]
 visible = false
-position = Vector2(64, 16)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="mpf_logo_img" type="Sprite2D" parent="zedmd/MPFCarousel/mpf_logo"]
+position = Vector2(63.9686, 15.9921)
 scale = Vector2(0.179687, 0.179687)
 texture = ExtResource("4_rgcsh")

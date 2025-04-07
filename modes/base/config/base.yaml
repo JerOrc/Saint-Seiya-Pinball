@@ -20,4 +20,4 @@ shots:
     switches: s_left_lane
 
 slide_player:
-  mode_base_started: base_slide
+  mode_base_started: base
