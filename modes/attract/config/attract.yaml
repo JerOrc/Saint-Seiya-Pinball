@@ -6,8 +6,14 @@
 mode_settings:
   selectable_items:
     - mpf_logo
+    - author
     - title
     - credits
+    - thanks
+    - thanks2
+    - thanks3
+    - thanks4
+    - thanks5
   next_item_events: s_flipper_right_active, timer_attract_carousel_timer_complete
   previous_item_events: s_flipper_left_active
 
@@ -23,7 +29,7 @@ sound_player:
 timers:
   attract_carousel_timer:
     end_value: 1
-    tick_interval: 5s
+    tick_interval: 35s
     start_running: true
     control_events:
       - event: item_highlighted
