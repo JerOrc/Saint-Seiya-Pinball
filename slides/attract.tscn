@@ -5,7 +5,6 @@
 [ext_resource type="Script" path="res://slides/label.gd" id="3_7pn8l"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_carousel.gd" id="3_s41nb"]
 [ext_resource type="FontFile" uid="uid://xf6l530xac8e" path="res://fonts/GallaeciaForte-16-12.ttf" id="4_1rq6t"]
-[ext_resource type="Texture2D" uid="uid://dounln3l35d26" path="res://addons/mpf-gmc/images/logo_mpf.png" id="4_rgcsh"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="4_ye0s5"]
 [ext_resource type="FontFile" uid="uid://dev6xehaasd1n" path="res://fonts/8-bit-fortress-7-6.ttf" id="6_2e5su"]
 [ext_resource type="FontFile" uid="uid://w0mq0jf416cf" path="res://fonts/UpheavalPro-20-10.ttf" id="7_s04m7"]
@@ -13,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://l5geiqonhqi0" path="res://fonts/SG10-8-5.ttf" id="10_lston"]
 [ext_resource type="FontFile" uid="uid://ctpjhag13hvl3" path="res://fonts/gas.regular-13-11.ttf" id="11_j70yh"]
 [ext_resource type="FontFile" uid="uid://bxleu8ifasuhw" path="res://fonts/nokiafc22-8-7.ttf" id="12_6fkkr"]
+[ext_resource type="Texture2D" uid="uid://b0hnyju2ktjlh" path="res://modes/attract/images/whoops.png" id="13_x02ep"]
 
 [node name="Attract" type="Control"]
 layout_mode = 3
@@ -138,6 +138,7 @@ autowrap_mode = 2
 
 [node name="thanks3" type="Label" parent="zedmd/MPFCarousel"]
 visible = false
+layout_mode = 0
 offset_right = 128.0
 offset_bottom = 32.0
 theme_override_colors/font_color = Color(1, 0.282353, 0.113725, 1)
@@ -151,6 +152,7 @@ uppercase = true
 
 [node name="thanks4" type="Label" parent="zedmd/MPFCarousel"]
 visible = false
+layout_mode = 0
 offset_right = 128.0
 offset_bottom = 32.0
 theme_override_colors/font_color = Color(1, 0.282353, 0.113725, 1)
@@ -164,6 +166,7 @@ uppercase = true
 
 [node name="thanks5" type="Label" parent="zedmd/MPFCarousel"]
 visible = false
+layout_mode = 0
 offset_right = 128.0
 offset_bottom = 32.0
 theme_override_colors/font_color = Color(1, 0.282353, 0.113725, 1)
@@ -176,7 +179,5 @@ autowrap_mode = 2
 uppercase = true
 
 [node name="mpf_logo" type="Sprite2D" parent="zedmd/MPFCarousel"]
-visible = false
-position = Vector2(63.9686, 15.9921)
-scale = Vector2(0.179687, 0.179687)
-texture = ExtResource("4_rgcsh")
+texture = ExtResource("13_x02ep")
+centered = false

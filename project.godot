@@ -23,11 +23,18 @@ MPF="*res://addons/mpf-gmc/mpf_gmc.gd"
 
 window/size/viewport_width=128
 window/size/viewport_height=32
+window/size/resizable=false
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/mpf-gmc/plugin.cfg")
 
+[gui]
+
+fonts/dynamic_fonts/use_oversampling=false
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+2d/snap/snap_2d_transforms_to_pixel=true
