@@ -25,9 +25,24 @@ playfields:
     default_source_device: bd_trough
     tags: default
 
+flippers:
+    left_flipper:
+        main_coil: c_flipper_left
+        activation_switch: s_flipper_left
+        enable_events: ball_started, enableAutofire
+        disable_events: ball_will_end, service_mode_entered, disableAutofire, shutdown
+    right_flipper:
+        main_coil: c_flipper_right
+        activation_switch: s_flipper_right
+        enable_events: ball_started, enableAutofire
+        disable_events: ball_will_end, service_mode_entered, disableAutofire, shutdown
+
 virtual_platform_start_active_switches:
   - s_trough_1
   - s_trough_2
   - s_trough_3
 
+machine:
+  balls_installed: 1 #How many balls are physically in your game
+  min_balls: 1 #How few balls can be accounted for before you can start a game
 

@@ -1,7 +1,16 @@
 #config_version=6
 
 hardware:
+  platform: opp
+  driverboards: gen2
   rgb_dmd: zedmd
+
+opp:
+#Use the USB ports defined by your OS for the two STM32 boards
+  ports: /dev/ttyACM0, /dev/ttyACM1
+
+psus:
+  default:
 
 rgb_dmds:
   zedmd:
