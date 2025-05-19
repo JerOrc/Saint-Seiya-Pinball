@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ck66t5102odf3"]
+[gd_scene load_steps=16 format=3 uid="uid://ck66t5102odf3"]
 
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_f6qva"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_dmd_display.gd" id="2_k4yqg"]
@@ -13,6 +13,8 @@
 [ext_resource type="FontFile" uid="uid://ctpjhag13hvl3" path="res://fonts/gas.regular-13-11.ttf" id="11_j70yh"]
 [ext_resource type="FontFile" uid="uid://bxleu8ifasuhw" path="res://fonts/nokiafc22-8-7.ttf" id="12_6fkkr"]
 [ext_resource type="Texture2D" uid="uid://b0hnyju2ktjlh" path="res://modes/attract/images/whoops.png" id="13_x02ep"]
+[ext_resource type="Texture2D" uid="uid://6h074n8ub28i" path="res://modes/attract/images/test-original.png" id="14_lo7nv"]
+[ext_resource type="Texture2D" uid="uid://dftc3inrhve5e" path="res://modes/attract/images/test-pixel.png" id="15_46apj"]
 
 [node name="Attract" type="Control"]
 layout_mode = 3
@@ -180,4 +182,14 @@ uppercase = true
 
 [node name="mpf_logo" type="Sprite2D" parent="zedmd/MPFCarousel"]
 texture = ExtResource("13_x02ep")
+centered = false
+
+[node name="mpf_logo2" type="Sprite2D" parent="zedmd/MPFCarousel"]
+scale = Vector2(0.166667, 0.166667)
+texture = ExtResource("14_lo7nv")
+centered = false
+
+[node name="mpf_logo3" type="Sprite2D" parent="zedmd/MPFCarousel"]
+scale = Vector2(0.166667, 0.166667)
+texture = ExtResource("15_46apj")
 centered = false
