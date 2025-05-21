@@ -11,6 +11,8 @@ opp:
 
 psus:
   default:
+    voltage: 48
+    release_wait_ms: 50    # defaults to 10ms
 
 rgb_dmds:
   zedmd:
