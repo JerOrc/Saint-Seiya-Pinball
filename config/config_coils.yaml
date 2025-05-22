@@ -4,7 +4,6 @@ coils:
   c_trough_eject:
     number: 0-0-3
 
-coils:
   c_flipper_left_main:
     number: 0-0-1
     default_pulse_ms: 50
