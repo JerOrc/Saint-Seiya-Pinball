@@ -15,11 +15,11 @@ coils:
     number: 0-0-2
     allow_enable: true
   c_flipper_right_main:
-    number: 0-0-3
+    number: 0-0-14
     default_pulse_ms: 50
     default_recycle: true
     platform_settings:
       recycle_factor: 2
   c_flipper_right_hold:
-    number: 0-0-4
+    number: 0-0-13
     allow_enable: true
