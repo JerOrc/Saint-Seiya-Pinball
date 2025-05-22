@@ -4,12 +4,16 @@ switches:
   # Playfield Switches
   s_bumper_1:
     number: 1-0-11
+    tags: playfield_active
   s_bumper_2:
     number: 1-0-10
+    tags: playfield_active
   s_bumper_3:
     number: 1-0-9
+    tags: playfield_active
   s_left_lane:
     number: 1-0-8
+    tags: playfield_active
 
   # Cabinet Switches
   s_flipper_left:
