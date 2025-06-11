@@ -4,21 +4,21 @@ coils:
   c_trough_eject:
     number: 0-0-3
 
-  c_flipper_left_main:
-    number: 0-0-1
-    default_pulse_ms: 50
-    default_recycle: true
-    platform_settings:
-      recycle_factor: 2
-  c_flipper_left_hold:
-    number: 0-0-2
-    allow_enable: true
   c_flipper_right_main:
-    number: 0-0-14
-    default_pulse_ms: 50
+    number: 0-0-1
+    default_pulse_ms: 25
     default_recycle: true
     platform_settings:
       recycle_factor: 2
   c_flipper_right_hold:
+    number: 0-0-2
+    allow_enable: true
+  c_flipper_left_main:
+    number: 0-0-14
+    default_pulse_ms: 25
+    default_recycle: true
+    platform_settings:
+      recycle_factor: 2
+  c_flipper_left_hold:
     number: 0-0-13
     allow_enable: true
