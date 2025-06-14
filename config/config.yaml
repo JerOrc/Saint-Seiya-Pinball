@@ -27,13 +27,13 @@ playfields:
 
 flippers:
   left_flipper:
-    main_coil: c_flipper_left_main
+    main_coil: c_flipper_left_power
     hold_coil: c_flipper_left_hold
     activation_switch: s_flipper_left
     enable_events: ball_started, enableAutofire, machine_reset_phase_3
     disable_events: ball_will_end, service_mode_entered, disableAutofire, shutdown
   right_flipper:
-    main_coil: c_flipper_right_main
+    main_coil: c_flipper_right_power
     hold_coil: c_flipper_right_hold
     activation_switch: s_flipper_right
     enable_events: ball_started, enableAutofire, machine_reset_phase_3
