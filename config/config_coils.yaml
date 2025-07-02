@@ -1,9 +1,7 @@
 #config_version=6
 
 coils:
-  c_trough_eject:
-    number: 0-0-3
-
+  # Flipper Coils
   c_flipper_right_power:
     number: 0-0-1
     default_pulse_ms: 25
@@ -22,3 +20,21 @@ coils:
   c_flipper_left_hold:
     number: 0-0-13
     allow_enable: true
+
+  c_trough_eject:
+    number: 0-0-3
+  c_plunger:
+    number:
+  c_kickback:
+    number:
+  c_scoop:
+    number:
+  c_kikout:
+    number:
+  c_bumper1:
+    number:
+  c_bumper2:
+    number:
+  c_bumper3:
+    number:
+
