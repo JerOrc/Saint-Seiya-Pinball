@@ -8,5 +8,6 @@ ball_devices:
 
   bd_trough:
     ball_switches: s_outlane_right
-    mechanical_eject: True
+    mechanical_eject: true
+    eject_targets: bd_plunger
     tags: trough, home, drain
