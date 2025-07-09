@@ -16,7 +16,7 @@ event_player:
 
 shots:
   hurryup:
-    switch: s_kickout_left
+    switch: s_bumper_1
 
 slide_player:
   mode_hurryup_started: hurryup

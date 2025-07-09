@@ -7,7 +7,9 @@ hardware:
 
 opp:
 #Use the USB ports defined by your OS for the two STM32 boards
-  ports: /dev/ttyACM0, /dev/ttyACM1
+  ports: /dev/ttyACM0
+  chains:
+    2: /dev/ttyACM0
 
 psus:
   default:
@@ -16,6 +18,7 @@ psus:
 
 rgb_dmds:
   zedmd:
+    label: ZeDMD
     hardware_brightness: .4
 
 zedmd:

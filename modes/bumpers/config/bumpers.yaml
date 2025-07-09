@@ -8,14 +8,10 @@ mode:
 shots:
   bumper_1:
     switch: s_bumper_1
-  bumper_2:
-    switch: s_bumper_2
-  bumper_3:
-    switch: s_bumper_3
 
 shot_groups:
   bumpers:
-    shots: bumper_1, bumper_2, bumper_3
+    shots: bumper_1
 
 variable_player:
   bumpers_hit:
