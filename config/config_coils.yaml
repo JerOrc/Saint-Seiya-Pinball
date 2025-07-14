@@ -3,23 +3,27 @@
 coils:
   # Flipper Coils
   c_flipper_right_power:
-    number: 0-0-1
+    number:
     default_pulse_ms: 25
     default_recycle: true
     platform_settings:
       recycle_factor: 2
+    platform: virtual
   c_flipper_right_hold:
     number: 0-0-2
     allow_enable: true
+    platform: virtual
   c_flipper_left_power:
     number: 0-0-14
     default_pulse_ms: 25
     default_recycle: true
     platform_settings:
       recycle_factor: 2
+    platform: virtual
   c_flipper_left_hold:
     number: 0-0-13
     allow_enable: true
-
+    platform: virtual
   c_trough_eject:
     number: 0-0-3
+    platform: virtual

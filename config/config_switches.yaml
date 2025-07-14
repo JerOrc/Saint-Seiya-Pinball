@@ -12,7 +12,12 @@ switches:
   s_start:
     number: 2-0-11
     tags: start
-
+  s_trough:
+    number:
+    platform: virtual
+  s_plunger:
+    number:
+    platform: virtual
 
   # Playfield Switches
   s_bumper_1:
@@ -93,3 +98,4 @@ switches:
   s_red_target_6:
     number: 2-0-31
     tags: playfield_active
+

@@ -10,7 +10,7 @@
 
 config:
   - config_ball_devices.yaml
-#  - config_coils.yaml
+  - config_coils.yaml
   - config_switches.yaml
   - config_hardware.yaml
 
@@ -25,8 +25,8 @@ playfields:
     default_source_device: bd_trough
     tags: default
 
-#virtual_platform_start_active_switches:
-#  - s_trough
+virtual_platform_start_active_switches:
+  - s_trough
 
 machine:
   balls_installed: 1 #How many balls are physically in your game

@@ -3,11 +3,11 @@
 ball_devices:
 
   bd_plunger:
-    ball_switches: s_outlane_left
+    ball_switches: s_plunger
     mechanical_eject: true
 
   bd_trough:
-    ball_switches: s_outlane_right
+    ball_switches: s_trough
     mechanical_eject: true
     eject_targets: bd_plunger
     tags: trough, home, drain
