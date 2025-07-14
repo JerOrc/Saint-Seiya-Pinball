@@ -1,7 +1,9 @@
 #config_version=6
 
 hardware:
-  platform: opp
+  platform:
+    - opp
+    - virtual
   driverboards: gen2
   rgb_dmd: zedmd
 

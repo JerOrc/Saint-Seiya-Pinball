@@ -25,16 +25,23 @@ coils:
     number: 0-0-3
   c_plunger:
     number:
+    platform: virtual
   c_kickback:
     number:
+    platform: virtual
   c_scoop:
     number:
+    platform: virtual
   c_kikout:
     number:
+    platform: virtual
   c_bumper1:
     number:
+    platform: virtual
   c_bumper2:
     number:
+    platform: virtual
   c_bumper3:
     number:
+    platform: virtual
 
