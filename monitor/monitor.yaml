@@ -33,7 +33,7 @@ switch:
   s_inlane_right:
     x: 0.7697112366603892
     y: 0.774818401937046
-  s_kickout_left:
+  s_kickout:
     x: 0.0752510985561833
     y: 0.5084745762711864
   s_left_lane:

@@ -17,7 +17,7 @@ event_player:
 
 shots:
   kickout_left:
-    switches: s_kickout_left
+    switches: s_kickout
 
 slide_player:
   mode_base_started: base

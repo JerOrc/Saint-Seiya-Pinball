@@ -56,10 +56,10 @@ switches:
     number:
     tags: playfield_active
     platform: virtual
-  s_kickout_left:
+  s_kickout:
     number:
-    tags: playfield_active
     platform: virtual
+
   s_orbit_left:
     number:
     tags: playfield_active
@@ -90,6 +90,7 @@ switches:
     platform: virtual
   s_temple_in:
     number:
+    platform: virtual
 
   # Scoop Switches
   s_scoop_1:

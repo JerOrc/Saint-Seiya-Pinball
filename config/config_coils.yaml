@@ -32,7 +32,7 @@ coils:
   c_scoop:
     number:
     platform: virtual
-  c_kikout:
+  c_kickout:
     number:
     platform: virtual
   c_bumper1:
