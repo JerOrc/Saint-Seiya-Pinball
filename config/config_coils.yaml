@@ -35,13 +35,58 @@ coils:
   c_kickout:
     number:
     platform: virtual
-  c_bumper1:
+  c_bumper_1:
     number:
+    default_pulse_ms: 50
     platform: virtual
-  c_bumper2:
+  c_bumper_2:
     number:
+    default_pulse_ms: 50
     platform: virtual
-  c_bumper3:
+  c_bumper_3:
     number:
+    default_pulse_ms: 50
+    platform: virtual
+  c_slingshot_left:
+    number:
+    default_pulse_ms: 25
+    platform: virtual
+  c_slingshot_right:
+    number:
+    default_pulse_ms: 25
     platform: virtual
 
+
+flippers:
+
+  left_flipper:
+    main_coil: c_flipper_left_power
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_flipper_left
+    enable_events: ball_started, enableAutofire, machine_reset_phase_3
+    disable_events: ball_will_end, service_mode_entered, disableAutofire, shutdown
+
+  right_flipper:
+    main_coil: c_flipper_right_power
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_flipper_right
+    enable_events: ball_started, enableAutofire, machine_reset_phase_3
+    disable_events: ball_will_end, service_mode_entered, disableAutofire, shutdown
+
+
+autofire_coils:
+  slingshot_left:
+    coil: c_slingshot_left
+    switch: s_slingshot_left
+  slingshot_right:
+    coil: c_slingshot_right
+    switch: s_slingshot_right
+  bumper_1:
+    coil: c_bumper_1
+    switch: s_bumper_1
+  bumper_2:
+    coil: c_bumper_2
+    switch: s_bumper_2
+  bumper_3:
+    coil: c_bumper_3
+    switch: s_bumper_3

@@ -6,16 +6,16 @@ mode:
   priority: 200
 
 shots:
-  bumper_1:
+  shot_bumper_1:
     switch: s_bumper_1
-  bumper_2:
+  shot_bumper_2:
     switch: s_bumper_2
-  bumper_3:
+  shot_bumper_3:
     switch: s_bumper_3
 
 shot_groups:
   bumpers:
-    shots: bumper_1, bumper_2, bumper_3
+    shots: shot_bumper_1, shot_bumper_2, shot_bumper_3
 
 variable_player:
   bumpers_hit:
