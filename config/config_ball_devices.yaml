@@ -7,7 +7,18 @@ ball_devices:
     mechanical_eject: true
 
   bd_trough:
-    ball_switches: s_trough_1, s_trough_2, s_trough_3
+    ball_switches: s_trough_1, s_trough_2, s_trough_3, s_trough_jam
     eject_coil: c_trough_eject
+    jam_switch: s_trough_jam
     eject_targets: bd_plunger
     tags: trough, home, drain
+
+  bd_kickout:
+    ball_switches: s_kickout
+    eject_coil: c_kickout
+    eject_timeouts: 2s
+
+  bd_scoop:
+    ball_switches: s_scoop_1, s_scoop_2, s_scoop_3, s_scoop_jam
+    eject_coil: c_scoop
+    eject_timeouts: 2s
