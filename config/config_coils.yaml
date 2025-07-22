@@ -35,15 +35,15 @@ coils:
   c_kickout:
     number:
     platform: virtual
-  c_bumper_1:
+  c_bumper_left:
     number:
     default_pulse_ms: 50
     platform: virtual
-  c_bumper_2:
+  c_bumper_right:
     number:
     default_pulse_ms: 50
     platform: virtual
-  c_bumper_3:
+  c_bumper_bottom:
     number:
     default_pulse_ms: 50
     platform: virtual
@@ -81,12 +81,12 @@ autofire_coils:
   slingshot_right:
     coil: c_slingshot_right
     switch: s_slingshot_right
-  bumper_1:
-    coil: c_bumper_1
-    switch: s_bumper_1
-  bumper_2:
-    coil: c_bumper_2
-    switch: s_bumper_2
-  bumper_3:
-    coil: c_bumper_3
-    switch: s_bumper_3
+  bumper_left:
+    coil: c_bumper_left
+    switch: s_bumper_left
+  bumper_right:
+    coil: c_bumper_right
+    switch: s_bumper_right
+  c_bumper_bottom:
+    coil: c_bumper_bottom
+    switch: s_bumper_bottom

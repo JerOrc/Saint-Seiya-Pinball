@@ -37,12 +37,12 @@ switches:
     platform: virtual
 
   # Playfield Switches (autofires coils doesn't have a playfield_active tag)
-  s_bumper_1:
+  s_bumper_left:
     number: 1-0-11
-  s_bumper_2:
+  s_bumper_right:
     number:
     platform: virtual
-  s_bumper_3:
+  s_bumper_bottom:
     number:
     platform: virtual
   s_slingshot_left:
@@ -116,11 +116,11 @@ switches:
   s_outlane_right:
     number:
     platform: virtual
-  s_dragon_lane_1:
+  s_dragon_lane_left:
     number:
     tags: playfield_active
     platform: virtual
-  s_dragon_lane_2:
+  s_dragon_lane_right:
     number:
     tags: playfield_active
     platform: virtual
