@@ -10,8 +10,9 @@ switches:
     number: 0-0-2
     tags: right_flipper
   s_start:
-    number: 0-0-3
+    number:
     tags: start
+    platform: virtual
 
   # Trough Switches
   s_plunger_lane:
@@ -38,7 +39,8 @@ switches:
 
   # Playfield Switches (autofires coils doesn't have a playfield_active tag)
   s_bumper_left:
-    number: 1-0-11
+    number:
+    platform: virtual
   s_bumper_right:
     number:
     platform: virtual
@@ -46,11 +48,9 @@ switches:
     number:
     platform: virtual
   s_slingshot_left:
-    number:
-    platform: virtual
+    number: 0-0-3
   s_slingshot_right:
-    number:
-    platform: virtual
+    number: 0-0-8
   s_kickout:
     number:
     platform: virtual

@@ -22,7 +22,7 @@ coils:
     allow_enable: true
 
   c_trough_eject:
-    number: 0-0-3
+    number: 1-0-1
   c_plunger:
     number:
     platform: virtual
@@ -47,14 +47,12 @@ coils:
     number:
     default_pulse_ms: 50
     platform: virtual
-  c_slingshot_left:
-    number:
-    default_pulse_ms: 25
-    platform: virtual
   c_slingshot_right:
-    number:
+    number: 0-0-3
     default_pulse_ms: 25
-    platform: virtual
+  c_slingshot_left:
+    number: 0-0-12
+    default_pulse_ms: 25
 
 
 flippers:
