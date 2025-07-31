@@ -20,3 +20,13 @@ shot_groups:
 variable_player:
   bumpers_hit:
     score: 1000
+
+# a changer ci dessous
+slide_player:
+  player_score:
+    bumpers:
+      action: play
+  s_bumper_right_hit:
+    bumpers:
+      action: method
+      method: slide_text
