@@ -12,6 +12,4 @@ func _process(delta: float) -> void:
 
 
 func top_down_text(_settings, _kwargs):
-  $zedmd/bumper_text.show()
   $zedmd/AnimationPlayer.play("top_down")
-  $zedmd/bumper_text.hide()
