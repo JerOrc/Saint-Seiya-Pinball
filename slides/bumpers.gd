@@ -1,21 +1,20 @@
-extends Label
+extends MPFSlide
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-  text = "Bumper !"
-  pass
+  pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
   pass
 
 
-func slide_text(settings, kwargs):
-  text = "Saint Seiya !"
+func slide_text(_settings, _kwargs):
   var i = 0
-  while i < 4 :
+  while i < 25 :
     i = (i+1)
-    position.y = 2 * i
-    text = "Bumper " + i
-    await get_tree().create_timer(1).timeout
-  position.y = -32
+    $zedmd/bumper_text.position.y += 1
+    await get_tree().create_timer(0.02).timeout
+  $zedmd/bumper_text.position.y = -24

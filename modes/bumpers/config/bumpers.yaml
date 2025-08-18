@@ -23,10 +23,12 @@ variable_player:
 
 # a changer ci dessous
 slide_player:
-  player_score:
-    bumpers:
-      action: play
+  mode_bumpers_started: bumpers
   s_bumper_right_hit:
+    bumpers:
+      action: method
+      method: slide_text
+  bumpers_hit:
     bumpers:
       action: method
       method: slide_text
