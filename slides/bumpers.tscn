@@ -1,7 +1,68 @@
-[gd_scene load_steps=3 format=3 uid="uid://cds8kr372n3uq"]
+[gd_scene load_steps=6 format=3 uid="uid://cds8kr372n3uq"]
 
 [ext_resource type="Script" path="res://slides/bumpers.gd" id="1_g8br3"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_dmd_display.gd" id="2_w8nqa"]
+
+[sub_resource type="Animation" id="Animation_t2rdn"]
+resource_name = "top_down"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -23), Vector2(0, -23), Vector2(0, 9), Vector2(0, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_17qyu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -23)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6gk2f"]
+_data = {
+"RESET": SubResource("Animation_17qyu"),
+"top_down": SubResource("Animation_t2rdn")
+}
 
 [node name="Bumpers" type="Control"]
 layout_mode = 3
@@ -16,6 +77,9 @@ script = ExtResource("2_w8nqa")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="zedmd"]
 root_node = NodePath("../bumper_text")
+libraries = {
+"": SubResource("AnimationLibrary_6gk2f")
+}
 
 [node name="bumper_text" type="Label" parent="zedmd"]
 layout_mode = 0
