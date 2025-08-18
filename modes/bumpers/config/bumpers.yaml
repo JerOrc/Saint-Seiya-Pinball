@@ -21,14 +21,9 @@ variable_player:
   bumpers_hit:
     score: 1000
 
-# a changer ci dessous
 slide_player:
   mode_bumpers_started: bumpers
-  s_bumper_right_hit:
-    bumpers:
-      action: method
-      method: slide_text
   bumpers_hit:
     bumpers:
       action: method
-      method: slide_text
+      method: top_down_text

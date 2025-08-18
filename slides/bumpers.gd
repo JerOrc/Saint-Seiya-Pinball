@@ -11,9 +11,9 @@ func _process(delta: float) -> void:
   pass
 
 
-func slide_text(_settings, _kwargs):
+func top_down_text(_settings, _kwargs):
   var i = 0
-  while i < 25 :
+  while i < 26 :
     i = (i+1)
     $zedmd/bumper_text.position.y += 1
     await get_tree().create_timer(0.02).timeout
