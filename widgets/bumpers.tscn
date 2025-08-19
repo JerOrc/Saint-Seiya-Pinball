@@ -1,7 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dptwgjgghwcwk"]
-
-[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_6e6wq"]
-[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_dmd_display.gd" id="2_0dtox"]
+[gd_scene load_steps=4 format=3 uid="uid://ctiot6sewkfg8"]
 
 [sub_resource type="Animation" id="Animation_17qyu"]
 length = 0.001
@@ -64,33 +61,15 @@ _data = {
 "created": SubResource("Animation_t2rdn")
 }
 
-[node name="widget_bumpers" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-script = ExtResource("1_6e6wq")
+[node name="Bumpers" type="Node"]
 
-[node name="zedmd" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 128.0
-offset_bottom = 32.0
-script = ExtResource("2_0dtox")
-
-[node name="ColorRect" type="ColorRect" parent="zedmd"]
-visible = false
-layout_mode = 0
-offset_left = 48.0
-offset_top = 4.0
-offset_right = 74.0
-offset_bottom = 29.0
-
-[node name="bumper_text" type="Label" parent="zedmd"]
-layout_mode = 0
+[node name="bumper_text" type="Label" parent="."]
 offset_top = -23.0
 offset_right = 128.0
 text = "Bumper hit !"
 horizontal_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="zedmd"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../bumper_text")
 libraries = {
 "": SubResource("AnimationLibrary_6gk2f")

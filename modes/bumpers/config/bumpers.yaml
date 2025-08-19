@@ -19,7 +19,8 @@ shot_groups:
 
 variable_player:
   bumpers_hit:
-    score: 1000
+    score: current_player.bumpers_score
+
 
 slide_player:
   mode_bumpers_started: bumpers
