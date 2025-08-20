@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 func top_down_text(_settings, _kwargs):
   # print("player score : " + $zedmd/MPFVariable.text)
   var instance = scene.instantiate()
-  instance.get_node("bumper_text").text = "Bumper hit \n+ " + $zedmd/MPFVariable.text
+  instance.get_node("bumper_text").text +=  " [center]+" + $zedmd/MPFVariable.text+ "[/center]"
   $zedmd.add_child(instance)
   await get_tree().create_timer(0.5).timeout
   instance.queue_free()

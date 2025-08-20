@@ -1,11 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctiot6sewkfg8"]
+[gd_scene load_steps=5 format=3 uid="uid://ctiot6sewkfg8"]
 
-[sub_resource type="Animation" id="Animation_17qyu"]
+[ext_resource type="FontFile" uid="uid://l5geiqonhqi0" path="res://fonts/SG10-8-5.ttf" id="1_4ue3i"]
+
+[sub_resource type="Animation" id="Animation_2aa53"]
+resource_name = "created"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bumper_text:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bumper_text:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -50), Vector2(0, 15), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_16oun"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("bumper_text:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -17,7 +47,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
+tracks/1/path = NodePath("bumper_text:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -27,52 +57,25 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_t2rdn"]
-resource_name = "created"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0001, 0.3, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, -23), Vector2(0, -23), Vector2(0, 9), Vector2(0, 3)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6gk2f"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yi0gm"]
 _data = {
-"RESET": SubResource("Animation_17qyu"),
-"created": SubResource("Animation_t2rdn")
+"RESET": SubResource("Animation_16oun"),
+"created": SubResource("Animation_2aa53")
 }
 
 [node name="Bumpers" type="Node"]
 
-[node name="bumper_text" type="Label" parent="."]
+[node name="bumper_text" type="RichTextLabel" parent="."]
 offset_top = -23.0
 offset_right = 128.0
-text = "Bumper hit !"
-horizontal_alignment = 1
+offset_bottom = 31.0
+theme_override_fonts/normal_font = ExtResource("1_4ue3i")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[center]Bumper [outline_size=4][outline_color=#00da99][pulse freq=5 color=#ffffff40 ease=-2.0][wave]hit[/wave][/pulse][/outline_color][/outline_size][/center]"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../bumper_text")
 libraries = {
-"": SubResource("AnimationLibrary_6gk2f")
+"": SubResource("AnimationLibrary_yi0gm")
 }
 autoplay = "created"
-movie_quit_on_finish = true
