@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://6h074n8ub28i" path="res://modes/attract/images/test-original.png" id="14_lo7nv"]
 [ext_resource type="Texture2D" uid="uid://dftc3inrhve5e" path="res://modes/attract/images/test-pixel.png" id="15_46apj"]
 
-[node name="Attract" type="Control"]
+[node name="attract" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 128.0
