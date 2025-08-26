@@ -16,8 +16,7 @@ switches:
 
   # Trough Switches
   s_plunger_lane:
-    number:
-    platform: virtual
+    number: 0-0-9
   s_trough_1:
     number:
     platform: virtual

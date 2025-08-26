@@ -24,8 +24,8 @@ coils:
   c_trough_eject:
     number: 1-0-1
   c_plunger:
-    number:
-    platform: virtual
+    number: 0-0-0
+    default_pulse_ms: 25
   c_kickback:
     number:
     platform: virtual

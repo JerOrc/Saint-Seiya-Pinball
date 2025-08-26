@@ -34,3 +34,7 @@ virtual_platform_start_active_switches:
 machine:
   balls_installed: 1 #How many balls are physically in your game
   min_balls: 1 #How few balls can be accounted for before you can start a game
+
+player_vars:
+  bumpers_score:
+    initial_value: 1000

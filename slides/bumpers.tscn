@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cds8kr372n3uq"]
+
+[ext_resource type="Script" path="res://slides/bumpers.gd" id="1_g8br3"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_dmd_display.gd" id="2_w8nqa"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_1wihb"]
+
+[node name="Bumpers" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_g8br3")
+
+[node name="zedmd" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 32.0
+script = ExtResource("2_w8nqa")
+
+[node name="MPFVariable" type="Label" parent="zedmd"]
+visible = false
+layout_mode = 0
+offset_left = 88.0
+offset_top = 9.0
+offset_right = 128.0
+offset_bottom = 32.0
+script = ExtResource("3_1wihb")
+variable_name = "bumpers_score"
