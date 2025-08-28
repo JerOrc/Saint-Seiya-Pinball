@@ -27,7 +27,7 @@ timers:
     start_running: true
     start_value: 0
     end_value: 1
-    tick_interval: 1s
+    tick_interval: 0.6s
   hurryup_timer:
     end_value: 25
     tick_interval: 200ms
