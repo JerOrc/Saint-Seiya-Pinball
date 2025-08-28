@@ -33,7 +33,7 @@ uniform int sectors : hint_range(1, 128) = 1;
 uniform float clock_feather : hint_range(0.0, 16.0) = 0.0;
 
 group_uniforms animation;
-uniform float progress = 0.0;
+uniform float progress : hint_range(0,1) = 0.0;
 uniform vec2 progress_bias = vec2(0.0);
 
 varying vec4 modulate;
