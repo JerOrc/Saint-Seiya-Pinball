@@ -6,14 +6,18 @@ mode:
   priority: 1000
 
 event_player:
-  timer_start_hurryup_timer_complete: start_hurryup_timer
-  timer_hurryup_timer_complete: stop_mode_hurryup
   hurryup_hit: stop_mode_hurryup
-  timer_hurryup_timer_tick:
+  timer_hurryup_timer_tick{ticks<=3}:
+    hurryup_value:
+      current_hurryup:
+        type: int
+        value: 100_000
+  timer_hurryup_timer_tick{ticks>3}:
     hurryup_value:
       current_hurryup:
         type: int
         value: 100_000 - ticks * 2_000
+  timer_hurryup_timer_complete: stop_mode_hurryup
 
 shots:
   hurryup:
@@ -23,17 +27,10 @@ slide_player:
   mode_hurryup_started: hurryup
 
 timers:
-  start_hurryup_timer:
-    start_running: true
-    start_value: 0
-    end_value: 1
-    tick_interval: 0.6s
   hurryup_timer:
-    end_value: 25
+    end_value: 28
     tick_interval: 200ms
-    control_events:
-      - event: start_hurryup_timer
-        action: start
+    start_running: true
 
 variable_player:
   hurryup_hit:
