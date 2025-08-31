@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://deomxtjqwogs4"]
 
-[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_3yip8"]
-[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_dmd_display.gd" id="2_jui2s"]
+[ext_resource type="Script" uid="uid://ee3vq0gnrk88" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_3yip8"]
+[ext_resource type="Script" uid="uid://cwfr1ipqeyqv6" path="res://addons/mpf-gmc/classes/mpf_dmd_display.gd" id="2_jui2s"]
 [ext_resource type="FontFile" uid="uid://dytq1gencghqw" path="res://fonts/PixelGameFont-16-12.ttf" id="3_iv3o2"]
-[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_l15x2"]
+[ext_resource type="Script" uid="uid://ciu7x6uw6f7ao" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_l15x2"]
 [ext_resource type="FontFile" uid="uid://l5geiqonhqi0" path="res://fonts/SG10-8-5.ttf" id="5_en7qi"]
 
 [node name="BaseSlide" type="Control"]
