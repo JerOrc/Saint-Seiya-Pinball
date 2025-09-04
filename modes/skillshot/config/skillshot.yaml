@@ -84,3 +84,4 @@ state_machines:
       - source: start
         target: failed
         events: skillshots_unlit_hit, timer_skillshots_timeout_complete
+        # A FAIRE : Ci-dessus, super skill doit être failed pour n'importe quel switch autre touché ? Sauf ceux de l'orbit ? Ou alors utiliser les shots qui doivent être fait dans un certain ordre ?
