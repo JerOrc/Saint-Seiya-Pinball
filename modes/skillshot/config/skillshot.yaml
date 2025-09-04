@@ -4,24 +4,35 @@ mode:
   start_events: start_mode_skillshot
   stop_events:
     - skill_success
+    - super_skill_success
     - skill_failed
     - stop_mode_skillshot
   priority: 500
 
 shots:
   skill_l:
-    switch: s_dragon_lane_left 
+    switch: s_dragon_lane_left
     profile: skillshots_profile
     advance_events: mode_skillshot_started        # replace "skill_shot" with your mode name
   skill_r:
     switch: s_dragon_lane_right
     profile: skillshots_profile
+  super_skill_target:
+    switch: s_newton_ball_target
+    profile: skillshots_profile
+    advance_events: mode_skillshot_started
 
 shot_groups:
   skillshots:
     shots: skill_l, skill_r
+    enable_events: enable_skill
+    disable_events: enable_super_skill, skill_failed
     rotate_left_events: s_flipper_left_active
     rotate_right_events: s_flipper_right_active
+  super_skillshot:
+    shots: super_skill_target
+    enable_events: enable_super_skill
+    disable_events: enable_skill, skill_failed
 
 shot_profiles:
   skillshots_profile:
@@ -34,11 +45,19 @@ shot_profiles:
 variable_player:
   skill_success:
     score: 10_000
+  super_skillshot_awarded:
+    score: 100_000
+
+event_player:
+  # Choix exclusif au moment où la bille est éjectée du plongeur
+  s_shooter_lane_inactive{device.switches.s_flipper_left.state==1}: enable_super_skill
+  s_shooter_lane_inactive{device.switches.s_flipper_left.state==0}: enable_skill
+  s_spinner_right_active: skill_failed
 
 timers:
   skillshots_timeout:
     start_value: 0
-    end_value: 10     # set the timeout of your skill shot here
+    end_value: 100     # set the timeout of your skill shot here
     direction: up
     tick_interval: 1s
     start_running: false
@@ -61,8 +80,7 @@ state_machines:
     transitions:
       - source: start
         target: success
-        events: skillshots_flashing_hit
+        events: skillshots_flashing_hit, super_skillshot_flashing_hit
       - source: start
         target: failed
         events: skillshots_unlit_hit, timer_skillshots_timeout_complete
-
