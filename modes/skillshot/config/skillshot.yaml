@@ -45,7 +45,7 @@ shot_profiles:
 variable_player:
   skill_success:
     score: 10_000
-  super_skillshot_awarded:
+  super_skill_success:
     score: 100_000
 
 event_player:
@@ -73,7 +73,7 @@ state_machines:
         label: Skill shot ready
       success:
         label: Skill successful
-        events_when_started: skill_success
+        events_when_started: skill_success # A FAIRE : démarrer super_skill_success
       failed:
         label: Skill failed
         events_when_started: skill_failed
