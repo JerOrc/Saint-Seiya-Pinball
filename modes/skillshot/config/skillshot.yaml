@@ -48,8 +48,7 @@ variable_player:
     score: 100_000
 
 event_player:
-  s_spinner_right_active: spinner_right_active
-  s_plunger_lane_active{device.switches.s_flipper_left.state==1}: enable_super_skill
+  s_plunger_lane_active{device.switches.s_flipper_left.state==1}: enable_super_skill # A FAIRE : à corriger
   s_plunger_lane_active{device.switches.s_flipper_left.state==0}: enable_skill
 
 timers:
@@ -87,7 +86,7 @@ state_machines:
         events: super_skillshot_flashing_hit
       - source: start
         target: failed
-        events: skillshots_unlit_hit, timer_skillshots_timeout_complete, spinner_right_active
+        events: skillshots_unlit_hit, timer_skillshots_timeout_complete, s_spinner_right_active
 
 widget_player:
   enable_super_skill:
@@ -98,8 +97,8 @@ widget_player:
       y: 0
       tokens:
         text: "enable super skill"
-  spinner_right_active:
-    log:
+  s_spinner_right_active:
+    log:                      # A FAIRE : Voir pourquoi le widget ne s'affiche qu'une seule fois ?
       expire: 5s
       slide: _overlay
       x: 0
