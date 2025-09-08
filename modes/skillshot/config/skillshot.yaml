@@ -48,8 +48,9 @@ variable_player:
     score: 100_000
 
 event_player:
-  s_plunger_lane_active{device.switches.s_flipper_left.state==1}: enable_super_skill # A FAIRE : à corriger
-  s_plunger_lane_active{device.switches.s_flipper_left.state==0}: enable_skill
+  mode_skillshot_started: enable_skill
+  s_flipper_left_active{device.switches.s_plunger_lane.state == 1}: enable_super_skill
+  s_flipper_left_inactive{device.switches.s_plunger_lane.state == 1}: enable_skill
 
 timers:
   skillshots_timeout:
@@ -61,6 +62,12 @@ timers:
     control_events:
       - action: start
         event: balldevice_bd_plunger_ball_eject_success
+      - action: stop
+        event: skill_failed
+      - action: stop
+        event: skill_success
+      - action: stop
+        event: super_skill_success
 
 state_machines:
   skillshots_success:
@@ -80,28 +87,43 @@ state_machines:
     transitions:
       - source: start
         target: skill_success
-        events: skillshots_flashing_hit, super_skillshot_flashing_hit
+        events: skillshots_flashing_hit
       - source: start
         target: super_skill_success
-        events: super_skillshot_flashing_hit
+        events: super_skillshot_hit
       - source: start
         target: failed
         events: skillshots_unlit_hit, timer_skillshots_timeout_complete, s_spinner_right_active
 
+# WIDGET LOG
 widget_player:
+  enable_skill:
+    log:
+      expire: 1s
+      slide: _overlay
+      tokens:
+        text: "enable skill"
   enable_super_skill:
     log:
-      expire: 5s
+      expire: 1s
       slide: _overlay
-      x: 0
-      y: 0
       tokens:
         text: "enable super skill"
-  s_spinner_right_active:
-    log:                      # A FAIRE : Voir pourquoi le widget ne s'affiche qu'une seule fois ?
-      expire: 5s
+  skill_failed:
+    log:
+      expire: 1s
       slide: _overlay
-      x: 0
-      y: 0
       tokens:
-        text: "spinner right active"
+        text: "skill failed"
+  skill_success:
+    log:
+      expire: 1s
+      slide: _overlay
+      tokens:
+        text: "skill success"
+  super_skill_success:
+    log:
+      expire: 1s
+      slide: _overlay
+      tokens:
+        text: "SUPER skill success"
