@@ -55,7 +55,7 @@ event_player:
 timers:
   skillshots_timeout:
     start_value: 0
-    end_value: 100     # set the timeout of your skill shot here
+    end_value: 20     # set the timeout of your skill shot here
     direction: up
     tick_interval: 1s
     start_running: false
