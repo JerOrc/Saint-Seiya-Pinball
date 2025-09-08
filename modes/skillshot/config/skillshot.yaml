@@ -4,24 +4,34 @@ mode:
   start_events: start_mode_skillshot
   stop_events:
     - skill_success
+    - super_skill_success
     - skill_failed
     - stop_mode_skillshot
   priority: 500
 
 shots:
   skill_l:
-    switch: s_dragon_lane_left 
+    switch: s_dragon_lane_left
     profile: skillshots_profile
     advance_events: mode_skillshot_started        # replace "skill_shot" with your mode name
   skill_r:
     switch: s_dragon_lane_right
     profile: skillshots_profile
+  super_skill_target:
+    switch: s_newton_ball_target
+    profile: skillshots_profile
 
 shot_groups:
   skillshots:
     shots: skill_l, skill_r
+    enable_events: enable_skill
+    disable_events: enable_super_skill, skill_failed
     rotate_left_events: s_flipper_left_active
     rotate_right_events: s_flipper_right_active
+  super_skillshot:
+    shots: super_skill_target
+    enable_events: enable_super_skill
+    disable_events: enable_skill, skill_failed
 
 shot_profiles:
   skillshots_profile:
@@ -34,35 +44,86 @@ shot_profiles:
 variable_player:
   skill_success:
     score: 10_000
+  super_skill_success:
+    score: 100_000
+
+event_player:
+  mode_skillshot_started: enable_skill
+  s_flipper_left_active{device.switches.s_plunger_lane.state == 1}: enable_super_skill
+  s_flipper_left_inactive{device.switches.s_plunger_lane.state == 1}: enable_skill
 
 timers:
   skillshots_timeout:
     start_value: 0
-    end_value: 10     # set the timeout of your skill shot here
+    end_value: 100     # set the timeout of your skill shot here
     direction: up
     tick_interval: 1s
     start_running: false
     control_events:
       - action: start
-        event: balldevice_bd_plunger_ball_eject_success  # replace "plunger_lane" with the name of your plunger device
+        event: balldevice_bd_plunger_ball_eject_success
+      - action: stop
+        event: skill_failed
+      - action: stop
+        event: skill_success
+      - action: stop
+        event: super_skill_success
 
 state_machines:
   skillshots_success:
     debug: true
     states:
       start:
-        label: Skill shot ready
-      success:
+        label: Skill shots ready
+      skill_success:
         label: Skill successful
         events_when_started: skill_success
+      super_skill_success:
+        label: Super skill successful
+        events_when_started: super_skill_success
       failed:
         label: Skill failed
         events_when_started: skill_failed
     transitions:
       - source: start
-        target: success
+        target: skill_success
         events: skillshots_flashing_hit
       - source: start
+        target: super_skill_success
+        events: super_skillshot_hit
+      - source: start
         target: failed
-        events: skillshots_unlit_hit, timer_skillshots_timeout_complete
+        events: skillshots_unlit_hit, timer_skillshots_timeout_complete, s_spinner_right_active
 
+# WIDGET LOG
+widget_player:
+  enable_skill:
+    log:
+      expire: 1s
+      slide: _overlay
+      tokens:
+        text: "enable skill"
+  enable_super_skill:
+    log:
+      expire: 1s
+      slide: _overlay
+      tokens:
+        text: "enable super skill"
+  skill_failed:
+    log:
+      expire: 1s
+      slide: _overlay
+      tokens:
+        text: "skill failed"
+  skill_success:
+    log:
+      expire: 1s
+      slide: _overlay
+      tokens:
+        text: "skill success"
+  super_skill_success:
+    log:
+      expire: 1s
+      slide: _overlay
+      tokens:
+        text: "SUPER skill success"

@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxeksqggr3hb6"]
+
+[ext_resource type="Script" uid="uid://hig71cy065oq" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_k2dkd"]
+[ext_resource type="FontFile" uid="uid://cpxjkgrdxt4r6" path="res://fonts/VCRosdNEUE-16-11.ttf" id="2_g7sic"]
+[ext_resource type="Script" uid="uid://ciu7x6uw6f7ao" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_w7xcx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4w1h8"]
+line_spacing = 0.0
+font = ExtResource("2_g7sic")
+font_color = Color(0, 0, 0, 1)
+
+[node name="Log" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -128.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k2dkd")
+metadata/_custom_type_script = "uid://hig71cy065oq"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 32.0
+color = Color(0.920727, 0.658931, 0, 1)
+
+[node name="MPFVariable" type="Label" parent="."]
+layout_mode = 0
+offset_right = 127.0
+offset_bottom = 32.0
+text = "Log 
+text"
+label_settings = SubResource("LabelSettings_4w1h8")
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("3_w7xcx")
+variable_type = 1
+variable_name = "text"
+metadata/_custom_type_script = "uid://ciu7x6uw6f7ao"
