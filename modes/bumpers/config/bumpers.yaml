@@ -28,9 +28,3 @@ slide_player:
     bumpers:
       action: method
       method: top_down_text
-
-# widget_player:
-#   bumpers_hit:
-#     bumpers:
-#       expire: .3s
-#       slide: base

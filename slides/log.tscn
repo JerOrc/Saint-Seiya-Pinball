@@ -1,13 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy6uaii0j7jn7"]
+[gd_scene load_steps=3 format=3 uid="uid://dy6uaii0j7jn7"]
 
 [ext_resource type="Script" uid="uid://b5eui2d2dwdcw" path="res://slides/log.gd" id="1_xy5bt"]
 [ext_resource type="Script" uid="uid://cwfr1ipqeyqv6" path="res://addons/mpf-gmc/classes/mpf_dmd_display.gd" id="2_xy5bt"]
-[ext_resource type="FontFile" uid="uid://bxleu8ifasuhw" path="res://fonts/nokiafc22-8-7.ttf" id="3_cpcom"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_rihdg"]
-line_spacing = 0.0
-font = ExtResource("3_cpcom")
-font_size = 8
 
 [node name="Log" type="Control"]
 layout_mode = 3
@@ -27,19 +21,3 @@ offset_right = 128.0
 offset_bottom = 32.0
 script = ExtResource("2_xy5bt")
 metadata/_custom_type_script = "uid://cwfr1ipqeyqv6"
-
-[node name="ColorRect" type="ColorRect" parent="zedmd"]
-layout_mode = 0
-offset_right = 128.0
-offset_bottom = 32.0
-color = Color(1, 0.768627, 0, 1)
-
-[node name="Label" type="Label" parent="zedmd"]
-layout_mode = 0
-offset_right = 128.0
-offset_bottom = 31.0
-text = "Log 
-Text"
-label_settings = SubResource("LabelSettings_rihdg")
-horizontal_alignment = 1
-autowrap_mode = 2
