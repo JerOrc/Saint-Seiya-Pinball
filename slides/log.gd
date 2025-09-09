@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 
 
 func log_text(_settings, _kwargs):
-  # print("player score : " + $zedmd/MPFVariable.text)
+  print("* LOG * ", _settings.tokens.text)
   var instance = scene.instantiate()
   instance.get_node("Label").text = _settings.tokens.text
   $zedmd.add_child(instance)
