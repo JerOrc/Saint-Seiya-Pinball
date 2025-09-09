@@ -12,9 +12,11 @@ event_player:
   mode_base_started:
     - start_mode_bumpers
     - start_mode_skillshot
+    - start_mode_log
   mode_base_will_stop:
     - stop_mode_bumpers
     - stop_mode_skillshot
+    - stop_mode_log
   kickout_left_hit: start_mode_hurryup
 
 shots:

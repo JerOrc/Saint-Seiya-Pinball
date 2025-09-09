@@ -51,6 +51,7 @@ event_player:
   mode_skillshot_started: enable_skill
   s_flipper_left_active{device.switches.s_plunger_lane.state == 1}: enable_super_skill
   s_flipper_left_inactive{device.switches.s_plunger_lane.state == 1}: enable_skill
+  enable_skill: log_enable_skill
 
 timers:
   skillshots_timeout:
@@ -95,35 +96,31 @@ state_machines:
         target: failed
         events: skillshots_unlit_hit, timer_skillshots_timeout_complete, s_spinner_right_active
 
+
 # WIDGET LOG
-widget_player:
-  enable_skill:
-    log:
-      expire: 1s
-      slide: _overlay
-      tokens:
-        text: "enable skill"
-  enable_super_skill:
-    log:
-      expire: 1s
-      slide: _overlay
-      tokens:
-        text: "enable super skill"
-  skill_failed:
-    log:
-      expire: 1s
-      slide: _overlay
-      tokens:
-        text: "skill failed"
-  skill_success:
-    log:
-      expire: 1s
-      slide: _overlay
-      tokens:
-        text: "skill success"
-  super_skill_success:
-    log:
-      expire: 1s
-      slide: _overlay
-      tokens:
-        text: "SUPER skill success"
+# widget_player:
+#   enable_skill:
+#     log:
+#       action: update
+#       tokens:
+#         text: "enable skill"
+#   enable_super_skill:
+#     log:
+#       action: update
+#       tokens:
+#         text: "enable super skill"
+#   skill_failed:
+#     log:
+#       action: update
+#       tokens:
+#         text: "skill failed"
+#   skill_success:
+#     log:
+#       action: update
+#       tokens:
+#         text: "skill success"
+#   super_skill_success:
+#     log:
+#       action: update
+#       tokens:
+#         text: "SUPER skill success"
