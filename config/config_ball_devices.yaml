@@ -6,6 +6,7 @@ ball_devices:
     ball_switches: s_plunger_lane
     eject_coil: c_plunger
     mechanical_eject: true
+    player_controlled_eject_event: auto_launch
     eject_timeouts: 3s
 
   bd_trough:

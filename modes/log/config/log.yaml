@@ -38,5 +38,15 @@ slide_player:
       method: log_text
       tokens:
         text: "Super skill success"
-
-
+  auto_launch:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "Auto launch"
+  balldevice_bd_plunger_ball_eject_attempt:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "Plunger eject"
