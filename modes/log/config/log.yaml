@@ -8,18 +8,6 @@ mode:
 
 slide_player:
   mode_log_started: log
-  enable_skill:
-    log:
-      action: method
-      method: log_text
-      tokens:
-        text: "enable skill"
-  enable_super_skill:
-    log:
-      action: method
-      method: log_text
-      tokens:
-        text: "enable super skill"
   skill_failed:
     log:
       action: method
@@ -38,7 +26,7 @@ slide_player:
       method: log_text
       tokens:
         text: "Super skill success"
-  auto_launch:
+  auto_launch_plunger:
     log:
       action: method
       method: log_text
