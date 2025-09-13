@@ -8,6 +8,18 @@ mode:
 
 slide_player:
   mode_log_started: log
+  player_shot_skill_l{value==1}:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "skill left"
+  player_shot_skill_r{value==1}:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "skill right"
   skill_failed:
     log:
       action: method
