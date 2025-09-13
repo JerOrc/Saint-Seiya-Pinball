@@ -9,10 +9,13 @@
 
 
 config:
-  - config_ball_devices.yaml
+  - config_hardware.yaml
   - config_coils.yaml
   - config_switches.yaml
-  - config_hardware.yaml
+#  - config_hardware_virtual.yaml
+#  - config_coils_virtual.yaml
+#  - config_switches_virtual.yaml
+  - config_ball_devices.yaml
 
 modes:
   - attract

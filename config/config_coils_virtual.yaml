@@ -27,20 +27,26 @@ coils:
     number: 0-0-0
     default_pulse_ms: 25
   c_kickback:
-    number: 1-0-2
+    number:
+    platform: virtual
   c_scoop:
-    number: 1-0-3
+    number:
+    platform: virtual
   c_kickout:
-    number: 1-0-4
+    number:
+    platform: virtual
   c_bumper_left:
-    number: 1-0-5
+    number:
     default_pulse_ms: 50
+    platform: virtual
   c_bumper_right:
-    number: 1-0-6
+    number:
     default_pulse_ms: 50
+    platform: virtual
   c_bumper_bottom:
-    number: 1-0-7
+    number:
     default_pulse_ms: 50
+    platform: virtual
   c_slingshot_right:
     number: 0-0-3
     default_pulse_ms: 25

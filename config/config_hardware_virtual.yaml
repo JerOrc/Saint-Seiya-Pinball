@@ -3,6 +3,7 @@
 hardware:
   platform:
     - opp
+    - virtual
   driverboards: gen2
   rgb_dmd: zedmd
 
