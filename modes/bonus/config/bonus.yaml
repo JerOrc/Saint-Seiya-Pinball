@@ -1,0 +1,12 @@
+#config_version=6
+
+slide_player:
+  mode_bonus_started: bonus
+  bonus_start:
+    bonus:
+      action: update
+      tokens:
+        entry: initial # display some initial text before the entry calculations are shown
+  bonus_entry:
+    bonus:
+      action: update
