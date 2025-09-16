@@ -1,5 +1,23 @@
 #config_version=6
 
+mode_settings:
+  display_delay_ms: 4000
+  # keep_multiplier: true
+  bonus_entries:
+    - entry: ramps_combo
+      text: "Ramps Combo"
+      player_score_entry: ramps_combo_count
+      score: 10_000
+      reset_player_score_entry: true
+
+    # - entry: multiplier
+    #   event: alien_bonus  # You should use a slide_player: in your bonus mode with slide entries based on these names, so when the bonus mode posts that event, you can show a slide with the relevant information for that bonus entry
+    #   text: "Bonus multiplier"
+    #   player_score_entry: bonus_multiplier
+    #   score: 0
+    #   skip_if_zero: false      
+
+
 slide_player:
   mode_bonus_started: bonus
   bonus_start:

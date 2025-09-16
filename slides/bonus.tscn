@@ -5,7 +5,8 @@
 [ext_resource type="Script" uid="uid://ciu7x6uw6f7ao" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_d5wm8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d5wm8"]
-font_size = 11
+line_spacing = 0.0
+font_size = 10
 
 [node name="Bonus" type="Control"]
 custom_minimum_size = Vector2(128, 32)
@@ -58,7 +59,6 @@ template_string = "End of Ball %s"
 metadata/_custom_type_script = "uid://ciu7x6uw6f7ao"
 
 [node name="__default__" type="Node2D" parent="ColorRect/MPFConditionalChildren"]
-visible = false
 
 [node name="text" type="Label" parent="ColorRect/MPFConditionalChildren/__default__"]
 anchors_preset = 8
@@ -191,6 +191,7 @@ comma_separate = true
 metadata/_custom_type_script = "uid://ciu7x6uw6f7ao"
 
 [node name="multiplier" type="Node2D" parent="ColorRect/MPFConditionalChildren"]
+visible = false
 
 [node name="Label" type="Label" parent="ColorRect/MPFConditionalChildren/multiplier"]
 anchors_preset = 8

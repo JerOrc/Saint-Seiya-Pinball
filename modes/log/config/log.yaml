@@ -50,3 +50,9 @@ slide_player:
       method: log_text
       tokens:
         text: "Plunger eject"
+  shot_ramps_combo_hit:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "Ramps Combo !"

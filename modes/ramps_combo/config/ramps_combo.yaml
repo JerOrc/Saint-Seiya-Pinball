@@ -1,0 +1,23 @@
+#config_version=6
+
+mode:
+  start_events: start_mode_ramps_combo
+  stop_events: stop_mode_ramps_combo
+  priority: 300
+
+shots:
+  shot_ramp_left:
+    switch: s_ramp_left
+  shot_ramp_right:
+    switch: s_ramp_right
+
+shot_groups:
+  shot_ramps_combo:
+    shots: shot_ramp_left, shot_ramp_right      # A FAIRE : enchainement des 2 rampes dans n'importe quel ordre
+
+variable_player:
+  shot_ramps_combo_hit:
+    score: current_player.ramps_combo_score
+    ramps_combo_count: 1
+
+
