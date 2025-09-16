@@ -5,18 +5,27 @@ mode:
   stop_events: stop_mode_ramps_combo
   priority: 300
 
+sequence_shots:
+  shot_ramps_lr_combo:
+    switch_sequence: s_ramp_left, s_ramp_right
+    cancel_switches: s_temple_out, s_newton_ball_target, s_blue_target_left, s_blue_target_right, s_red_target_1, s_red_target_2, s_red_target_3, s_red_target_4, s_red_target_5, s_red_target_6, s_scoop_1_active
+    sequence_timeout: 5s
+  shot_ramps_rl_combo:
+    switch_sequence: s_ramp_right, s_ramp_left
+    cancel_switches: s_temple_out, s_newton_ball_target, s_blue_target_left, s_blue_target_right, s_red_target_1, s_red_target_2, s_red_target_3, s_red_target_4, s_red_target_5, s_red_target_6, s_scoop_1_active
+    sequence_timeout: 5s
+
 shots:
-  shot_ramp_left:
-    switch: s_ramp_left
-  shot_ramp_right:
-    switch: s_ramp_right
+  shot_ramps_combo:
+    hit_events: shot_ramps_lr_combo_hit, shot_ramps_rl_combo_hit
+
 
 shot_groups:
-  shot_ramps_combo:
-    shots: shot_ramp_left, shot_ramp_right      # A FAIRE : enchainement des 2 rampes dans n'importe quel ordre
+  shot_ramps_combo_group:
+    shots: shot_ramps_combo      
 
 variable_player:
-  shot_ramps_combo_hit:
+  shot_ramps_combo_group_hit:
     score: current_player.ramps_combo_score
     ramps_combo_count: 1
 
