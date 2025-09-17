@@ -22,6 +22,7 @@ modes:
   - skillshot
   - log
   - bonus
+  - bonus_multiplier
   - ramps_combo
 
 playfields:
@@ -46,6 +47,4 @@ player_vars:
   ramps_combo_count:
     initial_value: 0
   bonus_multiplier:
-    initial_value: 2
-  
-  
+    initial_value: 1

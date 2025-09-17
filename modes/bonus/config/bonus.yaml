@@ -9,13 +9,12 @@ mode_settings:
       player_score_entry: ramps_combo_count
       score: 10_000
       reset_player_score_entry: true
-
-    # - entry: multiplier
-    #   event: alien_bonus  # You should use a slide_player: in your bonus mode with slide entries based on these names, so when the bonus mode posts that event, you can show a slide with the relevant information for that bonus entry
-    #   text: "Bonus multiplier"
-    #   player_score_entry: bonus_multiplier
-    #   score: 0
-    #   skip_if_zero: false      
+    - entry: knights
+      # event: alien_bonus  # You should use a slide_player: in your bonus mode with slide entries based on these names, so when the bonus mode posts that event, you can show a slide with the relevant information for that bonus entry
+      text: "Knights fallen"
+      player_score_entry: knights_count
+      score: 20_000
+      # skip_if_zero: false
 
 
 slide_player:
