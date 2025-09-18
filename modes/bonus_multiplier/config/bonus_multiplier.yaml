@@ -1,0 +1,35 @@
+#config_version=6
+
+# Hitting the top two lanes on top of the bumpers and the inner 2 lanes will increase the bonus multiplier.
+# The bonus multiplier can be increased up to 5x.
+
+mode:
+  start_events: start_mode_bonus_multiplier
+  stop_events: stop_mode_bonus_multiplier
+  priority: 110
+
+shots:
+  inlane_left:
+    switch: s_inlane_left
+  inlane_right:
+    switch: s_inlane_right
+  dragon_lane_left:
+    switch: s_dragon_lane_left
+  dragon_lane_right:
+    switch: s_dragon_lane_right
+
+shot_groups:
+  bm_lanes:
+    shots: inlane_left, inlane_right, dragon_lane_left, dragon_lane_right
+    reset_events:
+      bm_lanes_lit_complete: 1s
+
+variable_player:
+  mode_bonus_multiplier_started:
+    bonus_multiplier:
+      int: 1
+      action: set
+  bm_lanes_lit_complete{current_player.bonus_multiplier<5}:
+    bonus_multiplier: 1
+  bm_lanes_lit_complete:
+    score: 1000 * current_player.bonus_multiplier

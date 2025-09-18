@@ -1,0 +1,234 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp5k02u3rw6ji"]
+
+[ext_resource type="Script" uid="uid://ee3vq0gnrk88" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_4xgho"]
+[ext_resource type="Script" uid="uid://raumv6w6ee3l" path="res://addons/mpf-gmc/classes/mpf_conditional_children.gd" id="2_5bwht"]
+[ext_resource type="Script" uid="uid://ciu7x6uw6f7ao" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_d5wm8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d5wm8"]
+line_spacing = 0.0
+font_size = 10
+
+[node name="Bonus" type="Control"]
+custom_minimum_size = Vector2(128, 32)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4xgho")
+metadata/_custom_type_script = "uid://ee3vq0gnrk88"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MPFConditionalChildren" type="Control" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_5bwht")
+variable_type = 1
+variable_name = "entry"
+metadata/_custom_type_script = "uid://raumv6w6ee3l"
+
+[node name="initial" type="Node2D" parent="ColorRect/MPFConditionalChildren"]
+visible = false
+
+[node name="MPFVariable" type="Label" parent="ColorRect/MPFConditionalChildren/initial"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 128.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "End of Ball 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("3_d5wm8")
+variable_name = "ball"
+template_string = "End of Ball %s"
+metadata/_custom_type_script = "uid://ciu7x6uw6f7ao"
+
+[node name="__default__" type="Node2D" parent="ColorRect/MPFConditionalChildren"]
+
+[node name="text" type="Label" parent="ColorRect/MPFConditionalChildren/__default__"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -2.0
+offset_right = 128.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bonus Entry Text"
+label_settings = SubResource("LabelSettings_d5wm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("3_d5wm8")
+variable_type = 1
+variable_name = "text"
+template_string = "End of Ball %s"
+metadata/_custom_type_script = "uid://ciu7x6uw6f7ao"
+
+[node name="score" type="Label" parent="ColorRect/MPFConditionalChildren/__default__"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 15.0
+offset_right = 128.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1,000,000"
+label_settings = SubResource("LabelSettings_d5wm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("3_d5wm8")
+variable_type = 1
+variable_name = "score"
+comma_separate = true
+metadata/_custom_type_script = "uid://ciu7x6uw6f7ao"
+
+[node name="subtotal" type="Node2D" parent="ColorRect/MPFConditionalChildren"]
+visible = false
+
+[node name="Label" type="Label" parent="ColorRect/MPFConditionalChildren/subtotal"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -2.0
+offset_right = 128.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bonus Subtotal"
+label_settings = SubResource("LabelSettings_d5wm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_custom_type_script = "uid://ciu7x6uw6f7ao"
+
+[node name="score" type="Label" parent="ColorRect/MPFConditionalChildren/subtotal"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 15.0
+offset_right = 128.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1,000,000"
+label_settings = SubResource("LabelSettings_d5wm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("3_d5wm8")
+variable_type = 1
+variable_name = "score"
+comma_separate = true
+metadata/_custom_type_script = "uid://ciu7x6uw6f7ao"
+
+[node name="total" type="Node2D" parent="ColorRect/MPFConditionalChildren"]
+visible = false
+
+[node name="Label" type="Label" parent="ColorRect/MPFConditionalChildren/total"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -2.0
+offset_right = 128.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Total Bonus"
+label_settings = SubResource("LabelSettings_d5wm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_custom_type_script = "uid://ciu7x6uw6f7ao"
+
+[node name="score" type="Label" parent="ColorRect/MPFConditionalChildren/total"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 15.0
+offset_right = 128.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1,000,000"
+label_settings = SubResource("LabelSettings_d5wm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("3_d5wm8")
+variable_type = 1
+variable_name = "score"
+comma_separate = true
+metadata/_custom_type_script = "uid://ciu7x6uw6f7ao"
+
+[node name="multiplier" type="Node2D" parent="ColorRect/MPFConditionalChildren"]
+visible = false
+
+[node name="Label" type="Label" parent="ColorRect/MPFConditionalChildren/multiplier"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -2.0
+offset_right = 128.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bonus Multiplier"
+label_settings = SubResource("LabelSettings_d5wm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_custom_type_script = "uid://ciu7x6uw6f7ao"
+
+[node name="score" type="Label" parent="ColorRect/MPFConditionalChildren/multiplier"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 15.0
+offset_right = 128.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x1"
+label_settings = SubResource("LabelSettings_d5wm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("3_d5wm8")
+variable_type = 1
+variable_name = "score"
+template_string = "x%s"
+metadata/_custom_type_script = "uid://ciu7x6uw6f7ao"
