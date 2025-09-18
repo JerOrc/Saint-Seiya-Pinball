@@ -41,7 +41,7 @@ machine:
 
 player_vars:
   bumpers_score:
-    initial_value: 1000
+    initial_value: 210
   ramps_combo_score:
     initial_value: 2000
   ramps_combo_count:
