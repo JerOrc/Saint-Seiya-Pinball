@@ -19,13 +19,8 @@ shots:
   shot_ramps_combo:
     hit_events: shot_ramps_lr_combo_hit, shot_ramps_rl_combo_hit
 
-
-shot_groups:
-  shot_ramps_combo_group:
-    shots: shot_ramps_combo      
-
 variable_player:
-  shot_ramps_combo_group_hit:
+  shot_ramps_combo_hit:
     score: current_player.ramps_combo_score
     ramps_combo_count: 1
 
