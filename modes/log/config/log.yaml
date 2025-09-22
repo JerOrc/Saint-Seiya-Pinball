@@ -62,3 +62,15 @@ slide_player:
       method: log_text
       tokens:
         text: "Bonus increased"
+  super_bumpers_restart:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "Super Bumpers"
+  pf_multiplier_start:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "Pf multiplier flashing"
