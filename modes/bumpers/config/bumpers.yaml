@@ -1,5 +1,12 @@
 #config_version=6
 
+# Bumpers start with a value of 210 points.
+# Every 30 hits, the value per hit is increased by an additional 500 points.
+# The standard bumper value reaches a maximum of 3210 points.
+# After every 30 hits, the multiplier light will flash.
+# Hit the captive ball to collect This playfield multiplier can be increased up to 5x.
+# A new ball will reset both the bumper value and the playfield multiplier.
+
 mode:
   start_events: start_mode_bumpers
   stop_events: stop_mode_bumpers
@@ -12,15 +19,21 @@ shots:
     switch: s_bumper_right
   shot_bumper_bottom:
     switch: s_bumper_bottom
+  shot_newton_ball:
+    switch: s_newton_ball_target
+    profile: pf_multiplier_profile
+    enable_events: pf_multiplier_start
+    disable_events: pf_multiplier_stop
 
 shot_groups:
   bumpers:
     shots: shot_bumper_left, shot_bumper_right, shot_bumper_bottom
 
-variable_player:
-  bumpers_hit:
-    score: current_player.bumpers_score
-
+shot_profiles:
+  pf_multiplier_profile:
+    states:
+      - name: flashing
+    loop: true
 
 slide_player:
   mode_bumpers_started: bumpers
@@ -28,3 +41,32 @@ slide_player:
     bumpers:
       action: method
       method: top_down_text
+
+counters:
+  super_bumpers:
+    count_events: bumpers_hit
+    starting_count: 3
+    count_complete_value: 0
+    direction: down
+    events_when_complete: pf_multiplier_start
+    restart_events: super_bumpers_restart
+
+variable_player:
+  mode_bumpers_started:
+    bumpers_score:
+      int: 210
+      action: set
+    pf_multiplier:
+      int: 1
+      action: set
+  super_bumpers_restart{current_player.bumpers_score < 3210}:
+    bumpers_score: 500
+  super_bumpers_restart{current_player.pf_multiplier < 5}:
+    pf_multiplier: 1
+  bumpers_hit:
+    score: current_player.bumpers_score
+
+event_player:
+  shot_newton_ball_flashing_hit:
+    - super_bumpers_restart
+    - pf_multiplier_stop
