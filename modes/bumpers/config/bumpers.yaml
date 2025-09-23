@@ -3,8 +3,8 @@
 # Bumpers start with a value of 210 points.
 # Every 30 hits, the value per hit is increased by an additional 500 points.
 # The standard bumper value reaches a maximum of 3210 points.
-# After every 30 hits, the multiplier light will be read from the playing field.
-# Hit the captive ball to collect This play field multiplier can be increased up to 5x.
+# After every 30 hits, the multiplier light will flash.
+# Hit the captive ball to collect This playfield multiplier can be increased up to 5x.
 # A new ball will reset both the bumper value and the playfield multiplier.
 
 mode:
@@ -61,7 +61,7 @@ variable_player:
       action: set
   super_bumpers_restart{current_player.bumpers_score < 3210}:
     bumpers_score: 500
-  super_bumpers_restart{current_player.bumpers_score < 2710}:
+  super_bumpers_restart{current_player.pf_multiplier < 5}:
     pf_multiplier: 1
   bumpers_hit:
     score: current_player.bumpers_score
