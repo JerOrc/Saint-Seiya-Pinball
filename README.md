@@ -1,5 +1,9 @@
 # MPF Saint-Seiya-Pinball
 
+## Rules
+
+[Caballeros_del_Zodiaco (Saint Seiya) Rules.pdf](./R%C3%A8gles%20Caballeros_del_Zodiaco%20(Saint%20Seiya)%20Rules.pdf)
+
 ## Running steps
 
 - Install Godot
