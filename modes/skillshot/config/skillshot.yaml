@@ -43,14 +43,14 @@ shot_profiles:
 
 variable_player:
   skill_success:
-    score: 10_000
+    score: 10_000 * current_player.pf_multiplier
   super_skill_success:
-    score: 100_000
+    score: 100_000 * current_player.pf_multiplier
 
 event_player:
   mode_skillshot_started: enable_skill
   s_flipper_left_active{device.switches.s_plunger_lane.state == 1}: enable_super_skill
-  s_flipper_left_inactive{device.switches.s_plunger_lane.state == 1}: enable_skill  
+  s_flipper_left_inactive{device.switches.s_plunger_lane.state == 1}: enable_skill
 
 timers:
   skillshots_timeout:

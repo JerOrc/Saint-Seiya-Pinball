@@ -34,4 +34,4 @@ timers:
 
 variable_player:
   hurryup_hit:
-    score: 100_000 - device.timers.hurryup_timer.ticks * 2_000
+    score: (100_000 - device.timers.hurryup_timer.ticks * 2_000) * current_player.pf_multiplier

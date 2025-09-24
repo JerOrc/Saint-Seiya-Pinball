@@ -21,7 +21,5 @@ shots:
 
 variable_player:
   shot_ramps_combo_hit:
-    score: current_player.ramps_combo_score
+    score: current_player.ramps_combo_score * current_player.pf_multiplier
     ramps_combo_count: 1
-
-
