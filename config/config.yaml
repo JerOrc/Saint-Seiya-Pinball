@@ -50,3 +50,14 @@ player_vars:
     initial_value: 0
   bonus_multiplier:
     initial_value: 1
+
+plugins: switch_player
+
+switch_player:
+  steps:
+    - time: 2s
+      switch: s_start
+      action: activate
+    - time: 500ms
+      switch: s_start
+      action: deactivate
