@@ -3,9 +3,6 @@
 # Attract mode that starts when the machine boots up, stops
 # whenever a game is started, and re-starts after the game ends.
 
-slide_player:
-  mode_attract_started: attract
-
 mode_settings:
   selectable_items:
     - mpf_logo
@@ -19,8 +16,8 @@ mode_settings:
     - thanks3
     - thanks4
     - thanks5
-  next_item_events: s_flipper_right_active, timer_attract_carousel_timer_complete
-  previous_item_events: s_flipper_left_active
+  next_item_events: s_flipper_right_active, timer_attract_carousel_timer_complete, slide_attract_active
+  previous_item_events: s_flipper_left_active, slide_attract_active     # hook : slide_attract_active for linux bug on first slide
 
 sound_player:
   mode_attract_started:
@@ -28,10 +25,13 @@ sound_player:
       bus: music
       volume: 0.02
 
+slide_player:
+  mode_attract_started: attract
+
 timers:
   attract_carousel_timer:
     end_value: 1
-    tick_interval: 35s
+    tick_interval: 10s
     start_running: true
     control_events:
       - event: item_highlighted
