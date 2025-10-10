@@ -34,9 +34,11 @@ virtual_platform_start_active_switches:
   - s_trough_1
   - s_trough_2
   - s_trough_3
+  - s_trough_4
+  - s_trough_5
 
 machine:
-  balls_installed: 3 #How many balls are physically in your game
+  balls_installed: 5 #How many balls are physically in your game
   min_balls: 1 #How few balls can be accounted for before you can start a game
 
 player_vars:
