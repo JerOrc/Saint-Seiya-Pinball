@@ -31,3 +31,19 @@ shots:
 slide_player:
   mode_base_started: base
 
+# START - Hook to bd_trough jam
+timers:
+  bd_trough_jam:
+    end_value: 1
+    tick_interval: 3s
+    start_running: true
+    control_events:
+      - event: s_plunger_lane_active
+        action: stop
+      - event: timer_bd_trough_jam_complete
+        action: restart
+
+coil_player:
+  timer_bd_trough_jam_complete: c_trough_eject
+# END - Hook to bd_trough jam
+
