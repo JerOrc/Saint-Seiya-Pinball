@@ -40,3 +40,6 @@ timers:
         action: stop
       - event: flipper_cradle_release
         action: restart
+
+event_player:
+  flipper_cradle: game_start
