@@ -18,20 +18,20 @@ switches:
   s_plunger_lane:
     number: 0-0-9
   s_trough_1:
-    number:
-    platform: virtual
+    number: 1-0-32
+    type: NC
   s_trough_2:
-    number:
-    platform: virtual
+    number: 1-0-40
+    type: NC
   s_trough_3:
-    number:
-    platform: virtual
+    number: 1-0-48
+    type: NC
   s_trough_4:
-    number:
-    platform: virtual
+    number: 1-0-56
+    type: NC
   s_trough_5:
-    number:
-    platform: virtual
+    number: 1-0-64
+    type: NC
   s_trough_jam:
     number:
     platform: virtual
