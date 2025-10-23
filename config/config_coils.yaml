@@ -23,7 +23,7 @@ coils:
 
   c_trough_eject:
     number: 0-0-4
-    default_pulse_ms: 25
+    default_pulse_ms: 10
   c_plunger:
     number: 0-0-0
     default_pulse_ms: 25
