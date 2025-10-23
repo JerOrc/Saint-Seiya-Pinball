@@ -1,7 +1,7 @@
 #config_version=6
 
 mode_settings:
-  display_delay_ms: 4000
+  display_delay_ms: 2000
   # keep_multiplier: true
   bonus_entries:
     - entry: ramps_combo
