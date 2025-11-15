@@ -4,7 +4,7 @@ coils:
   # Flipper Coils
   c_flipper_right_power:
     number: 0-0-1
-    default_pulse_ms: 50
+    default_pulse_ms: 30
     default_recycle: true
     platform_settings:
       recycle_factor: 2
@@ -13,7 +13,7 @@ coils:
     allow_enable: true
   c_flipper_left_power:
     number: 0-0-14
-    default_pulse_ms: 50
+    default_pulse_ms: 30
     default_recycle: true
     platform_settings:
       recycle_factor: 2
@@ -30,12 +30,10 @@ coils:
 
   c_slingshot_right:
     number: 0-0-3
-    default_pulse_ms: 50
-    default_pulse_power: 0.7
+    default_pulse_ms: 25
   c_slingshot_left:
     number: 0-0-12
-    default_pulse_ms: 50
-    default_pulse_power: 0.7
+    default_pulse_ms: 25
 
   c_bumper_left:
     number:
