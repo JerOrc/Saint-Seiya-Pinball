@@ -76,12 +76,6 @@ timers:
     control_events:
       - action: start
         event: balldevice_bd_plunger_ball_eject_success
-      - action: stop
-        event: skill_failed
-      - action: stop
-        event: skill_success
-      - action: stop
-        event: super_skill_success
 
 state_machines:
   skillshots_success:
