@@ -1,4 +1,14 @@
 device_size: 0.04
+light:
+  led_left_lane:
+    x: 0.7015590200445434
+    y: 0.1906217268823547
+  led_right_lane:
+    x: 0.7861915367483296
+    y: 0.19438399780766435
+  led_super_skillshot:
+    x: 0.5924276169265033
+    y: 0.453980691654029
 switch:
   s_blue_target_left:
     x: 0.17630257376020086

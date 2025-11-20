@@ -10,9 +10,9 @@ mode:
 
 event_player:
   mode_base_started:
-    - start_mode_log
-    - start_mode_skillshot
     - start_mode_bumpers
+    - start_mode_skillshot
+    - start_mode_log
     - start_mode_ramps_combo
     - start_mode_bonus_multiplier
   mode_base_will_stop:

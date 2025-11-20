@@ -1,0 +1,48 @@
+#show_version=6
+
+- duration: 1
+  lights:
+    led_right_lane: 0
+    led_left_lane: ff
+- duration: 1
+  lights:
+    led_left_lane: 0
+    led_right_lane: ff
+- duration: 1
+  lights:
+    led_right_lane: 0
+    led_super_skillshot: ff
+- duration: 1
+  lights:
+    led_super_skillshot: 0
+    led_right_lane: ff
+- duration: 1
+  lights:
+    led_left_lane: red
+    led_right_lane: red
+    led_super_skillshot: ff0000
+- duration: 1
+  lights:
+    led_left_lane: ff6600
+    led_right_lane: ff6600
+    led_super_skillshot: ff6600
+- duration: 1
+  lights:
+    led_left_lane: ffcc00
+    led_right_lane: ffcc00
+    led_super_skillshot: ffcc00
+- duration: 1
+  lights:
+    led_left_lane: lime
+    led_right_lane: 00ff00
+    led_super_skillshot: 00ff00
+- duration: 1
+  lights:
+    led_left_lane: blue
+    led_right_lane: 0000ff
+    led_super_skillshot: 0000ff
+- duration: 1
+  lights:
+    led_left_lane: ff00aa
+    led_right_lane: ff00aa
+    led_super_skillshot: ff00aa

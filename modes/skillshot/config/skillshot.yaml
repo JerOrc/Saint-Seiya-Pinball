@@ -9,37 +9,51 @@ mode:
     - stop_mode_skillshot
   priority: 500
 
+shot_profiles:
+  skillshots_profile:
+    states:
+      - name: unlit
+        show: off
+      - name: flashing
+        show: flash
+      - name: lit
+        show: on
+    loop: true
+
 shots:
   skill_l:
     switch: s_dragon_lane_left
     profile: skillshots_profile
-    advance_events: mode_skillshot_started        # replace "skill_shot" with your mode name
+    advance_events: mode_skillshot_started
+    restart_events: mode_skillshot_will_stop
+    show_tokens:
+      led: led_left_lane
   skill_r:
     switch: s_dragon_lane_right
     profile: skillshots_profile
+    restart_events: mode_skillshot_will_stop
+    show_tokens:
+      led: led_right_lane
   super_skill_target:
     switch: s_newton_ball_target
     profile: skillshots_profile
+    control_events:
+      - events: player_shot_super_skill_target_enabled
+        state: 1
+    show_tokens:
+      led: led_super_skillshot
 
 shot_groups:
   skillshots:
     shots: skill_l, skill_r
     enable_events: enable_skill
-    disable_events: enable_super_skill, skill_failed
+    disable_events: enable_super_skill
     rotate_left_events: s_flipper_left_active
     rotate_right_events: s_flipper_right_active
   super_skillshot:
     shots: super_skill_target
     enable_events: enable_super_skill
-    disable_events: enable_skill, skill_failed
-
-shot_profiles:
-  skillshots_profile:
-    states:
-      - name: unlit
-      - name: flashing
-      - name: lit
-    loop: true
+    disable_events: enable_skill
 
 variable_player:
   skill_success:
@@ -49,25 +63,19 @@ variable_player:
 
 event_player:
   mode_skillshot_started: enable_skill
-  s_flipper_left_active{device.switches.s_plunger_lane.state == 1}: enable_super_skill
-  s_flipper_left_inactive{device.switches.s_plunger_lane.state == 1}: enable_skill
+  flipper_super_skill{device.switches.s_plunger_lane.state == 1}: enable_super_skill
+  flipper_super_skill_release{device.switches.s_plunger_lane.state == 1}: enable_skill
 
 timers:
   skillshots_timeout:
     start_value: 0
-    end_value: 20     # set the timeout of your skill shot here
+    end_value: 1
     direction: up
-    tick_interval: 1s
+    tick_interval: 20s     # set the timeout of your skill shot here
     start_running: false
     control_events:
       - action: start
         event: balldevice_bd_plunger_ball_eject_success
-      - action: stop
-        event: skill_failed
-      - action: stop
-        event: skill_success
-      - action: stop
-        event: super_skill_success
 
 state_machines:
   skillshots_success:
@@ -94,3 +102,10 @@ state_machines:
       - source: start
         target: failed
         events: skillshots_unlit_hit, timer_skillshots_timeout_complete, s_spinner_right_active,  s_ramp_right_active, s_ramp_left_active, s_temple_out_active, s_blue_target_left_active, s_blue_target_right_active, s_red_target_1_active, s_red_target_2_active, s_red_target_3_active, s_red_target_4_active, s_red_target_5_active, s_red_target_6_active, s_kickout_active, s_scoop_1_active
+
+timed_switches:
+  flipper_super_skill:
+    switch_tags: left_flipper
+    time: 1s
+    events_when_active: flipper_super_skill
+    events_when_released: flipper_super_skill_release
