@@ -15,7 +15,18 @@ shot_profiles:
       - name: unlit
         show: off
       - name: flashing
-        show: flash
+        show: flash_color
+        speed: 2
+      - name: lit
+        show: on
+    loop: true
+  super_skillshots_profile:
+    states:
+      - name: unlit
+        show: off
+      - name: flashing
+        show: flash_color
+        speed: 4
       - name: lit
         show: on
     loop: true
@@ -28,20 +39,23 @@ shots:
     restart_events: mode_skillshot_will_stop
     show_tokens:
       led: led_left_lane
+      color: 00FF00
   skill_r:
     switch: s_dragon_lane_right
     profile: skillshots_profile
     restart_events: mode_skillshot_will_stop
     show_tokens:
       led: led_right_lane
+      color: 00FF00
   super_skill_target:
     switch: s_newton_ball_target
-    profile: skillshots_profile
+    profile: super_skillshots_profile
     control_events:
       - events: player_shot_super_skill_target_enabled
         state: 1
     show_tokens:
       led: led_super_skillshot
+      color: FF0000
 
 shot_groups:
   skillshots:
@@ -101,7 +115,7 @@ state_machines:
         events: super_skillshot_hit
       - source: start
         target: failed
-        events: skillshots_unlit_hit, timer_skillshots_timeout_complete, s_spinner_right_active,  s_ramp_right_active, s_ramp_left_active, s_temple_out_active, s_blue_target_left_active, s_blue_target_right_active, s_red_target_1_active, s_red_target_2_active, s_red_target_3_active, s_red_target_4_active, s_red_target_5_active, s_red_target_6_active, s_kickout_active, s_scoop_1_active
+        events: skillshots_unlit_hit, timer_skillshots_timeout_complete, s_spinner_right_active,  s_ramp_right_active, s_ramp_left_active, s_temple_out_active, s_blue_target_left_active, s_blue_target_right_active, s_red_target_1_active, s_red_target_2_active, s_red_target_3_active, s_red_target_4_active, s_red_target_5_active, s_red_target_6_active, s_kickout_active, s_scoop_1_active, bumpers_hit
 
 timed_switches:
   flipper_super_skill:
