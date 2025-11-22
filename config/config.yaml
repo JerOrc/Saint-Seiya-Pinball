@@ -14,6 +14,7 @@ config:
   - config_switches.yaml
   - config_ball_devices.yaml
   - config_lights.yaml
+  - config_vars.yaml
 
 modes:
   - attract
@@ -41,18 +42,6 @@ virtual_platform_start_active_switches:
 machine:
   balls_installed: 5 #How many balls are physically in your game
   min_balls: 1 #How few balls can be accounted for before you can start a game
-
-player_vars:
-  bumpers_score:
-    initial_value: 210
-  pf_multiplier:
-    initial_value: 1
-  ramps_combo_score:
-    initial_value: 2000
-  ramps_combo_count:
-    initial_value: 0
-  bonus_multiplier:
-    initial_value: 1
 
 plugins: switch_player
 

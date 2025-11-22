@@ -1,0 +1,22 @@
+#config_version=6
+
+player_vars:
+  bumpers_score:
+    initial_value: 210
+
+  pf_multiplier:
+    initial_value: 1
+
+  ramps_combo_score:
+    initial_value: 2000
+  ramps_combo_count:
+    initial_value: 0
+
+  bonus_multiplier:
+    initial_value: 1
+
+  nb_skillshot:
+    initial_value: 0
+
+  nb_super_skillshot:
+    initial_value: 0
