@@ -32,4 +32,4 @@ variable_player:
   bm_lanes_lit_complete{current_player.bonus_multiplier<5}:
     bonus_multiplier: 1
   bm_lanes_lit_complete:
-    score: 1000 * current_player.pf_multiplier
+    score: 100_000 * current_player.pf_multiplier
