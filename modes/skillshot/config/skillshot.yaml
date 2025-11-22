@@ -1,5 +1,11 @@
 #config_version=6
 
+# There are 2 skill shots at the start of this game:
+# The light on at the top of the bumpers.
+# Press the left flipper and dunk a stronger ball then hit the captive ball within 10 seconds.
+# Skillshot value starts at 500,000 points and increases by 250,000 for each skillshot rolled.
+# Super skillshot value starts at 1,000,000 points and increases by 500,000 for each super skillshot rolled.
+
 mode:
   start_events: start_mode_skillshot
   stop_events:
@@ -71,9 +77,11 @@ shot_groups:
 
 variable_player:
   skill_success:
-    score: 10_000 * current_player.pf_multiplier
+    nb_skillshot: 1
+    score: 500_000 + current_player.nb_skillshot * 250_000
   super_skill_success:
-    score: 100_000 * current_player.pf_multiplier
+    nb_super_skillshot: 1
+    score: 1_000_000 * current_player.pf_multiplier + current_player.nb_super_skillshot * 500_000
 
 event_player:
   mode_skillshot_started: enable_skill
@@ -85,7 +93,7 @@ timers:
     start_value: 0
     end_value: 1
     direction: up
-    tick_interval: 20s     # set the timeout of your skill shot here
+    tick_interval: 10s     # set the timeout of your skill shot here
     start_running: false
     control_events:
       - action: start
