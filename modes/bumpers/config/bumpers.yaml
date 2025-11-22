@@ -13,21 +13,21 @@ mode:
   priority: 200
 
 shots:
-  shot_bumper_left:
+  bumper_left_shot:
     switch: s_bumper_left
-  shot_bumper_right:
+  bumper_right_shot:
     switch: s_bumper_right
-  shot_bumper_bottom:
+  bumper_bottom_shot:
     switch: s_bumper_bottom
-  shot_newton_ball:
+  newton_ball_shot:
     switch: s_newton_ball_target
     profile: pf_multiplier_profile
     enable_events: pf_multiplier_start
     disable_events: pf_multiplier_stop
 
 shot_groups:
-  bumpers:
-    shots: shot_bumper_left, shot_bumper_right, shot_bumper_bottom
+  bumpers_shots:
+    shots: bumper_left_shot, bumper_right_shot, bumper_bottom_shot
 
 shot_profiles:
   pf_multiplier_profile:
@@ -37,14 +37,14 @@ shot_profiles:
 
 slide_player:
   mode_bumpers_started: bumpers
-  bumpers_hit:
+  bumpers_shots_hit:
     bumpers:
       action: method
       method: top_down_text
 
 counters:
   super_bumpers:
-    count_events: bumpers_hit
+    count_events: bumpers_shots_hit
     starting_count: 3
     count_complete_value: 0
     direction: down
@@ -63,7 +63,7 @@ variable_player:
     bumpers_score: 500
   super_bumpers_restart{current_player.pf_multiplier < 5}:
     pf_multiplier: 1
-  bumpers_hit:
+  bumpers_shots_hit:
     score: current_player.bumpers_score
 
 event_player:
