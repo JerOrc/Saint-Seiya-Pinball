@@ -15,8 +15,8 @@ player_vars:
   bonus_multiplier:
     initial_value: 1
 
-  nb_skillshot:
+  skillshot_count:
     initial_value: 0
 
-  nb_super_skillshot:
+  super_skillshot_count:
     initial_value: 0

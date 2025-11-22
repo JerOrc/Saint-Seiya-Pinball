@@ -77,10 +77,10 @@ shot_groups:
 
 variable_player:
   skill_success:
-    nb_skillshot: 1
+    skillshot_count: 1
     score: 500_000 + current_player.nb_skillshot * 250_000
   super_skill_success:
-    nb_super_skillshot: 1
+    super_skillshot_count: 1
     score: 1_000_000 * current_player.pf_multiplier + current_player.nb_super_skillshot * 500_000
 
 event_player:
