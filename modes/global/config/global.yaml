@@ -1,0 +1,13 @@
+#config_version=6
+
+# All persistent non-wizard configuration :
+# - Multiball lock & advancement
+# - Wizard mode progression
+# - Pop bumpers awards
+# - Start/stop handlers dor field mode and mission mode
+# - Other ?
+#   . Cross mission qualifier
+#   . Qualifier for extra balls
+#   . ...
+
+
