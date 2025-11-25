@@ -2,6 +2,11 @@
 
 # Base mode that starts at the beginning of each ball
 # and stops at the end of each ball.
+# All persistent game-wide configuration and progress tracking :
+# . Achievements and ball saves
+# . Start/stop handlers for global mode and wizard modes
+# . Lanes modes and combo multipliers
+# . ...
 
 mode:
   start_events: ball_starting
@@ -10,17 +15,23 @@ mode:
 
 event_player:
   mode_base_started:
-    - start_mode_bumpers
     - start_mode_skillshot
+    - start_mode_global
+    - start_mode_bumpers
     - start_mode_log
     - start_mode_ramps_combo
     - start_mode_bonus_multiplier
   mode_base_will_stop:
-    - stop_mode_bumpers
     - stop_mode_skillshot
+    - stop_mode_global
+    - stop_mode_bumpers
     - stop_mode_log
     - stop_mode_ramps_combo
     - stop_mode_bonus_multiplier
+  mode_type_wizard_started:
+    - stop_mode_global
+  mode_type_wizard_stopped{not mode["base"].stopping}:
+    - start_mode_global
   kickout_left_hit: start_mode_hurryup
   flipper_cradle: auto_launch_plunger
 
