@@ -1,0 +1,18 @@
+#config_version=6
+
+# This is the "open playfield" mode that runs whenever there is no Mission mode
+# or Wizard mode active. It contains many of the show materials (lights, sounds)
+# for the Global modes that are disabled during missions.
+#####
+
+
+mode:
+  start_events: start_mode_field
+  stop_events: stop_mode_field
+
+config:
+  # add your mode parts here. For instance:
+  # - field_mission_qualifier_shots.yaml
+  # - field_miniwizard_qualifier_shots.yaml
+  # - field_chase_advancement.yaml
+  # - field_dropbank_special.yaml
