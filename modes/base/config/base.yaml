@@ -44,5 +44,5 @@ timers:
         action: stop
 
 coil_player:
-  timer_bd_trough_jam_tick: c_trough_eject
+  timer_bd_trough_jam_tick{ticks > 0}: c_trough_eject
 # Hook to bd_trough jam - END
