@@ -14,13 +14,13 @@ event_player:
     - start_mode_skillshot
     - start_mode_log
     - start_mode_ramps_combo
-    - start_mode_bonus_multiplier
+    - start_mode_rollover_lanes
   mode_base_will_stop:
     - stop_mode_bumpers
     - stop_mode_skillshot
     - stop_mode_log
     - stop_mode_ramps_combo
-    - stop_mode_bonus_multiplier
+    - stop_mode_rollover_lanes
   kickout_left_hit: start_mode_hurryup
 
 shots:
