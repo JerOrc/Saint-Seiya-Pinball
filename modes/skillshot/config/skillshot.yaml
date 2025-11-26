@@ -123,7 +123,7 @@ state_machines:
         events: super_skillshot_hit
       - source: start
         target: failed
-        events: skillshots_unlit_hit, timer_skillshots_timeout_complete, s_spinner_right_active,  s_ramp_right_active, s_ramp_left_active, s_temple_out_active, s_blue_target_left_active, s_blue_target_right_active, s_red_target_1_active, s_red_target_2_active, s_red_target_3_active, s_red_target_4_active, s_red_target_5_active, s_red_target_6_active, s_kickout_active, s_scoop_1_active, bumpers_hit
+        events: skillshots_unlit_hit, timer_skillshots_timeout_complete, s_spinner_right_active, sw_ramps_active, s_temple_out_active, sw_blue_targets_active, sw_red_targets_active, s_scoop_active, s_kickout_active, sw_bumpers_active
 
 timed_switches:
   flipper_super_skill:
