@@ -60,7 +60,7 @@ shots:
       - events: player_shot_super_skill_target_enabled
         state: 1
     show_tokens:
-      led: led_super_skillshot
+      led: led_newton_ball
       color: FF0000
 
 shot_groups:

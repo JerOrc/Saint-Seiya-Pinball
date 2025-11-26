@@ -4,6 +4,7 @@
   lights:
     led_right_lane: 0
     led_left_lane: ff
+    led_pf_multiplier_x2: blue
 - duration: 1
   lights:
     led_left_lane: 0
@@ -11,38 +12,45 @@
 - duration: 1
   lights:
     led_right_lane: 0
-    led_super_skillshot: ff
+    led_newton_ball: ff
+    led_pf_multiplier_x3: blue
 - duration: 1
   lights:
-    led_super_skillshot: 0
+    led_newton_ball: 0
     led_right_lane: ff
 - duration: 1
   lights:
     led_left_lane: red
     led_right_lane: red
-    led_super_skillshot: ff0000
+    led_newton_ball: ff0000
+    led_pf_multiplier_x4: blue
 - duration: 1
   lights:
     led_left_lane: ff6600
     led_right_lane: ff6600
-    led_super_skillshot: ff6600
+    led_newton_ball: ff6600
 - duration: 1
   lights:
     led_left_lane: ffcc00
     led_right_lane: ffcc00
-    led_super_skillshot: ffcc00
+    led_newton_ball: ffcc00
+    led_pf_multiplier_x5: blue
 - duration: 1
   lights:
     led_left_lane: lime
     led_right_lane: 00ff00
-    led_super_skillshot: 00ff00
+    led_newton_ball: 00ff00
 - duration: 1
   lights:
     led_left_lane: blue
     led_right_lane: 0000ff
-    led_super_skillshot: 0000ff
+    led_newton_ball: 0000ff
+    led_pf_multiplier_x2: 0
+    led_pf_multiplier_x3: 0
+    led_pf_multiplier_x4: 0
+    led_pf_multiplier_x5: 0
 - duration: 1
   lights:
     led_left_lane: ff00aa
     led_right_lane: ff00aa
-    led_super_skillshot: ff00aa
+    led_newton_ball: ff00aa
