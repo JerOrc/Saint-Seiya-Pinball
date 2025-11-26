@@ -21,6 +21,6 @@ ball_devices:
     eject_timeouts: 2s
 
   bd_scoop:
-    ball_switches: s_scoop_1, s_scoop_2, s_scoop_3, s_scoop_jam
+    ball_switches: s_scoop
     eject_coil: c_scoop
     eject_timeouts: 2s

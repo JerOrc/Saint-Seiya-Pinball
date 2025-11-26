@@ -8,11 +8,11 @@ mode:
 sequence_shots:
   shot_ramps_lr_combo:
     switch_sequence: s_ramp_left, s_ramp_right
-    cancel_switches: s_temple_out, s_newton_ball_target, s_blue_target_left, s_blue_target_right, s_red_target_1, s_red_target_2, s_red_target_3, s_red_target_4, s_red_target_5, s_red_target_6, s_scoop_1
+    cancel_switches: s_temple_out, s_newton_ball_target, s_blue_target_left, s_blue_target_right, s_red_target_1, s_red_target_2, s_red_target_3, s_red_target_4, s_red_target_5, s_red_target_6, s_scoop
     sequence_timeout: 5s
   shot_ramps_rl_combo:
     switch_sequence: s_ramp_right, s_ramp_left
-    cancel_switches: s_temple_out, s_newton_ball_target, s_blue_target_left, s_blue_target_right, s_red_target_1, s_red_target_2, s_red_target_3, s_red_target_4, s_red_target_5, s_red_target_6, s_scoop_1
+    cancel_switches: s_temple_out, s_newton_ball_target, s_blue_target_left, s_blue_target_right, s_red_target_1, s_red_target_2, s_red_target_3, s_red_target_4, s_red_target_5, s_red_target_6, s_scoop
     sequence_timeout: 5s
 
 shots:
