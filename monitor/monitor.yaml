@@ -1,6 +1,6 @@
 device_size: 0.04
 light:
-  led_left_lane:
+  led_dragon_lane_left:
     x: 0.7015590200445434
     y: 0.1906217268823547
   led_newton_ball:
@@ -18,7 +18,7 @@ light:
   led_pf_multiplier_x5:
     x: 0.6360544217687076
     y: 0.8197314379349238
-  led_right_lane:
+  led_dragon_lane_right:
     x: 0.7861915367483296
     y: 0.19438399780766435
 switch:

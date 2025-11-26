@@ -44,14 +44,14 @@ shots:
     advance_events: mode_skillshot_started
     restart_events: mode_skillshot_will_stop
     show_tokens:
-      led: led_left_lane
+      led: led_dragon_lane_left
       color: 00FF00
   skill_r:
     switch: s_dragon_lane_right
     profile: skillshots_profile
     restart_events: mode_skillshot_will_stop
     show_tokens:
-      led: led_right_lane
+      led: led_dragon_lane_right
       color: 00FF00
   super_skill_target:
     switch: s_newton_ball_target
