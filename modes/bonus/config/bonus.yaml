@@ -1,5 +1,8 @@
 #config_version=6
 
+mode:
+  priority: 1500
+
 mode_settings:
   display_delay_ms: 2000
   # keep_multiplier: true
