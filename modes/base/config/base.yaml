@@ -22,7 +22,6 @@ event_player:
     - stop_mode_ramps_combo
     - stop_mode_bonus_multiplier
   kickout_left_hit: start_mode_hurryup
-  flipper_cradle: auto_launch_plunger
 
 shots:
   kickout_left:
@@ -46,3 +45,10 @@ timers:
 coil_player:
   timer_bd_trough_jam_tick{ticks > 0}: c_trough_eject
 # Hook to bd_trough jam - END
+
+timed_switches:
+  flipper_right_cradle:
+    switch_tags: right_flipper
+    time: 3s
+    events_when_active: auto_launch_plunger
+    events_when_released: auto_launch_plunger_release
