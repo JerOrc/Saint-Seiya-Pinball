@@ -26,7 +26,7 @@ shots:
       led: led_newton_ball
       color: FF0000
     enable_events: bumpers_score_shot_start
-    disable_events: bumpers_score_shot_stop
+    disable_events: bumpers_score_shot_stop, mode_bumpers_will_stop
 
 shot_groups:
   bumpers_shots:
