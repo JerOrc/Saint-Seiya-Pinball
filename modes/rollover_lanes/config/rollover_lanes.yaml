@@ -4,19 +4,40 @@
 # The bonus multiplier can be increased up to 5x.
 
 mode:
-  start_events: start_mode_bonus_multiplier
-  stop_events: stop_mode_bonus_multiplier
+  start_events: start_mode_rollover_lanes
+  stop_events: stop_mode_rollover_lanes
   priority: 110
 
 shots:
   inlane_left:
     switch: s_inlane_left
+    show_tokens:
+      led: led_inlane_left
+      color: 0000FF
   inlane_right:
     switch: s_inlane_right
+    show_tokens:
+      led: led_inlane_right
+      color: 0000FF
   dragon_lane_left:
     switch: s_dragon_lane_left
+    show_tokens:
+      led: led_dragon_lane_left
+      color: 0000FF
   dragon_lane_right:
     switch: s_dragon_lane_right
+    show_tokens:
+      led: led_dragon_lane_right
+      color: 0000FF
+
+shot_profiles:
+  lanes_profile:
+    states:
+      - name: unlit
+        show: off
+      - name: lit
+        show: on
+    loop: true
 
 shot_groups:
   bm_lanes:
@@ -25,7 +46,7 @@ shot_groups:
       bm_lanes_lit_complete: 1s
 
 variable_player:
-  mode_bonus_multiplier_started:
+  mode_rollover_lanes_started:
     bonus_multiplier:
       int: 1
       action: set

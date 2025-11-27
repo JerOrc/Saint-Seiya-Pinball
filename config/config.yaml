@@ -24,7 +24,7 @@ modes:
   - skillshot
   - log
   - bonus
-  - bonus_multiplier
+  - rollover_lanes
   - ramps_combo
 
 playfields:

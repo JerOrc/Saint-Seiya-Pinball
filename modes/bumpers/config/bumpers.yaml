@@ -19,20 +19,25 @@ shots:
     switch: s_bumper_right
   bumper_bottom_shot:
     switch: s_bumper_bottom
-  newton_ball_shot:
+  bumpers_score_increase_shot:
     switch: s_newton_ball_target
-    profile: pf_multiplier_profile
-    enable_events: pf_multiplier_start
-    disable_events: pf_multiplier_stop
+    profile: bumpers_score_increase_profile
+    show_tokens:
+      led: led_newton_ball
+      color: FF0000
+    enable_events: bumpers_score_shot_start
+    disable_events: bumpers_score_shot_stop, mode_bumpers_will_stop
 
 shot_groups:
   bumpers_shots:
     shots: bumper_left_shot, bumper_right_shot, bumper_bottom_shot
 
 shot_profiles:
-  pf_multiplier_profile:
+  bumpers_score_increase_profile:
     states:
       - name: flashing
+        show: flash_color
+        speed: 2
     loop: true
 
 slide_player:
@@ -48,7 +53,7 @@ counters:
     starting_count: 3
     count_complete_value: 0
     direction: down
-    events_when_complete: pf_multiplier_start
+    events_when_complete: bumpers_score_shot_start
     restart_events: super_bumpers_restart
 
 variable_player:
@@ -59,14 +64,30 @@ variable_player:
     pf_multiplier:
       int: 1
       action: set
-  super_bumpers_restart{current_player.bumpers_score < 3210}:
-    bumpers_score: 500
-  super_bumpers_restart{current_player.pf_multiplier < 5}:
+  pf_multiplier_increase:
     pf_multiplier: 1
+  bumpers_score_increase:
+    bumpers_score: 500
   bumpers_shots_hit:
     score: current_player.bumpers_score
 
 event_player:
-  shot_newton_ball_flashing_hit:
+  bumpers_score_increase_shot_flashing_hit{current_player.pf_multiplier <= 4}:
+    - pf_multiplier_increase
+  bumpers_score_increase_shot_flashing_hit{current_player.bumpers_score < 2710}:
     - super_bumpers_restart
-    - pf_multiplier_stop
+  bumpers_score_increase_shot_flashing_hit{current_player.bumpers_score < 3210}:
+    - bumpers_score_increase
+  bumpers_score_increase_shot_flashing_hit:
+    - bumpers_score_shot_stop
+
+
+light_player:
+  pf_multiplier_increase{current_player.pf_multiplier == 1}:
+    led_pf_multiplier_x2: blue
+  pf_multiplier_increase{current_player.pf_multiplier == 2}:
+    led_pf_multiplier_x3: blue
+  pf_multiplier_increase{current_player.pf_multiplier == 3}:
+    led_pf_multiplier_x4: blue
+  pf_multiplier_increase{current_player.pf_multiplier == 4}:
+    led_pf_multiplier_x5: blue

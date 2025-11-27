@@ -1,16 +1,60 @@
 #config_version=6
 
 lights:
-  led_left_lane:
-    number: 0-0-0
+  led_dragon_lane_left:
+    number:
+    platform: virtual
     subtype: led
     type: grb
-  led_right_lane:
-    number: 0-0-1
+  led_dragon_lane_right:
+    number:
+    platform: virtual
     subtype: led
     type: grb
-  led_super_skillshot:
-    number: 0-0-2
+  led_outlane_right:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_outlane_left:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_inlane_right:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_inlane_left:
+    number:
+    platform: virtual
     subtype: led
     type: grb
 
+  led_newton_ball:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+
+  led_pf_multiplier_x2:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_pf_multiplier_x3:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_pf_multiplier_x4:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_pf_multiplier_x5:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb

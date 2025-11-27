@@ -69,11 +69,11 @@ switches:
     platform: virtual
   s_spinner_left:
     number:
-    tags: playfield_active, spinner
+    tags: playfield_active, spinners
     platform: virtual
   s_spinner_right:
     number:
-    tags: playfield_active, spinner
+    tags: playfield_active, spinners
     platform: virtual
   s_ramp_left:
     number:
@@ -92,16 +92,7 @@ switches:
     platform: virtual
 
   # Scoop Switches
-  s_scoop_1:
-    number:
-    platform: virtual
-  s_scoop_2:
-    number:
-    platform: virtual
-  s_scoop_3:
-    number:
-    platform: virtual
-  s_scoop_jam:
+  s_scoop:
     number:
     platform: virtual
 
@@ -122,11 +113,11 @@ switches:
     platform: virtual
   s_dragon_lane_left:
     number:
-    tags: playfield_active, lanes
+    tags: playfield_active, lanes, dragon_lanes
     platform: virtual
   s_dragon_lane_right:
     number:
-    tags: playfield_active, lanes
+    tags: playfield_active, lanes, dragon_lanes
     platform: virtual
 
   # Target Switches
