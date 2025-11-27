@@ -33,8 +33,10 @@ config:
 event_player:
   mode_global_started:
     - start_mode_field
+    - start_mode_pf_multiplier
   mode_global_will_stop:
     - stop_mode_field
+    - stop_mode_pf_multiplier
     - stop_missions
   mode_type_mission_started:
     - stop_mode_field

@@ -19,13 +19,18 @@ config:
 modes:
   - attract
   - base
+  - log
   - bumpers
+  - global
+  - field
+#  - mission
+  - bonus
   - hurryup
   - skillshot
-  - log
-  - bonus
+  - pf_multiplier
   - rollover_lanes
   - ramps_combo
+  - zodiac_ramps
 
 playfields:
   playfield:
