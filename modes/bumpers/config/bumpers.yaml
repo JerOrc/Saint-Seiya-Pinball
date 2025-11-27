@@ -29,9 +29,6 @@ variable_player:
     bumpers_score:
       int: 210
       action: set
-    pf_multiplier:
-      int: 1
-      action: set
   bumpers_shots_hit:
     score: current_player.bumpers_score
 

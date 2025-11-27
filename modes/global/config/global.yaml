@@ -23,7 +23,6 @@ mode:
   stop_events: stop_mode_global, ball_will_end
   priority: 300
 
-
 config:
   # add your configs here. For instance:
   # - global_multiball_madness_light_and_lock.yaml
@@ -34,9 +33,11 @@ event_player:
   mode_global_started:
     - start_mode_field
     - start_mode_pf_multiplier
+    - start_mode_bonus_multiplier
   mode_global_will_stop:
     - stop_mode_field
     - stop_mode_pf_multiplier
+    - stop_mode_bonus_multiplier
     - stop_missions
   mode_type_mission_started:
     - stop_mode_field
