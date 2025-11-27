@@ -56,14 +56,14 @@ event_player:
     - bumpers_score_shot_stop
 
 light_player:
-#  mode_pf_multiplier_started{current_player.pf_multiplier == 1}:
-#    led_pf_multiplier_x2: blue
-#  mode_pf_multiplier_started{current_player.pf_multiplier == 2}:
-#    led_pf_multiplier_x3: blue
-#  mode_pf_multiplier_started{current_player.pf_multiplier == 3}:
-#    led_pf_multiplier_x4: blue
-#  mode_pf_multiplier_started{current_player.pf_multiplier == 4}:
-#    led_pf_multiplier_x5: blue
+  mode_pf_multiplier_started{current_player.pf_multiplier == 1}:
+    led_pf_multiplier_x2: blue
+  mode_pf_multiplier_started{current_player.pf_multiplier == 2}:
+    led_pf_multiplier_x3: blue
+  mode_pf_multiplier_started{current_player.pf_multiplier == 3}:
+    led_pf_multiplier_x4: blue
+  mode_pf_multiplier_started{current_player.pf_multiplier == 4}:
+    led_pf_multiplier_x5: blue
   pf_multiplier_increase{current_player.pf_multiplier == 1}:
     led_pf_multiplier_x2: blue
   pf_multiplier_increase{current_player.pf_multiplier == 2}:
