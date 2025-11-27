@@ -13,7 +13,7 @@ mode:
     - super_skill_success
     - skill_failed
     - stop_mode_skillshot
-  priority: 500
+  priority: 1000
 
 shot_profiles:
   skillshots_profile:
