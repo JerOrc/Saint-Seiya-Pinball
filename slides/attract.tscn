@@ -10,11 +10,15 @@
 [ext_resource type="FontFile" uid="uid://w0mq0jf416cf" path="res://fonts/UpheavalPro-20-10.ttf" id="7_s04m7"]
 [ext_resource type="FontFile" uid="uid://cvh4ibl317df5" path="res://fonts/dosukoi-8-8.ttf" id="9_m8dk4"]
 [ext_resource type="FontFile" uid="uid://l5geiqonhqi0" path="res://fonts/SG10-8-5.ttf" id="10_lston"]
-[ext_resource type="FontFile" uid="uid://ctpjhag13hvl3" path="res://fonts/gas.regular-13-11.ttf" id="11_j70yh"]
+[ext_resource type="FontFile" uid="uid://ctpjhag13hvl3" path="res://fonts/gas.regular-31-24.ttf" id="11_j70yh"]
 [ext_resource type="FontFile" uid="uid://bxleu8ifasuhw" path="res://fonts/nokiafc22-8-7.ttf" id="12_6fkkr"]
 [ext_resource type="Texture2D" uid="uid://b0hnyju2ktjlh" path="res://modes/attract/images/whoops.png" id="13_x02ep"]
 [ext_resource type="Texture2D" uid="uid://6h074n8ub28i" path="res://modes/attract/images/test-original.png" id="14_lo7nv"]
-[ext_resource type="Texture2D" uid="uid://dftc3inrhve5e" path="res://modes/attract/images/test-pixel.png" id="15_46apj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q4ha8"]
+line_spacing = 1.0
+font_size = 31
+font_color = Color(1, 0.0941176, 0.568627, 1)
 
 [node name="attract" type="Control"]
 layout_mode = 3
@@ -95,6 +99,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="credits" type="Label" parent="zedmd/MPFCarousel"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -153,15 +158,13 @@ autowrap_mode = 2
 uppercase = true
 
 [node name="thanks4" type="Label" parent="zedmd/MPFCarousel"]
-visible = false
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 32.0
 theme_override_colors/font_color = Color(1, 0.282353, 0.113725, 1)
 theme_override_fonts/font = ExtResource("11_j70yh")
-theme_override_font_sizes/font_size = 13
-text = "thanks to jp salas"
-horizontal_alignment = 1
+text = "jp salas"
+label_settings = SubResource("LabelSettings_q4ha8")
 vertical_alignment = 1
 autowrap_mode = 2
 uppercase = true
@@ -181,15 +184,12 @@ autowrap_mode = 2
 uppercase = true
 
 [node name="mpf_logo" type="Sprite2D" parent="zedmd/MPFCarousel"]
+visible = false
 texture = ExtResource("13_x02ep")
 centered = false
 
 [node name="mpf_logo2" type="Sprite2D" parent="zedmd/MPFCarousel"]
+visible = false
 scale = Vector2(0.166667, 0.166667)
 texture = ExtResource("14_lo7nv")
-centered = false
-
-[node name="mpf_logo3" type="Sprite2D" parent="zedmd/MPFCarousel"]
-scale = Vector2(0.166667, 0.166667)
-texture = ExtResource("15_46apj")
 centered = false

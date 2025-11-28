@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://ctpjhag13hvl3"
-path="res://.godot/imported/gas.regular-13-11.ttf-a8db515ab0c3d34c61daebe1c1c47a55.fontdata"
+path="res://.godot/imported/gas.regular-31-24.ttf-feca1c10ea21bdadd9ca84a7d68f426f.fontdata"
 
 [deps]
 
-source_file="res://fonts/gas.regular-13-11.ttf"
-dest_files=["res://.godot/imported/gas.regular-13-11.ttf-a8db515ab0c3d34c61daebe1c1c47a55.fontdata"]
+source_file="res://fonts/gas.regular-31-24.ttf"
+dest_files=["res://.godot/imported/gas.regular-31-24.ttf-feca1c10ea21bdadd9ca84a7d68f426f.fontdata"]
 
 [params]
 

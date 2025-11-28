@@ -7,7 +7,6 @@ mode_settings:
   selectable_items:
     - mpf_logo
     - mpf_logo2
-    - mpf_logo3
     - author
     - title
     - credits
