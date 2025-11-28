@@ -1,0 +1,13 @@
+#config_version=6
+
+# ZODIAC EXTRABALL
+# Use the ramps until you spell the ZODIAC word, this activates a light in the lower left to get 1 million.
+# Complete again to get 2 million.
+# In the third attempt (18 Ramps) the Extraball light comes.
+# And so on...
+
+mode:
+  start_events: start_mode_zodiac_ramps
+  stop_events: stop_mode_zodiac_ramps
+  priority: 900
+

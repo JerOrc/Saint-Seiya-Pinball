@@ -1,0 +1,74 @@
+#config_version=6
+
+# Bumpers start with a value of 210 points.
+# Every 30 hits, the value per hit is increased by an additional 500 points.
+# The standard bumper value reaches a maximum of 3210 points.
+# After every 30 hits, the multiplier light will flash.
+# Hit the captive ball to collect This playfield multiplier can be increased up to 5x.
+# A new ball will reset both the bumper value and the playfield multiplier.
+
+mode:
+  start_events: start_mode_pf_multiplier
+  stop_events: stop_mode_pf_multiplier
+  priority: 900
+
+shots:
+  bumpers_score_increase_shot:
+    switch: s_newton_ball_target
+    profile: bumpers_score_increase_profile
+    show_tokens:
+      led: led_newton_ball
+      color: FF0000
+    enable_events: bumpers_score_shot_start
+    disable_events: bumpers_score_shot_stop, mode_pf_multiplier_will_stop
+
+shot_profiles:
+  bumpers_score_increase_profile:
+    states:
+      - name: flashing
+        show: flash_color
+        speed: 2
+    loop: true
+
+counters:
+  super_bumpers:
+    count_events: bumpers_shots_hit
+    starting_count: 3
+    count_complete_value: 0
+    direction: down
+    events_when_complete: bumpers_score_shot_start
+    restart_events: super_bumpers_restart
+
+variable_player:
+  pf_multiplier_increase:
+    pf_multiplier: 1
+  bumpers_score_increase:
+    bumpers_score: 500
+
+event_player:
+  bumpers_score_increase_shot_flashing_hit{current_player.pf_multiplier <= 4}:
+    - pf_multiplier_increase
+  bumpers_score_increase_shot_flashing_hit{current_player.bumpers_score < 2710}:
+    - super_bumpers_restart
+  bumpers_score_increase_shot_flashing_hit{current_player.bumpers_score < 3210}:
+    - bumpers_score_increase
+  bumpers_score_increase_shot_flashing_hit:
+    - bumpers_score_shot_stop
+
+light_player:
+  mode_pf_multiplier_started{current_player.pf_multiplier == 1}:
+    led_pf_multiplier_x2: blue
+  mode_pf_multiplier_started{current_player.pf_multiplier == 2}:
+    led_pf_multiplier_x3: blue
+  mode_pf_multiplier_started{current_player.pf_multiplier == 3}:
+    led_pf_multiplier_x4: blue
+  mode_pf_multiplier_started{current_player.pf_multiplier == 4}:
+    led_pf_multiplier_x5: blue
+  pf_multiplier_increase{current_player.pf_multiplier == 1}:
+    led_pf_multiplier_x2: blue
+  pf_multiplier_increase{current_player.pf_multiplier == 2}:
+    led_pf_multiplier_x3: blue
+  pf_multiplier_increase{current_player.pf_multiplier == 3}:
+    led_pf_multiplier_x4: blue
+  pf_multiplier_increase{current_player.pf_multiplier == 4}:
+    led_pf_multiplier_x5: blue

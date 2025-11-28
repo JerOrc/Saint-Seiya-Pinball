@@ -13,7 +13,7 @@ mode_settings:
       score: 10_000
       reset_player_score_entry: true
     - entry: knights
-      # event: alien_bonus  # You should use a slide_player: in your bonus mode with slide entries based on these names, so when the bonus mode posts that event, you can show a slide with the relevant information for that bonus entry
+      # You should use a slide_player: in your bonus mode with slide entries based on these names, so when the bonus mode posts that entry, you can show a slide with the relevant information for that bonus entry
       text: "Knights fallen"
       player_score_entry: knights_count
       score: 20_000
