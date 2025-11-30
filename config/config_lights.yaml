@@ -42,6 +42,11 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+  led_scoop:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
 
   led_pf_multiplier_x2:
     number:
