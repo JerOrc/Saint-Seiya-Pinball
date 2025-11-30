@@ -41,10 +41,9 @@ variable_player:
       int: 1
       action: set
 
-
-#shots:
-#  kickout_left:
-#    switches: s_kickout
+shots:
+  kickout_left:
+    switches: s_kickout
 
 slide_player:
   mode_base_started: base
