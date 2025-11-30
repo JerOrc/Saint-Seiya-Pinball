@@ -20,12 +20,11 @@ shots:
     switch: s_kickout
     profile: zodiac_validation_profile
     enable_events: zodiac_validation
-    disable_events: zodiac_validation_shot_hit, ball_will_end
-    restart_events: zodiac_validation_shot_hit
+    disable_events: zodiac_validation_shot_flashing_hit, ball_will_end
+    restart_events: zodiac_validation_shot_flashing_hit
     show_tokens:
       led: led_kickout
       color: 0000FF
-
 
 shot_groups:
   ramp_shot:
@@ -56,6 +55,10 @@ sequences:
 variable_player:
   ramp_shot_hit:
     score: 500 * current_player.pf_multiplier
-  zodiac_validation_shot_hit:
-    score: 10_000 * current_player.pf_multiplier
-    zodiac_count: 1
+  zodiac_validation_shot_flashing_hit:
+    zodiac_total_count: 1
+    zodiac_ball_count: 1
+    score: (current_player.zodiac_total_count % 3) * 1_000_000 * current_player.pf_multiplier
+
+event_player:
+  zodiac_validation_shot_flashing_hit{current_player.zodiac_total_count%3 == 2}: extraball_is_lit
