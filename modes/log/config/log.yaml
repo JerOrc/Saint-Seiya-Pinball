@@ -74,3 +74,45 @@ slide_player:
       method: log_text
       tokens:
         text: "Pf multiplier flashing"
+  logicblock_zodiac_sequence_hit{step==1}:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "Zodiac"
+  logicblock_zodiac_sequence_hit{step==2}:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "ZOdiac"
+  logicblock_zodiac_sequence_hit{step==3}:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "ZODiac"
+  logicblock_zodiac_sequence_hit{step==4}:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "ZODIac"
+  logicblock_zodiac_sequence_hit{step==5}:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "ZODIAc"
+  logicblock_zodiac_sequence_hit{step==6}:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "ZODIAC"
+  zodiac_validation_shot_hit:
+      log:
+        action: method
+        method: log_text
+        tokens:
+          text: "ZODIAC !!!"
