@@ -111,8 +111,14 @@ slide_player:
       tokens:
         text: "ZODIAC"
   zodiac_validation_shot_hit:
-      log:
-        action: method
-        method: log_text
-        tokens:
-          text: "ZODIAC !!!"
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "ZODIAC !!!"
+  extraball_is_lit:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "Extraball is lit"
