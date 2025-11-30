@@ -122,3 +122,9 @@ slide_player:
       method: log_text
       tokens:
         text: "Extraball is lit"
+  extra_ball_awarded:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "! EXTRABALL !"
