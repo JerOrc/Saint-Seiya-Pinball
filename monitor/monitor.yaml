@@ -36,6 +36,9 @@ light:
   led_pf_multiplier_x5:
     x: 0.6360544217687076
     y: 0.8197314379349238
+  led_scoop:
+    x: 0.23619216859957598
+    y: 0.3636363636363636
 switch:
   s_blue_target_left:
     x: 0.17630257376020086

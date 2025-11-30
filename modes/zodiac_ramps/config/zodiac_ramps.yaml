@@ -2,9 +2,10 @@
 
 # ZODIAC EXTRABALL
 # Use the ramps until you spell the ZODIAC word, this activates a light in the lower left to get 1 million.
-# Complete again to get 2 million.
-# In the third attempt (18 Ramps) the Extraball light comes.
+# Complete again to get 2 millions.
 # And so on...
+# In the third attempt (18 Ramps) the Extraball light comes.
+
 
 mode:
   start_events: start_mode_zodiac_ramps
@@ -38,7 +39,6 @@ shot_profiles:
         speed: 2
     loop: true
 
-
 sequences:
   zodiac_sequence:
     events:
@@ -51,14 +51,17 @@ sequences:
     events_when_complete: zodiac_validation
     restart_events: zodiac_validation_shot_hit
 
-
 variable_player:
   ramp_shot_hit:
     score: 500 * current_player.pf_multiplier
   zodiac_validation_shot_flashing_hit:
     zodiac_total_count: 1
     zodiac_ball_count: 1
-    score: (current_player.zodiac_total_count % 3) * 1_000_000 * current_player.pf_multiplier
+    score: current_player.zodiac_total_count * 1_000_000
 
 event_player:
-  zodiac_validation_shot_flashing_hit{current_player.zodiac_total_count%3 == 2}: extraball_is_lit
+  zodiac_validation_shot_flashing_hit{current_player.zodiac_total_count == 2}: extraball_is_lit
+
+extra_balls:
+  zodiac_ramps_extraball:
+    award_events: extraball_is_lit
