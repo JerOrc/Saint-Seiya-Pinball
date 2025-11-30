@@ -12,7 +12,9 @@ player_vars:
   ramps_combo_count:
     initial_value: 0
 
-  zodiac_count:
+  zodiac_total_count:
+    initial_value: 0
+  zodiac_ball_count:
     initial_value: 0
 
   bonus_multiplier:
