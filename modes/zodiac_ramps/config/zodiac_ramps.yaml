@@ -11,3 +11,51 @@ mode:
   stop_events: stop_mode_zodiac_ramps
   priority: 900
 
+shots:
+  ramp_left_shot:
+    switch: s_ramp_left
+  ramp_right_shot:
+    switch: s_ramp_right
+  zodiac_validation_shot:
+    switch: s_kickout
+    profile: zodiac_validation_profile
+    enable_events: zodiac_validation
+    disable_events: zodiac_validation_shot_hit, ball_will_end
+    restart_events: zodiac_validation_shot_hit
+    show_tokens:
+      led: led_kickout
+      color: 0000FF
+
+
+shot_groups:
+  ramp_shot:
+    shots: ramp_left_shot, ramp_right_shot
+
+shot_profiles:
+  zodiac_validation_profile:
+    states:
+      - name: flashing
+        show: flash_color
+        speed: 2
+    loop: true
+
+
+sequences:
+  zodiac_sequence:
+    events:
+      - ramp_shot_hit  # Z
+      - ramp_shot_hit  # O
+      - ramp_shot_hit  # D
+      - ramp_shot_hit  # I
+      - ramp_shot_hit  # A
+      - ramp_shot_hit  # C
+    events_when_complete: zodiac_validation
+    restart_events: zodiac_validation_shot_hit
+
+
+variable_player:
+  ramp_shot_hit:
+    score: 500 * current_player.pf_multiplier
+  zodiac_validation_shot_hit:
+    score: 10_000 * current_player.pf_multiplier
+    zodiac_count: 1
