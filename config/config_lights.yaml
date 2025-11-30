@@ -37,6 +37,11 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+  led_kickout:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
 
   led_pf_multiplier_x2:
     number:
