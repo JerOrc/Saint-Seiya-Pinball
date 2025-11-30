@@ -30,7 +30,7 @@ event_player:
     - stop_mode_global
   mode_type_wizard_stopped{not mode["base"].stopping}:
     - start_mode_global
-  kickout_left_hit: start_mode_hurryup
+  #kickout_left_hit: start_mode_hurryup
 
 variable_player:
   mode_base_started:
@@ -42,9 +42,9 @@ variable_player:
       action: set
 
 
-shots:
-  kickout_left:
-    switches: s_kickout
+#shots:
+#  kickout_left:
+#    switches: s_kickout
 
 slide_player:
   mode_base_started: base
