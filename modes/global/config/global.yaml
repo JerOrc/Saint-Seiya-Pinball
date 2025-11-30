@@ -34,10 +34,12 @@ event_player:
     - start_mode_field
     - start_mode_pf_multiplier
     - start_mode_bonus_multiplier
+    - start_mode_zodiac_ramps
   mode_global_will_stop:
     - stop_mode_field
     - stop_mode_pf_multiplier
     - stop_mode_bonus_multiplier
+    - stop_mode_zodiac_ramps
     - stop_missions
   mode_type_mission_started:
     - stop_mode_field
