@@ -60,8 +60,11 @@ variable_player:
     score: current_player.zodiac_total_count * 1_000_000
 
 event_player:
-  zodiac_validation_shot_flashing_hit{current_player.zodiac_total_count == 2}: extraball_is_lit
+  zodiac_validation_shot_flashing_hit{current_player.zodiac_total_count == 2}:
+    - zodiac_extraball_is_lit
+    - extraball_is_lit
 
 extra_balls:
   zodiac_ramps_extraball:
-    award_events: extraball_is_lit
+    light_events: zodiac_extraball_is_lit
+    award_events: extraball_shot_flashing_hit
