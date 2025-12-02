@@ -19,11 +19,8 @@ slide_player:
     bumpers:
       action: method
       method: top_down_text
+  # A FAIRE: stopper la slide si stop_base_bumpers
 
 variable_player:
-  start_base_bumpers:
-    bumpers_score:
-      int: 210
-      action: set
   bumpers_shots_hit:
     score: current_player.bumpers_score
