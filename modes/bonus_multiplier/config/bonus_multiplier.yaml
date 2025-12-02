@@ -11,25 +11,25 @@ mode:
 shots:
   inlane_left:
     switch: s_inlane_left
-    reset_events: ball_will_end
+    reset_events: mode_base_started{is_extra_ball == False}
     show_tokens:
       led: led_inlane_left
       color: 0000FF
   inlane_right:
     switch: s_inlane_right
-    reset_events: ball_will_end
+    reset_events: mode_base_started{is_extra_ball == False}
     show_tokens:
       led: led_inlane_right
       color: 0000FF
   dragon_lane_left:
     switch: s_dragon_lane_left
-    reset_events: ball_will_end
+    reset_events: mode_base_started{is_extra_ball == False}
     show_tokens:
       led: led_dragon_lane_left
       color: 0000FF
   dragon_lane_right:
     switch: s_dragon_lane_right
-    reset_events: ball_will_end
+    reset_events: mode_base_started{is_extra_ball == False}
     show_tokens:
       led: led_dragon_lane_right
       color: 0000FF
