@@ -1,9 +1,5 @@
 #config_version=6
 
-mode:
-  start_events: start_mode_bumpers
-  stop_events: stop_mode_bumpers
-  priority: 200
 
 shots:
   bumper_left_shot:
@@ -18,17 +14,16 @@ shot_groups:
     shots: bumper_left_shot, bumper_right_shot, bumper_bottom_shot
 
 slide_player:
-  mode_bumpers_started: bumpers
+  start_base_bumpers: bumpers
   bumpers_shots_hit:
     bumpers:
       action: method
       method: top_down_text
 
 variable_player:
-  mode_bumpers_started:
+  start_base_bumpers:
     bumpers_score:
       int: 210
       action: set
   bumpers_shots_hit:
     score: current_player.bumpers_score
-

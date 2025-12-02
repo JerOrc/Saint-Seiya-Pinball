@@ -14,21 +14,20 @@ mode:
   priority: 100
 
 config:
+  - base_bumpers.yaml
+  - base_log.yaml
   - base_extraball.yaml
+  - base_ramps_combo.yaml
 
 event_player:
   mode_base_started:
     - start_mode_global
-    - start_mode_log
     - start_mode_skillshot
-    - start_mode_bumpers
-    - start_mode_ramps_combo
+    - start_base_bumpers
+    - start_base_log
   mode_base_will_stop:
     - stop_mode_global
-    - stop_mode_log
     - stop_mode_skillshot
-    - stop_mode_bumpers
-    - stop_mode_ramps_combo
   mode_type_wizard_started:
     - stop_mode_global
   mode_type_wizard_stopped{not mode["base"].stopping}:
@@ -36,7 +35,7 @@ event_player:
   #kickout_left_hit: start_mode_hurryup
 
 variable_player:
-  mode_base_started:
+  mode_base_started{is_extra_ball == False}:
     pf_multiplier:
       int: 1
       action: set
@@ -61,6 +60,7 @@ ball_saves:
     debug: yes
 
 slide_player:
+  priority: 100
   mode_base_started: base
 
 # Hook to bd_trough jam - START

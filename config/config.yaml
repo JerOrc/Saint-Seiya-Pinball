@@ -19,8 +19,6 @@ config:
 modes:
   - attract
   - base
-  - log
-  - bumpers
   - global
   - field
 #  - mission
@@ -29,7 +27,6 @@ modes:
   - skillshot
   - pf_multiplier
   - bonus_multiplier
-  - ramps_combo
   - zodiac_ramps
 
 playfields:

@@ -1,25 +1,8 @@
 #config_version=6
 
-mode:
-  start_events: start_mode_log
-  stop_events: stop_mode_log
-  priority: 1_000
-
-
 slide_player:
-  mode_log_started: log
-#  player_shot_skill_l{value==1}:
-#    log:
-#      action: method
-#      method: log_text
-#      tokens:
-#        text: "skill left"
-#  player_shot_skill_r{value==1}:
-#    log:
-#      action: method
-#      method: log_text
-#      tokens:
-#        text: "skill right"
+  priority: 1_000
+  start_base_log: log
   skill_failed:
     log:
       action: method
@@ -44,12 +27,6 @@ slide_player:
 #      method: log_text
 #      tokens:
 #        text: "Auto launch"
-#  balldevice_bd_plunger_ball_eject_success:
-#    log:
-#      action: method
-#      method: log_text
-#      tokens:
-#        text: "Ball ejected"
   shot_ramps_combo_hit:
     log:
       action: method
@@ -127,4 +104,4 @@ slide_player:
       action: method
       method: log_text
       tokens:
-        text: "! EXTRABALL !"
+        text: "EXTRABALL !"
