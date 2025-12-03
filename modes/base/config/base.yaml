@@ -16,6 +16,7 @@ mode:
 config:
   - base_bumpers.yaml
   - base_log.yaml
+  - base_ballsave.yaml
   - base_extraball.yaml
   - base_ramps_combo.yaml
 
@@ -51,18 +52,6 @@ variable_player:
 shots:
   kickout_left:
     switches: s_kickout
-
-ball_saves:
-  default:
-    active_time: 10s
-    hurry_up_time: 2s
-    grace_period: 2s
-    enable_events: mode_base_started
-    timer_start_events: balldevice_bd_plunger_ball_eject_success
-    auto_launch: yes
-    balls_to_save: 1
-    early_ball_save_events: s_outlane_left_active, s_outlane_right_active
-    debug: yes
 
 slide_player:
   priority: 100

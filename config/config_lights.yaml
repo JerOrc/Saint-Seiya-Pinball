@@ -47,6 +47,11 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+  led_ballsave:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
 
   led_pf_multiplier_x2:
     number:

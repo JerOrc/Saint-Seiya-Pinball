@@ -1,5 +1,8 @@
 device_size: 0.04
 light:
+  led_ballsave:
+    x: 0.46341501434094023
+    y: 0.9124579124579124
   led_dragon_lane_left:
     x: 0.7015590200445434
     y: 0.1906217268823547
