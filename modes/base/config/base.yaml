@@ -37,7 +37,7 @@ event_player:
   #kickout_left_hit: start_mode_hurryup
 
 variable_player:
-  mode_base_started{is_extra_ball == False}:
+  mode_base_started{not is_extra_ball}:
     bumpers_score:
       int: 210
       action: set
