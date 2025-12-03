@@ -21,7 +21,7 @@ shots:
     switch: s_kickout
     profile: zodiac_validation_profile
     enable_events: zodiac_validation
-    disable_events: zodiac_validation_shot_flashing_hit, mode_base_started{is_extra_ball == False}
+    disable_events: zodiac_validation_shot_flashing_hit
     restart_events: zodiac_validation_shot_flashing_hit
     show_tokens:
       led: led_kickout
@@ -41,6 +41,7 @@ shot_profiles:
 
 sequences:
   zodiac_sequence:
+    persist_state: True
     events:
       - ramp_shot_hit  # Z
       - ramp_shot_hit  # O
