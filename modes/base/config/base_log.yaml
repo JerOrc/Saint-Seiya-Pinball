@@ -3,7 +3,9 @@
 slide_player:
   priority: 1_000
   start_base_log: log
-  # A FAIRE: stopper la slide si stop_base_log
+  stop_base_log:
+    log:
+      action: remove
   skill_failed:
     log:
       action: method
