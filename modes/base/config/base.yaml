@@ -28,6 +28,8 @@ event_player:
   mode_base_will_stop:
     - stop_mode_global
     - stop_mode_skillshot
+    - stop_base_bumpers
+    - stop_base_log
   mode_type_wizard_started:
     - stop_mode_global
   mode_type_wizard_stopped{not mode["base"].stopping}:
