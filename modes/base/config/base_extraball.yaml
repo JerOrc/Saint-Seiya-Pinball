@@ -18,3 +18,7 @@ shot_profiles:
         show: flash_color
         speed: 4
     loop: true
+
+light_player:
+  extra_ball_awarded:
+    led_ballsave: yellow
