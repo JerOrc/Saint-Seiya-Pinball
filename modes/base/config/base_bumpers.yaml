@@ -19,7 +19,9 @@ slide_player:
     bumpers:
       action: method
       method: top_down_text
-  # A FAIRE: stopper la slide si stop_base_bumpers
+  stop_base_bumpers:
+    bumpers:
+      action: remove
 
 variable_player:
   bumpers_shots_hit:
