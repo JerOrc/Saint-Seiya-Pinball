@@ -11,25 +11,25 @@ mode:
 shots:
   inlane_left:
     switch: s_inlane_left
-    reset_events: mode_base_started{is_extra_ball == False}
+    reset_events: reset_lanes
     show_tokens:
       led: led_inlane_left
       color: 0000FF
   inlane_right:
     switch: s_inlane_right
-    reset_events: mode_base_started{is_extra_ball == False}
+    reset_events: reset_lanes
     show_tokens:
       led: led_inlane_right
       color: 0000FF
   dragon_lane_left:
     switch: s_dragon_lane_left
-    reset_events: mode_base_started{is_extra_ball == False}
+    reset_events: reset_lanes
     show_tokens:
       led: led_dragon_lane_left
       color: 0000FF
   dragon_lane_right:
     switch: s_dragon_lane_right
-    reset_events: mode_base_started{is_extra_ball == False}
+    reset_events: reset_lanes
     show_tokens:
       led: led_dragon_lane_right
       color: 0000FF
@@ -54,3 +54,6 @@ variable_player:
     bonus_multiplier: 1
   bm_lanes_lit_complete:
     score: 100_000 * current_player.pf_multiplier
+
+event_player:
+  ball_will_end{current_player.extra_balls==0}: reset_lanes
