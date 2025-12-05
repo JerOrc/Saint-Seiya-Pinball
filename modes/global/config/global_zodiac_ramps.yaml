@@ -6,12 +6,6 @@
 # And so on...
 # In the third attempt (18 Ramps) the Extraball light comes.
 
-
-mode:
-  start_events: start_mode_zodiac_ramps
-  stop_events: stop_mode_zodiac_ramps
-  priority: 900
-
 shots:
   ramp_left_shot:
     switch: s_ramp_left
@@ -50,7 +44,7 @@ sequences:
       - ramp_shot_hit  # A
       - ramp_shot_hit  # C
     events_when_complete: zodiac_validation
-    restart_events: zodiac_validation_shot_hit
+    restart_events: zodiac_validation_shot_flashing_hit
 
 variable_player:
   ramp_shot_hit:

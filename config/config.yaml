@@ -25,9 +25,6 @@ modes:
   - bonus
   - hurryup
   - skillshot
-  - pf_multiplier
-  - bonus_multiplier
-  - zodiac_ramps
 
 playfields:
   playfield:
