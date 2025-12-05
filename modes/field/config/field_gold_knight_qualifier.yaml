@@ -1,0 +1,112 @@
+#config_version=6
+
+# When you start a game, a random knight is selected and its light starts blinking.
+# Hit the center temple to start the battle. The door can be opened by hitting it once or by hitting the 2
+# cygnus lock targets, located one on each side of the table.
+# When not in a battle, hitting the captive ball will change the selected battle.
+# You can't select again a finished battle until all battles are finished or a new game is started.
+
+random_event_player:
+   select_random_knight:
+    events:
+      - select_knight_1
+      - select_knight_2
+      - select_knight_3
+      - select_knight_4
+      - select_knight_5
+      - select_knight_6
+      - select_knight_7
+      - select_knight_8
+      - select_knight_9
+      - select_knight_10
+      - select_knight_11
+      - select_knight_12
+
+show_player:
+  flash_knight_1:
+      flash:
+        speed: 2
+        show_tokens:
+          led: led_knight_1
+  flash_knight_2:
+      flash:
+        speed: 2
+        show_tokens:
+          led: led_knight_2
+  flash_knight_3:
+      flash:
+        speed: 2
+        show_tokens:
+          led: led_knight_3
+  flash_knight_4:
+      flash:
+        speed: 2
+        show_tokens:
+          led: led_knight_4
+  flash_knight_5:
+      flash:
+        speed: 2
+        show_tokens:
+          led: led_knight_5
+  flash_knight_6:
+      flash:
+        speed: 2
+        show_tokens:
+          led: led_knight_6
+  flash_knight_7:
+      flash:
+        speed: 2
+        show_tokens:
+          led: led_knight_7
+  flash_knight_8:
+      flash:
+        speed: 2
+        show_tokens:
+          led: led_knight_8
+  flash_knight_9:
+      flash:
+        speed: 2
+        show_tokens:
+          led: led_knight_9
+  flash_knight_10:
+      flash:
+        speed: 2
+        show_tokens:
+          led: led_knight_10
+  flash_knight_11:
+      flash:
+        speed: 2
+        show_tokens:
+          led: led_knight_11
+  flash_knight_12:
+      flash:
+        speed: 2
+        show_tokens:
+          led: led_knight_12
+
+event_player:
+  mode_base_started : select_random_knight
+  select_knight_1:
+    - flash_knight_1
+  select_knight_2:
+    - flash_knight_2
+  select_knight_3:
+    - flash_knight_3
+  select_knight_4:
+    - flash_knight_4
+  select_knight_5:
+    - flash_knight_5
+  select_knight_6:
+    - flash_knight_6
+  select_knight_7:
+    - flash_knight_7
+  select_knight_8:
+    - flash_knight_8
+  select_knight_9:
+    - flash_knight_9
+  select_knight_10:
+    - flash_knight_10
+  select_knight_11:
+    - flash_knight_11
+  select_knight_12:
+    - flash_knight_12
