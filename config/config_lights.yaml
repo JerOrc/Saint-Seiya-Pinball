@@ -137,3 +137,9 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+
+  led_temple:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
