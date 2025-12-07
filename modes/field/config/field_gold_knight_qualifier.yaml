@@ -6,107 +6,251 @@
 # When not in a battle, hitting the captive ball will change the selected battle.
 # You can't select again a finished battle until all battles are finished or a new game is started.
 
-random_event_player:
-   select_random_knight:
-    events:
-      - select_knight_1
-      - select_knight_2
-      - select_knight_3
-      - select_knight_4
-      - select_knight_5
-      - select_knight_6
-      - select_knight_7
-      - select_knight_8
-      - select_knight_9
-      - select_knight_10
-      - select_knight_11
-      - select_knight_12
+shots:
+  select_knight:
+    switch: s_newton_ball_target
+  enter_knight_temple:
+    switch: s_temple_in
 
-show_player:
-  flash_knight_1:
-      flash:
-        speed: 2
-        show_tokens:
-          led: led_knight_1
-  flash_knight_2:
-      flash:
-        speed: 2
-        show_tokens:
-          led: led_knight_2
-  flash_knight_3:
-      flash:
-        speed: 2
-        show_tokens:
-          led: led_knight_3
-  flash_knight_4:
-      flash:
-        speed: 2
-        show_tokens:
-          led: led_knight_4
-  flash_knight_5:
-      flash:
-        speed: 2
-        show_tokens:
-          led: led_knight_5
-  flash_knight_6:
-      flash:
-        speed: 2
-        show_tokens:
-          led: led_knight_6
-  flash_knight_7:
-      flash:
-        speed: 2
-        show_tokens:
-          led: led_knight_7
-  flash_knight_8:
-      flash:
-        speed: 2
-        show_tokens:
-          led: led_knight_8
-  flash_knight_9:
-      flash:
-        speed: 2
-        show_tokens:
-          led: led_knight_9
-  flash_knight_10:
-      flash:
-        speed: 2
-        show_tokens:
-          led: led_knight_10
-  flash_knight_11:
-      flash:
-        speed: 2
-        show_tokens:
-          led: led_knight_11
-  flash_knight_12:
-      flash:
-        speed: 2
-        show_tokens:
-          led: led_knight_12
+achievements:
+  knight_1:
+    show_tokens:
+      lights: led_knight_1
+    show_when_selected: flash_knight_1 # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_defeated
+    reset_events: reset_knights
+  knight_2:
+    show_tokens:
+      lights: led_knight_2
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_defeated
+    reset_events: reset_knights
+  knight_3:
+    show_tokens:
+      lights: led_knight_3
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_defeated
+    reset_events: reset_knights
+  knight_4:
+    show_tokens:
+      lights: led_knight_4
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_defeated
+    reset_events: reset_knights
+  knight_5:
+    show_tokens:
+      lights: led_knight_5
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_defeated
+    reset_events: reset_knights
+  knight_6:
+    show_tokens:
+      lights: led_knight_6
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_defeated
+    reset_events: reset_knights
+  knight_7:
+    show_tokens:
+      lights: led_knight_7
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_defeated
+    reset_events: reset_knights
+  knight_8:
+    show_tokens:
+      lights: led_knight_8
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_defeated
+    reset_events: reset_knights
+  knight_9:
+    show_tokens:
+      lights: led_knight_9
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_defeated
+    reset_events: reset_knights
+  knight_10:
+    show_tokens:
+      lights: led_knight_10
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_defeated
+    reset_events: reset_knights
+  knight_11:
+    show_tokens:
+      lights: led_knight_11
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_defeated
+    reset_events: reset_knights
+  knight_12:
+    show_tokens:
+      lights: led_knight_12
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_defeated
+    reset_events: reset_knights
 
-event_player:
-  mode_base_started : select_random_knight
-  select_knight_1:
-    - flash_knight_1
-  select_knight_2:
-    - flash_knight_2
-  select_knight_3:
-    - flash_knight_3
-  select_knight_4:
-    - flash_knight_4
-  select_knight_5:
-    - flash_knight_5
-  select_knight_6:
-    - flash_knight_6
-  select_knight_7:
-    - flash_knight_7
-  select_knight_8:
-    - flash_knight_8
-  select_knight_9:
-    - flash_knight_9
-  select_knight_10:
-    - flash_knight_10
-  select_knight_11:
-    - flash_knight_11
-  select_knight_12:
-    - flash_knight_12
+achievement_groups:
+  knights_awards:
+    achievements:
+      - knight_1
+      - knight_2
+      - knight_3
+      - knight_4
+      - knight_5
+      - knight_6
+      - knight_7
+      - knight_8
+      - knight_9
+      - knight_10
+      - knight_11
+      - knight_12
+    show_tokens:
+      lights: led_temple
+    auto_select: true
+    events_when_all_completed: knights_wizard_is_lit
+    enable_while_no_achievement_started: false
+    show_when_enabled: flash
+    select_random_achievement_events: select_knight_hit
+    allow_selection_change_while_disabled: true
+    disable_while_achievement_started: false
+    start_selected_events: enter_knight_temple_hit
+    enable_events: mode_field_started
+    disable_events: mode_field_will_stop
+
+# random_event_player:
+#    select_random_knight:
+#     events:
+#       - select_knight_1
+#       - select_knight_2
+#       - select_knight_3
+#       - select_knight_4
+#       - select_knight_5
+#       - select_knight_6
+#       - select_knight_7
+#       - select_knight_8
+#       - select_knight_9
+#       - select_knight_10
+#       - select_knight_11
+#       - select_knight_12
+#
+# show_player:
+#   flash_knight:
+#       flash:
+#         speed: 2
+#         show_tokens:
+#           led: led_knight_1
+#   flash_knight_2:
+#       flash:
+#         speed: 2
+#         show_tokens:
+#           led: led_knight_2
+#   flash_knight_3:
+#       flash:
+#         speed: 2
+#         show_tokens:
+#           led: led_knight_3
+#   flash_knight_4:
+#       flash:
+#         speed: 2
+#         show_tokens:
+#           led: led_knight_4
+#   flash_knight_5:
+#       flash:
+#         speed: 2
+#         show_tokens:
+#           led: led_knight_5
+#   flash_knight_6:
+#       flash:
+#         speed: 2
+#         show_tokens:
+#           led: led_knight_6
+#   flash_knight_7:
+#       flash:
+#         speed: 2
+#         show_tokens:
+#           led: led_knight_7
+#   flash_knight_8:
+#       flash:
+#         speed: 2
+#         show_tokens:
+#           led: led_knight_8
+#   flash_knight_9:
+#       flash:
+#         speed: 2
+#         show_tokens:
+#           led: led_knight_9
+#   flash_knight_10:
+#       flash:
+#         speed: 2
+#         show_tokens:
+#           led: led_knight_10
+#   flash_knight_11:
+#       flash:
+#         speed: 2
+#         show_tokens:
+#           led: led_knight_11
+#   flash_knight_12:
+#       flash:
+#         speed: 2
+#         show_tokens:
+#           led: led_knight_12
+#
+# event_player:
+# #  mode_base_started : select_random_knight
+#   select_knight_1:
+#     - flash_knight_1
+#   select_knight_2:
+#     - flash_knight_2
+#   select_knight_3:
+#     - flash_knight_3
+#   select_knight_4:
+#     - flash_knight_4
+#   select_knight_5:
+#     - flash_knight_5
+#   select_knight_6:
+#     - flash_knight_6
+#   select_knight_7:
+#     - flash_knight_7
+#   select_knight_8:
+#     - flash_knight_8
+#   select_knight_9:
+#     - flash_knight_9
+#   select_knight_10:
+#     - flash_knight_10
+#   select_knight_11:
+#     - flash_knight_11
+#   select_knight_12:
+#     - flash_knight_12
