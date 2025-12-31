@@ -16,110 +16,110 @@ achievements:
   knight_1:
     show_tokens:
       lights: led_knight_1
-    show_when_selected: flash_knight_1 # probably want to create a custom version of the "flash" show
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: award_knight_started  # instant points award & plays shows
+    events_when_started: award_knight_1_started  # instant points award & plays shows
     enable_events: initialize_knights, reset_knights
-    complete_events: award_knight_defeated
+    complete_events: award_knight_1_started
     reset_events: reset_knights
   knight_2:
     show_tokens:
       lights: led_knight_2
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: award_knight_started  # instant points award & plays shows
+    events_when_started: award_knight_2_started  # instant points award & plays shows
     enable_events: initialize_knights, reset_knights
-    complete_events: award_knight_defeated
+    complete_events: award_knight_2_started
     reset_events: reset_knights
   knight_3:
     show_tokens:
       lights: led_knight_3
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: award_knight_started  # instant points award & plays shows
+    events_when_started: award_knight_3_started  # instant points award & plays shows
     enable_events: initialize_knights, reset_knights
-    complete_events: award_knight_defeated
+    complete_events: award_knight_3_started
     reset_events: reset_knights
   knight_4:
     show_tokens:
       lights: led_knight_4
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: award_knight_started  # instant points award & plays shows
+    events_when_started: award_knight_4_started  # instant points award & plays shows
     enable_events: initialize_knights, reset_knights
-    complete_events: award_knight_defeated
+    complete_events: award_knight_4_started
     reset_events: reset_knights
   knight_5:
     show_tokens:
       lights: led_knight_5
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: award_knight_started  # instant points award & plays shows
+    events_when_started: award_knight_5_started  # instant points award & plays shows
     enable_events: initialize_knights, reset_knights
-    complete_events: award_knight_defeated
+    complete_events: award_knight_5_started
     reset_events: reset_knights
   knight_6:
     show_tokens:
       lights: led_knight_6
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: award_knight_started  # instant points award & plays shows
+    events_when_started: award_knight_6_started  # instant points award & plays shows
     enable_events: initialize_knights, reset_knights
-    complete_events: award_knight_defeated
+    complete_events: award_knight_6_started
     reset_events: reset_knights
   knight_7:
     show_tokens:
       lights: led_knight_7
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: award_knight_started  # instant points award & plays shows
+    events_when_started: award_knight_7_started  # instant points award & plays shows
     enable_events: initialize_knights, reset_knights
-    complete_events: award_knight_defeated
+    complete_events: award_knight_7_started
     reset_events: reset_knights
   knight_8:
     show_tokens:
       lights: led_knight_8
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: award_knight_started  # instant points award & plays shows
+    events_when_started: award_knight_8_started  # instant points award & plays shows
     enable_events: initialize_knights, reset_knights
-    complete_events: award_knight_defeated
+    complete_events: award_knight_8_started
     reset_events: reset_knights
   knight_9:
     show_tokens:
       lights: led_knight_9
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: award_knight_started  # instant points award & plays shows
+    events_when_started: award_knight_9_started  # instant points award & plays shows
     enable_events: initialize_knights, reset_knights
-    complete_events: award_knight_defeated
+    complete_events: award_knight_9_started
     reset_events: reset_knights
   knight_10:
     show_tokens:
       lights: led_knight_10
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: award_knight_started  # instant points award & plays shows
+    events_when_started: award_knight_10_started  # instant points award & plays shows
     enable_events: initialize_knights, reset_knights
-    complete_events: award_knight_defeated
+    complete_events: award_knight_10_started
     reset_events: reset_knights
   knight_11:
     show_tokens:
       lights: led_knight_11
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: award_knight_started  # instant points award & plays shows
+    events_when_started: award_knight_11_started  # instant points award & plays shows
     enable_events: initialize_knights, reset_knights
-    complete_events: award_knight_defeated
+    complete_events: award_knight_11_started
     reset_events: reset_knights
   knight_12:
     show_tokens:
       lights: led_knight_12
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: award_knight_started  # instant points award & plays shows
+    events_when_started: award_knight_12_started  # instant points award & plays shows
     enable_events: initialize_knights, reset_knights
-    complete_events: award_knight_defeated
+    complete_events: award_knight_12_started
     reset_events: reset_knights
 
 achievement_groups:
@@ -142,115 +142,14 @@ achievement_groups:
     auto_select: true
     events_when_all_completed: knights_wizard_is_lit
     enable_while_no_achievement_started: false
+    disable_while_achievement_started: true
     show_when_enabled: flash
     select_random_achievement_events: select_knight_hit
-    allow_selection_change_while_disabled: true
-    disable_while_achievement_started: false
+    allow_selection_change_while_disabled: false
     start_selected_events: enter_knight_temple_hit
-    enable_events: mode_field_started
+    enable_events: initialize_knights
     disable_events: mode_field_will_stop
+    debug: true
 
-# random_event_player:
-#    select_random_knight:
-#     events:
-#       - select_knight_1
-#       - select_knight_2
-#       - select_knight_3
-#       - select_knight_4
-#       - select_knight_5
-#       - select_knight_6
-#       - select_knight_7
-#       - select_knight_8
-#       - select_knight_9
-#       - select_knight_10
-#       - select_knight_11
-#       - select_knight_12
-#
-# show_player:
-#   flash_knight:
-#       flash:
-#         speed: 2
-#         show_tokens:
-#           led: led_knight_1
-#   flash_knight_2:
-#       flash:
-#         speed: 2
-#         show_tokens:
-#           led: led_knight_2
-#   flash_knight_3:
-#       flash:
-#         speed: 2
-#         show_tokens:
-#           led: led_knight_3
-#   flash_knight_4:
-#       flash:
-#         speed: 2
-#         show_tokens:
-#           led: led_knight_4
-#   flash_knight_5:
-#       flash:
-#         speed: 2
-#         show_tokens:
-#           led: led_knight_5
-#   flash_knight_6:
-#       flash:
-#         speed: 2
-#         show_tokens:
-#           led: led_knight_6
-#   flash_knight_7:
-#       flash:
-#         speed: 2
-#         show_tokens:
-#           led: led_knight_7
-#   flash_knight_8:
-#       flash:
-#         speed: 2
-#         show_tokens:
-#           led: led_knight_8
-#   flash_knight_9:
-#       flash:
-#         speed: 2
-#         show_tokens:
-#           led: led_knight_9
-#   flash_knight_10:
-#       flash:
-#         speed: 2
-#         show_tokens:
-#           led: led_knight_10
-#   flash_knight_11:
-#       flash:
-#         speed: 2
-#         show_tokens:
-#           led: led_knight_11
-#   flash_knight_12:
-#       flash:
-#         speed: 2
-#         show_tokens:
-#           led: led_knight_12
-#
-# event_player:
-# #  mode_base_started : select_random_knight
-#   select_knight_1:
-#     - flash_knight_1
-#   select_knight_2:
-#     - flash_knight_2
-#   select_knight_3:
-#     - flash_knight_3
-#   select_knight_4:
-#     - flash_knight_4
-#   select_knight_5:
-#     - flash_knight_5
-#   select_knight_6:
-#     - flash_knight_6
-#   select_knight_7:
-#     - flash_knight_7
-#   select_knight_8:
-#     - flash_knight_8
-#   select_knight_9:
-#     - flash_knight_9
-#   select_knight_10:
-#     - flash_knight_10
-#   select_knight_11:
-#     - flash_knight_11
-#   select_knight_12:
-#     - flash_knight_12
+event_player:
+  mode_field_started : initialize_knights
