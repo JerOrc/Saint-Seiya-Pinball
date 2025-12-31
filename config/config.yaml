@@ -21,10 +21,11 @@ modes:
   - base
   - global
   - field
-#  - mission
   - bonus
   - hurryup
   - skillshot
+#  - missions
+  - gold_knight_1
 
 playfields:
   playfield:

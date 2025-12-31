@@ -1,0 +1,13 @@
+#config_version=6
+
+# gold_knight_1
+
+mode:
+  start_events: start_mode_gold_knight_1
+  stop_events: stop_mode_gold_knight_1, stop_missions
+  events_when_started: mode_type_mission_started
+  events_when_stopped: mode_type_mission_stopped
+
+
+event_player:
+  mode_gold_knight_1_started: stop_mode_gold_knight_1|3s
