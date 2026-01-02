@@ -15,7 +15,7 @@ shots:
 achievements:
   knight_1:
     show_tokens:
-      lights: led_knight_1
+      lights: led_gold_knight_1
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
     events_when_started: start_mode_gold_knight_1  # instant points award & plays shows
@@ -24,7 +24,7 @@ achievements:
     reset_events: reset_knights
   knight_2:
     show_tokens:
-      lights: led_knight_2
+      lights: led_gold_knight_2
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
     events_when_started: award_knight_2_started  # instant points award & plays shows
@@ -33,7 +33,7 @@ achievements:
     reset_events: reset_knights
   knight_3:
     show_tokens:
-      lights: led_knight_3
+      lights: led_gold_knight_3
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
     events_when_started: award_knight_3_started  # instant points award & plays shows
@@ -42,7 +42,7 @@ achievements:
     reset_events: reset_knights
   knight_4:
     show_tokens:
-      lights: led_knight_4
+      lights: led_gold_knight_4
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
     events_when_started: award_knight_4_started  # instant points award & plays shows
@@ -51,7 +51,7 @@ achievements:
     reset_events: reset_knights
   knight_5:
     show_tokens:
-      lights: led_knight_5
+      lights: led_gold_knight_5
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
     events_when_started: award_knight_5_started  # instant points award & plays shows
@@ -60,7 +60,7 @@ achievements:
     reset_events: reset_knights
   knight_6:
     show_tokens:
-      lights: led_knight_6
+      lights: led_gold_knight_6
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
     events_when_started: award_knight_6_started  # instant points award & plays shows
@@ -69,7 +69,7 @@ achievements:
     reset_events: reset_knights
   knight_7:
     show_tokens:
-      lights: led_knight_7
+      lights: led_gold_knight_7
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
     events_when_started: award_knight_7_started  # instant points award & plays shows
@@ -78,7 +78,7 @@ achievements:
     reset_events: reset_knights
   knight_8:
     show_tokens:
-      lights: led_knight_8
+      lights: led_gold_knight_8
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
     events_when_started: award_knight_8_started  # instant points award & plays shows
@@ -87,7 +87,7 @@ achievements:
     reset_events: reset_knights
   knight_9:
     show_tokens:
-      lights: led_knight_9
+      lights: led_gold_knight_9
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
     events_when_started: award_knight_9_started  # instant points award & plays shows
@@ -96,7 +96,7 @@ achievements:
     reset_events: reset_knights
   knight_10:
     show_tokens:
-      lights: led_knight_10
+      lights: led_gold_knight_10
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
     events_when_started: award_knight_10_started  # instant points award & plays shows
@@ -105,7 +105,7 @@ achievements:
     reset_events: reset_knights
   knight_11:
     show_tokens:
-      lights: led_knight_11
+      lights: led_gold_knight_11
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
     events_when_started: award_knight_11_started  # instant points award & plays shows
@@ -114,7 +114,7 @@ achievements:
     reset_events: reset_knights
   knight_12:
     show_tokens:
-      lights: led_knight_12
+      lights: led_gold_knight_12
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
     events_when_started: award_knight_12_started  # instant points award & plays shows

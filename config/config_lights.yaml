@@ -76,67 +76,90 @@ lights:
     subtype: led
     type: grb
 
-  # knights
-  led_knight_1:
+  # gold knights
+  led_gold_knight_1:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_knight_2:
+  led_gold_knight_2:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_knight_3:
+  led_gold_knight_3:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_knight_4:
+  led_gold_knight_4:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_knight_5:
+  led_gold_knight_5:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_knight_6:
+  led_gold_knight_6:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_knight_7:
+  led_gold_knight_7:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_knight_8:
+  led_gold_knight_8:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_knight_9:
+  led_gold_knight_9:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_knight_10:
+  led_gold_knight_10:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_knight_11:
+  led_gold_knight_11:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_knight_12:
+  led_gold_knight_12:
     number:
     platform: virtual
     subtype: led
     type: grb
+
+  # bronze knights
+  led_andromede:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_pegaze:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_dragon:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_cygnus:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+
 
   led_temple:
     number:
