@@ -116,3 +116,7 @@ variable_player:
     score: (150_000 + 30_000 * (device.counters.bronze_knight_hits_counter.value - 3)) * current_player.pf_multiplier
   bronze_knights_flashing_hit{device.counters.bronze_knight_hits_counter.value > 7}:
     score: 300_000 * current_player.pf_multiplier
+  mode_gold_knight_1_started:
+    knights_confronted_count: 1
+  logicblock_beat_gold_knight_1_complete:
+    knights_defeated_count: 1

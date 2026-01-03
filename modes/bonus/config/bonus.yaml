@@ -12,17 +12,19 @@ mode_settings:
       player_score_entry: ramps_combo_count
       score: 10_000
       reset_player_score_entry: true
-    - entry: zodiac_ramps
-      text: "Zodiac Ramps"
-      player_score_entry: zodiac_ball_count
-      score: 5_000
-      reset_player_score_entry: true
-    - entry: knights
-      # You should use a slide_player: in your bonus mode with slide entries based on these names, so when the bonus mode posts that entry, you can show a slide with the relevant information for that bonus entry
-      text: "Knights fallen"
-      player_score_entry: knights_count
+    - entry: knights_confronted
+      text: "Knights confronted"
+      player_score_entry: knights_confronted_count
       score: 20_000
-      # skip_if_zero: false
+      skip_if_zero: false
+      reset_player_score_entry: true
+    - entry: knights_defeated
+      # You should use a slide_player: in your bonus mode with slide entries based on these names, so when the bonus mode posts that entry, you can show a slide with the relevant information for that bonus entry
+      text: "Knights defeated"
+      player_score_entry: knights_defeated_count
+      score: 20_000
+      skip_if_zero: true
+      reset_player_score_entry: true
 
 
 slide_player:
