@@ -126,17 +126,17 @@ achievement_groups:
   knights_awards:
     achievements:
       - knight_1
-      - knight_2
-      - knight_3
-      - knight_4
-      - knight_5
-      - knight_6
-      - knight_7
-      - knight_8
-      - knight_9
-      - knight_10
-      - knight_11
-      - knight_12
+#      - knight_2
+#      - knight_3
+#      - knight_4
+#      - knight_5
+#      - knight_6
+#      - knight_7
+#      - knight_8
+#      - knight_9
+#      - knight_10
+#      - knight_11
+#      - knight_12
     show_tokens:
       lights: led_temple
     auto_select: true
