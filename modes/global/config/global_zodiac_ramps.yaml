@@ -52,7 +52,7 @@ variable_player:
   zodiac_validation_shot_flashing_hit:
     zodiac_total_count: 1
     zodiac_ball_count: 1
-    score: current_player.zodiac_total_count * 1_000_000
+    score: current_player.zodiac_total_count * 1_000_000 * current_player.pf_multiplier
 
 event_player:
   zodiac_validation_shot_flashing_hit{current_player.zodiac_total_count == 2}:

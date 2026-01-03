@@ -25,4 +25,4 @@ slide_player:
 
 variable_player:
   bumpers_shots_hit:
-    score: current_player.bumpers_score
+    score: current_player.bumpers_score * current_player.pf_multiplier
