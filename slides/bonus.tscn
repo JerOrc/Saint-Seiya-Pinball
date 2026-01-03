@@ -87,7 +87,7 @@ autowrap_mode = 2
 script = ExtResource("3_d5wm8")
 variable_type = 1
 variable_name = "text"
-template_string = "End of Ball %s"
+template_string = "%s"
 metadata/_custom_type_script = "uid://ciu7x6uw6f7ao"
 
 [node name="score" type="Label" parent="zedmd/ColorRect/MPFConditionalChildren/__default__"]

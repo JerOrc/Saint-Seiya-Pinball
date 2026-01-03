@@ -24,6 +24,9 @@ mode:
   priority: 300
 
 config:
+  - global_pf_multiplier.yaml
+  - global_bonus_multiplier.yaml
+  - global_zodiac_ramps.yaml
   # add your configs here. For instance:
   # - global_multiball_madness_light_and_lock.yaml
   # - global_pop_bumpers.yaml
@@ -32,14 +35,8 @@ config:
 event_player:
   mode_global_started:
     - start_mode_field
-    - start_mode_pf_multiplier
-    - start_mode_bonus_multiplier
-    - start_mode_zodiac_ramps
   mode_global_will_stop:
     - stop_mode_field
-    - stop_mode_pf_multiplier
-    - stop_mode_bonus_multiplier
-    - stop_mode_zodiac_ramps
     - stop_missions
   mode_type_mission_started:
     - stop_mode_field

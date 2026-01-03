@@ -21,13 +21,11 @@ modes:
   - base
   - global
   - field
-#  - mission
   - bonus
   - hurryup
   - skillshot
-  - pf_multiplier
-  - bonus_multiplier
-  - zodiac_ramps
+#  - missions
+  - gold_knight_1
 
 playfields:
   playfield:

@@ -1,6 +1,7 @@
 #config_version=6
 
 lights:
+  # Lanes
   led_dragon_lane_left:
     number:
     platform: virtual
@@ -53,6 +54,7 @@ lights:
     subtype: led
     type: grb
 
+  # pf_multiplier
   led_pf_multiplier_x2:
     number:
     platform: virtual
@@ -69,6 +71,97 @@ lights:
     subtype: led
     type: grb
   led_pf_multiplier_x5:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+
+  # gold knights
+  led_gold_knight_1:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_gold_knight_2:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_gold_knight_3:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_gold_knight_4:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_gold_knight_5:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_gold_knight_6:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_gold_knight_7:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_gold_knight_8:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_gold_knight_9:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_gold_knight_10:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_gold_knight_11:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_gold_knight_12:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+
+  # bronze knights
+  led_andromede:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_pegaze:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_dragon:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_cygnus:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+
+
+  led_temple:
     number:
     platform: virtual
     subtype: led

@@ -25,3 +25,8 @@ player_vars:
 
   super_skillshot_count:
     initial_value: 0
+
+  knights_confronted_count:
+    initial_value: 0
+  knights_defeated_count:
+    initial_value: 0

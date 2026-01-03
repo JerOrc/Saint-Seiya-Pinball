@@ -1,0 +1,155 @@
+#config_version=6
+
+# When you start a game, a random knight is selected and its light starts blinking.
+# Hit the center temple to start the battle. The door can be opened by hitting it once or by hitting the 2
+# cygnus lock targets, located one on each side of the table.
+# When not in a battle, hitting the captive ball will change the selected battle.
+# You can't select again a finished battle until all battles are finished or a new game is started.
+
+shots:
+  select_knight:
+    switch: s_newton_ball_target
+  enter_knight_temple:
+    switch: s_temple_in
+
+achievements:
+  knight_1:
+    show_tokens:
+      lights: led_gold_knight_1
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: start_mode_gold_knight_1  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: mode_gold_knight_1_started
+    reset_events: reset_knights
+  knight_2:
+    show_tokens:
+      lights: led_gold_knight_2
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_2_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_2_started
+    reset_events: reset_knights
+  knight_3:
+    show_tokens:
+      lights: led_gold_knight_3
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_3_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_3_started
+    reset_events: reset_knights
+  knight_4:
+    show_tokens:
+      lights: led_gold_knight_4
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_4_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_4_started
+    reset_events: reset_knights
+  knight_5:
+    show_tokens:
+      lights: led_gold_knight_5
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_5_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_5_started
+    reset_events: reset_knights
+  knight_6:
+    show_tokens:
+      lights: led_gold_knight_6
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_6_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_6_started
+    reset_events: reset_knights
+  knight_7:
+    show_tokens:
+      lights: led_gold_knight_7
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_7_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_7_started
+    reset_events: reset_knights
+  knight_8:
+    show_tokens:
+      lights: led_gold_knight_8
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_8_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_8_started
+    reset_events: reset_knights
+  knight_9:
+    show_tokens:
+      lights: led_gold_knight_9
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_9_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_9_started
+    reset_events: reset_knights
+  knight_10:
+    show_tokens:
+      lights: led_gold_knight_10
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_10_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_10_started
+    reset_events: reset_knights
+  knight_11:
+    show_tokens:
+      lights: led_gold_knight_11
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_11_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_11_started
+    reset_events: reset_knights
+  knight_12:
+    show_tokens:
+      lights: led_gold_knight_12
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: award_knight_12_started  # instant points award & plays shows
+    enable_events: initialize_knights, reset_knights
+    complete_events: award_knight_12_started
+    reset_events: reset_knights
+
+achievement_groups:
+  knights_awards:
+    achievements:
+      - knight_1
+#      - knight_2
+#      - knight_3
+#      - knight_4
+#      - knight_5
+#      - knight_6
+#      - knight_7
+#      - knight_8
+#      - knight_9
+#      - knight_10
+#      - knight_11
+#      - knight_12
+    show_tokens:
+      lights: led_temple
+    auto_select: true
+    events_when_all_completed: knights_wizard_is_lit
+    enable_while_no_achievement_started: false
+    disable_while_achievement_started: true
+    show_when_enabled: flash
+    select_random_achievement_events: select_knight_hit
+    allow_selection_change_while_disabled: false
+    start_selected_events: enter_knight_temple_hit
+    enable_events: initialize_knights
+    disable_events: mode_field_will_stop
+    debug: true
+
+event_player:
+  mode_field_started : initialize_knights

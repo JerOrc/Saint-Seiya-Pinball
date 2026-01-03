@@ -1,0 +1,122 @@
+#config_version=6
+
+# 1. MU DE ARIES - FOLLOW THE LIGHTS 2
+# In this mode, every 4 seconds the illuminated plane changes randomly.
+# Hitting the lit shot during this mode awards a standard score of 150,000.
+# Press 4 lights to activate the temple, insert the ball and complete the battle.
+
+mode:
+  start_events: start_mode_gold_knight_1
+  stop_events: stop_mode_gold_knight_1, stop_missions
+  events_when_started: mode_type_mission_started
+  events_when_stopped: mode_type_mission_stopped
+
+shot_profiles:
+  gold_knight_1_shots_profile:
+    states:
+      - name: unlit
+        show: off
+      - name: flashing
+        show: flash_color
+        speed: 2
+      - name: lit
+        show: on
+    advance_on_hit: false
+
+shots:
+  andromede:
+    switch: s_orbit_left
+    profile: gold_knight_1_shots_profile
+    advance_events: lit_andromede
+    show_tokens:
+      led: led_andromede
+      color: D67691
+  pegaze:
+    switch: s_ramp_left
+    profile: gold_knight_1_shots_profile
+    advance_events: lit_pegaze
+    show_tokens:
+      led: led_pegaze
+      color: D60108
+  dragon:
+    switch: s_ramp_right
+    profile: gold_knight_1_shots_profile
+    advance_events: lit_dragon
+    show_tokens:
+      led: led_dragon
+      color: 18A58F
+  cygnus:
+    switch: s_orbit_right
+    profile: gold_knight_1_shots_profile
+    advance_events: lit_cygnus
+    show_tokens:
+      led: led_cygnus
+      color: 2748C6
+  enter_gold_knight_1_temple:
+    switch: s_temple_in
+    profile: gold_knight_1_shots_profile
+    advance_events: lit_temple
+    show_tokens:
+      led: led_temple
+      color: cccccc
+
+shot_groups:
+  bronze_knights:
+    shots: andromede, pegaze, dragon, cygnus
+    disable_events: mode_gold_knight_1_stopping
+    restart_events: timer_gold_knight_1_timer_started.1, bronze_knights_flashing_hit.1
+
+random_event_player:
+  timer_gold_knight_1_timer_started.2:
+    events:
+      - lit_andromede
+      - lit_pegaze
+      - lit_dragon
+      - lit_cygnus
+  bronze_knights_flashing_hit.2:
+    events:
+      - lit_andromede
+      - lit_pegaze
+      - lit_dragon
+      - lit_cygnus
+
+event_player:
+  logicblock_bronze_knight_hits_counter_complete: lit_temple
+  logicblock_beat_gold_knight_1_complete: stop_mode_gold_knight_1
+
+timers:
+  gold_knight_1_timer:
+    end_value: 1
+    tick_interval: 4s
+    start_running: false
+    restart_on_complete: true
+    control_events:
+      - event: mode_gold_knight_1_started
+        action: start
+      - event: mode_gold_knight_1_stopping
+        action: stop
+
+counters:
+  bronze_knight_hits_counter:
+    count_events: bronze_knights_flashing_hit
+    count_complete_value: 4
+    disable_on_complete: false
+    reset_on_complete: false
+
+sequences:
+  beat_gold_knight_1:
+    events:
+      - logicblock_bronze_knight_hits_counter_complete
+      - enter_gold_knight_1_temple_hit
+
+variable_player:
+  bronze_knights_flashing_hit{device.counters.bronze_knight_hits_counter.value < 4}:
+    score: 150_000 * current_player.pf_multiplier
+  bronze_knights_flashing_hit{device.counters.bronze_knight_hits_counter.value >= 4 and device.counters.bronze_knight_hits_counter.value <= 7}:
+    score: (150_000 + 30_000 * (device.counters.bronze_knight_hits_counter.value - 3)) * current_player.pf_multiplier
+  bronze_knights_flashing_hit{device.counters.bronze_knight_hits_counter.value > 7}:
+    score: 300_000 * current_player.pf_multiplier
+  mode_gold_knight_1_started:
+    knights_confronted_count: 1
+  logicblock_beat_gold_knight_1_complete:
+    knights_defeated_count: 1

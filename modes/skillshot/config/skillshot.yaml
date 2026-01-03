@@ -13,6 +13,8 @@ mode:
     - super_skill_success
     - skill_failed
     - stop_mode_skillshot
+  events_when_started: mode_type_wizard_started
+  events_when_stopped: mode_type_wizard_stopped
   priority: 1000
 
 shot_profiles:
@@ -78,10 +80,10 @@ shot_groups:
 variable_player:
   skill_success:
     skillshot_count: 1
-    score: 500_000 + current_player.nb_skillshot * 250_000
+    score: (500_000 + current_player.nb_skillshot * 250_000) * current_player.pf_multiplier
   super_skill_success:
     super_skillshot_count: 1
-    score: 1_000_000 * current_player.pf_multiplier + current_player.nb_super_skillshot * 500_000
+    score: (1_000_000 + current_player.nb_super_skillshot * 500_000) * current_player.pf_multiplier
 
 event_player:
   mode_skillshot_started: enable_skill
