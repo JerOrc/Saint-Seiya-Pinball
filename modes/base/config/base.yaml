@@ -22,7 +22,6 @@ config:
 
 event_player:
   mode_base_started:
-    - start_mode_global
     - start_mode_skillshot
     - start_base_bumpers
     - start_base_log

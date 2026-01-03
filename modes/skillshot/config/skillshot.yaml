@@ -13,6 +13,8 @@ mode:
     - super_skill_success
     - skill_failed
     - stop_mode_skillshot
+  events_when_started: mode_type_wizard_started
+  events_when_stopped: mode_type_wizard_stopped
   priority: 1000
 
 shot_profiles:
