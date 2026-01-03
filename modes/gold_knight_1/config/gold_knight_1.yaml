@@ -52,6 +52,13 @@ shots:
     show_tokens:
       led: led_cygnus
       color: 2748C6
+  enter_gold_knight_1_temple:
+    switch: s_temple_in
+    profile: gold_knight_1_shots_profile
+    advance_events: lit_temple
+    show_tokens:
+      led: led_temple
+      color: cccccc
 
 shot_groups:
   bronze_knights:
@@ -74,12 +81,13 @@ random_event_player:
       - lit_cygnus
 
 event_player:
-  mode_gold_knight_1_started: stop_mode_gold_knight_1|30s
+  logicblock_bronze_knight_hits_counter_complete: lit_temple
+  logicblock_beat_gold_knight_1_complete: stop_mode_gold_knight_1
 
 timers:
   gold_knight_1_timer:
     end_value: 1
-    tick_interval: 8s
+    tick_interval: 4s
     start_running: false
     restart_on_complete: true
     control_events:
@@ -87,3 +95,24 @@ timers:
         action: start
       - event: mode_gold_knight_1_stopping
         action: stop
+
+counters:
+  bronze_knight_hits_counter:
+    count_events: bronze_knights_flashing_hit
+    count_complete_value: 4
+    disable_on_complete: false
+    reset_on_complete: false
+
+sequences:
+  beat_gold_knight_1:
+    events:
+      - logicblock_bronze_knight_hits_counter_complete
+      - enter_gold_knight_1_temple_hit
+
+variable_player:
+  bronze_knights_flashing_hit{device.counters.bronze_knight_hits_counter.value < 4}:
+    score: 150_000 * current_player.pf_multiplier
+  bronze_knights_flashing_hit{device.counters.bronze_knight_hits_counter.value >= 4 and device.counters.bronze_knight_hits_counter.value <= 7}:
+    score: (150_000 + 30_000 * (device.counters.bronze_knight_hits_counter.value - 3)) * current_player.pf_multiplier
+  bronze_knights_flashing_hit{device.counters.bronze_knight_hits_counter.value > 7}:
+    score: 300_000 * current_player.pf_multiplier
