@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/dosukoi-8-8.ttf-b70a6e7a943262c20be9cfc80306a
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
 disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false

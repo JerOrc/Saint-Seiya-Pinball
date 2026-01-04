@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/VeniceClassic-19-10.ttf-c1146ceda319d1b74c8e7
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
 disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false

@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/gas.regular-31-24.ttf-feca1c10ea21bdadd9ca84a
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
 disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false

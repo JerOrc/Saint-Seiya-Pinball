@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/UpheavalPro-20-10.ttf-b82388d923fd06ea85244ed
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
 disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false

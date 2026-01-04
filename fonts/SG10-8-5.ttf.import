@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/SG10-8-5.ttf-bd88ebd6aecadb0114483b70562c8e77
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
 disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false

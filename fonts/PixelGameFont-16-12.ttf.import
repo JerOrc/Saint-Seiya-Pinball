@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/PixelGameFont-16-12.ttf-65408f2893057f4affcaa
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
 disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false

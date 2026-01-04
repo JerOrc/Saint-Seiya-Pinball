@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Mario-Kart-DS-21-12.ttf-b178732957f2a26ab6ee6
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
 disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
