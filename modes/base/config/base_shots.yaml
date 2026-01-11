@@ -1,0 +1,38 @@
+#config_version=6
+
+shot_profiles:
+  classic_shots_profile:
+    states:
+      - name: unlit
+        show: off
+      - name: flashing
+        show: flash_color
+        speed: 2
+      - name: lit
+        show: on
+    loop: true
+
+  manual_advance_shots_profile:
+    states:
+      - name: unlit
+        show: off
+      - name: flashing
+        show: flash_color
+        speed: 2
+      - name: lit
+        show: on
+    advance_on_hit: false
+
+  flashing_profile:
+    states:
+      - name: flashing
+        show: flash_color
+        speed: 2
+    advance_on_hit: false
+
+  quick_flashing_profile:
+    states:
+      - name: flashing
+        show: flash_color
+        speed: 4
+    advance_on_hit: false

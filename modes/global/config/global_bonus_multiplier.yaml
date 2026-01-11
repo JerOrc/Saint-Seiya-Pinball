@@ -29,15 +29,6 @@ shots:
       led: led_dragon_lane_right
       color: 0000FF
 
-shot_profiles:
-  lanes_profile:
-    states:
-      - name: unlit
-        show: off
-      - name: lit
-        show: on
-    loop: true
-
 shot_groups:
   bm_lanes:
     shots: inlane_left, inlane_right, dragon_lane_left, dragon_lane_right

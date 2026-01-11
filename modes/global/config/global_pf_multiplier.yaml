@@ -7,23 +7,16 @@
 # Hit the captive ball to collect This playfield multiplier can be increased up to 5x.
 # A new ball will reset both the bumper value and the playfield multiplier.
 
+
 shots:
   bumpers_score_increase_shot:
     switch: s_newton_ball_target
-    profile: bumpers_score_increase_profile
+    profile: flashing_profile
     show_tokens:
       led: led_newton_ball
       color: FF0000
     enable_events: bumpers_score_shot_start
     disable_events: bumpers_score_shot_stop, mode_global_will_stop
-
-shot_profiles:
-  bumpers_score_increase_profile:
-    states:
-      - name: flashing
-        show: flash_color
-        speed: 2
-    loop: true
 
 counters:
   super_bumpers:
