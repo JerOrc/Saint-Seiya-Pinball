@@ -23,6 +23,7 @@ show_player:
   ball_save_default_disabled:
     ball_save_show:
       action: stop
+
 shows:
   ball_save_show:
     - time: 0
