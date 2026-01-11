@@ -18,32 +18,10 @@ mode:
   events_when_stopped: mode_type_wizard_stopped
   priority: 1000
 
-shot_profiles:
-  skillshots_profile:
-    states:
-      - name: unlit
-        show: off
-      - name: flashing
-        show: flash_color
-        speed: 2
-      - name: lit
-        show: on
-    loop: true
-  super_skillshots_profile:
-    states:
-      - name: unlit
-        show: off
-      - name: flashing
-        show: flash_color
-        speed: 4
-      - name: lit
-        show: on
-    loop: true
-
 shots:
   skill_l:
     switch: s_dragon_lane_left
-    profile: skillshots_profile
+    profile: classic_shots_profile
     advance_events: mode_skillshot_started
     restart_events: mode_skillshot_will_stop
     show_tokens:
@@ -51,14 +29,14 @@ shots:
       color: 00FF00
   skill_r:
     switch: s_dragon_lane_right
-    profile: skillshots_profile
+    profile: classic_shots_profile
     restart_events: mode_skillshot_will_stop
     show_tokens:
       led: led_dragon_lane_right
       color: 00FF00
   super_skill_target:
     switch: s_newton_ball_target
-    profile: super_skillshots_profile
+    profile: classic_shots_profile
     control_events:
       - events: player_shot_super_skill_target_enabled
         state: 1

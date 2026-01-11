@@ -11,54 +11,42 @@ mode:
   events_when_started: mode_type_mission_started
   events_when_stopped: mode_type_mission_stopped
 
-shot_profiles:
-  gold_knight_1_shots_profile:
-    states:
-      - name: unlit
-        show: off
-      - name: flashing
-        show: flash_color
-        speed: 2
-      - name: lit
-        show: on
-    advance_on_hit: false
-
 shots:
   andromede:
     switch: s_orbit_left
-    profile: gold_knight_1_shots_profile
+    profile: manual_advance_shots_profile
     advance_events: lit_andromede
     show_tokens:
-      led: led_andromede
+      led: led_orbit_left
       color: D67691
   pegaze:
     switch: s_ramp_left
-    profile: gold_knight_1_shots_profile
+    profile: manual_advance_shots_profile
     advance_events: lit_pegaze
     show_tokens:
-      led: led_pegaze
+      led: led_ramp_left
       color: D60108
   dragon:
     switch: s_ramp_right
-    profile: gold_knight_1_shots_profile
+    profile: manual_advance_shots_profile
     advance_events: lit_dragon
     show_tokens:
-      led: led_dragon
+      led: led_ramp_right
       color: 18A58F
   cygnus:
     switch: s_orbit_right
-    profile: gold_knight_1_shots_profile
+    profile: manual_advance_shots_profile
     advance_events: lit_cygnus
     show_tokens:
-      led: led_cygnus
+      led: led_orbit_right
       color: 2748C6
   enter_gold_knight_1_temple:
     switch: s_temple_in
-    profile: gold_knight_1_shots_profile
+    profile: manual_advance_shots_profile
     advance_events: lit_temple
     show_tokens:
       led: led_temple
-      color: cccccc
+      color: ffff00
 
 shot_groups:
   bronze_knights:
@@ -82,7 +70,7 @@ random_event_player:
 
 event_player:
   logicblock_bronze_knight_hits_counter_complete: lit_temple
-  logicblock_beat_gold_knight_1_complete: stop_mode_gold_knight_1
+  logicblock_beat_gold_knight_1_complete: stop_mode_gold_knight_1|1s
 
 timers:
   gold_knight_1_timer:

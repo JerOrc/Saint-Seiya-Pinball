@@ -13,7 +13,7 @@ shots:
     switch: s_ramp_right
   zodiac_validation_shot:
     switch: s_kickout
-    profile: zodiac_validation_profile
+    profile: flashing_profile
     enable_events: zodiac_validation
     disable_events: zodiac_validation_shot_flashing_hit
     restart_events: zodiac_validation_shot_flashing_hit
@@ -24,14 +24,6 @@ shots:
 shot_groups:
   ramp_shot:
     shots: ramp_left_shot, ramp_right_shot
-
-shot_profiles:
-  zodiac_validation_profile:
-    states:
-      - name: flashing
-        show: flash_color
-        speed: 2
-    loop: true
 
 sequences:
   zodiac_sequence:
