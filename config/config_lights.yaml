@@ -53,6 +53,31 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+  led_orbit_left:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_orbit_right:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_ramp_left:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_ramp_right:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_temple:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
 
   # pf_multiplier
   led_pf_multiplier_x2:
@@ -155,13 +180,6 @@ lights:
     subtype: led
     type: grb
   led_cygnus:
-    number:
-    platform: virtual
-    subtype: led
-    type: grb
-
-
-  led_temple:
     number:
     platform: virtual
     subtype: led
