@@ -1,0 +1,49 @@
+#config_version=6
+
+# 2. ALDEBARAN OF TAURUS = ORBITS
+# The left and right orbits score points during this mode.
+# Collect 280,000 points (4 orbits) to complete the mode.
+
+mode:
+  start_events: start_mode_gold_knight_2
+  stop_events: stop_mode_gold_knight_2, stop_missions
+  events_when_started: mode_type_mission_started
+  events_when_stopped: mode_type_mission_stopped
+
+shots:
+  left_pegasus_fist:
+    switch: s_orbit_left
+    profile: flashing_profile
+    show_tokens:
+      led: led_orbit_left
+      color: ffffff
+  right_pegasus_fist:
+    switch: s_orbit_right
+    profile: flashing_profile
+    show_tokens:
+      led: led_orbit_right
+      color: ffffff
+
+shot_groups:
+  pegasus_fists:
+    shots: left_pegasus_fist, right_pegasus_fist
+    disable_events: mode_gold_knight_2_stopping
+    restart_events: mode_gold_knight_2_started
+
+counters:
+  pegasus_fists_hits_counter:
+    starting_count: 4
+    count_complete_value: 0
+    direction: down
+    count_events: pegasus_fists_flashing_hit
+
+variable_player:
+  pegasus_fists_flashing_hit:
+    score: 70_000 * current_player.pf_multiplier
+  mode_gold_knight_2_started:
+    knights_confronted_count: 1
+  logicblock_pegasus_fists_hits_counter_complete:
+    knights_defeated_count: 1
+
+event_player:
+  logicblock_pegasus_fists_hits_counter_complete: stop_mode_gold_knight_2|500ms

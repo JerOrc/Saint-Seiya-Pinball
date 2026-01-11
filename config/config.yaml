@@ -26,6 +26,7 @@ modes:
   - skillshot
 #  - missions
   - gold_knight_1
+  - gold_knight_2
 
 playfields:
   playfield:
