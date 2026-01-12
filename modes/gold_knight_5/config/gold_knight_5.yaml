@@ -1,0 +1,50 @@
+#config_version=6
+
+# 5. Aioria de leo = Super Loops
+# In this mode the top gates are open to allow full orbit loops.
+# Completing a full loop scores 140,000.
+# Get 4 shots and undo Aioria's spell
+
+mode:
+  start_events: start_mode_gold_knight_5
+  stop_events: stop_mode_gold_knight_5, stop_missions
+  events_when_started: mode_type_mission_started
+  events_when_stopped: mode_type_mission_stopped
+
+shots:
+  left_leo:
+    switch: s_orbit_left
+    profile: flashing_profile
+    show_tokens:
+      led: led_orbit_left
+      color: ffffff
+  right_leo:
+    switch: s_orbit_right
+    profile: flashing_profile
+    show_tokens:
+      led: led_orbit_right
+      color: ffffff
+
+shot_groups:
+  leos:
+    shots: left_leo, right_leo
+    disable_events: mode_gold_knight_5_stopping
+    restart_events: mode_gold_knight_5_started
+
+counters:
+  leos_hits_counter:
+    starting_count: 4
+    count_complete_value: 0
+    direction: down
+    count_events: leos_flashing_hit
+
+variable_player:
+  leos_flashing_hit:
+    score: 140_000 * current_player.pf_multiplier
+  mode_gold_knight_5_started:
+    knights_confronted_count: 1
+  logicblock_leos_hits_counter_complete:
+    knights_defeated_count: 1
+
+event_player:
+  logicblock_leos_hits_counter_complete: stop_mode_gold_knight_5|500ms
