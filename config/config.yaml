@@ -27,6 +27,7 @@ modes:
 #  - missions
   - gold_knight_1
   - gold_knight_2
+  - gold_knight_3
 
 playfields:
   playfield:

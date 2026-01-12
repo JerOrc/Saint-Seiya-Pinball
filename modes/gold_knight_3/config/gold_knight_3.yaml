@@ -1,0 +1,68 @@
+#config_version=6
+
+# 3. GEMINI = RAMPS AND ORBITS
+# In this mode ramps and orbits will alternate.
+# Each shot adds 100,000 points.
+# Get 6 hits to finish the mode.
+
+mode:
+  start_events: start_mode_gold_knight_3
+  stop_events: stop_mode_gold_knight_3, stop_missions
+  events_when_started: mode_type_mission_started
+  events_when_stopped: mode_type_mission_stopped
+
+shots:
+  gemini_ramp_left:
+    switch: s_ramp_left
+    profile: flashing_profile
+    show_tokens:
+      led: led_ramp_left
+      color: ffff00
+  gemini_ramp_right:
+    switch: s_ramp_right
+    profile: flashing_profile
+    show_tokens:
+      led: led_ramp_right
+      color: ffff00
+  gemini_orbit_left:
+    switch: s_orbit_left
+    profile: flashing_profile
+    show_tokens:
+      led: led_orbit_left
+      color: ff00ff
+  gemini_orbit_right:
+    switch: s_orbit_right
+    profile: flashing_profile
+    show_tokens:
+      led: led_orbit_right
+      color: ff00ff
+
+shot_groups:
+  gemini_orbits:
+    shots: gemini_orbit_left, gemini_orbit_right
+    disable_events: mode_gold_knight_3_stopping, gemini_orbits_flashing_hit
+    enable_events: mode_gold_knight_3_started, gemini_ramps_flashing_hit
+  gemini_ramps:
+    shots: gemini_ramp_left, gemini_ramp_right
+    disable_events: mode_gold_knight_3_stopping, mode_gold_knight_3_started, gemini_ramps_flashing_hit
+    enable_events: gemini_orbits_flashing_hit
+
+counters:
+  gemini_flashing_hits_counter:
+    starting_count: 6
+    count_complete_value: 0
+    direction: down
+    count_events: gemini_ramps_flashing_hit, gemini_orbits_flashing_hit
+
+variable_player:
+  gemini_ramps_flashing_hit:
+    score: 100_000 * current_player.pf_multiplier
+  gemini_orbits_flashing_hit:
+    score: 100_000 * current_player.pf_multiplier
+  mode_gold_knight_3_started:
+    knights_confronted_count: 1
+  logicblock_gemini_flashing_hits_counter_complete:
+    knights_defeated_count: 1
+
+event_player:
+  logicblock_gemini_flashing_hits_counter_complete: stop_mode_gold_knight_3|500ms
