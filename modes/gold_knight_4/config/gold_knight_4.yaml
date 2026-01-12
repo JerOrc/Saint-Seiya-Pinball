@@ -1,0 +1,49 @@
+#config_version=6
+
+# 4. CANCER DEATH MASK = RAMPS
+# During this mode, the ramps are worth a base score of 100,000.
+# Hit the ramps 4 times to finish the mode.
+
+mode:
+  start_events: start_mode_gold_knight_4
+  stop_events: stop_mode_gold_knight_4, stop_missions
+  events_when_started: mode_type_mission_started
+  events_when_stopped: mode_type_mission_stopped
+
+shots:
+  cancer_ramp_left:
+    switch: s_ramp_left
+    profile: flashing_profile
+    show_tokens:
+      led: led_ramp_left
+      color: ffff00
+  cancer_ramp_right:
+    switch: s_ramp_right
+    profile: flashing_profile
+    show_tokens:
+      led: led_ramp_right
+      color: ffff00
+
+shot_groups:
+  cancer_ramps:
+    shots: cancer_ramp_left, cancer_ramp_right
+    disable_events: mode_gold_knight_4_stopping
+    restart_events: cancer_ramps_flashing_hit
+
+counters:
+  cancer_ramps_flashing_hits_counter:
+    starting_count: 4
+    count_complete_value: 0
+    direction: down
+    count_events: cancer_ramps_flashing_hit
+
+variable_player:
+  cancer_ramps_flashing_hit:
+    score: 100_000 * current_player.pf_multiplier
+  mode_gold_knight_4_started:
+    knights_confronted_count: 1
+  logicblock_cancer_ramps_flashing_hits_counter_complete:
+    knights_defeated_count: 1
+
+event_player:
+  logicblock_cancer_ramps_flashing_hits_counter_complete: stop_mode_gold_knight_4|500ms
