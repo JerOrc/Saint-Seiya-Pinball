@@ -23,3 +23,52 @@ rgb_dmds:
 zedmd:
   width: 128
   height: 32
+
+
+flippers:
+  left_flipper:
+    main_coil: c_flipper_left_power
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_flipper_left
+    enable_events: ball_started, enableAutofire, machine_reset_phase_3
+    disable_events: ball_will_end, service_mode_entered, disableAutofire, shutdown
+
+  right_flipper:
+    main_coil: c_flipper_right_power
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_flipper_right
+    enable_events: ball_started, enableAutofire, machine_reset_phase_3
+    disable_events: ball_will_end, service_mode_entered, disableAutofire, shutdown
+
+diverters:
+  left_orbit_gate:
+    activation_coil: c_orbit_left_gate
+    type: hold
+    activation_time: 2s
+    activate_events:
+    - s_orbit_right_active{mode.gold_knight_5.active}
+    # activate on ball launch
+    - s_plunger_lane_inactive{mode.skillshot.active and device.shots.super_skill_target.state == 1}
+    - s_plunger_lane_inactive{not mode.skillshot.active}
+    deactivate_events:
+    # hitting ANYTHING following initial ball launch will deactivate (only open for plunge)
+    - playfield_active{not mode.gold_knight_5.active}
+    targets_when_active: playfield
+    enable_events:
+    - mode_gold_knight_5_started
+    - balldevice_bd_trough_ejecting_ball
+    disable_events:
+    - mode_gold_knight_5_stopped
+    # disables itself when it deactivates itself for initial plunge
+    - diverter_left_orbit_gate_deactivating{not mode.gold_knight_5.active}
+  right_orbit_gate:
+    activation_coil: c_orbit_right_gate
+    type: hold
+    activation_time: 2s
+    activate_events:
+    - s_orbit_left_active{mode.gold_knight_5.active}
+    targets_when_active: playfield
+    enable_events:
+    - mode_gold_knight_5_started
+    disable_events:
+    - mode_gold_knight_5_stopped

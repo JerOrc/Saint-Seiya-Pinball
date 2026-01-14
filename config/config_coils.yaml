@@ -58,22 +58,14 @@ coils:
     number:
     platform: virtual
 
-flippers:
-
-  left_flipper:
-    main_coil: c_flipper_left_power
-    hold_coil: c_flipper_left_hold
-    activation_switch: s_flipper_left
-    enable_events: ball_started, enableAutofire, machine_reset_phase_3
-    disable_events: ball_will_end, service_mode_entered, disableAutofire, shutdown
-
-  right_flipper:
-    main_coil: c_flipper_right_power
-    hold_coil: c_flipper_right_hold
-    activation_switch: s_flipper_right
-    enable_events: ball_started, enableAutofire, machine_reset_phase_3
-    disable_events: ball_will_end, service_mode_entered, disableAutofire, shutdown
-
+  c_orbit_left_gate:
+    number:
+    allow_enable: true
+    platform: virtual
+  c_orbit_right_gate:
+    number:
+    allow_enable: true
+    platform: virtual
 
 autofire_coils:
   slingshot_left:
@@ -88,6 +80,6 @@ autofire_coils:
   bumper_right:
     coil: c_bumper_right
     switch: s_bumper_right
-  c_bumper_bottom:
+  bumper_bottom:
     coil: c_bumper_bottom
     switch: s_bumper_bottom

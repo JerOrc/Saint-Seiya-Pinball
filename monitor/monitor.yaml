@@ -1,4 +1,11 @@
 device_size: 0.04
+diverter:
+  left_orbit_gate:
+    x: 0.6487810200773163
+    y: 0.15824915824915825
+  right_orbit_gate:
+    x: 0.8401265743858336
+    y: 0.1818181818181818
 light:
   led_andromede:
     x: 0.30794675146526995
