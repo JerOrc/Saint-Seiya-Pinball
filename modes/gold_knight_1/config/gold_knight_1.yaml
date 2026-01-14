@@ -51,7 +51,6 @@ shots:
 shot_groups:
   bronze_knights:
     shots: andromede, pegaze, dragon, cygnus
-    disable_events: mode_gold_knight_1_stopping
     restart_events: timer_gold_knight_1_timer_started.1, bronze_knights_flashing_hit.1
 
 random_event_player:

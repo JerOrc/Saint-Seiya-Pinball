@@ -38,7 +38,9 @@ shots:
     switch: s_newton_ball_target
     profile: classic_shots_profile
     control_events:
-      - events: player_shot_super_skill_target_enabled
+      - events: enable_skill
+        state: 0
+      - events: enable_super_skill
         state: 1
     show_tokens:
       led: led_newton_ball
@@ -66,8 +68,8 @@ variable_player:
 
 event_player:
   mode_skillshot_started: enable_skill
-  flipper_super_skill{device.switches.s_plunger_lane.state == 1}: enable_super_skill
-  flipper_super_skill_release{device.switches.s_plunger_lane.state == 1}: enable_skill
+  flipper_super_skill_active{device.switches.s_plunger_lane.state == 1}: enable_super_skill
+  flipper_super_skill_released{device.switches.s_plunger_lane.state == 1}: enable_skill
 
 timers:
   skillshots_timeout:
@@ -110,5 +112,3 @@ timed_switches:
   flipper_super_skill:
     switch_tags: left_flipper
     time: 1s
-    events_when_active: flipper_super_skill
-    events_when_released: flipper_super_skill_release
