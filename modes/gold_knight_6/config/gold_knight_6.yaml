@@ -1,0 +1,73 @@
+#config_version=6
+
+# 6. SHAKA DE VIRGO
+# All targets score 10000 points during this mode.
+# Hit 6 red targets to defeat the gold knight
+
+mode:
+  start_events: start_mode_gold_knight_6
+  stop_events: stop_mode_gold_knight_6, stop_missions
+  events_when_started: mode_type_mission_started
+  events_when_stopped: mode_type_mission_stopped
+
+shots:
+  virgo_red_target_1:
+    switch: s_red_target_1
+    profile: flashing_profile
+    show_tokens:
+      led: led_red_target_1
+      color: ff0000
+  virgo_red_target_2:
+    switch: s_red_target_2
+    profile: flashing_profile
+    show_tokens:
+      led: led_red_target_2
+      color: ff0000
+  virgo_red_target_3:
+    switch: s_red_target_3
+    profile: flashing_profile
+    show_tokens:
+      led: led_red_target_3
+      color: ff0000
+  virgo_red_target_4:
+    switch: s_red_target_4
+    profile: flashing_profile
+    show_tokens:
+      led: led_red_target_4
+      color: ff0000
+  virgo_red_target_5:
+    switch: s_red_target_5
+    profile: flashing_profile
+    show_tokens:
+      led: led_red_target_5
+      color: ff0000
+  virgo_red_target_6:
+    switch: s_red_target_6
+    profile: flashing_profile
+    show_tokens:
+      led: led_red_target_6
+      color: ff0000
+
+shot_groups:
+  virgo_targets:
+    shots: virgo_red_target_1, virgo_red_target_2, virgo_red_target_3, virgo_red_target_4, virgo_red_target_5, virgo_red_target_6
+    disable_events: mode_gold_knight_6_stopping
+    restart_events: virgo_targets_flashing_hit
+
+counters:
+  virgo_targets_flashing_hits_counter:
+    starting_count: 6
+    count_complete_value: 0
+    direction: down
+    count_events: virgo_targets_flashing_hit
+
+variable_player:
+  virgo_targets_flashing_hit:
+    score: 100_000 * current_player.pf_multiplier
+  mode_gold_knight_6_started:
+    knights_confronted_count: 1
+  logicblock_virgo_targets_flashing_hits_counter_complete:
+    knights_defeated_count: 1
+
+event_player:
+  logicblock_virgo_targets_flashing_hits_counter_complete: stop_mode_gold_knight_6|500ms

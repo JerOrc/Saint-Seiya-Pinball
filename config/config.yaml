@@ -30,6 +30,7 @@ modes:
   - gold_knight_3
   - gold_knight_4
   - gold_knight_5
+  - gold_knight_6
 
 playfields:
   playfield:
