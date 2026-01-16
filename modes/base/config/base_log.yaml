@@ -114,3 +114,9 @@ slide_player:
       method: log_text
       tokens:
         text: "stop mode gold knight 1"
+  logicblock_leos_hits_counter_hit:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "Orbit"

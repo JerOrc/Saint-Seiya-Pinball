@@ -11,32 +11,20 @@ mode:
   events_when_started: mode_type_mission_started
   events_when_stopped: mode_type_mission_stopped
 
-shots:
+sequence_shots:
   left_leo:
-    switch: s_orbit_left
-    profile: flashing_profile
-    show_tokens:
-      led: led_orbit_left
-      color: ffffff
+    switch_sequence: s_orbit_left, s_orbit_right
+    sequence_timeout: 3s
   right_leo:
-    switch: s_orbit_right
-    profile: flashing_profile
-    show_tokens:
-      led: led_orbit_right
-      color: ffffff
-
-shot_groups:
-  leos:
-    shots: left_leo, right_leo
-    disable_events: mode_gold_knight_5_stopping
-    restart_events: mode_gold_knight_5_started
+    switch_sequence: s_orbit_right, s_orbit_left
+    sequence_timeout: 3s
 
 counters:
   leos_hits_counter:
     starting_count: 4
     count_complete_value: 0
     direction: down
-    count_events: leos_flashing_hit
+    count_events: left_leo_hit, right_leo_hit
 
 variable_player:
   leos_flashing_hit:
@@ -48,3 +36,22 @@ variable_player:
 
 event_player:
   logicblock_leos_hits_counter_complete: stop_mode_gold_knight_5|500ms
+
+show_player:
+  mode_gold_knight_5_started:
+    flashing_show:
+      speed: 5
+      show_tokens:
+        led: led_orbit_left, led_orbit_right
+        color: yellow
+
+shows:
+  flashing_show:
+    - time: 0
+      lights:
+        (led):
+          color: black
+    - time: '+1'
+      lights:
+        (led):
+          color: (color)
