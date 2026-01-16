@@ -3,6 +3,7 @@
 ball_devices:
 
   bd_plunger:
+    #auto_fire_on_unexpected_ball: false
     ball_switches: s_plunger_lane
     eject_coil: c_plunger
     mechanical_eject: true
