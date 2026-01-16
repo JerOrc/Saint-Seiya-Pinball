@@ -44,14 +44,3 @@ show_player:
       show_tokens:
         led: led_orbit_left, led_orbit_right
         color: yellow
-
-shows:
-  flashing_show:
-    - time: 0
-      lights:
-        (led):
-          color: black
-    - time: '+1'
-      lights:
-        (led):
-          color: (color)

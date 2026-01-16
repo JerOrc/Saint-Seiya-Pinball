@@ -79,3 +79,14 @@ timed_switches:
     time: 3s
     events_when_active: auto_launch_plunger
     events_when_released: auto_launch_plunger_release
+
+shows:
+  flashing_show:
+    - time: 0
+      lights:
+        (led):
+          color: black
+    - time: '+1'
+      lights:
+        (led):
+          color: (color)
