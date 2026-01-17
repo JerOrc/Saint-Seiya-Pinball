@@ -1,0 +1,88 @@
+#config_version=6
+
+# 7. LIBRA - Free Hyoga
+# In this order (each step score 200.000 points):
+# - 1 blue target
+# - enter temple
+# - 1 left ramp
+# - TODO : 10 bumpers
+# - 1 right ramp
+# - 1 orbit
+
+mode:
+  start_events: start_mode_gold_knight_7
+  stop_events: stop_mode_gold_knight_7, stop_missions
+  events_when_started: mode_type_mission_started
+  events_when_stopped: mode_type_mission_stopped
+
+shots:
+  libra_blue_target_left:
+    switch: s_blue_target_left
+    profile: manual_advance_shots_profile
+    advance_events: mode_gold_knight_7_started.2
+    show_tokens:
+      led: led_blue_target_left
+      color: 0000ff
+  libra_blue_target_right:
+    switch: s_blue_target_right
+    profile: manual_advance_shots_profile
+    advance_events: mode_gold_knight_7_started.3
+    show_tokens:
+      led: led_blue_target_right
+      color: 0000ff
+
+  libra_enter_temple:
+    switch: s_temple_in
+    profile: manual_advance_shots_profile
+    advance_events: lit_libra_temple
+    restart_events: mode_gold_knight_7_started, libra_enter_temple_flashing_hit
+    show_tokens:
+      led: led_temple
+      color: ffff00
+
+  libra_ramp_left:
+    switch: s_ramp_left
+    profile: manual_advance_shots_profile
+    advance_events: lit_libra_ramp_left
+    show_tokens:
+      led: led_ramp_left
+      color: ffffff
+
+
+shot_groups:
+  libra_blue_targets:
+    shots: libra_blue_target_left, libra_blue_target_right
+    restart_events: mode_gold_knight_7_started.1, libra_blue_targets_flashing_hit
+
+event_player:
+  libra_blue_targets_flashing_hit: lit_libra_temple
+  libra_enter_temple_flashing_hit: lit_libra_ramp_left
+  libra_ramp_left_flashing_hit: lit_libra_bumpers
+  logicblock_beat_gold_knight_7_complete: stop_mode_gold_knight_7|500ms
+
+
+counters:
+  bronze_knight_hits_counter:
+    count_events: bronze_knights_flashing_hit
+    count_complete_value: 4
+    disable_on_complete: false
+    reset_on_complete: false
+
+sequences:
+  beat_gold_knight_7:
+    events:
+      - libra_blue_targets_flashing_hit
+      - enter_gold_knight_7_temple_hit
+      - libra_ramp_left_flashing_hit
+
+variable_player:
+  libra_blue_targets_flashing_hit:
+    score: 200_000 * current_player.pf_multiplier
+  enter_gold_knight_7_temple_hit:
+    score: 200_000 * current_player.pf_multiplier
+  libra_ramp_left_flashing_hit:
+    score: 200_000 * current_player.pf_multiplier
+  mode_gold_knight_7_started:
+    knights_confronted_count: 1
+  logicblock_beat_gold_knight_7_complete:
+    knights_defeated_count: 1
