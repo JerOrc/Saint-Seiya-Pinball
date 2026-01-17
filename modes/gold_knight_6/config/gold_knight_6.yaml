@@ -1,7 +1,7 @@
 #config_version=6
 
 # 6. SHAKA DE VIRGO
-# All targets score 10000 points during this mode.
+# All targets score 100.000 points during this mode.
 # Hit 6 red targets to defeat the gold knight
 
 mode:
