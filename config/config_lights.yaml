@@ -227,3 +227,19 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+
+  led_bumper_left:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_bumper_right:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_bumper_bottom:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
