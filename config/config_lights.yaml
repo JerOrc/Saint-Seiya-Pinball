@@ -216,3 +216,14 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+
+  led_blue_target_left:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_blue_target_right:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
