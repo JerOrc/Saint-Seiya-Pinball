@@ -5,7 +5,7 @@
 # - 1 blue target
 # - enter temple
 # - 1 left ramp
-# - TODO : 10 bumpers
+# - 10 bumpers
 # - 1 right ramp
 # - 1 orbit
 
@@ -19,14 +19,22 @@ shots:
   libra_blue_target_left:
     switch: s_blue_target_left
     profile: manual_advance_shots_profile
-    advance_events: mode_gold_knight_7_started.2
+    control_events:
+      - events: mode_gold_knight_7_started
+        state: 1
+      - events: libra_blue_targets_flashing_hit
+        state: 0
     show_tokens:
       led: led_blue_target_left
       color: 0000ff
   libra_blue_target_right:
     switch: s_blue_target_right
     profile: manual_advance_shots_profile
-    advance_events: mode_gold_knight_7_started.3
+    control_events:
+      - events: mode_gold_knight_7_started
+        state: 1
+      - events: libra_blue_targets_flashing_hit
+        state: 0
     show_tokens:
       led: led_blue_target_right
       color: 0000ff
@@ -40,49 +48,102 @@ shots:
       led: led_temple
       color: ffff00
 
-  libra_ramp_left:
+  libra_left_ramp:
     switch: s_ramp_left
     profile: manual_advance_shots_profile
-    advance_events: lit_libra_ramp_left
+    advance_events: lit_libra_left_ramp
+    restart_events: mode_gold_knight_7_started, libra_left_ramp_flashing_hit
     show_tokens:
       led: led_ramp_left
       color: ffffff
+  libra_right_ramp:
+    switch: s_ramp_right
+    profile: manual_advance_shots_profile
+    advance_events: lit_libra_right_ramp
+    restart_events: mode_gold_knight_7_started, libra_right_ramp_flashing_hit
+    show_tokens:
+      led: led_ramp_right
+      color: ffffff
 
+  libra_left_orbit:
+    switch: s_orbit_left
+    profile: manual_advance_shots_profile
+    advance_events: lit_libra_orbits
+    restart_events: mode_gold_knight_7_started, libra_orbits_flashing_hit
+    show_tokens:
+      led: led_orbit_left
+      color: ffffff
+  libra_right_orbit:
+    switch: s_orbit_right
+    profile: manual_advance_shots_profile
+    advance_events: lit_libra_orbits, libra_orbits_flashing_hit
+    restart_events: mode_gold_knight_7_started, libra_orbits_flashing_hit
+    show_tokens:
+      led: led_orbit_right
+      color: ffffff
 
 shot_groups:
   libra_blue_targets:
     shots: libra_blue_target_left, libra_blue_target_right
-    restart_events: mode_gold_knight_7_started.1, libra_blue_targets_flashing_hit
+  libra_orbits:
+    shots: libra_left_orbit, libra_right_orbit
+
+counters:
+  libra_bumpers_hits_counter:
+    count_events: bumpers_shots_hit
+    count_complete_value: 10
+    enable_events: lit_libra_bumpers
+    disable_events: stop_mode_gold_knight_7
+    disable_on_complete: true
+    reset_on_complete: true
 
 event_player:
   libra_blue_targets_flashing_hit: lit_libra_temple
-  libra_enter_temple_flashing_hit: lit_libra_ramp_left
-  libra_ramp_left_flashing_hit: lit_libra_bumpers
+  libra_enter_temple_flashing_hit: lit_libra_left_ramp
+  libra_left_ramp_flashing_hit: lit_libra_bumpers
+  logicblock_libra_bumpers_hits_counter_complete: lit_libra_right_ramp
+  libra_right_ramp_flashing_hit: lit_libra_orbits
   logicblock_beat_gold_knight_7_complete: stop_mode_gold_knight_7|500ms
-
-
-counters:
-  bronze_knight_hits_counter:
-    count_events: bronze_knights_flashing_hit
-    count_complete_value: 4
-    disable_on_complete: false
-    reset_on_complete: false
 
 sequences:
   beat_gold_knight_7:
     events:
       - libra_blue_targets_flashing_hit
-      - enter_gold_knight_7_temple_hit
-      - libra_ramp_left_flashing_hit
+      - libra_enter_temple_flashing_hit
+      - libra_left_ramp_flashing_hit
+      - logicblock_libra_bumpers_hits_counter_complete
+      - libra_right_ramp_flashing_hit
+      - libra_orbits_flashing_hit
+
 
 variable_player:
   libra_blue_targets_flashing_hit:
     score: 200_000 * current_player.pf_multiplier
-  enter_gold_knight_7_temple_hit:
+  libra_enter_temple_flashing_hit:
     score: 200_000 * current_player.pf_multiplier
-  libra_ramp_left_flashing_hit:
+  libra_left_ramp_flashing_hit:
+    score: 200_000 * current_player.pf_multiplier
+  logicblock_libra_bumpers_hits_counter_complete:
+    score: 200_000 * current_player.pf_multiplier
+  libra_right_ramp_flashing_hit:
+    score: 200_000 * current_player.pf_multiplier
+  libra_orbits_flashing_hit:
     score: 200_000 * current_player.pf_multiplier
   mode_gold_knight_7_started:
     knights_confronted_count: 1
   logicblock_beat_gold_knight_7_complete:
     knights_defeated_count: 1
+
+show_player:
+  lit_libra_bumpers:
+    flashing_show:
+      speed: 5
+      show_tokens:
+        led: led_bumper_left, led_bumper_right, led_bumper_bottom
+        color: green
+  logicblock_libra_bumpers_hits_counter_complete:
+    flashing_show:
+      action: stop
+  mode_gold_knight_7_will_stop:
+    flashing_show:
+      action: stop
