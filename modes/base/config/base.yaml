@@ -85,8 +85,8 @@ shows:
     - time: 0
       lights:
         (led):
-          color: black
+          color: (color)
     - time: '+1'
       lights:
         (led):
-          color: (color)
+          color: off
