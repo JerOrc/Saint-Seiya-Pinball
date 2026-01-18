@@ -26,3 +26,26 @@ slide_player:
 variable_player:
   bumpers_shots_hit:
     score: current_player.bumpers_score * current_player.pf_multiplier
+
+show_player:
+  bumper_left_shot_hit:
+    flashing_show:
+      loops: 0
+      speed: 8
+      show_tokens:
+        led: led_bumper_left
+        color: green
+  bumper_right_shot_hit:
+    flashing_show:
+      loops: 0
+      speed: 8
+      show_tokens:
+        led: led_bumper_right
+        color: green
+  bumper_bottom_shot_hit:
+    flashing_show:
+      loops: 0
+      speed: 8
+      show_tokens:
+        led: led_bumper_right
+        color: green
