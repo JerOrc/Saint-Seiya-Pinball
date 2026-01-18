@@ -71,3 +71,10 @@ variable_player:
 
 event_player:
   logicblock_virgo_targets_flashing_hits_counter_complete: stop_mode_gold_knight_6|500ms
+
+show_player:
+  mode_gold_knight_6_started:
+    flashing_show:
+      show_tokens:
+        led: led_gold_knight_6
+        color: ffffff

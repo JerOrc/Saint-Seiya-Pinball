@@ -135,15 +135,17 @@ variable_player:
     knights_defeated_count: 1
 
 show_player:
-  lit_libra_bumpers:
+  mode_gold_knight_7_started:
     flashing_show:
+      show_tokens:
+        led: led_gold_knight_7
+        color: ffffff
+  lit_libra_bumpers:
+    flashing_show_bis:
       speed: 5
       show_tokens:
         led: led_bumper_left, led_bumper_right, led_bumper_bottom
         color: green
   logicblock_libra_bumpers_hits_counter_complete:
-    flashing_show:
-      action: stop
-  mode_gold_knight_7_will_stop:
-    flashing_show:
+    flashing_show_bis:
       action: stop

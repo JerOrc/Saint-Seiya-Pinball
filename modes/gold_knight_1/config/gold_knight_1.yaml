@@ -107,3 +107,10 @@ variable_player:
     knights_confronted_count: 1
   logicblock_beat_gold_knight_1_complete:
     knights_defeated_count: 1
+
+show_player:
+  mode_gold_knight_1_started:
+    flashing_show:
+      show_tokens:
+        led: led_gold_knight_1
+        color: ffffff

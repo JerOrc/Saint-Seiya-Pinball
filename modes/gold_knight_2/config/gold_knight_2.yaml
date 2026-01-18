@@ -47,3 +47,10 @@ variable_player:
 
 event_player:
   logicblock_pegasus_fists_hits_counter_complete: stop_mode_gold_knight_2|500ms
+
+show_player:
+  mode_gold_knight_2_started:
+    flashing_show:
+      show_tokens:
+        led: led_gold_knight_2
+        color: ffffff

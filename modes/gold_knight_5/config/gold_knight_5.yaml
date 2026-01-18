@@ -37,9 +37,14 @@ variable_player:
 event_player:
   logicblock_leos_hits_counter_complete: stop_mode_gold_knight_5|500ms
 
+
 show_player:
   mode_gold_knight_5_started:
     flashing_show:
+      show_tokens:
+        led: led_gold_knight_5
+        color: ffffff
+    flashing_show_bis:
       speed: 5
       show_tokens:
         led: led_orbit_left, led_orbit_right

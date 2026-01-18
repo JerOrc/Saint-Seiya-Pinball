@@ -66,3 +66,10 @@ variable_player:
 
 event_player:
   logicblock_gemini_flashing_hits_counter_complete: stop_mode_gold_knight_3|500ms
+
+show_player:
+  mode_gold_knight_3_started:
+    flashing_show:
+      show_tokens:
+        led: led_gold_knight_3
+        color: ffffff
