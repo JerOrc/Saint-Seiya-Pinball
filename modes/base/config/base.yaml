@@ -90,3 +90,12 @@ shows:
       lights:
         (led):
           color: off
+  flashing_show_bis: #used when 2 flashing_show speeds are needed
+    - time: 0
+      lights:
+        (led):
+          color: (color)
+    - time: '+1'
+      lights:
+        (led):
+          color: off
