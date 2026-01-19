@@ -6,6 +6,7 @@
 mode_settings:
   selectable_items:
     - mpf_logo
+    - testGif
     - mpf_logo2
     - author
     - title
