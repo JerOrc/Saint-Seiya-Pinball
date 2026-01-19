@@ -14,7 +14,7 @@
 [ext_resource type="FontFile" uid="uid://bxleu8ifasuhw" path="res://fonts/nokiafc22-8-7.ttf" id="12_6fkkr"]
 [ext_resource type="Texture2D" uid="uid://b0hnyju2ktjlh" path="res://modes/attract/images/whoops.png" id="13_x02ep"]
 [ext_resource type="Texture2D" uid="uid://6h074n8ub28i" path="res://modes/attract/images/test-original.png" id="14_lo7nv"]
-[ext_resource type="VideoStream" uid="uid://cnv44fvamjyrw" path="res://modes/attract/images/andromede.ogv" id="15_qvr08"]
+[ext_resource type="VideoStream" uid="uid://ev0gcqfb23hw" path="res://modes/attract/images/andromede.ogv" id="15_qvr08"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q4ha8"]
 line_spacing = 1.0
@@ -201,4 +201,3 @@ offset_right = 128.0
 offset_bottom = 32.0
 stream = ExtResource("15_qvr08")
 autoplay = true
-loop = true
