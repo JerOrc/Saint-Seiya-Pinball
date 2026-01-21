@@ -31,9 +31,11 @@ coils:
   c_slingshot_right:
     number: 0-0-3
     default_pulse_ms: 25
+    default_pulse_power: 0.5
   c_slingshot_left:
     number: 0-0-12
     default_pulse_ms: 25
+    default_pulse_power: 0.5
 
   c_bumper_left:
     number:
