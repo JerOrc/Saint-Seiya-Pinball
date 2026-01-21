@@ -11,49 +11,73 @@ mode:
   events_when_stopped: mode_type_mission_stopped
 
 shots:
+  scorpio_blue_target_left:
+    switch: s_blue_target_left
+    profile: manual_advance_shots_profile
+    control_events:
+      - events: mode_gold_knight_8_started
+        state: 1
+    show_tokens:
+      led: led_blue_target_left
+      color: 0000ff
   scorpio_left_orbit:
     switch: s_orbit_left
     profile: manual_advance_shots_profile
-    advance_events: lit_scorpio_left_orbit
     show_tokens:
       led: led_orbit_left
       color: D67691
+  scorpio_phoenix:
+    switch: s_scoop
+    profile: manual_advance_shots_profile
+    show_tokens:
+      led: led_scoop
+      color: ffff00
   scorpio_left_ramp:
     switch: s_ramp_left
     profile: manual_advance_shots_profile
-    advance_events: lit_scorpio_left_ramp
     show_tokens:
       led: led_ramp_left
       color: D60108
+  scorpio_temple:
+    switch: s_temple_out
+    profile: manual_advance_shots_profile
+    show_tokens:
+      led: led_temple
+      color: ffff00
+  scorpio_newton_ball:
+    switch: s_newton_ball_target
+    profile: manual_advance_shots_profile
+    show_tokens:
+      led: led_newton_ball
+      color: ffff00
   scorpio_right_ramp:
     switch: s_ramp_right
     profile: manual_advance_shots_profile
-    advance_events: lit_scorpio_right_ramp
     show_tokens:
       led: led_ramp_right
       color: 18A58F
   scorpio_right_orbit:
     switch: s_orbit_right
     profile: manual_advance_shots_profile
-    advance_events: lit_scorpio_right_orbit
     show_tokens:
       led: led_orbit_right
       color: 2748C6
-  scorpio_temple:
-    switch: s_temple_out
+  scorpio_blue_target_right:
+    switch: s_blue_target_right
     profile: manual_advance_shots_profile
-    advance_events: lit_temple
     show_tokens:
-      led: led_temple
-      color: ffff00
+      led: led_blue_target_right
+      color: 0000ff
 
 shot_groups:
   scorpio_shots:
-    shots: scorpio_left_orbit, scorpio_left_ramp, scorpio_right_ramp, scorpio_right_orbit
-    rotate_right_events: timer_gold_knight_8_timer_started, scorpio_shots_flashing_hit
+    shots: scorpio_blue_target_left, scorpio_left_orbit, scorpio_phoenix, scorpio_left_ramp, scorpio_temple, scorpio_newton_ball, scorpio_right_ramp, scorpio_right_orbit, scorpio_blue_target_right
+    rotate_right_events: timer_gold_knight_8_timer_complete, scorpio_shots_flashing_hit
+    disable_events: logicblock_beat_gold_knight_8_counter_complete
+    enable_events: mode_gold_knight_8_started
 
 event_player:
-  logicblock_beat_gold_knight_8_counter_complete: stop_mode_gold_knight_8|1s
+  logicblock_beat_gold_knight_8_counter_complete: stop_mode_gold_knight_8|500ms
 
 timers:
   gold_knight_8_timer:
