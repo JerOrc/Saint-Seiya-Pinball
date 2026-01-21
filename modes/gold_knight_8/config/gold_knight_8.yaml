@@ -1,0 +1,92 @@
+#config_version=6
+
+# 8. SCORPIO MILO
+# Shoot 6 times at the corresponding lights that move in an orderly way from left to right every 4 seconds
+# Hitting the lit shot during this mode awards a standard score of 100,000.
+
+mode:
+  start_events: start_mode_gold_knight_8
+  stop_events: stop_mode_gold_knight_8, stop_missions
+  events_when_started: mode_type_mission_started
+  events_when_stopped: mode_type_mission_stopped
+
+shots:
+  scorpio_left_orbit:
+    switch: s_orbit_left
+    profile: manual_advance_shots_profile
+    advance_events: lit_scorpio_left_orbit
+    show_tokens:
+      led: led_orbit_left
+      color: D67691
+  scorpio_left_ramp:
+    switch: s_ramp_left
+    profile: manual_advance_shots_profile
+    advance_events: lit_scorpio_left_ramp
+    show_tokens:
+      led: led_ramp_left
+      color: D60108
+  scorpio_right_ramp:
+    switch: s_ramp_right
+    profile: manual_advance_shots_profile
+    advance_events: lit_scorpio_right_ramp
+    show_tokens:
+      led: led_ramp_right
+      color: 18A58F
+  scorpio_right_orbit:
+    switch: s_orbit_right
+    profile: manual_advance_shots_profile
+    advance_events: lit_scorpio_right_orbit
+    show_tokens:
+      led: led_orbit_right
+      color: 2748C6
+  scorpio_temple:
+    switch: s_temple_out
+    profile: manual_advance_shots_profile
+    advance_events: lit_temple
+    show_tokens:
+      led: led_temple
+      color: ffff00
+
+shot_groups:
+  scorpio_shots:
+    shots: scorpio_left_orbit, scorpio_left_ramp, scorpio_right_ramp, scorpio_right_orbit
+    rotate_right_events: timer_gold_knight_8_timer_started, scorpio_shots_flashing_hit
+
+event_player:
+  logicblock_beat_gold_knight_8_counter_complete: stop_mode_gold_knight_8|1s
+
+timers:
+  gold_knight_8_timer:
+    end_value: 1
+    tick_interval: 4s
+    start_running: false
+    restart_on_complete: true
+    control_events:
+      - event: mode_gold_knight_8_started
+        action: start
+      - event: scorpio_shots_flashing_hit
+        action: reset
+      - event: mode_gold_knight_8_stopping
+        action: stop
+
+counters:
+  beat_gold_knight_8_counter:
+    count_events: scorpio_shots_flashing_hit
+    count_complete_value: 4
+    disable_on_complete: false
+    reset_on_complete: false
+
+variable_player:
+  scorpio_shots_flashing_hit:
+    score: 100_000 * current_player.pf_multiplier
+  mode_gold_knight_8_started:
+    knights_confronted_count: 1
+  logicblock_beat_gold_knight_8_counter_complete:
+    knights_defeated_count: 1
+
+show_player:
+  mode_gold_knight_8_started:
+    flashing_show:
+      show_tokens:
+        led: led_gold_knight_8
+        color: ffffff
