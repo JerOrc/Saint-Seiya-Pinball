@@ -12,31 +12,31 @@ mode:
   events_when_stopped: mode_type_mission_stopped
 
 shots:
-  andromede:
+  aries_left_orbit:
     switch: s_orbit_left
     profile: manual_advance_shots_profile
-    advance_events: lit_andromede
+    advance_events: lit_aries_left_orbit
     show_tokens:
       led: led_orbit_left
       color: D67691
-  pegaze:
+  aries_left_ramp:
     switch: s_ramp_left
     profile: manual_advance_shots_profile
-    advance_events: lit_pegaze
+    advance_events: lit_aries_left_ramp
     show_tokens:
       led: led_ramp_left
       color: D60108
-  dragon:
+  aries_right_ramp:
     switch: s_ramp_right
     profile: manual_advance_shots_profile
-    advance_events: lit_dragon
+    advance_events: lit_aries_right_ramp
     show_tokens:
       led: led_ramp_right
       color: 18A58F
-  cygnus:
+  aries_right_orbit:
     switch: s_orbit_right
     profile: manual_advance_shots_profile
-    advance_events: lit_cygnus
+    advance_events: lit_aries_right_orbit
     show_tokens:
       led: led_orbit_right
       color: 2748C6
@@ -50,22 +50,22 @@ shots:
 
 shot_groups:
   bronze_knights:
-    shots: andromede, pegaze, dragon, cygnus
+    shots: aries_left_orbit, aries_left_ramp, aries_right_ramp, aries_right_orbit
     restart_events: timer_gold_knight_1_timer_started.1, bronze_knights_flashing_hit.1
 
 random_event_player:
   timer_gold_knight_1_timer_started.2:
     events:
-      - lit_andromede
-      - lit_pegaze
-      - lit_dragon
-      - lit_cygnus
+      - lit_aries_left_orbit
+      - lit_aries_left_ramp
+      - lit_aries_right_ramp
+      - lit_aries_right_orbit
   bronze_knights_flashing_hit.2:
     events:
-      - lit_andromede
-      - lit_pegaze
-      - lit_dragon
-      - lit_cygnus
+      - lit_aries_left_orbit
+      - lit_aries_left_ramp
+      - lit_aries_right_ramp
+      - lit_aries_right_orbit
 
 event_player:
   logicblock_bronze_knight_hits_counter_complete: lit_temple
