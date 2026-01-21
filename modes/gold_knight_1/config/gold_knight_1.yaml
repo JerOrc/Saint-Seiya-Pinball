@@ -80,6 +80,8 @@ timers:
     control_events:
       - event: mode_gold_knight_1_started
         action: start
+      - event: bronze_knights_flashing_hit
+        action: reset
       - event: mode_gold_knight_1_stopping
         action: stop
 
