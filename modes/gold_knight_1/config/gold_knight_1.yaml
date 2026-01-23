@@ -40,27 +40,27 @@ shots:
     show_tokens:
       led: led_orbit_right
       color: 2748C6
-  enter_gold_knight_1_temple:
+  enter_aries_temple:
     switch: s_temple_in
     profile: manual_advance_shots_profile
-    advance_events: lit_temple
+    advance_events: lit_aries_temple
     show_tokens:
       led: led_temple
       color: ffff00
 
 shot_groups:
-  bronze_knights:
+  aries_shots:
     shots: aries_left_orbit, aries_left_ramp, aries_right_ramp, aries_right_orbit
-    restart_events: timer_gold_knight_1_timer_started.1, bronze_knights_flashing_hit.1
+    restart_events: timer_aries_timer_started.1, aries_shots_flashing_hit.1
 
 random_event_player:
-  timer_gold_knight_1_timer_started.2:
+  timer_aries_timer_started.2:
     events:
       - lit_aries_left_orbit
       - lit_aries_left_ramp
       - lit_aries_right_ramp
       - lit_aries_right_orbit
-  bronze_knights_flashing_hit.2:
+  aries_shots_flashing_hit.2:
     events:
       - lit_aries_left_orbit
       - lit_aries_left_ramp
@@ -68,11 +68,11 @@ random_event_player:
       - lit_aries_right_orbit
 
 event_player:
-  logicblock_bronze_knight_hits_counter_complete: lit_temple
-  logicblock_beat_gold_knight_1_complete: stop_mode_gold_knight_1|1s
+  logicblock_aries_shots_hits_counter_complete: lit_aries_temple
+  logicblock_beat_gold_knight_1_complete: stop_mode_gold_knight_1|500ms
 
 timers:
-  gold_knight_1_timer:
+  aries_timer:
     end_value: 1
     tick_interval: 4s
     start_running: false
@@ -80,14 +80,14 @@ timers:
     control_events:
       - event: mode_gold_knight_1_started
         action: start
-      - event: bronze_knights_flashing_hit
+      - event: aries_shots_flashing_hit
         action: reset
       - event: mode_gold_knight_1_stopping
         action: stop
 
 counters:
-  bronze_knight_hits_counter:
-    count_events: bronze_knights_flashing_hit
+  aries_shots_hits_counter:
+    count_events: aries_shots_flashing_hit
     count_complete_value: 4
     disable_on_complete: false
     reset_on_complete: false
@@ -95,15 +95,15 @@ counters:
 sequences:
   beat_gold_knight_1:
     events:
-      - logicblock_bronze_knight_hits_counter_complete
-      - enter_gold_knight_1_temple_hit
+      - logicblock_aries_shots_hits_counter_complete
+      - enter_aries_temple_hit
 
 variable_player:
-  bronze_knights_flashing_hit{device.counters.bronze_knight_hits_counter.value < 4}:
+  aries_shots_flashing_hit{device.counters.aries_shots_hits_counter.value < 4}:
     score: 150_000 * current_player.pf_multiplier
-  bronze_knights_flashing_hit{device.counters.bronze_knight_hits_counter.value >= 4 and device.counters.bronze_knight_hits_counter.value <= 7}:
-    score: (150_000 + 30_000 * (device.counters.bronze_knight_hits_counter.value - 3)) * current_player.pf_multiplier
-  bronze_knights_flashing_hit{device.counters.bronze_knight_hits_counter.value > 7}:
+  aries_shots_flashing_hit{device.counters.aries_shots_hits_counter.value >= 4 and device.counters.aries_shots_hits_counter.value <= 7}:
+    score: (150_000 + 30_000 * (device.counters.aries_shots_hits_counter.value - 3)) * current_player.pf_multiplier
+  aries_shots_flashing_hit{device.counters.aries_shots_hits_counter.value > 7}:
     score: 300_000 * current_player.pf_multiplier
   mode_gold_knight_1_started:
     knights_confronted_count: 1
