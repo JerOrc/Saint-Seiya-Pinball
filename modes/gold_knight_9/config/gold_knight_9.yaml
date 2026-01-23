@@ -1,0 +1,91 @@
+#config_version=6
+
+# 9. SAGITTARIUS
+# 4 lights turn on and you must turn them all off one by one
+# until you reach the light of the central temple
+
+mode:
+  start_events: start_mode_gold_knight_9
+  stop_events: stop_mode_gold_knight_9, stop_missions
+  events_when_started: mode_type_mission_started
+  events_when_stopped: mode_type_mission_stopped
+
+shots:
+  sagittarius_left_orbit:
+    switch: s_orbit_left
+    profile: manual_advance_shots_profile
+    advance_events: lit_sagittarius_left_orbit
+    reset_events: sagittarius_left_orbit_flashing_hit, mode_gold_knight_9_stopping
+    show_tokens:
+      led: led_orbit_left
+      color: D67691
+  sagittarius_left_ramp:
+    switch: s_ramp_left
+    profile: manual_advance_shots_profile
+    advance_events: lit_sagittarius_left_ramp
+    reset_events: sagittarius_left_ramp_flashing_hit, mode_gold_knight_9_stopping
+    show_tokens:
+      led: led_ramp_left
+      color: D60108
+  sagittarius_right_ramp:
+    switch: s_ramp_right
+    profile: manual_advance_shots_profile
+    advance_events: lit_sagittarius_right_ramp
+    reset_events: sagittarius_right_ramp_flashing_hit, mode_gold_knight_9_stopping
+    show_tokens:
+      led: led_ramp_right
+      color: 18A58F
+  sagittarius_right_orbit:
+    switch: s_orbit_right
+    profile: manual_advance_shots_profile
+    advance_events: lit_sagittarius_right_orbit
+    reset_events: sagittarius_right_orbit_flashing_hit, mode_gold_knight_9_stopping
+    show_tokens:
+      led: led_orbit_right
+      color: 2748C6
+  enter_gold_knight_9_temple:
+    switch: s_temple_in
+    profile: manual_advance_shots_profile
+    advance_events: lit_sagittarius_temple
+    reset_events: enter_gold_knight_9_temple_flashing_hit, mode_gold_knight_9_stopping
+    show_tokens:
+      led: led_temple
+      color: ffff00
+
+event_player:
+  mode_gold_knight_9_started:
+    - lit_sagittarius_left_orbit
+    - lit_sagittarius_left_ramp
+    - lit_sagittarius_right_ramp
+    - lit_sagittarius_right_orbit
+  logicblock_sagittarius_accruals_complete: lit_sagittarius_temple
+  logicblock_beat_gold_knight_9_complete: stop_mode_gold_knight_9|500ms
+
+accruals:
+  sagittarius_accruals:
+    events:
+      - sagittarius_left_orbit_flashing_hit
+      - sagittarius_left_ramp_flashing_hit
+      - sagittarius_right_ramp_flashing_hit
+      - sagittarius_right_orbit_flashing_hit
+
+sequences:
+  beat_gold_knight_9:
+    events:
+      - logicblock_sagittarius_accruals_complete
+      - enter_gold_knight_9_temple_hit
+
+variable_player:
+  logicblock_sagittarius_accruals_hit:
+    score: 100_000 * current_player.pf_multiplier
+  mode_gold_knight_9_started:
+    knights_confronted_count: 1
+  logicblock_beat_gold_knight_9_complete:
+    knights_defeated_count: 1
+
+show_player:
+  mode_gold_knight_9_started:
+    flashing_show:
+      show_tokens:
+        led: led_gold_knight_9
+        color: ffffff
