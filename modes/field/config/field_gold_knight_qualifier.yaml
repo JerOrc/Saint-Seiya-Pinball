@@ -99,27 +99,27 @@ achievements:
       lights: led_gold_knight_10
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: award_knight_10_started  # instant points award & plays shows
+    events_when_started: start_mode_gold_knight_10  # instant points award & plays shows
     enable_events: initialize_knights, reset_knights
-    complete_events: award_knight_10_started
+    complete_events: mode_gold_knight_10_started
     reset_events: reset_knights
   knight_11:
     show_tokens:
       lights: led_gold_knight_11
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: award_knight_11_started  # instant points award & plays shows
+    events_when_started: start_mode_gold_knight_11  # instant points award & plays shows
     enable_events: initialize_knights, reset_knights
-    complete_events: award_knight_11_started
+    complete_events: mode_gold_knight_11_started
     reset_events: reset_knights
   knight_12:
     show_tokens:
       lights: led_gold_knight_12
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: award_knight_12_started  # instant points award & plays shows
+    events_when_started: start_mode_gold_knight_12  # instant points award & plays shows
     enable_events: initialize_knights, reset_knights
-    complete_events: award_knight_12_started
+    complete_events: mode_gold_knight_12_started
     reset_events: reset_knights
 
 achievement_groups:
@@ -134,7 +134,7 @@ achievement_groups:
       - knight_7
       - knight_8
       - knight_9
-#      - knight_10
+      - knight_10
 #      - knight_11
 #      - knight_12
     show_tokens:

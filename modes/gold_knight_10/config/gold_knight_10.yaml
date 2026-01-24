@@ -1,0 +1,44 @@
+#config_version=6
+
+# 10. CAPRICORN - SUPER POP BUMPER
+# Complete this mode with 12 Pop Bumper hits.
+# ln this mode, each bumper hit is worth an additional 5,000 points per
+# hit on top of all other existing values.
+
+mode:
+  start_events: start_mode_gold_knight_10
+  stop_events: stop_mode_gold_knight_10, stop_missions
+  events_when_started: mode_type_mission_started
+  events_when_stopped: mode_type_mission_stopped
+
+counters:
+  beat_gold_knight_10_counter:
+    count_events: bumpers_shots_hit
+    count_complete_value: 12
+    enable_events: mode_gold_knight_10_started
+    disable_events: mode_gold_knight_10_stopping
+    disable_on_complete: true
+    reset_on_complete: true
+
+event_player:
+  logicblock_beat_gold_knight_10_counter_complete: stop_mode_gold_knight_10|500ms
+
+variable_player:
+  bumpers_shots_hit:
+    score: 5_000 * current_player.pf_multiplier
+  mode_gold_knight_10_started:
+    knights_confronted_count: 1
+  logicblock_beat_gold_knight_10_counter_complete:
+    knights_defeated_count: 1
+
+show_player:
+  mode_gold_knight_10_started:
+    flashing_show:
+      show_tokens:
+        led: led_gold_knight_10
+        color: ffffff
+    flashing_show_bis:
+      speed: 5
+      show_tokens:
+        led: led_bumper_left, led_bumper_right, led_bumper_bottom
+        color: green
