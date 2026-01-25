@@ -12,13 +12,13 @@ mode:
 
 shots:
   piscs_left_spinner:
-    switch: s_blue_target_left
+    switch: s_spinner_left
     profile: flashing_profile
     show_tokens:
       led: led_orbit_left
       color: 0000ff
   piscs_right_spinner:
-    switch: s_blue_target_right
+    switch: s_spinner_right
     profile: flashing_profile
     show_tokens:
       led: led_orbit_right
