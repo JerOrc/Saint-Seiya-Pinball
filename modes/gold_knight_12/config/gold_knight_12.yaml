@@ -1,0 +1,56 @@
+#config_version=6
+
+# 12. PISCS - SUPER SPINNERS
+# During this mode, each spin is worth a base of 3000 points/spin + the normal value of the spin.
+# Complete 60 spins to complete the mode (that's about 3 or 4 hits to the spinners)
+
+mode:
+  start_events: start_mode_gold_knight_12
+  stop_events: stop_mode_gold_knight_12, stop_missions
+  events_when_started: mode_type_mission_started
+  events_when_stopped: mode_type_mission_stopped
+
+shots:
+  piscs_left_spinner:
+    switch: s_blue_target_left
+    profile: flashing_profile
+    show_tokens:
+      led: led_orbit_left
+      color: 0000ff
+  piscs_right_spinner:
+    switch: s_blue_target_right
+    profile: flashing_profile
+    show_tokens:
+      led: led_orbit_right
+      color: 0000ff
+
+shot_groups:
+  piscs_spinners:
+    shots: piscs_left_spinner, piscs_right_spinner
+    disable_events: mode_gold_knight_12_stopping
+    restart_events: mode_gold_knight_12_started
+
+counters:
+  piscs_spinners_hits_counter:
+    starting_count: 10
+    count_complete_value: 0
+    direction: down
+    count_events: piscs_spinners_flashing_hit
+
+variable_player:
+  piscs_spinners_flashing_hit:
+    score: 1_000 * current_player.pf_multiplier
+  mode_gold_knight_12_started:
+    knights_confronted_count: 1
+  logicblock_piscs_spinners_hits_counter_complete:
+    knights_defeated_count: 1
+
+event_player:
+  logicblock_piscs_spinners_hits_counter_complete: stop_mode_gold_knight_12|500ms
+
+show_player:
+  mode_gold_knight_12_started:
+    flashing_show:
+      show_tokens:
+        led: led_gold_knight_12
+        color: ffffff
