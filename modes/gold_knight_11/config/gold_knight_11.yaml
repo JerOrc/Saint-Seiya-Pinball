@@ -1,0 +1,56 @@
+#config_version=6
+
+# 11. AQUARIUS = BLUE TARGETS
+# In this mode, the Ieft and right blue targets are worth 25_000 each.
+# Hit 4 targets to complete the mode.
+
+mode:
+  start_events: start_mode_gold_knight_11
+  stop_events: stop_mode_gold_knight_11, stop_missions
+  events_when_started: mode_type_mission_started
+  events_when_stopped: mode_type_mission_stopped
+
+shots:
+  aquarius_blue_target_left:
+    switch: s_blue_target_left
+    profile: flashing_profile
+    show_tokens:
+      led: led_blue_target_left
+      color: 0000ff
+  aquarius_blue_target_right:
+    switch: s_blue_target_right
+    profile: flashing_profile
+    show_tokens:
+      led: led_blue_target_right
+      color: 0000ff
+
+shot_groups:
+  aquarius_blue_targets:
+    shots: aquarius_blue_target_left, aquarius_blue_target_right
+    disable_events: mode_gold_knight_11_stopping
+    restart_events: mode_gold_knight_11_started
+
+counters:
+  aquarius_blue_target_hits_counter:
+    starting_count: 4
+    count_complete_value: 0
+    direction: down
+    count_events: aquarius_blue_targets_flashing_hit
+
+variable_player:
+  aquarius_blue_targets_flashing_hit:
+    score: 25_000 * current_player.pf_multiplier
+  mode_gold_knight_11_started:
+    knights_confronted_count: 1
+  logicblock_aquarius_blue_target_hits_counter_complete:
+    knights_defeated_count: 1
+
+event_player:
+  logicblock_aquarius_blue_target_hits_counter_complete: stop_mode_gold_knight_11|500ms
+
+show_player:
+  mode_gold_knight_11_started:
+    flashing_show:
+      show_tokens:
+        led: led_gold_knight_11
+        color: ffffff

@@ -135,7 +135,7 @@ achievement_groups:
       - knight_8
       - knight_9
       - knight_10
-#      - knight_11
+      - knight_11
 #      - knight_12
     show_tokens:
       lights: led_temple
