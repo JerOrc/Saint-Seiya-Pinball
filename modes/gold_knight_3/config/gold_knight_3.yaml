@@ -8,8 +8,8 @@
 mode:
   start_events: start_mode_gold_knight_3
   stop_events: stop_mode_gold_knight_3, stop_missions
-  events_when_started: mode_type_mission_started
-  events_when_stopped: mode_type_mission_stopped
+  events_when_started: mode_type_mission_started, mode_gold_knight_started
+  events_when_stopped: mode_type_mission_stopped, mode_gold_knight_stopped
 
 shots:
   gemini_ramp_left:
@@ -59,8 +59,6 @@ variable_player:
     score: 100_000 * current_player.pf_multiplier
   gemini_orbits_flashing_hit:
     score: 100_000 * current_player.pf_multiplier
-  mode_gold_knight_3_started:
-    knights_confronted_count: 1
   logicblock_gemini_flashing_hits_counter_complete:
     knights_defeated_count: 1
 

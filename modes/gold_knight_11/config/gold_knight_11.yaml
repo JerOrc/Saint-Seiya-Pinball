@@ -7,8 +7,8 @@
 mode:
   start_events: start_mode_gold_knight_11
   stop_events: stop_mode_gold_knight_11, stop_missions
-  events_when_started: mode_type_mission_started
-  events_when_stopped: mode_type_mission_stopped
+  events_when_started: mode_type_mission_started, mode_gold_knight_started
+  events_when_stopped: mode_type_mission_stopped, mode_gold_knight_stopped
 
 shots:
   aquarius_blue_target_left:
@@ -40,8 +40,6 @@ counters:
 variable_player:
   aquarius_blue_targets_flashing_hit:
     score: 25_000 * current_player.pf_multiplier
-  mode_gold_knight_11_started:
-    knights_confronted_count: 1
   logicblock_aquarius_blue_target_hits_counter_complete:
     knights_defeated_count: 1
 

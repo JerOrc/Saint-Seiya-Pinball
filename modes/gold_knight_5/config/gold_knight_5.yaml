@@ -8,8 +8,8 @@
 mode:
   start_events: start_mode_gold_knight_5
   stop_events: stop_mode_gold_knight_5, stop_missions
-  events_when_started: mode_type_mission_started
-  events_when_stopped: mode_type_mission_stopped
+  events_when_started: mode_type_mission_started, mode_gold_knight_started
+  events_when_stopped: mode_type_mission_stopped, mode_gold_knight_stopped
 
 sequence_shots:
   left_leo:
@@ -29,8 +29,6 @@ counters:
 variable_player:
   leos_flashing_hit:
     score: 140_000 * current_player.pf_multiplier
-  mode_gold_knight_5_started:
-    knights_confronted_count: 1
   logicblock_leos_hits_counter_complete:
     knights_defeated_count: 1
 

@@ -14,7 +14,7 @@ mode_settings:
       reset_player_score_entry: true
     - entry: knights_confronted
       text: "Knights confronted"
-      player_score_entry: knights_confronted_count
+      player_score_entry: knights_confronted_ball_count
       score: 20_000
       skip_if_zero: false
       reset_player_score_entry: true

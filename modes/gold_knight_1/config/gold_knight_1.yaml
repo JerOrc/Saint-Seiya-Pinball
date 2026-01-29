@@ -8,8 +8,8 @@
 mode:
   start_events: start_mode_gold_knight_1
   stop_events: stop_mode_gold_knight_1, stop_missions
-  events_when_started: mode_type_mission_started
-  events_when_stopped: mode_type_mission_stopped
+  events_when_started: mode_type_mission_started, mode_gold_knight_started
+  events_when_stopped: mode_type_mission_stopped, mode_gold_knight_stopped
 
 shots:
   aries_left_orbit:
@@ -105,8 +105,6 @@ variable_player:
     score: (150_000 + 30_000 * (device.counters.aries_shots_hits_counter.value - 3)) * current_player.pf_multiplier
   aries_shots_flashing_hit{device.counters.aries_shots_hits_counter.value > 7}:
     score: 300_000 * current_player.pf_multiplier
-  mode_gold_knight_1_started:
-    knights_confronted_count: 1
   logicblock_beat_gold_knight_1_complete:
     knights_defeated_count: 1
 

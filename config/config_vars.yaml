@@ -26,7 +26,9 @@ player_vars:
   super_skillshot_count:
     initial_value: 0
 
-  knights_confronted_count:
+  knights_confronted_total_count:
     initial_value: 0
-  knights_defeated_count:
+  knights_confronted_ball_count:
+    initial_value: 0
+  knights_defeated_count: # ball_count
     initial_value: 0
