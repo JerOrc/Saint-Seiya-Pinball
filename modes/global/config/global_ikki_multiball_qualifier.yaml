@@ -18,7 +18,6 @@ shots:
     restart_events: ikki_lock1, ikki_lock2, ikki_multiball_ended
   ikki_temple:
     switch: s_temple_in
-    restart_events: ikki_lock1, ikki_lock2, ikki_multiball_ended
 
 shot_groups:
   ikki_targets:
@@ -30,6 +29,18 @@ sequences:
       - ikki_targets_unlit_hit
       - ikki_targets_unlit_hit
       - ikki_temple_hit
+      - ikki_targets_unlit_hit
+      - ikki_targets_unlit_hit
+      - ikki_temple_hit
+      - ikki_targets_unlit_hit
+      - ikki_targets_unlit_hit
+      - ikki_temple_hit
     persist_state: true
     disable_on_complete: false
     events_when_complete: ikki_multiball_start
+
+# TODO : use tag "multiballs:"
+
+event_player:
+  logicblock_ikki_multiball_sequence_updated{value == 3}: ikki_lock1
+  logicblock_ikki_multiball_sequence_updated{value == 6}: ikki_lock2
