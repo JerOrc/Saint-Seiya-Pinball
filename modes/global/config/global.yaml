@@ -27,6 +27,7 @@ config:
   - global_pf_multiplier.yaml
   - global_bonus_multiplier.yaml
   - global_zodiac_ramps.yaml
+  - global_ikki_multiball_qualifier.yaml
   # add your configs here. For instance:
   # - global_multiball_madness_light_and_lock.yaml
   # - global_pop_bumpers.yaml
