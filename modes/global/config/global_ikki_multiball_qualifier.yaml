@@ -12,10 +12,10 @@
 shots:
   ikki_left_target:
     switch: s_red_target_1
-    restart_events: ikki_lock1, ikki_lock2, ikki_multiball_ended
+    restart_events: ikki_locked, multiball_ikki_multiball_ended
   ikki_right_target:
     switch: s_red_target_2
-    restart_events: ikki_lock1, ikki_lock2, ikki_multiball_ended
+    restart_events: ikki_locked, multiball_ikki_multiball_ended
   ikki_temple:
     switch: s_temple_in
 
@@ -39,8 +39,27 @@ sequences:
     disable_on_complete: false
     events_when_complete: ikki_multiball_start
 
-# TODO : use tag "multiballs:"
+multiball_locks:
+  ikki_lock:
+    balls_to_lock: 1
+    lock_devices: bd_lock
+    enable_events: ikki_lock_enabled
+    disable_events: ikki_lock_disabled
+    locked_ball_counting_strategy: virtual_only
+    reset_count_for_current_player_events: ikki_multiball_start
+
+multiballs:
+  ikki_multiball:
+    ball_count: 3
+    ball_locks: bd_lock
+    start_events: ikki_multiball_start
 
 event_player:
-  logicblock_ikki_multiball_sequence_updated{value == 3}: ikki_lock1
-  logicblock_ikki_multiball_sequence_updated{value == 6}: ikki_lock2
+  logicblock_ikki_multiball_sequence_hit{step == 2}: ikki_lock_enabled
+  logicblock_ikki_multiball_sequence_hit{step == 3}: ikki_locked
+  balldevice_bd_lock_ball_entered{device.sequences.ikki_multiball_sequence.value == 3}: ikki_lock_disabled
+  logicblock_ikki_multiball_sequence_hit{step == 5}: ikki_lock_enabled
+  logicblock_ikki_multiball_sequence_hit{step == 6}: ikki_locked
+  balldevice_bd_lock_ball_entered{device.sequences.ikki_multiball_sequence.value == 6}: ikki_lock_disabled
+  logicblock_ikki_multiball_sequence_hit{step == 8}: ikki_dummy_lock_enabled
+  logicblock_ikki_multiball_sequence_hit{step == 9}: ikki_locked
