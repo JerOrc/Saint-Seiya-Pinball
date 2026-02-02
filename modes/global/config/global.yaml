@@ -41,5 +41,5 @@ event_player:
     - stop_missions
   mode_type_mission_started:
     - stop_mode_field
-  mode_type_mission_stopped{not mode["global"].stopping}:
+  mode_type_mission_stopped{not mode["global"].stopping and not mode["ikki_multiball"].active}:
     - start_mode_field

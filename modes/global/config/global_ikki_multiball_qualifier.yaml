@@ -12,10 +12,10 @@
 shots:
   ikki_left_target:
     switch: s_red_target_1
-    restart_events: ikki_locked, multiball_ikki_multiball_ended
+    restart_events: ikki_locked, mode_ikki_multiball_stopped
   ikki_right_target:
     switch: s_red_target_2
-    restart_events: ikki_locked, multiball_ikki_multiball_ended
+    restart_events: ikki_locked, mode_ikki_multiball_stopped
   ikki_temple:
     switch: s_temple_in
 
@@ -36,8 +36,9 @@ sequences:
       - ikki_targets_unlit_hit
       - ikki_temple_hit
     persist_state: true
-    disable_on_complete: false
-    events_when_complete: ikki_multiball_start
+    disable_on_complete: true
+    restart_events: mode_ikki_multiball_stopped
+    events_when_complete: start_mode_ikki_multiball
 
 multiball_locks:
   ikki_lock:
@@ -46,13 +47,7 @@ multiball_locks:
     enable_events: ikki_lock_enabled
     disable_events: ikki_lock_disabled
     locked_ball_counting_strategy: virtual_only
-    reset_count_for_current_player_events: ikki_multiball_start
-
-multiballs:
-  ikki_multiball:
-    ball_count: 3
-    ball_locks: bd_lock
-    start_events: ikki_multiball_start
+    reset_count_for_current_player_events: mode_ikki_multiball_starting
 
 event_player:
   logicblock_ikki_multiball_sequence_hit{step == 2}: ikki_lock_enabled
@@ -62,4 +57,4 @@ event_player:
   logicblock_ikki_multiball_sequence_hit{step == 6}: ikki_locked
   balldevice_bd_lock_ball_entered{device.sequences.ikki_multiball_sequence.value == 6}: ikki_lock_disabled
   logicblock_ikki_multiball_sequence_hit{step == 8}: ikki_dummy_lock_enabled
-  logicblock_ikki_multiball_sequence_hit{step == 9}: ikki_locked
+  logicblock_ikki_multiball_sequence_hit{step == 9}: ikki_dummy_locked
