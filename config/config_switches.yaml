@@ -95,6 +95,9 @@ switches:
   s_scoop:
     number:
     platform: virtual
+  s_lock:
+    number:
+    platform: virtual
 
   # Lane Switches
   s_inlane_left:
