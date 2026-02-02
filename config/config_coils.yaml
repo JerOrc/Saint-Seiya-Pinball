@@ -53,6 +53,9 @@ coils:
   c_kickback:
     number:
     platform: virtual
+  c_lock:
+    number:
+    platform: virtual
   c_scoop:
     number:
     platform: virtual
