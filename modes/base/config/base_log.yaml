@@ -138,6 +138,12 @@ slide_player:
       method: log_text
       tokens:
         text: "Ball locked"
+  ikki_dummy_locked:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "Ball locked"
   multiball_ikki_multiball_started:
     log:
       action: method
