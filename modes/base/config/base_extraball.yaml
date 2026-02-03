@@ -1,16 +1,5 @@
 #config_version=6
 
-shots:
-  extraball_shot:
-    switch: s_scoop
-    profile: quick_flashing_profile
-    enable_events: extraball_is_lit
-    disable_events: extraball_shot_flashing_hit
-    restart_events: extraball_shot_flashing_hit
-    show_tokens:
-      led: led_scoop
-      color: FF0000
-
 light_player:
   extra_ball_awarded:
     led_ballsave: yellow

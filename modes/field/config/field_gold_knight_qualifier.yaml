@@ -11,6 +11,16 @@ shots:
     switch: s_newton_ball_target
   enter_knight_temple:
     switch: s_temple_in
+  gold_knights_extraballs_shot:
+    switch: s_scoop
+    profile: quick_flashing_profile
+    enable_events: gold_knights_extraballs_shot_is_lit
+    disable_events: gold_knights_extraballs_shot_flashing_hit
+    restart_events: gold_knights_extraballs_shot_flashing_hit
+    show_tokens:
+      led: led_scoop
+      color: FF0000
+
 
 achievements:
   knight_1:
@@ -152,13 +162,13 @@ achievement_groups:
     debug: true
 
 sequences:
-  gold_knight_extraball_sequence:
+  gold_knights_extraballs_sequence:
     events:
-      - gold_knight_extraball_is_lit
+      - gold_knights_extraballs_is_lit
       - mode_gold_knight_stopped
     persist_state: true
     disable_on_complete: false
-    events_when_complete: extraball_is_lit
+    events_when_complete: gold_knights_extraballs_shot_is_lit
 
 variable_player:
   mode_gold_knight_started:
@@ -167,10 +177,9 @@ variable_player:
 
 event_player:
   mode_field_started: initialize_knights
-  mode_gold_knight_started{(current_player.knights_confronted_total_count % 3) == 2}: gold_knight_extraball_is_lit
+  mode_gold_knight_started{(current_player.knights_confronted_total_count % 3) == 2}: gold_knights_extraballs_is_lit
 
 extra_balls:
   gold_knight_extraball:
     max_per_game: 100
-    light_events: gold_knight_extraball_is_lit
-    award_events: extraball_shot_flashing_hit
+    award_events: gold_knights_extraballs_shot_flashing_hit

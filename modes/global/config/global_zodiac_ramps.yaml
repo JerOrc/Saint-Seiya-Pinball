@@ -20,6 +20,16 @@ shots:
     show_tokens:
       led: led_kickout
       color: 0000FF
+  zodiac_extraball_shot:
+    switch: s_scoop
+    profile: quick_flashing_profile
+    enable_events: zodiac_extraball_shot_is_lit
+    disable_events: zodiac_extraball_shot_flashing_hit
+    restart_events: zodiac_extraball_shot_flashing_hit
+    show_tokens:
+      led: led_scoop
+      color: FF0000
+
 
 shot_groups:
   ramp_shot:
@@ -47,11 +57,8 @@ variable_player:
     score: current_player.zodiac_total_count * 1_000_000 * current_player.pf_multiplier
 
 event_player:
-  zodiac_validation_shot_flashing_hit{current_player.zodiac_total_count == 2}:
-    - zodiac_extraball_is_lit
-    - extraball_is_lit
+  zodiac_validation_shot_flashing_hit{current_player.zodiac_total_count == 2}: zodiac_extraball_shot_is_lit
 
 extra_balls:
   zodiac_ramps_extraball:
-    light_events: zodiac_extraball_is_lit
-    award_events: extraball_shot_flashing_hit
+    award_events: zodiac_extraball_shot_flashing_hit
