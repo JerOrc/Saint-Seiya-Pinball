@@ -9,6 +9,7 @@
 mode:
   start_events: start_mode_field
   stop_events: stop_mode_field
+  priority: 400
 
 config:
   - field_gold_knight_qualifier.yaml
