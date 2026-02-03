@@ -156,17 +156,5 @@ variable_player:
     knights_confronted_ball_count: 1
     knights_confronted_total_count: 1
 
-
-sequences:
-  gold_knights_extraballs_sequence:
-    events:
-      - gold_knights_extraballs_is_lit
-      - mode_gold_knight_stopped, mode_field_started
-    persist_state: true
-    disable_on_complete: false
-    events_when_complete: gold_knights_extraballs_shot_is_lit
-
 event_player:
   mode_field_started: initialize_knights
-  mode_gold_knight_started{(current_player.knights_confronted_total_count % 3) == 2}: gold_knights_extraballs_is_lit
-

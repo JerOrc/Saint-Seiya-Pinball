@@ -112,3 +112,7 @@ timed_switches:
   flipper_super_skill:
     switch_tags: left_flipper
     time: 1s
+
+light_player:
+  mode_skillshot_started:
+    led_scoop: off

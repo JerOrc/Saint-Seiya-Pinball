@@ -46,6 +46,3 @@ variable_player:
     zodiac_ball_count: 1
     score: current_player.zodiac_total_count * 1_000_000 * current_player.pf_multiplier
 
-event_player:
-  zodiac_validation_shot_flashing_hit{current_player.zodiac_total_count == 2}: zodiac_extraball_shot_is_lit
-

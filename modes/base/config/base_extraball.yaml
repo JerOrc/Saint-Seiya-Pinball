@@ -35,3 +35,17 @@ light_player:
     led_ballsave: yellow
   mode_base_started{current_player.extra_balls > 0}:
     led_ballsave: yellow
+
+
+sequences:
+  gold_knights_extraballs_sequence:
+    events:
+      - gold_knights_extraballs_is_lit
+      - mode_gold_knight_stopped, mode_base_started
+    persist_state: true
+    disable_on_complete: false
+    events_when_complete: gold_knights_extraballs_shot_is_lit
+
+event_player:
+  mode_gold_knight_started{current_player.knights_confronted_total_count % 3 == 0}: gold_knights_extraballs_is_lit
+  zodiac_validation_shot_flashing_hit{current_player.zodiac_total_count == 3}: zodiac_extraball_shot_is_lit
