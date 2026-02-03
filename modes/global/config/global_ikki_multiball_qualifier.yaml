@@ -56,5 +56,5 @@ event_player:
   logicblock_ikki_multiball_sequence_hit{step == 5}: ikki_lock_enabled
   logicblock_ikki_multiball_sequence_hit{step == 6}: ikki_locked
   balldevice_bd_lock_ball_entered{device.sequences.ikki_multiball_sequence.value == 6}: ikki_lock_disabled
-  logicblock_ikki_multiball_sequence_hit{step == 8}: ikki_dummy_lock_enabled
-  logicblock_ikki_multiball_sequence_hit{step == 9}: ikki_dummy_locked
+  logicblock_ikki_multiball_sequence_hit{step == 8}: ikki_dummy_lock_enabled  # dummy used in order not to lock the last ball
+  logicblock_ikki_multiball_sequence_hit{step == 9}: ikki_dummy_locked        # dummy used in order not to restart targets
