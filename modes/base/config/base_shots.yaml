@@ -36,3 +36,12 @@ shot_profiles:
         show: flash_color
         speed: 4
     advance_on_hit: false
+
+  jackpot_profile:
+    states:
+      - name: flashing
+        show: flash_color
+        speed: 3
+      - name: unlit
+        show: off
+    loop: false
