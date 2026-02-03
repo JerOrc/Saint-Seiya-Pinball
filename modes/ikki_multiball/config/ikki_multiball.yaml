@@ -1,8 +1,11 @@
 #config_version=6
 
+# In this multiball, the Jackpots are activated on the ramps.
+# Hit both ramps to collect the Jackpots, then hit the captive ball to re-enable the Jackpots on the ramps.
+
 mode:
   start_events: start_mode_ikki_multiball
-  stop_events: stop_mode_ikki_multiball, stop_missions
+  stop_events: multiball_ikki_multiball_ended, stop_missions
   events_when_started: mode_type_mission_started
   events_when_stopped: mode_type_mission_stopped
 
@@ -12,5 +15,41 @@ multiballs:
     ball_locks: bd_lock
     start_events: mode_ikki_multiball_started
 
-event_player:
-  multiball_ikki_multiball_ended: stop_mode_ikki_multiball
+shots:
+  ikki_ramp_left:
+    switch: s_ramp_left
+    profile: jackpot_profile
+    restart_events: mode_ikki_multiball_started, ikki_newton_ball_flashing_hit
+    disable_events: multiball_ikki_multiball_ended
+    show_tokens:
+      led: led_ramp_left
+      color: ff0000
+  ikki_ramp_right:
+    switch: s_ramp_right
+    profile: jackpot_profile
+    restart_events: mode_ikki_multiball_started, ikki_newton_ball_flashing_hit
+    disable_events: multiball_ikki_multiball_ended
+    show_tokens:
+      led: led_ramp_right
+      color: ff0000
+  ikki_newton_ball:
+    switch: s_newton_ball_target
+    profile: quick_flashing_profile
+    start_enabled: false
+    restart_events: ikki_ramps_unlit_complete
+    disable_events: mode_ikki_multiball_started, ikki_newton_ball_flashing_hit
+    show_tokens:
+      led: led_newton_ball
+      color: ff0000
+
+shot_groups:
+  ikki_ramps:
+    shots: ikki_ramp_left, ikki_ramp_right
+    disable_events: mode_ikki_multiball_stopping
+    restart_events: ikki_newton_ball_flashing_hit
+
+variable_player:
+  ikki_ramps_flashing_hit:
+    score: 150_000 * current_player.pf_multiplier
+  ikki_newton_ball_flashing_hit:
+    score: 600_000 * current_player.pf_multiplier
