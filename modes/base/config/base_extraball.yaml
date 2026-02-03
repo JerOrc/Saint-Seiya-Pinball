@@ -1,5 +1,37 @@
 #config_version=6
 
+
+shots:
+  gold_knights_extraballs_shot:
+    switch: s_scoop
+    profile: quick_flashing_profile
+    enable_events: gold_knights_extraballs_shot_is_lit
+    disable_events: gold_knights_extraballs_shot_flashing_hit
+    restart_events: gold_knights_extraballs_shot_flashing_hit
+    show_tokens:
+      led: led_scoop
+      color: FF0000
+  zodiac_extraball_shot:
+    switch: s_scoop
+    profile: quick_flashing_profile
+    enable_events: zodiac_extraball_shot_is_lit
+    disable_events: zodiac_extraball_shot_flashing_hit
+    restart_events: zodiac_extraball_shot_flashing_hit
+    show_tokens:
+      led: led_scoop
+      color: FF0000
+
+
+extra_balls:
+  gold_knight_extraball:
+    max_per_game: 100
+    award_events: gold_knights_extraballs_shot_flashing_hit
+  zodiac_ramps_extraball:
+    award_events: zodiac_extraball_shot_flashing_hit
+
+
 light_player:
   extra_ball_awarded:
+    led_ballsave: yellow
+  mode_base_started{current_player.extra_balls > 0}:
     led_ballsave: yellow
