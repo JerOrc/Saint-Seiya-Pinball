@@ -22,7 +22,7 @@ shots:
     restart_events: mode_ikki_multiball_started, ikki_newton_ball_flashing_hit
     disable_events: multiball_ikki_multiball_ended
     show_tokens:
-      led: led_ramp_left
+      led: led_ramp_left_jackpot
       color: ff0000
   ikki_ramp_right:
     switch: s_ramp_right
@@ -30,7 +30,7 @@ shots:
     restart_events: mode_ikki_multiball_started, ikki_newton_ball_flashing_hit
     disable_events: multiball_ikki_multiball_ended
     show_tokens:
-      led: led_ramp_right
+      led: led_ramp_right_jackpot
       color: ff0000
   ikki_newton_ball:
     switch: s_newton_ball_target
@@ -39,7 +39,7 @@ shots:
     restart_events: ikki_ramps_unlit_complete
     disable_events: mode_ikki_multiball_started, ikki_newton_ball_flashing_hit
     show_tokens:
-      led: led_newton_ball
+      led: led_newton_ball_super_jackpot
       color: ff0000
 
 shot_groups:

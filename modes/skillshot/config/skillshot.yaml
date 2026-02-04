@@ -115,4 +115,4 @@ timed_switches:
 
 light_player:
   mode_skillshot_started:
-    led_scoop: off
+    led_scoop_extraball: off

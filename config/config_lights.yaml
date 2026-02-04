@@ -38,12 +38,37 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+  led_newton_ball_super_jackpot:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_newton_ball_pf_multiplier:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
   led_kickout:
     number:
     platform: virtual
     subtype: led
     type: grb
+  led_kickout_jackpot:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
   led_scoop:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_scoop_extraball:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_scoop_jackpot:
     number:
     platform: virtual
     subtype: led
@@ -58,7 +83,17 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+  led_orbit_left_jackpot:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
   led_orbit_right:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_orbit_right_jackpot:
     number:
     platform: virtual
     subtype: led
@@ -68,12 +103,37 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+  led_ramp_left_jackpot:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
   led_ramp_right:
     number:
     platform: virtual
     subtype: led
     type: grb
+  led_ramp_right_jackpot:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
   led_temple:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_temple_lock_is_lit:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_temple_jackpot:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_temple_start_battle:
     number:
     platform: virtual
     subtype: led

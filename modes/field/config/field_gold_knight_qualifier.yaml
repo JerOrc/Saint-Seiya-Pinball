@@ -138,7 +138,7 @@ achievement_groups:
       - knight_11
       - knight_12
     show_tokens:
-      lights: led_temple
+      lights: led_temple_start_battle
     auto_select: true
     events_when_all_completed: knights_wizard_is_lit
     enable_while_no_achievement_started: false

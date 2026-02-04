@@ -13,7 +13,7 @@ shots:
     switch: s_newton_ball_target
     profile: flashing_profile
     show_tokens:
-      led: led_newton_ball
+      led: led_newton_ball_pf_multiplier
       color: FF0000
     enable_events: bumpers_score_shot_start
     disable_events: bumpers_score_shot_stop, mode_global_will_stop
