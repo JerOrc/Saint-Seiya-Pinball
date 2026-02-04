@@ -19,7 +19,7 @@ config:
   - base_ballsave.yaml
   - base_extraball.yaml
   - base_ramps_combo.yaml
-  - base_shots.yaml
+  - base_shot_profiles.yaml
 
 event_player:
   mode_base_started:
