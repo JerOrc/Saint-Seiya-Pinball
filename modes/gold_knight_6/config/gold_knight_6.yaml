@@ -51,7 +51,6 @@ shots:
 shot_groups:
   virgo_targets:
     shots: virgo_red_target_1, virgo_red_target_2, virgo_red_target_3, virgo_red_target_4, virgo_red_target_5, virgo_red_target_6
-    disable_events: mode_gold_knight_6_stopping
     restart_events: virgo_targets_flashing_hit
 
 counters:
