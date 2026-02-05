@@ -53,6 +53,11 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+  led_kickout_extraball:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
   led_kickout_jackpot:
     number:
     platform: virtual

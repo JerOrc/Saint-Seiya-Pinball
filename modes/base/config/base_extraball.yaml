@@ -12,13 +12,13 @@ shots:
       led: led_scoop_extraball
       color: FF0000
   zodiac_extraball_shot:
-    switch: s_scoop
+    switch: s_kickout
     profile: quick_flashing_profile
     enable_events: zodiac_extraball_shot_is_lit
     disable_events: zodiac_extraball_shot_flashing_hit
     restart_events: zodiac_extraball_shot_flashing_hit
     show_tokens:
-      led: led_scoop_extraball
+      led: led_kickout_extraball
       color: FF0000
 
 

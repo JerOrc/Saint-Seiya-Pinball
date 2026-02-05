@@ -18,7 +18,7 @@ shots:
     disable_events: zodiac_validation_shot_flashing_hit
     restart_events: zodiac_validation_shot_flashing_hit
     show_tokens:
-      led: led_kickout
+      led: led_kickout_jackpot
       color: 0000FF
 
 shot_groups:
