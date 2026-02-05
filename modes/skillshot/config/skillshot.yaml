@@ -43,7 +43,7 @@ shots:
       - events: enable_super_skill
         state: 1
     show_tokens:
-      led: led_newton_ball
+      led: led_newton_ball_super_jackpot
       color: FF0000
 
 shot_groups:
