@@ -12,28 +12,28 @@ mode:
   events_when_stopped: mode_type_mission_stopped, mode_gold_knight_stopped
 
 sequence_shots:
-  left_leo:
+  leo_left_orbit:
     switch_sequence: s_orbit_left, s_orbit_right
     sequence_timeout: 3s
-  right_leo:
+  leo_right_orbit:
     switch_sequence: s_orbit_right, s_orbit_left
     sequence_timeout: 3s
 
 counters:
-  leos_hits_counter:
+  leo_orbits_hits_counter:
     starting_count: 4
     count_complete_value: 0
     direction: down
-    count_events: left_leo_hit, right_leo_hit
+    count_events: leo_left_orbit_hit, leo_right_orbit_hit
 
 variable_player:
-  leos_flashing_hit:
+  logicblock_leo_orbits_hits_counter_hit:
     score: 140_000 * current_player.pf_multiplier
-  logicblock_leos_hits_counter_complete:
+  logicblock_leo_orbits_hits_counter_complete:
     knights_defeated_count: 1
 
 event_player:
-  logicblock_leos_hits_counter_complete: stop_mode_gold_knight_5|500ms
+  logicblock_leo_orbits_hits_counter_complete: stop_mode_gold_knight_5|500ms
 
 
 show_player:
