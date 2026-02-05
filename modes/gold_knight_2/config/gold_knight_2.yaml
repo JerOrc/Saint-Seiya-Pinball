@@ -11,13 +11,13 @@ mode:
   events_when_stopped: mode_type_mission_stopped, mode_gold_knight_stopped
 
 shots:
-  left_pegasus_fist:
+  taurus_left_orbit:
     switch: s_orbit_left
     profile: flashing_profile
     show_tokens:
       led: led_orbit_left
       color: ffffff
-  right_pegasus_fist:
+  taurus_right_orbit:
     switch: s_orbit_right
     profile: flashing_profile
     show_tokens:
@@ -25,26 +25,24 @@ shots:
       color: ffffff
 
 shot_groups:
-  pegasus_fists:
-    shots: left_pegasus_fist, right_pegasus_fist
-    disable_events: mode_gold_knight_2_stopping
-    restart_events: mode_gold_knight_2_started
+  taurus_orbits:
+    shots: taurus_left_orbit, taurus_right_orbit
 
 counters:
-  pegasus_fists_hits_counter:
+  taurus_orbits_hits_counter:
     starting_count: 4
     count_complete_value: 0
     direction: down
-    count_events: pegasus_fists_flashing_hit
+    count_events: taurus_orbits_flashing_hit
 
 variable_player:
-  pegasus_fists_flashing_hit:
+  taurus_orbits_flashing_hit:
     score: 70_000 * current_player.pf_multiplier
-  logicblock_pegasus_fists_hits_counter_complete:
+  logicblock_taurus_orbits_hits_counter_complete:
     knights_defeated_count: 1
 
 event_player:
-  logicblock_pegasus_fists_hits_counter_complete: stop_mode_gold_knight_2|500ms
+  logicblock_taurus_orbits_hits_counter_complete: stop_mode_gold_knight_2|500ms
 
 show_player:
   mode_gold_knight_2_started:
