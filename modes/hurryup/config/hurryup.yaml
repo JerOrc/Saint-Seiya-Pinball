@@ -21,7 +21,11 @@ event_player:
 
 shots:
   hurryup:
-    switch: s_kickout
+    switch: s_scoop
+    profile: flashing_profile
+    show_tokens:
+      led: led_scoop_jackpot
+      color: 0000ff
 
 slide_player:
   mode_hurryup_started: hurryup
