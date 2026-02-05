@@ -27,8 +27,6 @@ shots:
 shot_groups:
   cancer_ramps:
     shots: cancer_ramp_left, cancer_ramp_right
-    disable_events: mode_gold_knight_4_stopping
-    restart_events: cancer_ramps_flashing_hit
 
 counters:
   cancer_ramps_flashing_hits_counter:
