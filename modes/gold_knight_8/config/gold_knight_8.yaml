@@ -73,8 +73,6 @@ shot_groups:
   scorpio_shots:
     shots: scorpio_blue_target_left, scorpio_left_orbit, scorpio_phoenix, scorpio_left_ramp, scorpio_temple, scorpio_newton_ball, scorpio_right_ramp, scorpio_right_orbit, scorpio_blue_target_right
     rotate_right_events: timer_gold_knight_8_timer_complete, scorpio_shots_flashing_hit
-    disable_events: logicblock_beat_gold_knight_8_counter_complete
-    enable_events: mode_gold_knight_8_started
 
 event_player:
   logicblock_beat_gold_knight_8_counter_complete: stop_mode_gold_knight_8|500ms
