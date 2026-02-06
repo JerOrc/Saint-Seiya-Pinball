@@ -20,16 +20,12 @@ shots:
   ikki_ramp_left:
     switch: s_ramp_left
     profile: jackpot_profile
-    restart_events: mode_ikki_multiball_started, ikki_newton_ball_flashing_hit
-    disable_events: multiball_ikki_multiball_ended
     show_tokens:
       led: led_ramp_left_jackpot
       color: ff0000
   ikki_ramp_right:
     switch: s_ramp_right
     profile: jackpot_profile
-    restart_events: mode_ikki_multiball_started, ikki_newton_ball_flashing_hit
-    disable_events: multiball_ikki_multiball_ended
     show_tokens:
       led: led_ramp_right_jackpot
       color: ff0000
@@ -46,8 +42,7 @@ shots:
 shot_groups:
   ikki_ramps:
     shots: ikki_ramp_left, ikki_ramp_right
-    disable_events: mode_ikki_multiball_stopping
-    restart_events: ikki_newton_ball_flashing_hit
+    restart_events: mode_ikki_multiball_started, ikki_newton_ball_flashing_hit
 
 variable_player:
   ikki_ramps_flashing_hit:
