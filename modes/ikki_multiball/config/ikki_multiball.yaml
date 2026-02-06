@@ -8,6 +8,7 @@ mode:
   stop_events: multiball_ikki_multiball_ended, stop_missions
   events_when_started: mode_type_mission_started
   events_when_stopped: mode_type_mission_stopped
+  priority: 450
 
 multiballs:
   ikki_multiball:

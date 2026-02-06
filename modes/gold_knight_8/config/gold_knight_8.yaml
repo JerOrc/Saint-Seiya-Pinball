@@ -9,6 +9,7 @@ mode:
   stop_events: stop_mode_gold_knight_8, stop_missions
   events_when_started: mode_type_mission_started, mode_gold_knight_started
   events_when_stopped: mode_type_mission_stopped, mode_gold_knight_stopped
+  priority: 400
 
 shots:
   scorpio_blue_target_left:
