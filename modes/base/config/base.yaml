@@ -15,6 +15,7 @@ mode:
 
 config:
   - base_bumpers.yaml
+  - base_red_targets.yaml
   - base_log.yaml
   - base_ballsave.yaml
   - base_extraball.yaml

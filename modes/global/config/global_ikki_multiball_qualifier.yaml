@@ -13,9 +13,17 @@ shots:
   ikki_left_target:
     switch: s_red_target_1
     restart_events: ikki_locked, mode_ikki_multiball_stopped
+    profile: color_profile
+    show_tokens:
+      led: led_red_target_1
+      color: ffff00
   ikki_right_target:
     switch: s_red_target_2
     restart_events: ikki_locked, mode_ikki_multiball_stopped
+    profile: color_profile
+    show_tokens:
+      led: led_red_target_2
+      color: ffff00
   ikki_temple:
     switch: s_temple_in
 

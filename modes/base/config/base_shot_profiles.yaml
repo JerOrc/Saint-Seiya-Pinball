@@ -45,3 +45,12 @@ shot_profiles:
       - name: unlit
         show: off
     loop: false
+
+  color_profile:
+    states:
+      - name: unlit
+        show: "off"
+      - name: lit
+        show: led_color
+        show_tokens:
+          color: (color)

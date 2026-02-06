@@ -1,0 +1,49 @@
+#config_version=6
+
+
+shots:
+  red_target_1:
+    switch: s_red_target_1
+    profile: color_profile
+    show_tokens:
+      led: led_red_target_1
+      color: ff0000
+  red_target_2:
+    switch: s_red_target_2
+    profile: color_profile
+    show_tokens:
+      led: led_red_target_2
+      color: ff0000
+  red_target_3:
+    switch: s_red_target_3
+    profile: color_profile
+    show_tokens:
+      led: led_red_target_3
+      color: ff0000
+  red_target_4:
+    switch: s_red_target_4
+    profile: color_profile
+    show_tokens:
+      led: led_red_target_4
+      color: ff0000
+  red_target_5:
+    switch: s_red_target_5
+    profile: color_profile
+    show_tokens:
+      led: led_red_target_5
+      color: ff0000
+  red_target_6:
+    switch: s_red_target_6
+    profile: color_profile
+    show_tokens:
+      led: led_red_target_6
+      color: ff0000
+
+
+variable_player:
+  sw_red_targets:
+    score: 1_000 * current_player.pf_multiplier
+
+#TODO:
+# - reset les shots au ball start
+# - reset et mistery à lancer quand les 6 sont activés
