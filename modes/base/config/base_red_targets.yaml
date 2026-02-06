@@ -39,11 +39,16 @@ shots:
       led: led_red_target_6
       color: ff0000
 
+shot_groups:
+  red_targets_group:
+    shots: red_target_1, red_target_2, red_target_3, red_target_4, red_target_5, red_target_6
+    reset_events: mode_base_started, red_targets_group_lit_complete
 
 variable_player:
-  sw_red_targets:
+  red_targets_group_hit:
     score: 1_000 * current_player.pf_multiplier
+  red_targets_group_lit_complete:
+    score: 100_000 * current_player.pf_multiplier
 
 #TODO:
-# - reset les shots au ball start
-# - reset et mistery à lancer quand les 6 sont activés
+# -  mistery à lancer quand les 6 sont activés
