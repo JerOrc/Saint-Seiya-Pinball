@@ -100,3 +100,12 @@ shows:
       lights:
         (led):
           color: off
+  flashing_2_colors_show:
+    - time: 0
+      lights:
+        (led):
+          color: (color1)
+    - time: '+1'
+      lights:
+        (led):
+          color: (color2)
