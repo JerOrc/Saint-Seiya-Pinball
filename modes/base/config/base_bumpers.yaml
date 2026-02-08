@@ -1,5 +1,8 @@
 #config_version=6
 
+# Bumpers start with a value of 210 points.
+# Every 30 hits, the value per hit is increased by an additional 500 points (global_pf_multiplier)
+
 
 shots:
   bumper_left_shot:
@@ -24,6 +27,10 @@ slide_player:
       action: remove
 
 variable_player:
+  mode_base_started{not is_extra_ball}:
+    bumpers_score:
+      int: 210
+      action: set
   bumpers_shots_hit:
     score: current_player.bumpers_score * current_player.pf_multiplier
 

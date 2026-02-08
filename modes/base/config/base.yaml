@@ -40,9 +40,6 @@ event_player:
 
 variable_player:
   mode_base_started{not is_extra_ball}:
-    bumpers_score:
-      int: 210
-      action: set
     pf_multiplier:
       int: 1
       action: set
