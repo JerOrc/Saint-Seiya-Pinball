@@ -1,16 +1,26 @@
 #config_version=6
 
+shot_profiles:
+  color_profile_201:
+    states:
+      - name: unlit
+        show: "off"
+      - name: lit
+        show: led_color
+        priority: 201
+        show_tokens:
+          color: (color)
 
 shots:
   red_target_1:
     switch: s_red_target_1
-    profile: color_profile
+    profile: color_profile_201
     show_tokens:
       led: led_red_target_1
       color: ff0000
   red_target_2:
     switch: s_red_target_2
-    profile: color_profile
+    profile: color_profile_201
     show_tokens:
       led: led_red_target_2
       color: ff0000

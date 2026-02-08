@@ -52,5 +52,6 @@ shot_profiles:
         show: "off"
       - name: lit
         show: led_color
+        priority: 5
         show_tokens:
           color: (color)
