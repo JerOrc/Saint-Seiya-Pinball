@@ -97,7 +97,8 @@ random_event_player:
     force_all: true
 
 event_player:
-  slide_log_removed{device.ball_holds.mystery_scoop.balls_held==1}: end_mystery
+#  slide_log_removed{device.ball_holds.mystery_scoop.balls_held == 1}: end_mystery
+  mystery_award_event: end_mystery|1s
   mystery_award_1_event: mystery_award_event
   mystery_award_2_event: mystery_award_event
   mystery_award_3_event: mystery_award_event
@@ -114,7 +115,6 @@ slide_player:
       method: log_text
       tokens:
         text: "Random mistery"
-      expire: 3s
 
 
 multiballs:
