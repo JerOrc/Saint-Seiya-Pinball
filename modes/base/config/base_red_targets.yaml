@@ -1,5 +1,17 @@
 #config_version=6
 
+# Hit the 6 red targets to activate the Mystery light
+# Hit the IFenix to collect the prize.
+# Some of the mystery prizes are:
+#   - 2 Ball Instant Multiball
+#   - Small dots (10 - 100,000)
+#   - Big Points (100,000)
+#   - Instant completion of the incomplete battle.
+#   - Increase playfield score to 5x for 30 seconds
+#   - Increase Bonus X
+#   - Extra Light Ball
+#   - Activate BallSaver for 20 seconds
+
 shot_profiles:
   color_profile_201: # Hook for red targets light priority when yellow and red color are active
     states:
@@ -62,5 +74,50 @@ variable_player:
   red_targets_group_lit_complete:
     score: 100_000 * current_player.pf_multiplier
 
-#TODO:
-# -  mistery à lancer quand les 6 sont activés
+#TODO: mistery
+ball_holds:
+  mystery_scoop:
+    balls_to_hold: 1
+    hold_devices: bd_scoop
+    enable_events: red_targets_group_lit_complete
+    disable_events: end_mystery #, multiball_active
+    release_one_events: end_mystery
+
+random_event_player:
+  ball_hold_mystery_scoop_held_ball:
+    events:
+      mystery_award_1_event: 12 #numbers show probability of event
+      mystery_award_2_event: 12
+      mystery_award_3_event: 13
+      mystery_award_4_event: 13
+      mystery_award_5_event: 12
+      mystery_award_6_event: 12
+      mystery_award_7_event: 13
+      mystery_award_8_event: 13
+    force_all: true
+
+event_player:
+  slide_log_removed{device.ball_holds.mystery_scoop.balls_held==1}: end_mystery
+  mystery_award_1_event: mystery_award_event
+  mystery_award_2_event: mystery_award_event
+  mystery_award_3_event: mystery_award_event
+  mystery_award_4_event: mystery_award_event
+  mystery_award_5_event: mystery_award_event
+  mystery_award_6_event: mystery_award_event
+  mystery_award_7_event: mystery_award_event
+  mystery_award_8_event: mystery_award_event
+
+slide_player:
+  mystery_award_event:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "Random mistery"
+      expire: 3s
+
+
+multiballs:
+  mistery_multiball:
+    ball_count: 2
+    start_events: mystery_award_1_event
