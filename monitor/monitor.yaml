@@ -208,7 +208,7 @@ light:
     shape: TRIANGLE
     x: 0.27206946003242294
     y: 0.4461279461279461
-  led_scoop_mistery:
+  led_scoop_mystery:
     rotation: 70
     shape: RECTANGLE
     size: 0.05

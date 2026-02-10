@@ -73,7 +73,7 @@ lights:
     platform: virtual
     subtype: led
     type: grb
-  led_scoop_mistery:
+  led_scoop_mystery:
     number:
     platform: virtual
     subtype: led
