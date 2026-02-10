@@ -83,7 +83,8 @@ variable_player:
   red_targets_group_lit_complete:
     score: 100_000 * current_player.pf_multiplier
   mystery_award_smalldots_event:
-    score: 10_000 * (machine_vars.audits.switches.s_slingshot_left.value % 10 + 1) #TODO
+    score: machine_vars.audits.missing_switches.s_slingshot_left
+    #score: 10_000 * (machine.vars.audits.switches.s_slingshot_left.value % 10 + 1) #TODO
 
 ball_holds:
   mystery_scoop:
