@@ -83,8 +83,8 @@ variable_player:
   red_targets_group_lit_complete:
     score: 100_000 * current_player.pf_multiplier
   mystery_award_smalldots_event:
-    score: machine_vars.audits.missing_switches.s_slingshot_left
-    #score: 10_000 * (machine.vars.audits.switches.s_slingshot_left.value % 10 + 1) #TODO
+    score:  10_000 * device.timers.random_smalldots.ticks
+
 
 ball_holds:
   mystery_scoop:
@@ -119,21 +119,34 @@ event_player:
   mystery_award_8_event: mystery_award_event
 
 slide_player:
-  mystery_award_event:
-    log:
-      action: method
-      method: log_text
-      tokens:
-        text: "Random mistery"
   mystery_award_multiball_event:
     log:
       action: method
       method: log_text
       tokens:
         text: "2 balls instant Multiball"
+  mystery_award_smalldots_event:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: 'Small dots'
 
 
 multiballs:
   mistery_multiball:
     ball_count: 2
     start_events: mystery_award_multiball_event
+
+timers:
+  random_smalldots:
+    start_running: false
+    tick_interval: 400ms
+    start_value: 1
+    end_value: 9
+    restart_on_complete: true
+    control_events:
+      - event: red_targets_group_lit_complete
+        action: restart
+      - event: mystery_award_event
+        action: stop
