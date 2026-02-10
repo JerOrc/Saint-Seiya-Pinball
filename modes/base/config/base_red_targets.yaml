@@ -82,8 +82,9 @@ variable_player:
     score: 1_000 * current_player.pf_multiplier
   red_targets_group_lit_complete:
     score: 100_000 * current_player.pf_multiplier
+  mystery_award_smalldots_event:
+    score: 10_000 * (machine_vars.audits.switches.s_slingshot_left.value % 10 + 1) #TODO
 
-#TODO: mistery
 ball_holds:
   mystery_scoop:
     balls_to_hold: 1
@@ -96,19 +97,19 @@ random_event_player:
   ball_hold_mystery_scoop_held_ball:
     events:
       mystery_award_multiball_event: 1 #numbers show probability of event
-      mystery_award_2_event: 93
+      mystery_award_smalldots_event: 93
       mystery_award_3_event: 1
       mystery_award_4_event: 1
       mystery_award_5_event: 1
       mystery_award_6_event: 1
       mystery_award_7_event: 1
       mystery_award_8_event: 1
-    force_all: true
+    force_all: false
 
 event_player:
   mystery_award_event: end_mystery|1s  #  slide_mistery_removed: end_mystery
   mystery_award_multiball_event: mystery_award_event
-  mystery_award_2_event: mystery_award_event
+  mystery_award_smalldots_event: mystery_award_event
   mystery_award_3_event: mystery_award_event
   mystery_award_4_event: mystery_award_event
   mystery_award_5_event: mystery_award_event
