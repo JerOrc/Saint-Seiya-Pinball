@@ -74,27 +74,38 @@ shot_groups:
     shots: red_target_1, red_target_2, red_target_3, red_target_4, red_target_5, red_target_6
     disable_events: red_targets_group_lit_complete
     restart_events:
-      - mode_base_started{not is_extra_ball}
       - mystery_award_event
+      - mode_base_started{not is_extra_ball and current_player.mystery_is_lit == 0}
 
 variable_player:
   red_targets_group_hit:
     score: 1_000 * current_player.pf_multiplier
   red_targets_group_lit_complete:
     score: 100_000 * current_player.pf_multiplier
+    mystery_is_lit:
+      int: 1
+      action: set
   mystery_award_smallpoints_event:
     score: 10_000 * device.timers.random_smallpoints.ticks
   mystery_award_bigpoints_event:
     score: 100_000
-
+  mystery_award_event:
+    mystery_is_lit:
+      int: 0
+      action: set
 
 ball_holds:
   mystery_scoop:
     balls_to_hold: 1
     hold_devices: bd_scoop
-    enable_events: red_targets_group_lit_complete
-    disable_events: end_mystery #, multiball_active
+    enable_events:
+      - red_targets_group_lit_complete
+      - mode_base_started{current_player.mystery_is_lit == 1}
+    disable_events: end_mystery
     release_one_events: end_mystery
+    console_log: full
+    file_log: full
+    debug: true
 
 random_event_player:
   ball_hold_mystery_scoop_held_ball:
@@ -139,6 +150,37 @@ slide_player:
       method: log_text
       tokens:
         text: 'Big points'
+  mystery_award_4_event:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: 'Mystery award'
+  mystery_award_5_event:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: 'Mystery award'
+  mystery_award_6_event:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: 'Mystery award'
+  mystery_award_7_event:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: 'Mystery award'
+  mystery_award_8_event:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: 'Mystery award'
+
 
 multiballs:
   mystery_multiball:

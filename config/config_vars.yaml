@@ -32,3 +32,6 @@ player_vars:
     initial_value: 0
   knights_defeated_count: # ball_count
     initial_value: 0
+
+  mystery_is_lit:
+    initial_value: 0
