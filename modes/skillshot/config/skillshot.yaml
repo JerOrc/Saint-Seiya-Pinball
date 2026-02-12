@@ -116,6 +116,7 @@ timed_switches:
 light_player:
   mode_skillshot_started:
     led_scoop_extraball: off
+    led_scoop_mystery: off
     led_red_target_1: off
     led_red_target_2: off
     led_red_target_3: off
