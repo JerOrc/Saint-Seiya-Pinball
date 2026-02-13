@@ -35,3 +35,5 @@ player_vars:
 
   knight_battle_active:
     initial_value: 0
+  mystery_pf_multiplier_save:
+    initial_value: 0

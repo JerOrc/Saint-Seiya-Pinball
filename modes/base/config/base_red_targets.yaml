@@ -86,6 +86,18 @@ variable_player:
     score: 10_000 * device.timers.random_smallpoints.ticks
   mystery_award_bigpoints_event:
     score: 100_000
+  mystery_award_30s_playfield_5x_event.1:
+    mystery_pf_multiplier_save:
+      int: current_player.pf_multiplier
+      action: set
+  mystery_award_30s_playfield_5x_event.2:
+    pf_multiplier:
+      int: 5
+      action: set
+  timer_playfield_5x_complete:
+    pf_multiplier:
+      int: current_player.mystery_pf_multiplier_save
+      action: set
 
 ball_holds:
   mystery_scoop:
@@ -106,8 +118,8 @@ random_event_player:
       mystery_award_multiball_event: 1 #numbers show probability of event
       mystery_award_smallpoints_event: 1
       mystery_award_bigpoints_event: 1
-      mystery_award_end_knight_event: 93
-      mystery_award_5_event: 1
+      mystery_award_end_knight_event: 1
+      mystery_award_30s_playfield_5x_event: 93
       mystery_award_6_event: 1
       mystery_award_7_event: 1
       mystery_award_8_event: 1
@@ -153,12 +165,12 @@ slide_player:
       method: log_text
       tokens:
         text: 'Instant completion of the battle'
-  mystery_award_5_event:
+  mystery_award_30s_playfield_5x_event:
     log:
       action: method
       method: log_text
       tokens:
-        text: 'Mystery award'
+        text: '30s pf multiplier 5x'
   mystery_award_6_event:
     log:
       action: method
@@ -199,3 +211,44 @@ timers:
         action: restart
       - event: mystery_award_event
         action: stop
+  playfield_5x:
+    console_log: none
+    start_running: false
+    tick_interval: 30s
+    end_value: 1
+    restart_on_complete: false
+    control_events:
+      - event: mystery_award_30s_playfield_5x_event
+        action: restart
+
+
+show_player:
+  mystery_award_30s_playfield_5x_event:
+    playfield_5x_show:
+      action: play
+      speed: 5
+  timer_playfield_5x_complete:
+    playfield_5x_show: stop
+
+shows:
+  playfield_5x_show:
+    - time: 0
+      lights:
+        led_pf_multiplier_x2:
+          color: red
+        led_pf_multiplier_x3:
+          color: red
+        led_pf_multiplier_x4:
+          color: red
+        led_pf_multiplier_x5:
+          color: red
+    - time: '+2'
+      lights:
+        led_pf_multiplier_x2:
+          color: off
+        led_pf_multiplier_x3:
+          color: off
+        led_pf_multiplier_x4:
+          color: off
+        led_pf_multiplier_x5:
+          color: off

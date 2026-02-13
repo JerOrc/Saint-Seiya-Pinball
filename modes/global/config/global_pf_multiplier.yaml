@@ -43,15 +43,3 @@ event_player:
     - bumpers_score_increase
   bumpers_score_increase_shot_flashing_hit:
     - bumpers_score_shot_stop
-  mode_global_started{current_player.pf_multiplier >= 2}:
-    - pf_multiplier_light_actualise
-
-light_player:
-  pf_multiplier_light_actualise{current_player.pf_multiplier >= 2}:
-    led_pf_multiplier_x2: blue
-  pf_multiplier_light_actualise{current_player.pf_multiplier >= 3}:
-    led_pf_multiplier_x3: blue
-  pf_multiplier_light_actualise{current_player.pf_multiplier >= 4}:
-    led_pf_multiplier_x4: blue
-  pf_multiplier_light_actualise{current_player.pf_multiplier >= 5}:
-    led_pf_multiplier_x5: blue
