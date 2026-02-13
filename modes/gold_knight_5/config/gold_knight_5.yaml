@@ -7,7 +7,7 @@
 
 mode:
   start_events: start_mode_gold_knight_5
-  stop_events: stop_mode_gold_knight_5, stop_missions
+  stop_events: stop_mode_gold_knight, stop_missions
   events_when_started: mode_type_mission_started, mode_gold_knight_started
   events_when_stopped: mode_type_mission_stopped, mode_gold_knight_stopped
   priority: 400
@@ -26,15 +26,11 @@ counters:
     count_complete_value: 0
     direction: down
     count_events: leo_left_orbit_hit, leo_right_orbit_hit
+    events_when_complete: stop_mode_gold_knight
 
 variable_player:
   logicblock_leo_orbits_hits_counter_hit:
     score: 140_000 * current_player.pf_multiplier
-  logicblock_leo_orbits_hits_counter_complete:
-    knights_defeated_count: 1
-
-event_player:
-  logicblock_leo_orbits_hits_counter_complete: stop_mode_gold_knight_5|500ms
 
 
 show_player:

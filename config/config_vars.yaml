@@ -33,3 +33,5 @@ player_vars:
   knights_defeated_count: # ball_count
     initial_value: 0
 
+  knight_battle_active:
+    initial_value: 0

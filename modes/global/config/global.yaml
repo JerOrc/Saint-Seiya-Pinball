@@ -43,3 +43,17 @@ event_player:
     - stop_mode_field
   mode_type_mission_stopped{not mode["global"].stopping and not mode.ikki_multiball.active and not mode.gold_knight_1.active and not mode.gold_knight_2.active and not mode.gold_knight_3.active and not mode.gold_knight_4.active and not mode.gold_knight_5.active and not mode.gold_knight_6.active and not mode.gold_knight_7.active and not mode.gold_knight_8.active and not mode.gold_knight_9.active and not mode.gold_knight_10.active and not mode.gold_knight_11.active and not mode.gold_knight_12.active}:
     - start_mode_field
+
+variable_player:
+  mode_gold_knight_started:
+    knights_confronted_ball_count: 1
+    knights_confronted_total_count: 1
+    knight_battle_active:
+      int: 1
+      action: set
+  stop_mode_gold_knight:
+    knights_defeated_count: 1
+  mode_gold_knight_stopped:
+    knight_battle_active:
+      int: 0
+      action: set

@@ -104,9 +104,9 @@ random_event_player:
   ball_hold_mystery_scoop_held_ball:
     events:
       mystery_award_multiball_event: 1 #numbers show probability of event
-      mystery_award_smallpoints_event: 93
+      mystery_award_smallpoints_event: 1
       mystery_award_bigpoints_event: 1
-      mystery_award_4_event: 1
+      mystery_award_end_knight_event: 93
       mystery_award_5_event: 1
       mystery_award_6_event: 1
       mystery_award_7_event: 1
@@ -115,6 +115,8 @@ random_event_player:
 
 event_player:
   mystery_award_event: end_mystery|1s  #  slide_mystery_removed: end_mystery
+  mystery_award_end_knight_event{current_player.knight_battle_active == 0}: mystery_award_smallpoints_event
+  mystery_award_end_knight_event{current_player.knight_battle_active == 1}: stop_mode_gold_knight
 
 sequences:
   mystery_award_sequence:
@@ -145,12 +147,12 @@ slide_player:
       method: log_text
       tokens:
         text: 'Big points'
-  mystery_award_4_event:
+  mystery_award_end_knight_event{current_player.knight_battle_active == 1}:
     log:
       action: method
       method: log_text
       tokens:
-        text: 'Mystery award'
+        text: 'Instant completion of the battle'
   mystery_award_5_event:
     log:
       action: method

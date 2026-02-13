@@ -6,7 +6,7 @@
 
 mode:
   start_events: start_mode_gold_knight_8
-  stop_events: stop_mode_gold_knight_8, stop_missions
+  stop_events: stop_mode_gold_knight, stop_missions
   events_when_started: mode_type_mission_started, mode_gold_knight_started
   events_when_stopped: mode_type_mission_stopped, mode_gold_knight_stopped
   priority: 400
@@ -75,9 +75,6 @@ shot_groups:
     shots: scorpio_blue_target_left, scorpio_left_orbit, scorpio_phoenix, scorpio_left_ramp, scorpio_temple, scorpio_newton_ball, scorpio_right_ramp, scorpio_right_orbit, scorpio_blue_target_right
     rotate_right_events: timer_gold_knight_8_timer_complete, scorpio_shots_flashing_hit
 
-event_player:
-  logicblock_beat_gold_knight_8_counter_complete: stop_mode_gold_knight_8|500ms
-
 timers:
   gold_knight_8_timer:
     end_value: 1
@@ -98,12 +95,11 @@ counters:
     count_complete_value: 4
     disable_on_complete: false
     reset_on_complete: false
+    events_when_complete: stop_mode_gold_knight
 
 variable_player:
   scorpio_shots_flashing_hit:
     score: 100_000 * current_player.pf_multiplier
-  logicblock_beat_gold_knight_8_counter_complete:
-    knights_defeated_count: 1
 
 show_player:
   mode_gold_knight_8_started:

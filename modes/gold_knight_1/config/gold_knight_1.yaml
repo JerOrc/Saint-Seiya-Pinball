@@ -7,7 +7,7 @@
 
 mode:
   start_events: start_mode_gold_knight_1
-  stop_events: stop_mode_gold_knight_1, stop_missions
+  stop_events: stop_mode_gold_knight, stop_missions
   events_when_started: mode_type_mission_started, mode_gold_knight_started
   events_when_stopped: mode_type_mission_stopped, mode_gold_knight_stopped
   priority: 400
@@ -71,7 +71,6 @@ random_event_player:
 
 event_player:
   logicblock_aries_shots_hits_counter_complete: lit_aries_temple
-  logicblock_beat_gold_knight_1_complete: stop_mode_gold_knight_1|500ms
 
 timers:
   aries_timer:
@@ -99,6 +98,7 @@ sequences:
     events:
       - logicblock_aries_shots_hits_counter_complete
       - enter_aries_temple_hit
+    events_when_complete: stop_mode_gold_knight
 
 variable_player:
   aries_shots_flashing_hit{device.counters.aries_shots_hits_counter.value < 4}:
@@ -107,8 +107,6 @@ variable_player:
     score: (150_000 + 30_000 * (device.counters.aries_shots_hits_counter.value - 3)) * current_player.pf_multiplier
   aries_shots_flashing_hit{device.counters.aries_shots_hits_counter.value > 7}:
     score: 300_000 * current_player.pf_multiplier
-  logicblock_beat_gold_knight_1_complete:
-    knights_defeated_count: 1
 
 show_player:
   mode_gold_knight_1_started:
