@@ -108,12 +108,18 @@ slide_player:
       method: log_text
       tokens:
         text: "GK extraball is lit"
-  extra_ball_awarded:
+  extra_ball_gold_knight_extraball_awarded:
     log:
       action: method
       method: log_text
       tokens:
         text: "EXTRABALL !"
+  extra_ball_zodiac_ramps_extraball_awarded:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "ZODIAC EXTRABALL !"
   logicblock_leos_hits_counter_hit:
     log:
       action: method

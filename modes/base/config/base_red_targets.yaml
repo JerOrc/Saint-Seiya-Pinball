@@ -123,8 +123,8 @@ random_event_player:
       mystery_award_bigpoints_event: 1
       mystery_award_end_knight_event_lit: 1
       mystery_award_30s_playfield_5x_event_lit: 1
-      mystery_award_bonus_increment_event: 93
-      mystery_award_7_event: 1
+      mystery_award_bonus_increment_event: 1
+      mystery_award_extraball_event_lit: 93
       mystery_award_8_event: 1
     force_all: false
 
@@ -134,6 +134,8 @@ event_player:
   mystery_award_end_knight_event_lit{current_player.knight_battle_active == 1}: mystery_award_end_knight_event, stop_mode_gold_knight
   mystery_award_30s_playfield_5x_event_lit{current_player.pf_multiplier == 5}: mystery_award_bigpoints_event
   mystery_award_30s_playfield_5x_event_lit{current_player.pf_multiplier < 5}: mystery_award_30s_playfield_5x_event
+  extra_ball_mystery_extraball_award_disabled: mystery_award_multiball_event
+  extra_ball_mystery_extraball_awarded: mystery_award_extraball_event
 
 sequences:
   mystery_award_sequence:
@@ -182,12 +184,12 @@ slide_player:
       method: log_text
       tokens:
         text: 'Bonus multiplier increased'
-  mystery_award_7_event:
+  mystery_award_extraball_event:
     log:
       action: method
       method: log_text
       tokens:
-        text: 'Mystery award'
+        text: 'Mystery extraball !'
   mystery_award_8_event:
     log:
       action: method
