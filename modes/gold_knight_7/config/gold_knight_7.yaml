@@ -11,7 +11,7 @@
 
 mode:
   start_events: start_mode_gold_knight_7
-  stop_events: stop_mode_gold_knight_7, stop_missions
+  stop_events: stop_mode_gold_knight, stop_missions
   events_when_started: mode_type_mission_started, mode_gold_knight_started
   events_when_stopped: mode_type_mission_stopped, mode_gold_knight_stopped
   priority: 400
@@ -98,14 +98,6 @@ counters:
     disable_on_complete: true
     reset_on_complete: true
 
-event_player:
-  libra_blue_targets_flashing_hit: lit_libra_temple
-  libra_enter_temple_flashing_hit: lit_libra_left_ramp
-  libra_left_ramp_flashing_hit: lit_libra_bumpers
-  logicblock_libra_bumpers_hits_counter_complete: lit_libra_right_ramp
-  libra_right_ramp_flashing_hit: lit_libra_orbits
-  logicblock_beat_gold_knight_7_complete: stop_mode_gold_knight_7|500ms
-
 sequences:
   beat_gold_knight_7:
     events:
@@ -115,7 +107,14 @@ sequences:
       - logicblock_libra_bumpers_hits_counter_complete
       - libra_right_ramp_flashing_hit
       - libra_orbits_flashing_hit
+    events_when_complete: stop_mode_gold_knight
 
+event_player:
+  libra_blue_targets_flashing_hit: lit_libra_temple
+  libra_enter_temple_flashing_hit: lit_libra_left_ramp
+  libra_left_ramp_flashing_hit: lit_libra_bumpers
+  logicblock_libra_bumpers_hits_counter_complete: lit_libra_right_ramp
+  libra_right_ramp_flashing_hit: lit_libra_orbits
 
 variable_player:
   libra_blue_targets_flashing_hit:
@@ -130,8 +129,7 @@ variable_player:
     score: 200_000 * current_player.pf_multiplier
   libra_orbits_flashing_hit:
     score: 200_000 * current_player.pf_multiplier
-  logicblock_beat_gold_knight_7_complete:
-    knights_defeated_count: 1
+
 
 show_player:
   mode_gold_knight_7_started:

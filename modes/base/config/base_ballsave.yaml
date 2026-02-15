@@ -10,6 +10,15 @@ ball_saves:
     auto_launch: yes
     balls_to_save: 1  # for unlimited saves set -1
     early_ball_save_events: s_outlane_left_active, s_outlane_right_active
+  mystery_ballsave:
+    active_time: 20s
+    hurry_up_time: 2s
+    grace_period: 2s
+    enable_events: mystery_award_ballsave_event
+    auto_launch: yes
+    balls_to_save: -1  # for unlimited saves set -1
+    early_ball_save_events: s_outlane_left_active, s_outlane_right_active
+
 
 show_player:
   ball_save_default_timer_start:
@@ -23,9 +32,29 @@ show_player:
   ball_save_default_disabled:
     ball_save_show:
       action: stop
+  ball_save_mystery_ballsave_timer_start:
+    mystery_ball_save_show:
+      action: play
+      speed: 5
+  ball_save_mystery_ballsave_hurry_up:
+    mystery_ball_save_show:
+      action: play
+      speed: 10
+  ball_save_mystery_ballsave_disabled:
+    mystery_ball_save_show:
+      action: stop
 
 shows:
   ball_save_show:
+    - time: 0
+      lights:
+        led_ballsave:
+          color: black
+    - time: '+2'
+      lights:
+        led_ballsave:
+          color: orange
+  mystery_ball_save_show:
     - time: 0
       lights:
         led_ballsave:

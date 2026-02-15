@@ -27,6 +27,7 @@ event_player:
     - start_mode_skillshot
     - start_base_bumpers
     - start_base_log
+    - pf_multiplier_light_actualise
   mode_base_will_stop:
     - stop_mode_global
     - stop_mode_skillshot
@@ -106,3 +107,14 @@ shows:
       lights:
         (led):
           color: (color2)
+
+
+light_player:
+  pf_multiplier_light_actualise{current_player.pf_multiplier >= 2}:
+    led_pf_multiplier_x2: blue
+  pf_multiplier_light_actualise{current_player.pf_multiplier >= 3}:
+    led_pf_multiplier_x3: blue
+  pf_multiplier_light_actualise{current_player.pf_multiplier >= 4}:
+    led_pf_multiplier_x4: blue
+  pf_multiplier_light_actualise{current_player.pf_multiplier >= 5}:
+    led_pf_multiplier_x5: blue

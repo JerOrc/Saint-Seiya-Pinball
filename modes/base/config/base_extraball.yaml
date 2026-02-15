@@ -28,6 +28,9 @@ extra_balls:
     award_events: gold_knights_extraballs_shot_flashing_hit
   zodiac_ramps_extraball:
     award_events: zodiac_extraball_shot_flashing_hit
+  mystery_extraball:
+    max_per_game: 1
+    award_events: mystery_award_extraball_event_lit
 
 
 light_player:

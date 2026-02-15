@@ -195,19 +195,25 @@ light:
     y: 0.49326599326599324
   led_scoop:
     size: 0.04
-    x: 0.2984409799554566
-    y: 0.4853329493649426
+    x: 0.30734966592427615
+    y: 0.5028902136830542
   led_scoop_extraball:
     rotation: 70
     shape: RECTANGLE
     size: 0.05
-    x: 0.28507795100222716
-    y: 0.4640134141215213
+    x: 0.2828507795100223
+    y: 0.4652675044299579
   led_scoop_jackpot:
     rotation: 340
     shape: TRIANGLE
     x: 0.27206946003242294
     y: 0.4461279461279461
+  led_scoop_mystery:
+    rotation: 70
+    shape: RECTANGLE
+    size: 0.05
+    x: 0.29175946547884185
+    y: 0.48157067843963297
   led_temple:
     x: 0.46341501434094023
     y: 0.4225589225589225

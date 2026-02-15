@@ -151,10 +151,5 @@ achievement_groups:
     disable_events: mode_field_will_stop
     debug: true
 
-variable_player:
-  mode_gold_knight_started:
-    knights_confronted_ball_count: 1
-    knights_confronted_total_count: 1
-
 event_player:
   mode_field_started: initialize_knights
