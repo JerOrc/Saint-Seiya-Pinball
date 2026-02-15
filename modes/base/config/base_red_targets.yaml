@@ -98,6 +98,9 @@ variable_player:
     pf_multiplier:
       int: current_player.mystery_pf_multiplier_save
       action: set
+  mystery_award_bonus_increment_event:
+    bonus_multiplier: 1
+
 
 ball_holds:
   mystery_scoop:
@@ -119,8 +122,8 @@ random_event_player:
       mystery_award_smallpoints_event: 1
       mystery_award_bigpoints_event: 1
       mystery_award_end_knight_event_lit: 1
-      mystery_award_30s_playfield_5x_event_lit: 93
-      mystery_award_6_event: 1
+      mystery_award_30s_playfield_5x_event_lit: 1
+      mystery_award_bonus_increment_event: 93
       mystery_award_7_event: 1
       mystery_award_8_event: 1
     force_all: false
@@ -173,12 +176,12 @@ slide_player:
       method: log_text
       tokens:
         text: '30s pf multiplier 5x'
-  mystery_award_6_event:
+  mystery_award_bonus_increment_event:
     log:
       action: method
       method: log_text
       tokens:
-        text: 'Mystery award'
+        text: 'Bonus multiplier increased'
   mystery_award_7_event:
     log:
       action: method
