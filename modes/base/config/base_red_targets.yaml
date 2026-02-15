@@ -118,14 +118,14 @@ ball_holds:
 random_event_player:
   ball_hold_mystery_scoop_held_ball:
     events:
-      mystery_award_multiball_event: 1 #numbers show probability of event
-      mystery_award_smallpoints_event: 1
-      mystery_award_bigpoints_event: 1
-      mystery_award_end_knight_event_lit: 1
-      mystery_award_30s_playfield_5x_event_lit: 1
-      mystery_award_bonus_increment_event: 1
-      mystery_award_extraball_event_lit: 1
-      mystery_award_ballsave_event: 93
+      mystery_award_multiball_event: 10 #numbers show probability of event
+      mystery_award_smallpoints_event: 20
+      mystery_award_bigpoints_event: 20
+      mystery_award_end_knight_event_lit: 10
+      mystery_award_30s_playfield_5x_event_lit: 10
+      mystery_award_bonus_increment_event: 10
+      mystery_award_extraball_event_lit: 10
+      mystery_award_ballsave_event: 10
     force_all: false
 
 event_player:
