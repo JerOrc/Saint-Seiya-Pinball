@@ -124,8 +124,8 @@ random_event_player:
       mystery_award_end_knight_event_lit: 1
       mystery_award_30s_playfield_5x_event_lit: 1
       mystery_award_bonus_increment_event: 1
-      mystery_award_extraball_event_lit: 93
-      mystery_award_8_event: 1
+      mystery_award_extraball_event_lit: 1
+      mystery_award_ballsave_event: 93
     force_all: false
 
 event_player:
@@ -190,12 +190,12 @@ slide_player:
       method: log_text
       tokens:
         text: 'Mystery extraball !'
-  mystery_award_8_event:
+  mystery_award_ballsave_event:
     log:
       action: method
       method: log_text
       tokens:
-        text: 'Mystery award'
+        text: 'Ball save 20s'
 
 
 multiballs:
