@@ -44,31 +44,27 @@ diverters:
   left_orbit_gate:
     activation_coil: c_orbit_left_gate
     type: hold
-    activation_time: 2s
+    activation_time: 4s
     activate_events:
-    - s_orbit_right_active{mode.gold_knight_5.active}
-    # activate on ball launch
+    # activate on skillshot ball launch
     - s_plunger_lane_inactive{mode.skillshot.active and device.shots.super_skill_target.state == 1}
+    # activate when a new ball is launched, for multiballs, for ball locks, ...
     - s_plunger_lane_inactive{not mode.skillshot.active}
-    deactivate_events:
-    # hitting ANYTHING following initial ball launch will deactivate (only open for plunge)
-    - playfield_active{not mode.gold_knight_5.active}
-    targets_when_active: playfield
+    # activate on orbit shot during gold knight 5
+    - sw_orbits_active{mode.gold_knight_5.active}
     enable_events:
-    - mode_gold_knight_5_started
-    - balldevice_bd_trough_ejecting_ball
-    disable_events:
-    - mode_gold_knight_5_stopped
-    # disables itself when it deactivates itself for initial plunge
-    - diverter_left_orbit_gate_deactivating{not mode.gold_knight_5.active}
+     - mode_base_started
+
   right_orbit_gate:
     activation_coil: c_orbit_right_gate
     type: hold
-    activation_time: 2s
+    activation_time: 4s
     activate_events:
-    - s_orbit_left_active{mode.gold_knight_5.active}
-    targets_when_active: playfield
+    # activate on skillshot ball launch
+    - s_plunger_lane_inactive{mode.skillshot.active and device.shots.super_skill_target.state == 1}
+    # activate when a new ball is launched, for multiballs, for ball locks, ...
+    - s_plunger_lane_inactive{not mode.skillshot.active}
+    # activate on orbit shot during gold knight 5
+    - sw_orbits_active{mode.gold_knight_5.active}
     enable_events:
-    - mode_gold_knight_5_started
-    disable_events:
-    - mode_gold_knight_5_stopped
+     - mode_base_started
