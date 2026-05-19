@@ -78,6 +78,10 @@ timed_switches:
     time: 3s
     events_when_active: auto_launch_plunger
     events_when_released: auto_launch_plunger_release
+  game_cancel:
+    switch_tags: start
+    time: 5s
+    events_when_active: end_game
 
 shows:
   flashing_show:
