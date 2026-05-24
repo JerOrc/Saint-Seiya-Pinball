@@ -5,7 +5,7 @@ coils:
   c_flipper_right_power:
     number: 0-0-1
     default_pulse_ms: 50
-    default_pulse_power: 0.98
+    default_pulse_power: 0.95
     default_recycle: true
     platform_settings:
       recycle_factor: 2
@@ -15,7 +15,7 @@ coils:
   c_flipper_left_power:
     number: 0-0-14
     default_pulse_ms: 50
-    default_pulse_power: 0.98
+    default_pulse_power: 0.95
     default_recycle: true
     platform_settings:
       recycle_factor: 2
@@ -59,8 +59,8 @@ coils:
     number:
     platform: virtual
   c_scoop:
-    number:
-    platform: virtual
+    number: 0-0-11
+    default_pulse_ms: 50
   c_kickout:
     number:
     platform: virtual
