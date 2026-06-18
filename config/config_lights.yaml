@@ -58,6 +58,11 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+  led_kickout_start_mission:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
   led_kickout_jackpot:
     number:
     platform: virtual
@@ -309,6 +314,51 @@ lights:
     subtype: led
     type: grb
   led_bumper_bottom:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_cosmo_c:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_cosmo_o1:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_cosmo_s:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_cosmo_m:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_cosmo_o2:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_ikki_i1:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_ikki_k1:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_ikki_k2:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_ikki_i2:
     number:
     platform: virtual
     subtype: led
