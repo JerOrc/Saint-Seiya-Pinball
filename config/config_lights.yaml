@@ -48,6 +48,7 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+
   led_kickout:
     number:
     platform: virtual
@@ -68,6 +69,12 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+  led_kickout_cosmo:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+
   led_scoop:
     number:
     platform: virtual
@@ -88,17 +95,23 @@ lights:
     platform: virtual
     subtype: led
     type: grb
-  led_ballsave:
+  led_scoop_cosmo:
     number:
     platform: virtual
     subtype: led
     type: grb
+
   led_orbit_left:
     number:
     platform: virtual
     subtype: led
     type: grb
   led_orbit_left_jackpot:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_orbit_left_cosmo:
     number:
     platform: virtual
     subtype: led
@@ -113,12 +126,23 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+  led_orbit_right_cosmo:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+
   led_ramp_left:
     number:
     platform: virtual
     subtype: led
     type: grb
   led_ramp_left_jackpot:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_ramp_left_cosmo:
     number:
     platform: virtual
     subtype: led
@@ -133,6 +157,12 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+  led_ramp_right_cosmo:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+
   led_temple:
     number:
     platform: virtual
@@ -153,6 +183,12 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+  led_temple_cosmo:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+
 
   # pf_multiplier
   led_pf_multiplier_x2:
@@ -244,7 +280,7 @@ lights:
     platform: virtual
     subtype: led
     type: grb
-  led_pegaze:
+  led_pegasus:
     number:
     platform: virtual
     subtype: led
@@ -259,7 +295,6 @@ lights:
     platform: virtual
     subtype: led
     type: grb
-
 
   led_red_target_1:
     number:
@@ -318,31 +353,7 @@ lights:
     platform: virtual
     subtype: led
     type: grb
-  led_cosmo_c:
-    number:
-    platform: virtual
-    subtype: led
-    type: grb
-  led_cosmo_o1:
-    number:
-    platform: virtual
-    subtype: led
-    type: grb
-  led_cosmo_s:
-    number:
-    platform: virtual
-    subtype: led
-    type: grb
-  led_cosmo_m:
-    number:
-    platform: virtual
-    subtype: led
-    type: grb
-  led_cosmo_o2:
-    number:
-    platform: virtual
-    subtype: led
-    type: grb
+
   led_ikki_i1:
     number:
     platform: virtual
@@ -359,6 +370,43 @@ lights:
     subtype: led
     type: grb
   led_ikki_i2:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+
+  led_mission_b1:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_mission_b2:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_mission_b3:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_mission_s1:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_mission_s2:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_mission_g:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+
+  led_ballsave:
     number:
     platform: virtual
     subtype: led
