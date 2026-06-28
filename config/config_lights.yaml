@@ -38,7 +38,7 @@ lights:
     platform: virtual
     subtype: led
     type: grb
-  led_newton_ball_super_jackpot:
+  led_newton_ball_jackpot:
     number:
     platform: virtual
     subtype: led
@@ -332,7 +332,17 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+  led_blue_target_left_jackpot:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
   led_blue_target_right:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_blue_target_right_jackpot:
     number:
     platform: virtual
     subtype: led
@@ -407,6 +417,32 @@ lights:
     type: grb
 
   led_ballsave:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+
+  led_cosmo_c:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_cosmo_o1:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_cosmo_s:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_cosmo_m:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_cosmo_o2:
     number:
     platform: virtual
     subtype: led

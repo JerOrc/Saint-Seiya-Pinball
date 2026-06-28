@@ -36,7 +36,7 @@ shots:
     restart_events: ikki_ramps_unlit_complete
     disable_events: mode_ikki_multiball_started, ikki_newton_ball_flashing_hit
     show_tokens:
-      led: led_newton_ball_super_jackpot
+      led: led_newton_ball_jackpot
       color: ff0000
 
 shot_groups:

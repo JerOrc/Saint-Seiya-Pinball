@@ -14,14 +14,25 @@ light:
     x: 0.31817732599181137
     y: 0.6200762388818297
   led_ballsave:
-    x: 0.46341501434094023
-    y: 0.9124579124579124
+    x: 0.4625982399171726
+    y: 0.9148665819567979
   led_blue_target_left:
     x: 0.17826956562661772
     y: 0.5641677255400254
+  led_blue_target_left_jackpot:
+    rotation: 330
+    shape: TRIANGLE
+    size: 0.04
+    x: 0.20986164054779047
+    y: 0.5895806861499364
   led_blue_target_right:
     x: 0.7694926820085651
     y: 0.6048284625158831
+  led_blue_target_right_jackpot:
+    rotation: 50
+    shape: TRIANGLE
+    x: 0.7243611464068898
+    y: 0.625158831003812
   led_bumper_bottom:
     x: 0.683742764365382
     y: 0.3176620076238882
@@ -31,6 +42,36 @@ light:
   led_bumper_right:
     x: 0.7694926820085651
     y: 0.26937738246505716
+  led_cosmo_c:
+    rotation: 50
+    shape: SQUARE
+    size: 0.03
+    x: 0.30915101887147634
+    y: 0.8233799237611181
+  led_cosmo_m:
+    rotation: 40
+    shape: SQUARE
+    size: 0.03
+    x: 0.5438350040001882
+    y: 0.8373570520965692
+  led_cosmo_o1:
+    rotation: 50
+    shape: SQUARE
+    size: 0.03
+    x: 0.3813614758341569
+    y: 0.8373570520965692
+  led_cosmo_o2:
+    rotation: 30
+    shape: SQUARE
+    size: 0.03
+    x: 0.6183020377429527
+    y: 0.8233799237611181
+  led_cosmo_s:
+    rotation: 320
+    shape: SQUARE
+    size: 0.03
+    x: 0.4625982399171726
+    y: 0.8449809402795426
   led_cygnus:
     rotation: 30
     shape: SQUARE
@@ -159,18 +200,18 @@ light:
     size: 0.04
     x: 0.5438350040001882
     y: 0.5069885641677255
+  led_newton_ball_jackpot:
+    rotation: 20
+    shape: TRIANGLE
+    size: 0.04
+    x: 0.5257823897595182
+    y: 0.5374841168996188
   led_newton_ball_pf_multiplier:
     rotation: 110
     shape: RECTANGLE
     size: 0.05
     x: 0.5573744646806909
     y: 0.48538754764930114
-  led_newton_ball_super_jackpot:
-    rotation: 20
-    shape: TRIANGLE
-    size: 0.04
-    x: 0.5257823897595182
-    y: 0.5374841168996188
   led_orbit_left:
     x: 0.1853660057363761
     y: 0.4898989898989899
