@@ -447,3 +447,34 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+
+  led_zodiac_z:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_zodiac_o:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_zodiac_d:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_zodiac_i:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_zodiac_a:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb
+  led_zodiac_c:
+    number:
+    platform: virtual
+    subtype: led
+    type: grb

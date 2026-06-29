@@ -309,12 +309,6 @@ light:
     size: 0.02
     x: 0.25499317614946587
     y: 0.42185514612452346
-  led_scoop_phoenix_return:
-    rotation: 70
-    shape: RECTANGLE
-    size: 0.04
-    x: 0.29109840463080616
-    y: 0.47903430749682335
   led_scoop_jackpot:
     rotation: 340
     shape: TRIANGLE
@@ -326,6 +320,12 @@ light:
     size: 0.04
     x: 0.273045790390136
     y: 0.45108005082592123
+  led_scoop_phoenix_return:
+    rotation: 70
+    shape: RECTANGLE
+    size: 0.04
+    x: 0.29109840463080616
+    y: 0.47903430749682335
   led_temple:
     size: 0.04
     x: 0.4625982399171726
@@ -346,6 +346,30 @@ light:
     size: 0.03
     x: 0.4625982399171726
     y: 0.39390088945362134
+  led_zodiac_a:
+    shape: SQUARE
+    x: 0.7830321426890677
+    y: 0.04701397712833545
+  led_zodiac_c:
+    shape: SQUARE
+    x: 0.8417031389712457
+    y: 0.04701397712833545
+  led_zodiac_d:
+    shape: SQUARE
+    x: 0.6611769965645442
+    y: 0.04701397712833545
+  led_zodiac_i:
+    shape: SQUARE
+    x: 0.7243611464068898
+    y: 0.04701397712833545
+  led_zodiac_o:
+    shape: SQUARE
+    x: 0.6025060002823662
+    y: 0.04701397712833545
+  led_zodiac_z:
+    shape: SQUARE
+    x: 0.5438350040001882
+    y: 0.04701397712833545
 switch:
   s_blue_target_left:
     rotation: 60
