@@ -80,7 +80,7 @@ lights:
     platform: virtual
     subtype: led
     type: grb
-  led_scoop_extraball:
+  led_scoop_phoenix_return:
     number:
     platform: virtual
     subtype: led

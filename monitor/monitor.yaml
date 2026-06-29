@@ -309,7 +309,7 @@ light:
     size: 0.02
     x: 0.25499317614946587
     y: 0.42185514612452346
-  led_scoop_extraball:
+  led_scoop_phoenix_return:
     rotation: 70
     shape: RECTANGLE
     size: 0.04

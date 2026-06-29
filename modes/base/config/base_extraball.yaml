@@ -9,7 +9,7 @@ shots:
     disable_events: gold_knights_extraballs_shot_flashing_hit
     restart_events: gold_knights_extraballs_shot_flashing_hit
     show_tokens:
-      led: led_scoop_extraball
+      led: led_kickout_extraball
       color: FF0000
   zodiac_extraball_shot:
     switch: s_kickout
