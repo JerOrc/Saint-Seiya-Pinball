@@ -10,6 +10,10 @@ hardware:
 opp:
 #Use the USB ports defined by your OS for the two STM32 boards
   ports: /dev/ttyACM0, /dev/ttyACM1, /dev/ttyACM2
+  chains:
+    0: /dev/ttyACM0
+    1: /dev/ttyACM1
+    2: /dev/ttyACM2
 
 psus:
   default:
