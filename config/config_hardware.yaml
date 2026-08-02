@@ -9,7 +9,7 @@ hardware:
 
 opp:
 #Use the USB ports defined by your OS for the two STM32 boards
-  ports: /dev/ttyACM0, /dev/ttyACM1
+  ports: /dev/ttyACM0, /dev/ttyACM1, /dev/ttyACM2
 
 psus:
   default:
@@ -23,6 +23,18 @@ rgb_dmds:
 zedmd:
   width: 128
   height: 32
+
+servos:
+  servo:
+    positions:
+      0.1: servo_left
+      0.9: servo_right
+    reset_position: 0.0
+    reset_events: servo_reset
+    number: 2-0-9
+    speed_limit: 0.5
+    debug: true
+    console_log: full
 
 
 flippers:
