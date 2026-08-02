@@ -10,9 +10,8 @@ switches:
     number: 0-0-2
     tags: right_flipper
   s_start:
-    number:
+    number: 2-0-31
     tags: start
-    platform: virtual
 
   # Trough Switches
   s_plunger_lane:
