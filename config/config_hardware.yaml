@@ -29,16 +29,24 @@ zedmd:
   height: 32
 
 servos:
-  servo:
+  servo_MG996R:
+    servo_min: 0.14
+    servo_max: 0.92
     positions:
-      0.1: servo_left
-      0.9: servo_right
-    reset_position: 0.0
-    reset_events: servo_reset
-    number: 2-0-9
+      0.0: servo_min
+      0.5: servo_middle
+      1.0: servo_max
+    number: 2-0-8
     speed_limit: 0.5
-    debug: true
-    console_log: full
+  servo_MG90S:
+    servo_min: 0.14
+    servo_max: 0.95
+    positions:
+      0.0: servo_left
+      0.5: servo_reset
+      1.0: servo_right
+    number: 2-0-9
+
 
 
 flippers:
