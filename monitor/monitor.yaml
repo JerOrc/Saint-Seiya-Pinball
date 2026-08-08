@@ -150,8 +150,8 @@ light:
     y: 0.6238881829733164
   led_kickout_cosmo:
     size: 0.02
-    x: 0.07672361052284812
-    y: 0.5489199491740787
+    x: 0.214374794107958
+    y: 0.6645489199491741
   led_kickout_extraball:
     rotation: 60
     shape: CIRCLE
@@ -217,8 +217,8 @@ light:
     y: 0.4898989898989899
   led_orbit_left_cosmo:
     size: 0.02
-    x: 0.17149983528636642
-    y: 0.46886912325285895
+    x: 0.2211445244482093
+    y: 0.5374841168996188
   led_orbit_left_jackpot:
     rotation: 340
     shape: TRIANGLE
@@ -230,8 +230,8 @@ light:
     y: 0.5304802004686582
   led_orbit_right_cosmo:
     size: 0.02
-    x: 0.8078544872699892
-    y: 0.5069885641677255
+    x: 0.7333874535272248
+    y: 0.576874205844981
   led_orbit_right_jackpot:
     rotation: 30
     shape: TRIANGLE
@@ -255,8 +255,8 @@ light:
     y: 0.36086404066073696
   led_ramp_left_cosmo:
     size: 0.02
-    x: 0.3294602098922302
-    y: 0.337992376111817
+    x: 0.3768483222739894
+    y: 0.41168996188055906
   led_ramp_left_jackpot:
     rotation: 340
     shape: TRIANGLE
@@ -269,8 +269,8 @@ light:
     y: 0.508259212198221
   led_ramp_right_cosmo:
     size: 0.02
-    x: 0.6792296108052144
-    y: 0.48284625158831
+    x: 0.6250717680832039
+    y: 0.5578144853875476
   led_ramp_right_jackpot:
     rotation: 20
     shape: TRIANGLE
@@ -307,8 +307,8 @@ light:
     y: 0.5006353240152478
   led_scoop_cosmo:
     size: 0.02
-    x: 0.25499317614946587
-    y: 0.42185514612452346
+    x: 0.34299967057273284
+    y: 0.554002541296061
   led_scoop_jackpot:
     rotation: 340
     shape: TRIANGLE
@@ -333,7 +333,7 @@ light:
   led_temple_cosmo:
     size: 0.02
     x: 0.4625982399171726
-    y: 0.337992376111817
+    y: 0.49809402795425667
   led_temple_jackpot:
     shape: TRIANGLE
     x: 0.4625982399171726
@@ -368,8 +368,8 @@ light:
     y: 0.5336721728081322
   led_zodiac_z:
     shape: SQUARE
-    x: 0.9387359405148478
-    y: 0.5044472681067345
+    x: 0.9229399030542614
+    y: 0.5031766200762389
 switch:
   s_blue_target_left:
     rotation: 60
@@ -538,8 +538,8 @@ switch:
     rotation: 90
     shape: RECTANGLE
     size: 0.07
-    x: 0.17149983528636642
-    y: 0.9606099110546379
+    x: 0.23468398512871194
+    y: 0.9377382465057179
   s_temple_in:
     x: 0.4603416631370888
     y: 0.21855146124523506
