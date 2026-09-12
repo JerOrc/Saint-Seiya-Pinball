@@ -90,16 +90,25 @@ switches:
     tags: playfield_active
     platform: virtual
   s_temple_in:
-    number:
-    platform: virtual
+    number: 1-0-41
+    type: NC
+  s_temple_secret:
+    number: 1-0-33
+    type: NC
 
   # Scoop Switches
   s_scoop:
     number:
     platform: virtual
-  s_lock:
-    number:
-    platform: virtual
+  s_lock_1:
+    number: 1-0-65
+    type: NC
+  s_lock_2:
+    number: 1-0-57
+    type: NC
+  s_lock_3:
+    number: 1-0-49
+    type: NC
 
   # Lane Switches
   s_inlane_left:
