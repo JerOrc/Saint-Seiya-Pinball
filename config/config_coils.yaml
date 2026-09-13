@@ -58,7 +58,7 @@ coils:
   c_lock:
     number: 0-0-10
     default_pulse_ms: 250
-    default_pulse_power: 0.25
+    default_pulse_power: 0.35
   c_scoop:
     number: 0-0-11
     default_pulse_ms: 50
