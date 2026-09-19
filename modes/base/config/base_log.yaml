@@ -24,6 +24,12 @@ slide_player:
       method: log_text
       tokens:
         text: "Super skill success"
+  super_secret_skill_success:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "Super secret skill success"
 #  auto_launch_plunger:
 #    log:
 #      action: method
