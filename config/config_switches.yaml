@@ -32,9 +32,6 @@ switches:
   s_trough_5:
     number: 1-0-64
     type: NC
-  s_trough_jam:
-    number:
-    platform: virtual
 
   # Playfield Switches (autofires coils doesn't have a playfield_active tag)
   s_bumper_left:
