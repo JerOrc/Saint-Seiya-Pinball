@@ -22,7 +22,7 @@ ball_devices:
     eject_timeouts: 2s
 
   bd_lock:
-    ball_switches: s_lock, s_temple_in
+    ball_switches: s_lock_1, s_lock_2, s_lock_3
     eject_coil: c_lock
     eject_timeouts: 2s
     eject_targets: bd_scoop
