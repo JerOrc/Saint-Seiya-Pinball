@@ -1,155 +1,155 @@
 #config_version=6
 
-# When you start a game, a random knight is selected and its light starts blinking.
+# When you start a game, a random saint is selected and its light starts blinking.
 # Hit the center temple to start the battle. The door can be opened by hitting it once or by hitting the 2
 # cygnus lock targets, located one on each side of the table.
 # When not in a battle, hitting the captive ball will change the selected battle.
 # You can't select again a finished battle until all battles are finished or a new game is started.
 
 shots:
-  select_knight:
+  select_saint:
     switch: s_newton_ball_target
-  enter_knight_temple:
+  enter_saint_temple:
     switch: s_temple_in
 
 achievements:
-  knight_1:
+  saint_1:
     show_tokens:
-      lights: led_gold_knight_1
+      lights: led_gold_saint_1
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: start_mode_gold_knight_1  # instant points award & plays shows
-    enable_events: initialize_knights, reset_knights
-    complete_events: mode_gold_knight_1_started
-    reset_events: reset_knights
-  knight_2:
+    events_when_started: start_mode_gold_saint_1  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_1_started
+    reset_events: reset_saints
+  saint_2:
     show_tokens:
-      lights: led_gold_knight_2
+      lights: led_gold_saint_2
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: start_mode_gold_knight_2  # instant points award & plays shows
-    enable_events: initialize_knights, reset_knights
-    complete_events: mode_gold_knight_2_started
-    reset_events: reset_knights
-  knight_3:
+    events_when_started: start_mode_gold_saint_2  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_2_started
+    reset_events: reset_saints
+  saint_3:
     show_tokens:
-      lights: led_gold_knight_3
+      lights: led_gold_saint_3
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: start_mode_gold_knight_3  # instant points award & plays shows
-    enable_events: initialize_knights, reset_knights
-    complete_events: mode_gold_knight_3_started
-    reset_events: reset_knights
-  knight_4:
+    events_when_started: start_mode_gold_saint_3  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_3_started
+    reset_events: reset_saints
+  saint_4:
     show_tokens:
-      lights: led_gold_knight_4
+      lights: led_gold_saint_4
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: start_mode_gold_knight_4  # instant points award & plays shows
-    enable_events: initialize_knights, reset_knights
-    complete_events: mode_gold_knight_4_started
-    reset_events: reset_knights
-  knight_5:
+    events_when_started: start_mode_gold_saint_4  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_4_started
+    reset_events: reset_saints
+  saint_5:
     show_tokens:
-      lights: led_gold_knight_5
+      lights: led_gold_saint_5
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: start_mode_gold_knight_5  # instant points award & plays shows
-    enable_events: initialize_knights, reset_knights
-    complete_events: mode_gold_knight_5_started
-    reset_events: reset_knights
-  knight_6:
+    events_when_started: start_mode_gold_saint_5  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_5_started
+    reset_events: reset_saints
+  saint_6:
     show_tokens:
-      lights: led_gold_knight_6
+      lights: led_gold_saint_6
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: start_mode_gold_knight_6  # instant points award & plays shows
-    enable_events: initialize_knights, reset_knights
-    complete_events: mode_gold_knight_6_started
-    reset_events: reset_knights
-  knight_7:
+    events_when_started: start_mode_gold_saint_6  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_6_started
+    reset_events: reset_saints
+  saint_7:
     show_tokens:
-      lights: led_gold_knight_7
+      lights: led_gold_saint_7
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: start_mode_gold_knight_7  # instant points award & plays shows
-    enable_events: initialize_knights, reset_knights
-    complete_events: mode_gold_knight_7_started
-    reset_events: reset_knights
-  knight_8:
+    events_when_started: start_mode_gold_saint_7  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_7_started
+    reset_events: reset_saints
+  saint_8:
     show_tokens:
-      lights: led_gold_knight_8
+      lights: led_gold_saint_8
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: start_mode_gold_knight_8  # instant points award & plays shows
-    enable_events: initialize_knights, reset_knights
-    complete_events: mode_gold_knight_8_started
-    reset_events: reset_knights
-  knight_9:
+    events_when_started: start_mode_gold_saint_8  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_8_started
+    reset_events: reset_saints
+  saint_9:
     show_tokens:
-      lights: led_gold_knight_9
+      lights: led_gold_saint_9
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: start_mode_gold_knight_9  # instant points award & plays shows
-    enable_events: initialize_knights, reset_knights
-    complete_events: mode_gold_knight_9_started
-    reset_events: reset_knights
-  knight_10:
+    events_when_started: start_mode_gold_saint_9  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_9_started
+    reset_events: reset_saints
+  saint_10:
     show_tokens:
-      lights: led_gold_knight_10
+      lights: led_gold_saint_10
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: start_mode_gold_knight_10  # instant points award & plays shows
-    enable_events: initialize_knights, reset_knights
-    complete_events: mode_gold_knight_10_started
-    reset_events: reset_knights
-  knight_11:
+    events_when_started: start_mode_gold_saint_10  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_10_started
+    reset_events: reset_saints
+  saint_11:
     show_tokens:
-      lights: led_gold_knight_11
+      lights: led_gold_saint_11
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: start_mode_gold_knight_11  # instant points award & plays shows
-    enable_events: initialize_knights, reset_knights
-    complete_events: mode_gold_knight_11_started
-    reset_events: reset_knights
-  knight_12:
+    events_when_started: start_mode_gold_saint_11  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_11_started
+    reset_events: reset_saints
+  saint_12:
     show_tokens:
-      lights: led_gold_knight_12
+      lights: led_gold_saint_12
     show_when_selected: flash # probably want to create a custom version of the "flash" show
     show_when_completed: on
-    events_when_started: start_mode_gold_knight_12  # instant points award & plays shows
-    enable_events: initialize_knights, reset_knights
-    complete_events: mode_gold_knight_12_started
-    reset_events: reset_knights
+    events_when_started: start_mode_gold_saint_12  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_12_started
+    reset_events: reset_saints
 
 achievement_groups:
-  knights_awards:
+  saints_awards:
     achievements:
-      - knight_1
-      - knight_2
-      - knight_3
-      - knight_4
-      - knight_5
-      - knight_6
-      - knight_7
-      - knight_8
-      - knight_9
-      - knight_10
-      - knight_11
-      - knight_12
+      - saint_1
+      - saint_2
+      - saint_3
+      - saint_4
+      - saint_5
+      - saint_6
+      - saint_7
+      - saint_8
+      - saint_9
+      - saint_10
+      - saint_11
+      - saint_12
     show_tokens:
       lights: led_temple_start_battle
     auto_select: true
-    events_when_all_completed: knights_wizard_is_lit
+    events_when_all_completed: saints_wizard_is_lit
     enable_while_no_achievement_started: false
     disable_while_achievement_started: true
     show_when_enabled: flash
-    select_random_achievement_events: select_knight_hit
+    select_random_achievement_events: select_saint_hit
     allow_selection_change_while_disabled: false
-    start_selected_events: enter_knight_temple_hit
-    enable_events: initialize_knights
+    start_selected_events: enter_saint_temple_hit
+    enable_events: initialize_saints
     disable_events: mode_field_will_stop
     debug: true
 
 event_player:
-  mode_field_started: initialize_knights
+  mode_field_started: initialize_saints

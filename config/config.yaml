@@ -25,18 +25,18 @@ modes:
   - hurryup
   - skillshot
 #  - missions
-  - gold_knight_1
-  - gold_knight_2
-  - gold_knight_3
-  - gold_knight_4
-  - gold_knight_5
-  - gold_knight_6
-  - gold_knight_7
-  - gold_knight_8
-  - gold_knight_9
-  - gold_knight_10
-  - gold_knight_11
-  - gold_knight_12
+  - gold_saint_1
+  - gold_saint_2
+  - gold_saint_3
+  - gold_saint_4
+  - gold_saint_5
+  - gold_saint_6
+  - gold_saint_7
+  - gold_saint_8
+  - gold_saint_9
+  - gold_saint_10
+  - gold_saint_11
+  - gold_saint_12
   - ikki_multiball
 
 playfields:

@@ -1,0 +1,109 @@
+#config_version=6
+
+# 8. SCORPIO MILO
+# Shoot 6 times at the corresponding lights that move in an orderly way from left to right every 4 seconds
+# Hitting the lit shot during this mode awards a standard score of 100,000.
+
+mode:
+  start_events: start_mode_gold_saint_8
+  stop_events: stop_mode_gold_saint, stop_missions
+  events_when_started: mode_type_mission_started, mode_gold_saint_started
+  events_when_stopped: mode_type_mission_stopped, mode_gold_saint_stopped
+  priority: 400
+
+shots:
+  scorpio_blue_target_left:
+    switch: s_blue_target_left
+    profile: manual_advance_shots_profile
+    control_events:
+      - events: mode_gold_saint_8_started
+        state: 1
+    show_tokens:
+      led: led_blue_target_left
+      color: 0000ff
+  scorpio_left_orbit:
+    switch: s_orbit_left
+    profile: manual_advance_shots_profile
+    show_tokens:
+      led: led_orbit_left
+      color: D67691
+  scorpio_phoenix:
+    switch: s_scoop
+    profile: manual_advance_shots_profile
+    show_tokens:
+      led: led_scoop
+      color: ffff00
+  scorpio_left_ramp:
+    switch: s_ramp_left
+    profile: manual_advance_shots_profile
+    show_tokens:
+      led: led_ramp_left
+      color: D60108
+  scorpio_temple:
+    switch: s_temple_out
+    profile: manual_advance_shots_profile
+    show_tokens:
+      led: led_temple
+      color: ffff00
+  scorpio_newton_ball:
+    switch: s_newton_ball_target
+    profile: manual_advance_shots_profile
+    show_tokens:
+      led: led_newton_ball
+      color: ffff00
+  scorpio_right_ramp:
+    switch: s_ramp_right
+    profile: manual_advance_shots_profile
+    show_tokens:
+      led: led_ramp_right
+      color: 18A58F
+  scorpio_right_orbit:
+    switch: s_orbit_right
+    profile: manual_advance_shots_profile
+    show_tokens:
+      led: led_orbit_right
+      color: 2748C6
+  scorpio_blue_target_right:
+    switch: s_blue_target_right
+    profile: manual_advance_shots_profile
+    show_tokens:
+      led: led_blue_target_right
+      color: 0000ff
+
+shot_groups:
+  scorpio_shots:
+    shots: scorpio_blue_target_left, scorpio_left_orbit, scorpio_phoenix, scorpio_left_ramp, scorpio_temple, scorpio_newton_ball, scorpio_right_ramp, scorpio_right_orbit, scorpio_blue_target_right
+    rotate_right_events: timer_gold_saint_8_timer_complete, scorpio_shots_flashing_hit
+
+timers:
+  gold_saint_8_timer:
+    end_value: 1
+    tick_interval: 4s
+    start_running: false
+    restart_on_complete: true
+    control_events:
+      - event: mode_gold_saint_8_started
+        action: start
+      - event: scorpio_shots_flashing_hit
+        action: reset
+      - event: mode_gold_saint_8_stopping
+        action: stop
+
+counters:
+  beat_gold_saint_8_counter:
+    count_events: scorpio_shots_flashing_hit
+    count_complete_value: 4
+    disable_on_complete: false
+    reset_on_complete: false
+    events_when_complete: stop_mode_gold_saint
+
+variable_player:
+  scorpio_shots_flashing_hit:
+    score: 100_000 * current_player.pf_multiplier
+
+show_player:
+  mode_gold_saint_8_started:
+    flashing_show:
+      show_tokens:
+        led: led_gold_saint_8
+        color: ffffff

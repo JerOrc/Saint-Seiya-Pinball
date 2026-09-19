@@ -212,69 +212,69 @@ lights:
     subtype: led
     type: grb
 
-  # gold knights
-  led_gold_knight_1:
+  # gold saints
+  led_gold_saint_1:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_2:
+  led_gold_saint_2:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_3:
+  led_gold_saint_3:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_4:
+  led_gold_saint_4:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_5:
+  led_gold_saint_5:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_6:
+  led_gold_saint_6:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_7:
+  led_gold_saint_7:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_8:
+  led_gold_saint_8:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_9:
+  led_gold_saint_9:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_10:
+  led_gold_saint_10:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_11:
+  led_gold_saint_11:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_12:
+  led_gold_saint_12:
     number:
     platform: virtual
     subtype: led
     type: grb
 
-  # bronze knights
+  # bronze saints
   led_andromede:
     number:
     platform: virtual

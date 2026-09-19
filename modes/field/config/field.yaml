@@ -12,7 +12,7 @@ mode:
   priority: 400
 
 config:
-  - field_gold_knight_qualifier.yaml
+  - field_gold_saint_qualifier.yaml
   # add your mode parts here. For instance:
   # - field_mission_qualifier_shots.yaml
   # - field_miniwizard_qualifier_shots.yaml

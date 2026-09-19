@@ -121,7 +121,7 @@ random_event_player:
       mystery_award_multiball_event: 10 #numbers show probability of event
       mystery_award_smallpoints_event: 20
       mystery_award_bigpoints_event: 20
-      mystery_award_end_knight_event_lit: 10
+      mystery_award_end_saint_event_lit: 10
       mystery_award_30s_playfield_5x_event_lit: 10
       mystery_award_bonus_increment_event: 10
       mystery_award_extraball_event_lit: 10
@@ -130,8 +130,8 @@ random_event_player:
 
 event_player:
   mystery_award_event: end_mystery|1s  #  slide_mystery_removed: end_mystery
-  mystery_award_end_knight_event_lit{current_player.knight_battle_active == 0}: mystery_award_multiball_event
-  mystery_award_end_knight_event_lit{current_player.knight_battle_active == 1}: mystery_award_end_knight_event, stop_mode_gold_knight
+  mystery_award_end_saint_event_lit{current_player.saint_battle_active == 0}: mystery_award_multiball_event
+  mystery_award_end_saint_event_lit{current_player.saint_battle_active == 1}: mystery_award_end_saint_event, stop_mode_gold_saint
   mystery_award_30s_playfield_5x_event_lit{current_player.pf_multiplier == 5}: mystery_award_bigpoints_event
   mystery_award_30s_playfield_5x_event_lit{current_player.pf_multiplier < 5}: mystery_award_30s_playfield_5x_event
   extra_ball_mystery_extraball_award_disabled: mystery_award_multiball_event
@@ -166,7 +166,7 @@ slide_player:
       method: log_text
       tokens:
         text: 'Big points'
-  mystery_award_end_knight_event:
+  mystery_award_end_saint_event:
     log:
       action: method
       method: log_text

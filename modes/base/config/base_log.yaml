@@ -102,13 +102,13 @@ slide_player:
       method: log_text
       tokens:
         text: "Zodiac extraball is lit"
-  gold_knights_extraballs_shot_is_lit:
+  gold_saints_extraballs_shot_is_lit:
     log:
       action: method
       method: log_text
       tokens:
         text: "GK extraball is lit"
-  extra_ball_gold_knight_extraball_awarded:
+  extra_ball_gold_saint_extraball_awarded:
     log:
       action: method
       method: log_text

@@ -26,14 +26,14 @@ player_vars:
   super_skillshot_count:
     initial_value: 0
 
-  knights_confronted_total_count:
+  saints_confronted_total_count:
     initial_value: 0
-  knights_confronted_ball_count:
+  saints_confronted_ball_count:
     initial_value: 0
-  knights_defeated_count: # ball_count
+  saints_defeated_count: # ball_count
     initial_value: 0
 
-  knight_battle_active:
+  saint_battle_active:
     initial_value: 0
   mystery_pf_multiplier_save:
     initial_value: 0
