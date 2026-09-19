@@ -36,7 +36,7 @@ variable_player:
 event_player:
   bumpers_score_increase_shot_flashing_hit{current_player.pf_multiplier <= 4}:
     - pf_multiplier_increase
-    - pf_multiplier_light_actualise
+    - pf_multiplier_light_refresh
   bumpers_score_increase_shot_flashing_hit{current_player.bumpers_score < 2710}:
     - super_bumpers_restart
   bumpers_score_increase_shot_flashing_hit{current_player.bumpers_score < 3210}:
