@@ -37,3 +37,9 @@ slide_player:
   bonus_entry:
     bonus:
       action: update
+
+sound_player:
+  mode_bonus_started:
+    Dramatic-02-sanctuary-precept-of-death-mp3cut:
+      bus: effects
+      volume: 0.5

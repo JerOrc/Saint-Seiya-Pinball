@@ -19,12 +19,6 @@ mode_settings:
   next_item_events: s_flipper_right_active, timer_attract_carousel_timer_complete, slide_attract_active
   previous_item_events: s_flipper_left_active, slide_attract_active     # hook : slide_attract_active for linux bug on first slide
 
-sound_player:
-  mode_attract_started:
-    nu-metal-tribute-to-saint-michael-the-archangel-265109:
-      bus: music
-      volume: 0.02
-
 slide_player:
   mode_attract_started: attract
 
@@ -48,3 +42,9 @@ timers:
 
 event_player:
   flipper_cradle: game_start
+
+sound_player:
+  mode_attract_started:
+    nu-metal-tribute-to-saint-michael-the-archangel-265109:
+      bus: music
+      volume: 0.05

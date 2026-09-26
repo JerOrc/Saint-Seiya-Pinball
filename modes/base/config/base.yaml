@@ -122,3 +122,17 @@ light_player:
     led_pf_multiplier_x4: blue
   pf_multiplier_light_refresh{current_player.pf_multiplier >= 5}:
     led_pf_multiplier_x5: blue
+
+sound_player:
+  mode_base_started:
+    base:
+      bus: music
+      volume: 0.05
+  s_plunger_lane_inactive:
+    Anime_Sword_Slice_Sound_(echoey):
+      bus: effects
+      volume: 0.5
+  s_temple_secret_active:
+    Anime_Realization_Sound:
+      bus: effects
+      volume: 0.5

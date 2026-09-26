@@ -134,3 +134,21 @@ light_player:
     led_red_target_4: off
     led_red_target_5: off
     led_red_target_6: off
+
+sound_player:
+  mode_base_started:
+    base:
+      bus: music
+      volume: 0.05
+  skill_failed:
+    Anime_Glass_Break_1_(alt)_low_pitch.mp3:
+      bus: effects
+      volume: 0.5
+  skill_success:
+    Anime_Pose_Sound:
+      bus: effects
+      volume: 0.5
+  super_skill_success:
+    Anime_Pose_Sound_(low_pitched):
+      bus: effects
+      volume: 0.5
