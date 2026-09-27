@@ -125,7 +125,7 @@ light_player:
 
 sound_player:
   mode_base_started:
-    base:
+    base_playlist:
       bus: music
       volume: 0.05
   s_plunger_lane_inactive:
