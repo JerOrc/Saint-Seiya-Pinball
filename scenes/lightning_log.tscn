@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5x8xe270fku"]
+
+[ext_resource type="FontFile" uid="uid://cpxjkgrdxt4r6" path="res://fonts/VCRosdNEUE-16-11.ttf" id="1_brhqv"]
+[ext_resource type="Script" uid="uid://ddfkogr77156j" path="res://scenes/lightning_log.gd" id="1_k3bly"]
+[ext_resource type="Shader" uid="uid://dob87bj5mjcmn" path="res://shaders/remove_black_background.gdshader" id="1_p7vp8"]
+[ext_resource type="VideoStream" uid="uid://rkest0hfqyne" path="res://videos/golden_lightning_dmd.ogv" id="2_5ckr1"]
+[ext_resource type="Texture2D" uid="uid://b0hnyju2ktjlh" path="res://modes/attract/images/whoops.png" id="3_k3bly"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k3bly"]
+shader = ExtResource("1_p7vp8")
+shader_parameter/key_color = Vector3(0, 0, 0)
+shader_parameter/tolerance = 0.9
+
+[sub_resource type="LabelSettings" id="LabelSettings_pt1ea"]
+line_spacing = 0.0
+font = ExtResource("1_brhqv")
+
+[node name="Log" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k3bly")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_k3bly")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -35.0
+offset_right = 140.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_k3bly")
+stretch_mode = 5
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource("2_5ckr1")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 32.0
+text = "Log 
+Text"
+label_settings = SubResource("LabelSettings_pt1ea")
+horizontal_alignment = 1
+autowrap_mode = 2

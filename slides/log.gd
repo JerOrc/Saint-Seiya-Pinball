@@ -5,7 +5,8 @@ var scene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-  scene = preload("res://scenes/log.tscn")
+  scene = preload("res://scenes/lightning_log.tscn")
+  # scene = preload("res://scenes/log.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,5 +19,5 @@ func log_text(_settings, _kwargs):
   var instance = scene.instantiate()
   instance.get_node("Label").text = _settings.tokens.text
   $zedmd.add_child(instance)
-  await get_tree().create_timer(1).timeout
+  await get_tree().create_timer(3).timeout
   instance.queue_free()
