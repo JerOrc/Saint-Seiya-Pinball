@@ -19,5 +19,5 @@ func log_text(_settings, _kwargs):
   var instance = scene.instantiate()
   instance.get_node("Label").text = _settings.tokens.text
   $zedmd.add_child(instance)
-  await get_tree().create_timer(3).timeout
+  await get_tree().create_timer(2).timeout
   instance.queue_free()
