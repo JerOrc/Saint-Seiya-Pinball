@@ -12,6 +12,7 @@ slide_player:
       method: log_text
       tokens:
         text: "skill failed"
+        style: lightning
   skill_success:
     log:
       action: method
