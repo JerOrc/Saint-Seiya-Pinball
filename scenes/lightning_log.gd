@@ -1,7 +1,7 @@
 extends Control
 
-@onready var video_player = $VideoStreamPlayer
-@onready var shader_rect = $TextureRect
+@onready var video_player = $lightning/VideoStreamPlayer
+@onready var shader_rect = $lightning/TextureRect
 
 func _ready():
     var tex = video_player.get_video_texture()

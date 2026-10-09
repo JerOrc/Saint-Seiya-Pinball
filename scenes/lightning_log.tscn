@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5x8xe270fku"]
+[gd_scene load_steps=12 format=3 uid="uid://b5x8xe270fku"]
 
 [ext_resource type="FontFile" uid="uid://cpxjkgrdxt4r6" path="res://fonts/VCRosdNEUE-16-11.ttf" id="1_brhqv"]
 [ext_resource type="Script" uid="uid://ddfkogr77156j" path="res://scenes/lightning_log.gd" id="1_k3bly"]
@@ -14,6 +14,73 @@ shader_parameter/tolerance = 0.9
 [sub_resource type="LabelSettings" id="LabelSettings_pt1ea"]
 line_spacing = 0.0
 font = ExtResource("1_brhqv")
+font_color = Color(1, 0.972549, 0.356863, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_58u4v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-128, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-128, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ge5hi"]
+resource_name = "created"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.17, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-128, 0), Vector2(-128, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-128, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xvo2p"]
+resource_name = "remove"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_58u4v"]
+_data = {
+&"RESET": SubResource("Animation_58u4v"),
+&"created": SubResource("Animation_ge5hi"),
+&"remove": SubResource("Animation_xvo2p")
+}
 
 [node name="Log" type="Control"]
 layout_mode = 3
@@ -24,37 +91,59 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k3bly")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="lightning" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_right = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="lightning"]
 material = SubResource("ShaderMaterial_k3bly")
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -16.0
-offset_right = 64.0
-offset_bottom = 16.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_k3bly")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="lightning"]
 visible = false
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 128.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
 audio_track = 1
 stream = ExtResource("2_5ckr1")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 128.0
-offset_bottom = 32.0
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -16.0
+offset_bottom = 16.0
+grow_vertical = 2
 text = "Log 
 Text"
 label_settings = SubResource("LabelSettings_pt1ea")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../lightning")
+libraries = {
+&"": SubResource("AnimationLibrary_58u4v")
+}
+autoplay = "created"
