@@ -1,0 +1,400 @@
+#show_version=6
+- time: 0
+  lights:
+    led_newton_ball: '8F8E00'
+    led_newton_ball_pf_multiplier: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_newton_ball: 'FFFD00'
+    led_red_target_5: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_newton_ball_jackpot: '656400'
+    led_ramp_right: '222200'
+    led_temple: '383700'
+    led_temple_cosmo: 'FFFD00'
+    led_temple_jackpot: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_newton_ball_jackpot: 'FFFD00'
+    led_ramp_right: 'FFFD00'
+    led_ramp_right_jackpot: 'FFFD00'
+    led_temple: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_ramp_right_cosmo: 'FFFD00'
+    led_red_target_6: '222200'
+    
+- time: '+1'
+  lights:
+    led_red_target_6: 'FFFD00'
+    led_temple_start_battle: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_dragon: '434300'
+    led_orbit_right: 'C6C500'
+    led_ramp_left_cosmo: 'FFFD00'
+    led_scoop: 'FFFD00'
+    led_scoop_jackpot: 'FFFD00'
+    led_temple_lock_is_lit: 'EFED00'
+    
+- time: '+1'
+  lights:
+    led_dragon: 'FFFD00'
+    led_orbit_right: 'FFFD00'
+    led_orbit_right_cosmo: 'FFFD00'
+    led_orbit_right_jackpot: 'FFFD00'
+    led_pegasus: '8D8C00'
+    led_ramp_left_jackpot: 'FFFD00'
+    led_red_target_2: 'FFFD00'
+    led_red_target_4: 'F9F700'
+    led_scoop_cosmo: 'FFFD00'
+    led_scoop_mystery: '0B0B00'
+    led_scoop_phoenix_return: 'FFFD00'
+    led_temple_lock_is_lit: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_cygnus: 'FFFD00'
+    led_pegasus: 'FFFD00'
+    led_ramp_left: 'FFFD00'
+    led_red_target_3: '030300'
+    led_red_target_4: 'FFFD00'
+    led_scoop_mystery: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_blue_target_right: 'FFFD00'
+    led_blue_target_right_jackpot: 'FFFD00'
+    led_bumper_bottom: 'FFFD00'
+    led_gold_saint_12: 'FEFC00'
+    led_orbit_left_cosmo: '010100'
+    led_orbit_left_jackpot: '2B2A00'
+    led_red_target_1: 'FFFD00'
+    led_red_target_3: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_andromede: 'FFFD00'
+    led_gold_saint_1: 'FFFD00'
+    led_gold_saint_12: 'FFFD00'
+    led_orbit_left: 'FFFD00'
+    led_orbit_left_cosmo: 'FFFD00'
+    led_orbit_left_jackpot: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_blue_target_left: 'FFFD00'
+    led_blue_target_left_jackpot: 'FFFD00'
+    led_gold_saint_11: 'FFFD00'
+    led_gold_saint_2: '0E0E00'
+    
+- time: '+1'
+  lights:
+    led_gold_saint_2: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_bumper_left: 'FFFD00'
+    led_bumper_right: 'FFFD00'
+    led_inlane_right: 'FFFD00'
+    led_mission_g: 'FFFD00'
+    led_mission_s1: '797800'
+    led_mission_s2: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_gold_saint_10: 'FFFD00'
+    led_gold_saint_3: 'FFFD00'
+    led_kickout: 'FFFD00'
+    led_kickout_cosmo: 'FFFD00'
+    led_kickout_extraball: 'FFFD00'
+    led_kickout_jackpot: 'FFFD00'
+    led_kickout_start_mission: 'FFFD00'
+    led_mission_b3: 'FFFD00'
+    led_mission_s1: 'FFFD00'
+    led_outlane_right: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_mission_b1: 'FFFD00'
+    led_mission_b2: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_dragon_lane_left: 'FFFD00'
+    led_gold_saint_4: 'FFFD00'
+    led_gold_saint_9: 'FFFD00'
+    led_ikki_k2: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_dragon_lane_right: 'FFFD00'
+    led_ikki_i2: 'FFFD00'
+    led_inlane_left: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_gold_saint_5: 'FFFD00'
+    led_gold_saint_8: 'FFFD00'
+    led_outlane_left: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_gold_saint_6: 'FFFD00'
+    led_gold_saint_7: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_cosmo_o2: 'FFFD00'
+    led_ikki_i1: '595800'
+    led_ikki_k1: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_cosmo_c: 'FFFD00'
+    led_cosmo_m: 'FFFD00'
+    led_cosmo_o1: 'F4F200'
+    led_cosmo_s: 'FFFD00'
+    led_ikki_i1: 'FFFD00'
+    
+- time: '+1'
+  lights:
+    led_cosmo_o1: 'FFFD00'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    led_ballsave: 'FFFD00'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    led_ballsave: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    led_cosmo_o1: 'F4F200'
+    
+- time: '+1'
+  lights:
+    led_cosmo_c: '000000'
+    led_cosmo_m: '000000'
+    led_cosmo_o1: '000000'
+    led_cosmo_s: '000000'
+    led_ikki_i1: '595800'
+    
+- time: '+1'
+  lights:
+    led_cosmo_o2: '000000'
+    led_ikki_i1: '000000'
+    led_ikki_k1: '000000'
+    
+- time: '+1'
+  lights:
+    led_gold_saint_6: '000000'
+    led_gold_saint_7: '000000'
+    
+- time: '+1'
+  lights:
+    led_gold_saint_5: '000000'
+    led_gold_saint_8: '000000'
+    led_outlane_left: '000000'
+    
+- time: '+1'
+  lights:
+    led_dragon_lane_right: '000000'
+    led_ikki_i2: '000000'
+    led_inlane_left: '000000'
+    
+- time: '+1'
+  lights:
+    led_dragon_lane_left: '000000'
+    led_gold_saint_4: '000000'
+    led_gold_saint_9: '000000'
+    led_ikki_k2: '000000'
+    
+- time: '+1'
+  lights:
+    led_mission_b1: '000000'
+    led_mission_b2: '000000'
+    
+- time: '+1'
+  lights:
+    led_gold_saint_10: '000000'
+    led_gold_saint_3: '000000'
+    led_kickout: '000000'
+    led_kickout_cosmo: '000000'
+    led_kickout_extraball: '000000'
+    led_kickout_jackpot: '000000'
+    led_kickout_start_mission: '000000'
+    led_mission_b3: '000000'
+    led_mission_s1: '797800'
+    led_outlane_right: '000000'
+    
+- time: '+1'
+  lights:
+    led_bumper_left: '000000'
+    led_bumper_right: '000000'
+    led_inlane_right: '000000'
+    led_mission_g: '000000'
+    led_mission_s1: '000000'
+    led_mission_s2: '000000'
+    
+- time: '+1'
+  lights:
+    led_gold_saint_2: '0E0E00'
+    
+- time: '+1'
+  lights:
+    led_blue_target_left: '000000'
+    led_blue_target_left_jackpot: '000000'
+    led_gold_saint_11: '000000'
+    led_gold_saint_2: '000000'
+    
+- time: '+1'
+  lights:
+    led_andromede: '000000'
+    led_gold_saint_1: '000000'
+    led_gold_saint_12: 'FEFC00'
+    led_orbit_left: '000000'
+    led_orbit_left_cosmo: '010100'
+    led_orbit_left_jackpot: '2B2A00'
+    
+- time: '+1'
+  lights:
+    led_blue_target_right: '000000'
+    led_blue_target_right_jackpot: '000000'
+    led_bumper_bottom: '000000'
+    led_gold_saint_12: '000000'
+    led_orbit_left_cosmo: '000000'
+    led_orbit_left_jackpot: '000000'
+    led_red_target_1: '000000'
+    led_red_target_3: '030300'
+    
+- time: '+1'
+  lights:
+    led_cygnus: '000000'
+    led_pegasus: '8D8C00'
+    led_ramp_left: '000000'
+    led_red_target_3: '000000'
+    led_red_target_4: 'F9F700'
+    led_scoop_mystery: '0B0B00'
+    
+- time: '+1'
+  lights:
+    led_dragon: '434300'
+    led_orbit_right: 'C6C500'
+    led_orbit_right_cosmo: '000000'
+    led_orbit_right_jackpot: '000000'
+    led_pegasus: '000000'
+    led_ramp_left_jackpot: '000000'
+    led_red_target_2: '000000'
+    led_red_target_4: '000000'
+    led_scoop_cosmo: '000000'
+    led_scoop_mystery: '000000'
+    led_scoop_phoenix_return: '000000'
+    led_temple_lock_is_lit: 'EFED00'
+    
+- time: '+1'
+  lights:
+    led_dragon: '000000'
+    led_orbit_right: '000000'
+    led_ramp_left_cosmo: '000000'
+    led_scoop: '000000'
+    led_scoop_jackpot: '000000'
+    led_temple_lock_is_lit: '000000'
+    
+- time: '+1'
+  lights:
+    led_red_target_6: '222200'
+    led_temple_start_battle: '000000'
+    
+- time: '+1'
+  lights:
+    led_ramp_right_cosmo: '000000'
+    led_red_target_6: '000000'
+    
+- time: '+1'
+  lights:
+    led_newton_ball_jackpot: '656400'
+    led_ramp_right: '222200'
+    led_ramp_right_jackpot: '000000'
+    led_temple: '383700'
+    
+- time: '+1'
+  lights:
+    led_newton_ball_jackpot: '000000'
+    led_ramp_right: '000000'
+    led_temple: '000000'
+    led_temple_cosmo: '000000'
+    led_temple_jackpot: '000000'
+    
+- time: '+1'
+  lights:
+    led_newton_ball: '8F8E00'
+    led_red_target_5: '000000'
+    
+- time: '+1'
+  lights:
+    led_newton_ball: '000000'
+    
