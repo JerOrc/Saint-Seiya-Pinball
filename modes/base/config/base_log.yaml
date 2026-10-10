@@ -19,18 +19,21 @@ slide_player:
       method: log_text
       tokens:
         text: "skill success"
+        style: lightning
   super_skill_success:
     log:
       action: method
       method: log_text
       tokens:
         text: "Super skill success"
+        style: lightning
   super_secret_skill_success:
     log:
       action: method
       method: log_text
       tokens:
         text: "Super secret skill success"
+        style: lightning
 #  auto_launch_plunger:
 #    log:
 #      action: method
