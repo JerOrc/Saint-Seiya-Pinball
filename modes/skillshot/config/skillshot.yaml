@@ -142,10 +142,6 @@ show_player:
       speed: 50
 
 sound_player:
-  mode_base_started:
-    base:
-      bus: music
-      volume: 0.05
   skill_failed:
     Anime_Glass_Break_1_(alt)_low_pitch.mp3:
       bus: effects
