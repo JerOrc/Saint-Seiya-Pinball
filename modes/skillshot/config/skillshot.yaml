@@ -128,12 +128,7 @@ light_player:
   mode_skillshot_started:
     led_kickout_extraball: off
     led_scoop_mystery: off
-    led_red_target_1: off
-    led_red_target_2: off
-    led_red_target_3: off
-    led_red_target_4: off
-    led_red_target_5: off
-    led_red_target_6: off
+    leds_red_target: off
 
 show_player:
   super_skill_success:
