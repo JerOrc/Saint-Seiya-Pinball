@@ -1,0 +1,44 @@
+#show_version=6
+
+- duration: -1
+  lights:
+    led_cosmo_c: off
+    led_cosmo_o1: off
+    led_cosmo_s: off
+    led_cosmo_m: off
+    led_cosmo_o2: off
+- duration: -1
+  lights:
+    led_cosmo_c: blue
+    led_cosmo_o1: off
+    led_cosmo_s: off
+    led_cosmo_m: off
+    led_cosmo_o2: off
+- duration: -1
+  lights:
+    led_cosmo_c: blue
+    led_cosmo_o1: blue
+    led_cosmo_s: off
+    led_cosmo_m: off
+    led_cosmo_o2: off
+- duration: -1
+  lights:
+    led_cosmo_c: blue
+    led_cosmo_o1: blue
+    led_cosmo_s: blue
+    led_cosmo_m: off
+    led_cosmo_o2: off
+- duration: -1
+  lights:
+    led_cosmo_c: blue
+    led_cosmo_o1: blue
+    led_cosmo_s: blue
+    led_cosmo_m: blue
+    led_cosmo_o2: off
+- duration: -1
+  lights:
+    led_cosmo_c: blue
+    led_cosmo_o1: blue
+    led_cosmo_s: blue
+    led_cosmo_m: blue
+    led_cosmo_o2: blue

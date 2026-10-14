@@ -1,0 +1,22 @@
+#config_version=6
+
+counters:
+  cosmo_counter:
+    count_events: cosmo_up{device.counters.cosmo_counter.value < 5}
+    control_events:
+      - event: cosmo_down{device.counters.cosmo_counter.value > 0}
+        action: subtract
+        value: 1
+    starting_count: 0
+
+show_player:
+  logicblock_cosmo_counter_updated{enabled}:
+    cosmo_show:
+      key: cosmo_counter_show
+      start_step: value + 1
+
+sound_player:
+  logicblock_cosmo_counter_hit:
+    cosmo-up:
+      bus: voice
+      volume: 1.0

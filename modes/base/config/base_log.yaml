@@ -12,7 +12,6 @@ slide_player:
       method: log_text
       tokens:
         text: "skill failed"
-        style: lightning
   skill_success:
     log:
       action: method
@@ -166,3 +165,10 @@ slide_player:
       method: log_text
       tokens:
         text: "IKKI MULTIBALL !"
+  logicblock_cosmo_counter_hit:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: "Cosmo up !"
+        style: lightning
