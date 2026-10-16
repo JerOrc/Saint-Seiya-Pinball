@@ -12,26 +12,29 @@ slide_player:
       method: log_text
       tokens:
         text: "skill failed"
+        bad: 1
   skill_success:
     log:
       action: method
       method: log_text
       tokens:
-        text: "skill success"
+        text1: "skill shot"
+        text2: "50.000"
+        text3: "+1 Cosmo"
         style: lightning
   super_skill_success:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Super skill success"
+        text1: "Super skill success"
         style: lightning
   super_secret_skill_success:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Super secret skill success"
+        text1: "Super secret skill success"
         style: lightning
 #  auto_launch_plunger:
 #    log:
@@ -170,5 +173,5 @@ slide_player:
       action: method
       method: log_text
       tokens:
-        text: "Cosmo up !"
+        text1: "Cosmo up !"
         style: lightning

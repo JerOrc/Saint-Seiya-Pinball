@@ -76,8 +76,8 @@ event_player:
   super_skill_success:
     - stop_mode_skillshot|2s
   skill_success:
-    - cosmo_up
-    - stop_mode_skillshot|1s
+    - cosmo_up|2s
+    - stop_mode_skillshot|3s
 
 timers:
   skillshots_timeout:

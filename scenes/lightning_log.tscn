@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://b5x8xe270fku"]
+[gd_scene load_steps=20 format=3 uid="uid://b5x8xe270fku"]
 
-[ext_resource type="FontFile" uid="uid://cpxjkgrdxt4r6" path="res://fonts/VCRosdNEUE-16-11.ttf" id="1_brhqv"]
 [ext_resource type="Script" uid="uid://ddfkogr77156j" path="res://scenes/lightning_log.gd" id="1_k3bly"]
 [ext_resource type="Shader" uid="uid://dob87bj5mjcmn" path="res://shaders/remove_black_background.gdshader" id="1_p7vp8"]
 [ext_resource type="VideoStream" uid="uid://invbof2mxbua" path="res://videos/Golden_lightning.ogv" id="2_5ckr1"]
 [ext_resource type="Texture2D" uid="uid://b0hnyju2ktjlh" path="res://modes/attract/images/whoops.png" id="3_k3bly"]
+[ext_resource type="FontFile" uid="uid://dytq1gencghqw" path="res://fonts/PixelGameFont-16-12.ttf" id="5_xvo2p"]
+[ext_resource type="FontFile" uid="uid://cvh4ibl317df5" path="res://fonts/dosukoi-8-8.ttf" id="6_58u4v"]
+[ext_resource type="FontFile" uid="uid://w0mq0jf416cf" path="res://fonts/UpheavalPro-20-10.ttf" id="7_58u4v"]
+[ext_resource type="FontFile" uid="uid://l5geiqonhqi0" path="res://fonts/SG10-8-5.ttf" id="8_xvo2p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k3bly"]
 shader = ExtResource("1_p7vp8")
@@ -13,9 +16,44 @@ shader_parameter/tolerance = 0.9
 
 [sub_resource type="LabelSettings" id="LabelSettings_pt1ea"]
 line_spacing = 0.0
-font = ExtResource("1_brhqv")
+font = ExtResource("5_xvo2p")
 font_color = Color(1, 0.972549, 0.356863, 1)
-outline_size = 10
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vmd3o"]
+font = ExtResource("6_58u4v")
+font_size = 8
+font_color = Color(1, 0.972549, 0.356863, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_spupx"]
+font = ExtResource("7_58u4v")
+font_size = 20
+font_color = Color(1, 0.972549, 0.356863, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_58u4v"]
+font = ExtResource("6_58u4v")
+font_size = 8
+font_color = Color(1, 0.972549, 0.356863, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xvo2p"]
+font = ExtResource("7_58u4v")
+font_size = 20
+font_color = Color(1, 0.972549, 0.356863, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jyef3"]
+font = ExtResource("8_xvo2p")
+font_size = 8
+font_color = Color(1, 0.972549, 0.356863, 1)
+outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_58u4v"]
@@ -23,7 +61,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Label:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -35,14 +73,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
+tracks/1/path = NodePath("../Labels:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-128, 0)]
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ge5hi"]
@@ -50,26 +88,26 @@ resource_name = "created"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Label:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.17, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-128, 0), Vector2(-128, 0), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-128, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Labels:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.17, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(128, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_xvo2p"]
@@ -125,14 +163,24 @@ audio_track = 1
 stream = ExtResource("2_5ckr1")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Labels" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Label1" type="Control" parent="Labels"]
+visible = false
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Label1-1" type="Label" parent="Labels/Label1"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = -16.0
-offset_bottom = 16.0
+offset_left = -124.121
+offset_top = 1.0
+offset_right = 3.879
+offset_bottom = 35.0
 grow_vertical = 2
 text = "Log 
 Text"
@@ -140,6 +188,92 @@ label_settings = SubResource("LabelSettings_pt1ea")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+uppercase = true
+
+[node name="Label2" type="Control" parent="Labels"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label2-1" type="Label" parent="Labels/Label2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -15.0
+offset_bottom = 17.0
+grow_vertical = 2
+text = "label2 - 1"
+label_settings = SubResource("LabelSettings_vmd3o")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2-2" type="Label" parent="Labels/Label2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -3.0
+offset_bottom = 29.0
+grow_vertical = 2
+text = "Label2 - 2"
+label_settings = SubResource("LabelSettings_spupx")
+horizontal_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="Label3" type="Control" parent="Labels"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label3-1" type="Label" parent="Labels/Label3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -17.0
+offset_bottom = 15.0
+grow_vertical = 2
+text = "Label 3 - 1"
+label_settings = SubResource("LabelSettings_58u4v")
+horizontal_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="Label3-2" type="Label" parent="Labels/Label3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -7.0
+offset_bottom = 25.0
+grow_vertical = 2
+text = "Label 3 - 2"
+label_settings = SubResource("LabelSettings_xvo2p")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3-3" type="Label" parent="Labels/Label3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 4.0
+offset_bottom = 36.0
+grow_vertical = 2
+text = "Label 3 - 3"
+label_settings = SubResource("LabelSettings_jyef3")
+horizontal_alignment = 1
+autowrap_mode = 2
+uppercase = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../lightning")
