@@ -15,11 +15,13 @@ offset_bottom = 32.0
 color = Color(1, 0.768627, 0, 1)
 
 [node name="Label" type="Label" parent="."]
+offset_top = 1.0
 offset_right = 128.0
-offset_bottom = 31.0
+offset_bottom = 35.0
 text = "Log 
 Text"
 label_settings = SubResource("LabelSettings_pt1ea")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+uppercase = true
