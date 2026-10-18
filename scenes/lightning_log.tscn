@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b0hnyju2ktjlh" path="res://modes/attract/images/whoops.png" id="3_k3bly"]
 [ext_resource type="FontFile" uid="uid://dytq1gencghqw" path="res://fonts/PixelGameFont-16-12.ttf" id="5_xvo2p"]
 [ext_resource type="FontFile" uid="uid://d0rcsr3de1nid" path="res://fonts/SmallBoldPixel7-20-8.ttf" id="6_xvo2p"]
-[ext_resource type="FontFile" uid="uid://w0mq0jf416cf" path="res://fonts/UpheavalPro-20-10.ttf" id="7_58u4v"]
+[ext_resource type="FontFile" uid="uid://cuaegs5xflikt" path="res://fonts/DepartureMono-Regular-11-10.otf" id="7_xvo2p"]
 [ext_resource type="FontFile" uid="uid://l5geiqonhqi0" path="res://fonts/SG10-8-5.ttf" id="8_xvo2p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k3bly"]
@@ -29,10 +29,10 @@ outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_spupx"]
-font = ExtResource("7_58u4v")
-font_size = 20
+font = ExtResource("7_xvo2p")
+font_size = 11
 font_color = Color(1, 0.972549, 0.356863, 1)
-outline_size = 8
+outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_58u4v"]
@@ -43,8 +43,8 @@ outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_xvo2p"]
-font = ExtResource("7_58u4v")
-font_size = 20
+font = ExtResource("7_xvo2p")
+font_size = 11
 font_color = Color(1, 0.972549, 0.356863, 1)
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
@@ -216,8 +216,8 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = -128.0
-offset_top = -2.0
-offset_bottom = 30.0
+offset_top = -4.0
+offset_bottom = 28.0
 grow_vertical = 2
 text = "Label2 - 2"
 label_settings = SubResource("LabelSettings_spupx")
@@ -226,6 +226,7 @@ autowrap_mode = 2
 uppercase = true
 
 [node name="Label3" type="Control" parent="Labels"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -250,8 +251,8 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = -128.0
-offset_top = -7.0
-offset_bottom = 25.0
+offset_top = -9.0
+offset_bottom = 23.0
 grow_vertical = 2
 text = "Label 3 - 2"
 label_settings = SubResource("LabelSettings_xvo2p")
