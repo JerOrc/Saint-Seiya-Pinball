@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://deomxtjqwogs4"]
+[gd_scene load_steps=8 format=3 uid="uid://deomxtjqwogs4"]
 
 [ext_resource type="Script" uid="uid://ee3vq0gnrk88" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_3yip8"]
 [ext_resource type="Script" uid="uid://cwfr1ipqeyqv6" path="res://addons/mpf-gmc/classes/mpf_dmd_display.gd" id="2_jui2s"]
 [ext_resource type="FontFile" uid="uid://dytq1gencghqw" path="res://fonts/PixelGameFont-16-12.ttf" id="3_iv3o2"]
 [ext_resource type="Script" uid="uid://ciu7x6uw6f7ao" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_l15x2"]
 [ext_resource type="FontFile" uid="uid://l5geiqonhqi0" path="res://fonts/SG10-8-5.ttf" id="5_en7qi"]
+
+[sub_resource type="FontVariation" id="FontVariation_qjsot"]
+base_font = ExtResource("5_en7qi")
+spacing_space = -3
+
+[sub_resource type="FontVariation" id="FontVariation_6vrr4"]
+base_font = ExtResource("5_en7qi")
+spacing_space = -3
 
 [node name="BaseSlide" type="Control"]
 layout_mode = 3
@@ -58,29 +66,29 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -8.0
-offset_right = 102.0
-offset_bottom = 3.0
+offset_left = 1.0
+offset_top = -7.0
+offset_right = 101.0
+offset_bottom = 13.0
 grow_vertical = 0
-theme_override_constants/h_separation = 4
+theme_override_constants/h_separation = -2
 
 [node name="player_number" type="Label" parent="zedmd/HFlowContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(3.27289e-06, 0.788568, 0.800598, 1)
-theme_override_fonts/font = ExtResource("5_en7qi")
+theme_override_fonts/font = SubResource("FontVariation_qjsot")
 theme_override_font_sizes/font_size = 8
-text = "PLAYER X ."
+text = "PLAYER X "
 vertical_alignment = 2
 script = ExtResource("3_l15x2")
 variable_name = "number"
-template_string = "PLAYER %s ."
+template_string = "PLAYER %s "
 min_players = 2
 
 [node name="player_ball" type="Label" parent="zedmd/HFlowContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(3.27289e-06, 0.788568, 0.800598, 1)
-theme_override_fonts/font = ExtResource("5_en7qi")
+theme_override_fonts/font = SubResource("FontVariation_6vrr4")
 theme_override_font_sizes/font_size = 8
 text = "BALL X"
 script = ExtResource("3_l15x2")
