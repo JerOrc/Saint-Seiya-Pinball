@@ -5,10 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dytq1gencghqw" path="res://fonts/PixelGameFont-16-12.ttf" id="3_iv3o2"]
 [ext_resource type="Script" uid="uid://ciu7x6uw6f7ao" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_l15x2"]
 [ext_resource type="FontFile" uid="uid://l5geiqonhqi0" path="res://fonts/SG10-8-5.ttf" id="5_en7qi"]
-
-[sub_resource type="FontVariation" id="FontVariation_qjsot"]
-base_font = ExtResource("5_en7qi")
-spacing_space = -3
+[ext_resource type="Script" uid="uid://byefsrphw4tn7" path="res://slides/current_ball.gd" id="6_6vrr4"]
 
 [sub_resource type="FontVariation" id="FontVariation_6vrr4"]
 base_font = ExtResource("5_en7qi")
@@ -39,7 +36,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="player_score" type="Label" parent="zedmd"]
+[node name="current_player_score" type="Label" parent="zedmd"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -51,7 +48,7 @@ offset_top = -7.0
 offset_right = 47.0
 offset_bottom = 10.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 0.282353, 0.113725, 1)
+theme_override_colors/font_color = Color(1, 0.972549, 0.356863, 1)
 theme_override_fonts/font = ExtResource("3_iv3o2")
 theme_override_font_sizes/font_size = 16
 text = "1,234,567"
@@ -61,31 +58,119 @@ variable_name = "score"
 comma_separate = true
 min_digits = 2
 
-[node name="HFlowContainer" type="HFlowContainer" parent="zedmd"]
+[node name="player_score1" type="Label" parent="zedmd"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -16.0
+offset_right = 14.0
+offset_bottom = -8.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.788235, 0.8, 1)
+theme_override_fonts/font = ExtResource("5_en7qi")
+theme_override_font_sizes/font_size = 8
+text = "1,234,567"
+script = ExtResource("3_l15x2")
+variable_type = 4
+variable_name = "score"
+comma_separate = true
+min_digits = 2
+min_players = 2
+
+[node name="player_score2" type="Label" parent="zedmd"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -16.0
+offset_right = 64.0
+offset_bottom = -8.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.788235, 0.8, 1)
+theme_override_fonts/font = ExtResource("5_en7qi")
+theme_override_font_sizes/font_size = 8
+text = "1,234,567"
+horizontal_alignment = 2
+script = ExtResource("3_l15x2")
+variable_type = 5
+variable_name = "score"
+comma_separate = true
+min_digits = 2
+min_players = 2
+
+[node name="player_score3" type="Label" parent="zedmd"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = 9.0
+offset_right = 14.0
+offset_bottom = 17.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.788235, 0.8, 1)
+theme_override_fonts/font = ExtResource("5_en7qi")
+theme_override_font_sizes/font_size = 8
+text = "1,234,567"
+script = ExtResource("3_l15x2")
+variable_type = 6
+variable_name = "score"
+comma_separate = true
+min_digits = 2
+min_players = 3
+
+[node name="player_score4" type="Label" parent="zedmd"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = 9.0
+offset_right = 64.0
+offset_bottom = 17.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.788235, 0.8, 1)
+theme_override_fonts/font = ExtResource("5_en7qi")
+theme_override_font_sizes/font_size = 8
+text = "1,234,567"
+horizontal_alignment = 2
+script = ExtResource("3_l15x2")
+variable_type = 7
+variable_name = "score"
+comma_separate = true
+min_digits = 2
+min_players = 4
+
+[node name="current_ball" type="HFlowContainer" parent="zedmd"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 1.0
 offset_top = -7.0
-offset_right = 101.0
-offset_bottom = 13.0
+offset_right = 129.0
+offset_bottom = 1.0
 grow_vertical = 0
 theme_override_constants/h_separation = -2
+alignment = 2
+script = ExtResource("6_6vrr4")
 
-[node name="player_number" type="Label" parent="zedmd/HFlowContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(3.27289e-06, 0.788568, 0.800598, 1)
-theme_override_fonts/font = SubResource("FontVariation_qjsot")
-theme_override_font_sizes/font_size = 8
-text = "PLAYER X "
-vertical_alignment = 2
-script = ExtResource("3_l15x2")
-variable_name = "number"
-template_string = "PLAYER %s "
-min_players = 2
-
-[node name="player_ball" type="Label" parent="zedmd/HFlowContainer"]
+[node name="player_ball" type="Label" parent="zedmd/current_ball"]
 layout_mode = 2
 theme_override_colors/font_color = Color(3.27289e-06, 0.788568, 0.800598, 1)
 theme_override_fonts/font = SubResource("FontVariation_6vrr4")
