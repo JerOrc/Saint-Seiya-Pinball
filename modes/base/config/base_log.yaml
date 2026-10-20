@@ -180,7 +180,7 @@ slide_player:
       action: method
       method: effect
       tokens:
-        style: circle
+        style: double_circle
   bumpers_shots_hit:
     log:
       action: method

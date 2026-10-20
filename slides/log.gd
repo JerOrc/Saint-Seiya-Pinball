@@ -22,6 +22,10 @@ func _ready() -> void:
       "preload": preload("res://scenes/circle.tscn"),
       "duration": PI/4 
     },
+    "double_circle": {
+      "preload": preload("res://scenes/circle.tscn"),
+      "duration": PI/4 
+    },
   }
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -62,10 +66,19 @@ func log_text(_settings, _kwargs):
 
 
 func effect(_settings, _kwargs): 
+  var instance2
   var style = _settings.tokens.style if _settings.tokens.has("style") else "circle"
   var scene = effect_scenes[style].preload
   var instance = scene.instantiate()
-
   $zedmd.add_child(instance)
-  await get_tree().create_timer(effect_scenes[style].duration).timeout
-  instance.queue_free()
+
+  if style == "double_circle":
+    await get_tree().create_timer(0.1).timeout
+    instance2 = scene.instantiate()
+    $zedmd.add_child(instance2)
+    await get_tree().create_timer(effect_scenes[style].duration).timeout
+    instance.queue_free()
+    instance2.queue_free()
+  else:      
+    await get_tree().create_timer(effect_scenes[style].duration).timeout
+    instance.queue_free()
