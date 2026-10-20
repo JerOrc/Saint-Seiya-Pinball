@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bms7tnupcdxg0"]
+
+[ext_resource type="Script" uid="uid://cbshb1h2ul6mb" path="res://scenes/citcle.gd" id="1_4mvoj"]
+
+[node name="Circle" type="Node2D"]
+script = ExtResource("1_4mvoj")

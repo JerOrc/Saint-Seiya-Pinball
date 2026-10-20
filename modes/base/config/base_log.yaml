@@ -175,3 +175,15 @@ slide_player:
       tokens:
         text1: "Cosmo up !"
         style: lightning
+  s_plunger_lane_inactive:
+    log:
+      action: method
+      method: effect
+      tokens:
+        style: circle
+  bumpers_shots_hit:
+    log:
+      action: method
+      method: effect
+      tokens:
+        style: circle
