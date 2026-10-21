@@ -58,7 +58,7 @@ func log_text(_settings, _kwargs):
       instance.get_node("Label").text = _settings.tokens.text
   
   if _settings.tokens.has("bad") and style == "default":
-    instance.get_node("ColorRect").set("color", Color(0.733333, 0.14902, 0, 1))
+    instance.get_node("ColorRect").set("color", Color.html('c72227'))
       
   $zedmd.add_child(instance)
   await get_tree().create_timer(log_scenes[style].duration).timeout

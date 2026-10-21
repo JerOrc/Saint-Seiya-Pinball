@@ -17,40 +17,40 @@ shader_parameter/tolerance = 0.9
 [sub_resource type="LabelSettings" id="LabelSettings_pt1ea"]
 line_spacing = 0.0
 font = ExtResource("5_xvo2p")
-font_color = Color(1, 0.972549, 0.356863, 1)
-outline_size = 7
+font_color = Color(0.305882, 0.486275, 0.729412, 1)
+outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vmd3o"]
 font = ExtResource("6_xvo2p")
 font_size = 20
-font_color = Color(1, 0.972549, 0.356863, 1)
+font_color = Color(0.929412, 0.796078, 0.0666667, 1)
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_spupx"]
 font = ExtResource("5_58u4v")
-font_color = Color(1, 0.972549, 0.356863, 1)
+font_color = Color(0.305882, 0.486275, 0.729412, 1)
 outline_size = 7
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_58u4v"]
 font = ExtResource("6_xvo2p")
 font_size = 20
-font_color = Color(1, 0.972549, 0.356863, 1)
+font_color = Color(0.929412, 0.796078, 0.0666667, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_xvo2p"]
 font = ExtResource("5_58u4v")
-font_color = Color(1, 0.972549, 0.356863, 1)
+font_color = Color(0.305882, 0.486275, 0.729412, 1)
 outline_size = 7
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jyef3"]
 font = ExtResource("8_xvo2p")
 font_size = 8
-font_color = Color(1, 0.972549, 0.356863, 1)
+font_color = Color(0.929412, 0.796078, 0.0666667, 1)
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
