@@ -11,169 +11,169 @@ slide_player:
       action: method
       method: log_text
       tokens:
-        text: "skill failed"
+        text: skill failed
         bad: 1
   skill_success:
     log:
       action: method
       method: log_text
       tokens:
-        text1: "skill shot"
-        text2: "50.000"
-        text3: "+1 Cosmo"
+        text1: skill shot
+        text2: (50000 + _current_player.get('skillshot_count') * 50000) * _current_player.get('pf_multiplier')
+        text3: +1 Cosmo
         style: lightning
   super_skill_success:
     log:
       action: method
       method: log_text
       tokens:
-        text1: "Super skill success"
+        text1: Super skill success
         style: lightning
   super_secret_skill_success:
     log:
       action: method
       method: log_text
       tokens:
-        text1: "Super secret skill success"
+        text1: Super secret skill success
         style: lightning
 #  auto_launch_plunger:
 #    log:
 #      action: method
 #      method: log_text
 #      tokens:
-#        text: "Auto launch"
+#        text: Auto launch
   shot_ramps_combo_hit:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Ramps Combo !"
+        text: Ramps Combo !
   bm_lanes_lit_complete:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Bonus increased"
+        text: Bonus increased
   super_bumpers_restart:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Super Bumpers"
+        text: Super Bumpers
   pf_multiplier_start:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Pf multiplier flashing"
+        text: Pf multiplier flashing
   logicblock_zodiac_sequence_hit{step==1}:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Zodiac"
+        text: Zodiac
   logicblock_zodiac_sequence_hit{step==2}:
     log:
       action: method
       method: log_text
       tokens:
-        text: "ZOdiac"
+        text: ZOdiac
   logicblock_zodiac_sequence_hit{step==3}:
     log:
       action: method
       method: log_text
       tokens:
-        text: "ZODiac"
+        text: ZODiac
   logicblock_zodiac_sequence_hit{step==4}:
     log:
       action: method
       method: log_text
       tokens:
-        text: "ZODIac"
+        text: ZODIac
   logicblock_zodiac_sequence_hit{step==5}:
     log:
       action: method
       method: log_text
       tokens:
-        text: "ZODIAc"
+        text: ZODIAc
   logicblock_zodiac_sequence_hit{step==6}:
     log:
       action: method
       method: log_text
       tokens:
-        text: "ZODIAC"
+        text: ZODIAC
   zodiac_validation_shot_hit:
     log:
       action: method
       method: log_text
       tokens:
-        text: "ZODIAC !!!"
+        text: ZODIAC !!!
   zodiac_extraball_shot_is_lit:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Zodiac extraball is lit"
+        text: Zodiac extraball is lit
   gold_saints_extraballs_shot_is_lit:
     log:
       action: method
       method: log_text
       tokens:
-        text: "GK extraball is lit"
+        text: GK extraball is lit
   extra_ball_gold_saint_extraball_awarded:
     log:
       action: method
       method: log_text
       tokens:
-        text: "EXTRABALL !"
+        text: EXTRABALL !
   extra_ball_zodiac_ramps_extraball_awarded:
     log:
       action: method
       method: log_text
       tokens:
-        text: "ZODIAC EXTRABALL !"
+        text: ZODIAC EXTRABALL !
   logicblock_leos_hits_counter_hit:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Orbit"
+        text: Orbit
   ikki_lock_enabled:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Lock is lit"
+        text: Lock is lit
   ikki_dummy_lock_enabled:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Lock is lit"
+        text: Lock is lit
   ikki_locked:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Ball locked"
+        text: Ball locked
   ikki_dummy_locked:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Ball locked"
+        text: Ball locked
   multiball_ikki_multiball_started:
     log:
       action: method
       method: log_text
       tokens:
-        text: "IKKI MULTIBALL !"
+        text: IKKI MULTIBALL !
   logicblock_cosmo_counter_hit:
     log:
       action: method
       method: log_text
       tokens:
-        text1: "Cosmo up !"
+        text1: Cosmo up !
         style: lightning
   s_plunger_lane_inactive:
     log:
