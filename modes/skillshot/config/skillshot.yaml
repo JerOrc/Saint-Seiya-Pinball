@@ -1,16 +1,13 @@
 #config_version=6
-
-# There are 2 skill shots at the start of this game:
-# The light on at the top of the bumpers.
-# Press the left flipper and dunk a stronger ball then hit the captive ball within 10 seconds or go into the secret skillshot.
-# Skillshot value starts at 50,000 points and increases by 50,000 for each skillshot rolled.
-# Super skillshot value starts at 100,000 points and increases by 50,000 for each super skillshot rolled.
-# Super secret skillshot value starts at 150,000 points and increases by 50,000 for each super skillshot rolled.
+# 3 skillshots :
+#   1. random 1 des 2 lanes au niveau des bumpers -> points + augmente son cosmos
+#   Si on appuie sur le flipper gauche durant le lancé :
+#     2. secret skillshot derrière la rampe gauche -> points + Bonus +5s pour les ball save sur cette bille
+#
 
 mode:
   start_events: start_mode_skillshot
   stop_events:
-    - super_secret_skill_success
     - skill_failed
     - stop_mode_skillshot
     - stop_wizards
@@ -52,7 +49,7 @@ shot_groups:
     enable_events: enable_skill
     disable_events: enable_super_skill, mode_skillshot_will_stop
     rotate_left_events: s_flipper_left_active
-    rotate_right_events: s_flipper_right_active
+    rotate_right_events: s_flipper_right_active, random_right_lane
   super_skillshot:
     shots: super_skill_target
     enable_events: enable_super_skill
@@ -66,6 +63,7 @@ variable_player:
     super_skillshot_count: 1
     score: (100_000 + current_player.super_skillshot_count * 50_000) * current_player.pf_multiplier
   super_secret_skill_success:
+    ballsave_bonus_time: 5
     super_skillshot_count: 1
     score: (150_000 + current_player.super_skillshot_count * 50_000) * current_player.pf_multiplier
 
@@ -75,9 +73,17 @@ event_player:
   flipper_super_skill_released{device.switches.s_plunger_lane.state == 1}: enable_skill
   super_skill_success:
     - stop_mode_skillshot|2s
+  super_secret_skill_success:
+    - stop_mode_skillshot|1s
   skill_success:
     - cosmo_up|2s
     - stop_mode_skillshot|3s
+
+random_event_player:
+  enable_skill:
+    events:
+      - random_left_lane
+      - random_right_lane
 
 timers:
   skillshots_timeout:

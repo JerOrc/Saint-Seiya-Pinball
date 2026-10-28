@@ -1,6 +1,9 @@
 #config_version=6
 
 player_vars:
+  ballsave_bonus_time:
+    initial_value: 0
+
   bumpers_score:
     initial_value: 210
 

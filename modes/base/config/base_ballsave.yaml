@@ -1,17 +1,26 @@
 #config_version=6
 
 ball_saves:
+  # default:
+  #   active_time: 1 + current_player.ballsave_bonus_time
+  #   hurry_up_time: 2s
+  #   grace_period: 2s
+  #   enable_events: mode_base_started
+  #   timer_start_events: mode_skillshot_stopped, s_orbit_left_active
+  #   auto_launch: yes
+  #   balls_to_save: 1  # for unlimited saves set -1
+  #   early_ball_save_events: s_outlane_left_active, s_outlane_right_active
   default:
-    active_time: 10s
-    hurry_up_time: 2s
-    grace_period: 2s
-    enable_events: mode_base_started
-    timer_start_events: balldevice_bd_plunger_ball_eject_success
+    active_time: 0
+    # hurry_up_time: 2s
+    # grace_period: 2s
+    enable_events: mode_skillshot_stopped, s_orbit_left_active
     auto_launch: yes
     balls_to_save: 1  # for unlimited saves set -1
     early_ball_save_events: s_outlane_left_active, s_outlane_right_active
+    disable_events: timer_default_ball_save_timer_complete
   mystery_ballsave:
-    active_time: 20s
+    active_time: 20 + current_player.ballsave_bonus_time
     hurry_up_time: 2s
     grace_period: 2s
     enable_events: mystery_award_ballsave_event
@@ -19,16 +28,33 @@ ball_saves:
     balls_to_save: -1  # for unlimited saves set -1
     early_ball_save_events: s_outlane_left_active, s_outlane_right_active
 
+timers:
+  default_ball_save_timer:
+    start_value: 20
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - event: ball_save_default_enabled
+        action: start
+      # Add extra time
+      - event: super_secret_skill_success
+        action: add
+        value: 5
+
 
 show_player:
-  ball_save_default_timer_start:
+  ball_save_default_enabled:
     ball_save_show:
       action: play
       speed: 5
-  ball_save_default_hurry_up:
+  timer_default_ball_save_timer_tick{ticks_remaining==5}:
     ball_save_show:
       action: play
       speed: 10
+  timer_default_ball_save_timer_tick{ticks_remaining==2}:
+    ball_save_show:
+      action: stop
   ball_save_default_disabled:
     ball_save_show:
       action: stop

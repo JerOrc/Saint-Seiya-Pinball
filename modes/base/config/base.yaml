@@ -48,6 +48,9 @@ variable_player:
     bonus_multiplier:
       int: 1
       action: set
+    ballsave_bonus_time:
+      int: 0
+      action: set
 
 shots:
   kickout_left:
