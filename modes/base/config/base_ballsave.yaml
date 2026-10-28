@@ -7,15 +7,15 @@ ball_saves:
   #   grace_period: 2s
   #   enable_events: mode_base_started
   #   timer_start_events: mode_skillshot_stopped, s_orbit_left_active
-  #   auto_launch: yes
+  #   auto_launch: true
   #   balls_to_save: 1  # for unlimited saves set -1
   #   early_ball_save_events: s_outlane_left_active, s_outlane_right_active
   default:
     active_time: 0
     # hurry_up_time: 2s
     # grace_period: 2s
-    enable_events: mode_skillshot_stopped, s_orbit_left_active
-    auto_launch: yes
+    enable_events: mode_base_started
+    auto_launch: true
     balls_to_save: 1  # for unlimited saves set -1
     early_ball_save_events: s_outlane_left_active, s_outlane_right_active
     disable_events: timer_default_ball_save_timer_complete
@@ -24,7 +24,7 @@ ball_saves:
     hurry_up_time: 2s
     grace_period: 2s
     enable_events: mystery_award_ballsave_event
-    auto_launch: yes
+    auto_launch: true
     balls_to_save: -1  # for unlimited saves set -1
     early_ball_save_events: s_outlane_left_active, s_outlane_right_active
 
@@ -35,7 +35,7 @@ timers:
     direction: down
     tick_interval: 1s
     control_events:
-      - event: ball_save_default_enabled
+      - event: mode_skillshot_stopped, s_orbit_left_active_during_skillshot
         action: start
       # Add extra time
       - event: super_secret_skill_success

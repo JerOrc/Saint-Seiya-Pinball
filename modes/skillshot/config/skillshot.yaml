@@ -78,6 +78,8 @@ event_player:
   skill_success:
     - cosmo_up|2s
     - stop_mode_skillshot|3s
+  s_orbit_left_active:
+    - s_orbit_left_active_during_skillshot
 
 random_event_player:
   enable_skill:
