@@ -2,10 +2,13 @@ extends MPFSlide
 
 var log_scenes
 var effect_scenes 
-
+var _MPF
+var _current_player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+  _MPF = MPF
+  _current_player = MPF.game.player
   log_scenes = { 
     "default": {
         "preload": preload("res://scenes/log.tscn"),
@@ -44,7 +47,7 @@ func log_text(_settings, _kwargs):
     if _settings.tokens.has("text2"):
       if _settings.tokens.has("text3"):
         instance.get_node("Labels/Label3/Label3-1").text = _settings.tokens.text1
-        instance.get_node("Labels/Label3/Label3-2").text = _settings.tokens.text2
+        instance.get_node("Labels/Label3/Label3-2").text = _evaluate(_settings.tokens.text2)
         instance.get_node("Labels/Label3/Label3-3").text = _settings.tokens.text3
         instance.get_node("Labels/Label3").visible = true
       else:
@@ -82,3 +85,47 @@ func effect(_settings, _kwargs):
   else:      
     await get_tree().create_timer(effect_scenes[style].duration).timeout
     instance.queue_free()
+
+
+func _evaluate(command: String, variable_names = [], variable_values = []) -> String:
+  #if command.contains('['): 
+    #var debut_expression = 0
+    #var fin_expression = 0
+    #while command.find('[', debut_expression) >= 0:
+      #debut_expression = command.find('[', fin_expression)
+      #fin_expression = command.find(']', debut_expression)
+      #variable_names.append(command.substr(debut_expression, fin_expression - debut_expression + 1))
+      #debut_expression = fin_expression
+#
+    #var var_clean_name
+    #var var_value
+    #for var_name in variable_names:
+      #var_clean_name = var_name.substr(1, var_name.length() - 2)
+      #var_value = _MPF.game.player.get(var_clean_name)
+      #variable_values.append(var_value)
+    
+  var expression = Expression.new()
+  var error = expression.parse(command, variable_names)
+  if error != OK:
+    push_error(expression.get_error_text())
+    return command
+
+  var result = expression.execute(variable_values, self)
+  
+  if not expression.has_execute_failed():
+    return "+" + format_big_number(result) 
+    
+  return command
+
+func format_big_number(number: int)-> String:
+  var num_str: String = str(number)
+  var result: String = ""
+  var count: int = 0
+  
+  for i in range(num_str.length() - 1, -1, -1):
+    result = num_str[i] + result
+    count += 1
+    if count % 3 == 0 and i != 0:
+      result = "." + result
+  return result
+  
