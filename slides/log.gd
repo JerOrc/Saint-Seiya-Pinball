@@ -46,19 +46,19 @@ func log_text(_settings, _kwargs):
 
     if _settings.tokens.has("text2"):
       if _settings.tokens.has("text3"):
-        instance.get_node("Labels/Label3/Label3-1").text = _settings.tokens.text1
+        instance.get_node("Labels/Label3/Label3-1").text = _evaluate(_settings.tokens.text1)
         instance.get_node("Labels/Label3/Label3-2").text = _evaluate(_settings.tokens.text2)
-        instance.get_node("Labels/Label3/Label3-3").text = _settings.tokens.text3
+        instance.get_node("Labels/Label3/Label3-3").text = _evaluate(_settings.tokens.text3)
         instance.get_node("Labels/Label3").visible = true
       else:
-        instance.get_node("Labels/Label3/Label2-1").text = _settings.tokens.text1
-        instance.get_node("Labels/Label3/Label2-2").text = _settings.tokens.text2
+        instance.get_node("Labels/Label3/Label2-1").text = _evaluate(_settings.tokens.text1)
+        instance.get_node("Labels/Label3/Label2-2").text = _evaluate(_settings.tokens.text2)
         instance.get_node("Labels/Label2").visible = true
     else:
-      instance.get_node("Labels/Label1/Label1-1").text = _settings.tokens.text1
+      instance.get_node("Labels/Label1/Label1-1").text = _evaluate(_settings.tokens.text1)
       instance.get_node("Labels/Label1").visible = true  
   else:
-      instance.get_node("Label").text = _settings.tokens.text
+      instance.get_node("Label").text = _evaluate(_settings.tokens.text)
   
   if _settings.tokens.has("bad") and style == "default":
     instance.get_node("ColorRect").set("color", Color.html('c72227'))
@@ -88,34 +88,35 @@ func effect(_settings, _kwargs):
 
 
 func _evaluate(command: String, variable_names = [], variable_values = []) -> String:
-  #if command.contains('['): 
-    #var debut_expression = 0
-    #var fin_expression = 0
-    #while command.find('[', debut_expression) >= 0:
-      #debut_expression = command.find('[', fin_expression)
-      #fin_expression = command.find(']', debut_expression)
-      #variable_names.append(command.substr(debut_expression, fin_expression - debut_expression + 1))
-      #debut_expression = fin_expression
-#
-    #var var_clean_name
-    #var var_value
-    #for var_name in variable_names:
-      #var_clean_name = var_name.substr(1, var_name.length() - 2)
-      #var_value = _MPF.game.player.get(var_clean_name)
-      #variable_values.append(var_value)
-    
-  var expression = Expression.new()
-  var error = expression.parse(command, variable_names)
-  if error != OK:
-    push_error(expression.get_error_text())
-    return command
-
-  var result = expression.execute(variable_values, self)
-  
-  if not expression.has_execute_failed():
-    return "+" + format_big_number(result) 
-    
+  if command.begins_with('='):
+    command = command.substr(1)
+    if command.contains('['): 
+      #var debut_expression = 0
+      #var fin_expression = 0
+      #while command.find('[', debut_expression) >= 0:
+        #debut_expression = command.find('[', fin_expression)
+        #fin_expression = command.find(']', debut_expression)
+        #variable_names.append(command.substr(debut_expression, fin_expression - debut_expression + 1))
+        #debut_expression = fin_expression
+      #var var_clean_name
+      #var var_value
+      #for var_name in variable_names:
+        #var_clean_name = var_name.substr(1, var_name.length() - 2)
+        #var_value = _MPF.game.player.get(var_clean_name)
+        #variable_values.append(var_value)
+      command = command.replace('[', "_current_player.get('")
+      command = command.replace(']', "')")
+      
+    var expression = Expression.new()
+    var error = expression.parse(command, variable_names)
+    if error != OK:
+      push_error(expression.get_error_text())
+      return command
+    var result = expression.execute(variable_values, self)
+    if not expression.has_execute_failed():
+      return result     
   return command
+
 
 func format_big_number(number: int)-> String:
   var num_str: String = str(number)

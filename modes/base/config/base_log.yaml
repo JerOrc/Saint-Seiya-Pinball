@@ -19,7 +19,7 @@ slide_player:
       method: log_text
       tokens:
         text1: skill shot
-        text2: (50000 + _current_player.get('skillshot_count') * 50000) * _current_player.get('pf_multiplier')
+        text2: = "+" + format_big_number((50000 + [skillshot_count] * 50000) * [pf_multiplier])
         text3: +1 Cosmo
         style: lightning
   super_skill_success:
