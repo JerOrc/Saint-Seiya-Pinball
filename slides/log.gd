@@ -3,12 +3,10 @@ extends MPFSlide
 var log_scenes
 var effect_scenes 
 var _MPF
-var _current_player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
   _MPF = MPF
-  _current_player = MPF.game.player
   log_scenes = { 
     "default": {
         "preload": preload("res://scenes/log.tscn"),
@@ -104,7 +102,7 @@ func _evaluate(command: String, variable_names = [], variable_values = []) -> St
         #var_clean_name = var_name.substr(1, var_name.length() - 2)
         #var_value = _MPF.game.player.get(var_clean_name)
         #variable_values.append(var_value)
-      command = command.replace('[', "_current_player.get('")
+      command = command.replace('[', "_MPF.game.player.get('") # ~current_player.variables
       command = command.replace(']', "')")
       
     var expression = Expression.new()
