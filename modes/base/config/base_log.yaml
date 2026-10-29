@@ -12,7 +12,7 @@ slide_player:
       method: log_text
       tokens:
         text: skill failed
-        bad: 1
+        background: red
   skill_success:
     log:
       action: method
@@ -27,21 +27,15 @@ slide_player:
       action: method
       method: log_text
       tokens:
-        text1: Super skill success
-        style: lightning
+        text: Super skill !
+        background: black
   super_secret_skill_success:
     log:
       action: method
       method: log_text
       tokens:
-        text1: Super secret skill success
-        style: lightning
-#  auto_launch_plunger:
-#    log:
-#      action: method
-#      method: log_text
-#      tokens:
-#        text: Auto launch
+        text: Secret skill...
+        background: black
   shot_ramps_combo_hit:
     log:
       action: method
