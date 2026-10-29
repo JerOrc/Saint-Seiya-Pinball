@@ -51,11 +51,11 @@ switches:
     tags: bumpers
   s_slingshot_left:
     number: 0-0-3
-    ignore_window_ms: 150
+    debounce: quick
     tags: slingshots
   s_slingshot_right:
     number: 0-0-8
-    ignore_window_ms: 150
+    debounce: quick
     tags: slingshots
   s_kickout:
     number:

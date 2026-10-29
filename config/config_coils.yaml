@@ -34,10 +34,16 @@ coils:
     number: 0-0-3
     default_pulse_ms: 25
     default_pulse_power: 0.5
+    default_recycle: true
+    platform_settings:
+      recycle_factor: 7
   c_slingshot_left:
     number: 0-0-12
     default_pulse_ms: 25
     default_pulse_power: 0.5
+    default_recycle: true
+    platform_settings:
+      recycle_factor: 7
 
   c_bumper_left:
     number:
@@ -79,9 +85,13 @@ autofire_coils:
   slingshot_left:
     coil: c_slingshot_left
     switch: s_slingshot_left
+    switch_overwrite:
+      debounce: quick
   slingshot_right:
     coil: c_slingshot_right
     switch: s_slingshot_right
+    switch_overwrite:
+      debounce: quick
   bumper_left:
     coil: c_bumper_left
     switch: s_bumper_left
