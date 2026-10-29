@@ -36,6 +36,20 @@ slide_player:
       tokens:
         text: Secret skill...
         background: black
+  super_secret_skill_success_log1:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: = "+" + format_big_number((150000 + [super_skillshot_count] * 50000) * [pf_multiplier])
+        background: black
+  super_secret_skill_success_log2:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: ballsaves +5s
+        background: black
   shot_ramps_combo_hit:
     log:
       action: method

@@ -74,7 +74,9 @@ event_player:
   super_skill_success:
     - stop_mode_skillshot|2s
   super_secret_skill_success:
-    - stop_mode_skillshot|1s
+    - super_secret_skill_success_log1|1s
+    - super_secret_skill_success_log2|2.5s
+    - stop_mode_skillshot|4s
   skill_success:
     - cosmo_up|2s
     - stop_mode_skillshot|3s
