@@ -1,24 +1,14 @@
 #config_version=6
 
 ball_saves:
-  # default:
-  #   active_time: 1 + current_player.ballsave_bonus_time
-  #   hurry_up_time: 2s
-  #   grace_period: 2s
-  #   enable_events: mode_base_started
-  #   timer_start_events: mode_skillshot_stopped, s_orbit_left_active
-  #   auto_launch: true
-  #   balls_to_save: 1  # for unlimited saves set -1
-  #   early_ball_save_events: s_outlane_left_active, s_outlane_right_active
-  default:
-    active_time: 0
-    # hurry_up_time: 2s
-    # grace_period: 2s
-    enable_events: mode_base_started
+  start_ballsave:
+    active_time: 20 + current_player.ballsave_bonus_time
+    hurry_up_time: 2s
+    grace_period: 2s
+    enable_events: mode_skillshot_stopped, s_orbit_left_active_during_skillshot
     auto_launch: true
     balls_to_save: 1  # for unlimited saves set -1
     early_ball_save_events: s_outlane_left_active, s_outlane_right_active
-    disable_events: timer_default_ball_save_timer_complete
   mystery_ballsave:
     active_time: 20 + current_player.ballsave_bonus_time
     hurry_up_time: 2s
@@ -28,59 +18,32 @@ ball_saves:
     balls_to_save: -1  # for unlimited saves set -1
     early_ball_save_events: s_outlane_left_active, s_outlane_right_active
 
-timers:
-  default_ball_save_timer:
-    start_value: 20
-    end_value: 0
-    direction: down
-    tick_interval: 1s
-    control_events:
-      - event: mode_skillshot_stopped, s_orbit_left_active_during_skillshot
-        action: start
-      # Add extra time
-      - event: super_secret_skill_success
-        action: add
-        value: 5
-
-
 show_player:
-  ball_save_default_enabled:
+  ball_save_start_ballsave_timer_start:
     ball_save_show:
       action: play
       speed: 5
-  timer_default_ball_save_timer_tick{ticks_remaining==5}:
+  ball_save_start_ballsave_hurry_up:
     ball_save_show:
       action: play
       speed: 10
-  timer_default_ball_save_timer_tick{ticks_remaining==2}:
-    ball_save_show:
-      action: stop
-  ball_save_default_disabled:
+  ball_save_start_ballsave_disabled:
     ball_save_show:
       action: stop
   ball_save_mystery_ballsave_timer_start:
-    mystery_ball_save_show:
+    ball_save_show:
       action: play
       speed: 5
   ball_save_mystery_ballsave_hurry_up:
-    mystery_ball_save_show:
+    ball_save_show:
       action: play
       speed: 10
   ball_save_mystery_ballsave_disabled:
-    mystery_ball_save_show:
+    ball_save_show:
       action: stop
 
 shows:
   ball_save_show:
-    - time: 0
-      lights:
-        led_ballsave:
-          color: black
-    - time: '+2'
-      lights:
-        led_ballsave:
-          color: orange
-  mystery_ball_save_show:
     - time: 0
       lights:
         led_ballsave:
