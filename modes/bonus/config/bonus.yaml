@@ -13,7 +13,7 @@ mode_settings:
       score: 10_000
       reset_player_score_entry: true
     - entry: saints_confronted
-      text: "saints confronted"
+      text: "saints fought"
       player_score_entry: saints_confronted_ball_count
       score: 20_000
       skip_if_zero: false

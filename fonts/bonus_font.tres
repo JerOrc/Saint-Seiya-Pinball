@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bksko5hv37a3q"]
+
+[ext_resource type="FontFile" uid="uid://cvh4ibl317df5" path="res://fonts/dosukoi-8-8.ttf" id="1_4iw3g"]
+
+[resource]
+font = ExtResource("1_4iw3g")
+font_size = 8
