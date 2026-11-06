@@ -58,28 +58,39 @@ shot_groups:
 variable_player:
   skill_success:
     skillshot_count: 1
-    score: 10_000 * (1 + current_player.skillshot_count) * current_player.pf_multiplier
+    skill_score:
+      int: 10_000 * current_player.skillshot_count * current_player.pf_multiplier
+      action: set
   super_skill_success:
-    super_skillshot_count: 1
-    score: 20_000 * (1 + current_player.skillshot_count) * current_player.pf_multiplier
+    skillshot_count: 1
+    skill_score:
+      int: 20_000 * current_player.skillshot_count * current_player.pf_multiplier
+      action: set
   super_secret_skill_success:
+    skillshot_count: 1
+    skill_score:
+      int: 30_000 * current_player.skillshot_count * current_player.pf_multiplier
+      action: set
     ballsave_bonus_time: 5
-    super_skillshot_count: 1
-    score: 30_000 * (1 + current_player.skillshot_count) * current_player.pf_multiplier
+  skill_success_score:
+      score: current_player.skill_score
 
 event_player:
   mode_skillshot_started: enable_skill
   flipper_super_skill_active{device.switches.s_plunger_lane.state == 1}: enable_super_skill
   flipper_super_skill_released{device.switches.s_plunger_lane.state == 1}: enable_skill
   skill_success:
+    - skill_success_score|1s
     - cosmo_up|2s
     - stop_mode_skillshot|3s
   super_skill_success:
+    - skill_success_score|1s
     - stop_mode_skillshot|2s
   super_secret_skill_success:
-    - super_secret_skill_success_log1|1s
-    - super_secret_skill_success_log2|2.5s
-    - stop_mode_skillshot|4s
+    - skill_success_score|1s
+    - super_secret_skill_success_log1|2s
+    - super_secret_skill_success_log2|3.5s
+    - stop_mode_skillshot|4.5s
   s_orbit_left_active:
     - s_orbit_left_active_during_skillshot
 
@@ -88,6 +99,11 @@ random_event_player:
     events:
       - random_left_lane
       - random_right_lane
+
+queue_relay_player:
+  balldevice_bd_scoop_ball_eject_attempt: # add scoop eject ball delay in case of a secret skillshot
+    post: bd_scoop_ready_to_eject
+    wait_for: stop_mode_skillshot
 
 timers:
   skillshots_timeout:

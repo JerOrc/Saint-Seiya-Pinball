@@ -19,7 +19,7 @@ slide_player:
       method: log_text
       tokens:
         text1: skill shot
-        text2: = "+" + format_big_number((50000 + [skillshot_count] * 50000) * [pf_multiplier])
+        text2: = "+" + format_big_number([skill_score])
         text3: +1 Cosmo
         style: lightning
   super_skill_success:
@@ -34,21 +34,21 @@ slide_player:
       action: method
       method: log_text
       tokens:
-        text: Secret skill...
+        text: your 7th sense is awakening...
         background: black
   super_secret_skill_success_log1:
     log:
       action: method
       method: log_text
       tokens:
-        text: = "+" + format_big_number(30000 * (1 + [super_skillshot_count]) * [pf_multiplier])
+        text: ballsaves +5s
         background: black
   super_secret_skill_success_log2:
     log:
       action: method
       method: log_text
       tokens:
-        text: ballsaves +5s
+        text: = "+" + format_big_number([skill_score])
         background: black
   shot_ramps_combo_hit:
     log:

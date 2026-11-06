@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgx6rfjt41bjg"]
 
-[ext_resource type="FontFile" uid="uid://dyqh3mfq7rar4" path="res://fonts/VerminVibes1989Regular-m77m.ttf" id="1_spugk"]
+[ext_resource type="FontFile" uid="uid://d0rcsr3de1nid" path="res://fonts/SmallBoldPixel7-20-8.ttf" id="1_spugk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pt1ea"]
-line_spacing = -2.0
+line_spacing = -8.0
 font = ExtResource("1_spugk")
+font_size = 20
 font_color = Color(0, 0, 0, 1)
 
 [node name="Log" type="Node2D"]

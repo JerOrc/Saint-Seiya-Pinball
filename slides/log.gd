@@ -49,8 +49,8 @@ func log_text(_settings, _kwargs):
         instance.get_node("Labels/Label3/Label3-3").text = _evaluate(_settings.tokens.text3)
         instance.get_node("Labels/Label3").visible = true
       else:
-        instance.get_node("Labels/Label3/Label2-1").text = _evaluate(_settings.tokens.text1)
-        instance.get_node("Labels/Label3/Label2-2").text = _evaluate(_settings.tokens.text2)
+        instance.get_node("Labels/Label2/Label2-1").text = _evaluate(_settings.tokens.text1)
+        instance.get_node("Labels/Label2/Label2-2").text = _evaluate(_settings.tokens.text2)
         instance.get_node("Labels/Label2").visible = true
     else:
       instance.get_node("Labels/Label1/Label1-1").text = _evaluate(_settings.tokens.text1)
@@ -62,8 +62,13 @@ func log_text(_settings, _kwargs):
     match _settings.tokens.background:
       'red': 
         instance.get_node("ColorRect").set("color", Color.html('c72227'))
+        instance.get_node("Label").label_settings.set("font", load( "res://fonts/VerminVibes1989Regular-m77m.ttf"))
+        instance.get_node("Label").label_settings.set("font_size", 16)
+        instance.get_node("Label").label_settings.set("font_color", Color.html('000000'))
       'black':
         instance.get_node("ColorRect").set("color", Color.html('000000'))
+        instance.get_node("Label").label_settings.set("font", load( "res://fonts/SmallBoldPixel7-20-8.ttf"))
+        instance.get_node("Label").label_settings.set("font_size", 20)
         instance.get_node("Label").label_settings.set("font_color", Color.html('edcb11'))
       
   $zedmd.add_child(instance)
