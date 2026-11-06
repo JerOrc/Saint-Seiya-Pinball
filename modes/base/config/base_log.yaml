@@ -34,7 +34,7 @@ slide_player:
       action: method
       method: log_text
       tokens:
-        text: your 7th sense is awakening...
+        text: Your seven sense is awakening...
         background: black
   super_secret_skill_success_log1:
     log:

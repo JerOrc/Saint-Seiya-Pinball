@@ -63,12 +63,10 @@ func log_text(_settings, _kwargs):
       'red': 
         instance.get_node("ColorRect").set("color", Color.html('c72227'))
         instance.get_node("Label").label_settings.set("font", load( "res://fonts/VerminVibes1989Regular-m77m.ttf"))
-        instance.get_node("Label").label_settings.set("font_size", 16)
         instance.get_node("Label").label_settings.set("font_color", Color.html('000000'))
       'black':
         instance.get_node("ColorRect").set("color", Color.html('000000'))
-        instance.get_node("Label").label_settings.set("font", load( "res://fonts/SmallBoldPixel7-20-8.ttf"))
-        instance.get_node("Label").label_settings.set("font_size", 20)
+        instance.get_node("Label").label_settings.set("font", load( "res://fonts/CutePixel-16-8.ttf"))
         instance.get_node("Label").label_settings.set("font_color", Color.html('edcb11'))
       
   $zedmd.add_child(instance)
