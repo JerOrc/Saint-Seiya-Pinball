@@ -11,7 +11,7 @@ slide_player:
       action: method
       method: log_text
       tokens:
-        text: skill failed
+        text: Skill failed
         background: red
   skill_success:
     log:
@@ -41,7 +41,7 @@ slide_player:
       action: method
       method: log_text
       tokens:
-        text: ballsaves +5s
+        text: Ballsaves +5s
         background: black
   super_secret_skill_success_log2:
     log:
