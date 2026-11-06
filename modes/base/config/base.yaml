@@ -117,16 +117,6 @@ shows:
           color: (color2)
 
 
-light_player:
-  pf_multiplier_light_refresh{current_player.pf_multiplier >= 2}:
-    led_pf_multiplier_x2: blue
-  pf_multiplier_light_refresh{current_player.pf_multiplier >= 3}:
-    led_pf_multiplier_x3: blue
-  pf_multiplier_light_refresh{current_player.pf_multiplier >= 4}:
-    led_pf_multiplier_x4: blue
-  pf_multiplier_light_refresh{current_player.pf_multiplier >= 5}:
-    led_pf_multiplier_x5: blue
-
 sound_player:
   mode_base_started:
     base_playlist:
