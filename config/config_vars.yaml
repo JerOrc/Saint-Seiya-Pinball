@@ -9,6 +9,10 @@ player_vars:
 
   pf_multiplier:
     initial_value: 1
+  missions_pf_multiplier:
+    initial_value: 2
+  nb_missions:
+    initial_value: 0
 
   ramps_combo_score:
     initial_value: 2000

@@ -86,6 +86,8 @@ event_player:
   super_skill_success:
     - skill_success_score|1s
     - stop_mode_skillshot|2s
+    - pf_multiplier_is_lit
+    - start_pf_multiplier
   super_secret_skill_success:
     - skill_success_score|1s
     - super_secret_skill_success_log1|2s

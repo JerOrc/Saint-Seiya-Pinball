@@ -14,21 +14,21 @@ mode:
   priority: 100
 
 config:
-  - base_bumpers.yaml
-  - base_red_targets.yaml
-  - base_log.yaml
   - base_ballsave.yaml
-  - base_extraball.yaml
-  - base_ramps_combo.yaml
-  - base_shot_profiles.yaml
+  - base_bumpers.yaml
   - base_cosmo.yaml
+  - base_extraball.yaml
+  - base_log.yaml
+  - base_pf_multiplier.yaml
+  - base_ramps_combo.yaml
+  - base_red_targets.yaml
+  - base_shot_profiles.yaml
 
 event_player:
   mode_base_started:
     - start_mode_skillshot
     - start_base_bumpers
     - start_base_log
-    - pf_multiplier_light_refresh
   mode_base_will_stop:
     - stop_mode_global
     - stop_mode_skillshot

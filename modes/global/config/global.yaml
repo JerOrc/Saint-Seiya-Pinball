@@ -24,7 +24,6 @@ mode:
   priority: 300
 
 config:
-  - global_pf_multiplier.yaml
   - global_bonus_multiplier.yaml
   - global_zodiac_ramps.yaml
   - global_ikki_multiball_qualifier.yaml
