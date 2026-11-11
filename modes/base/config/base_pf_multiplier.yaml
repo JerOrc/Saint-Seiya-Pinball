@@ -1,14 +1,14 @@
 #config_version=6
 
 shots:
-  active_pf_multiplier_shot:
+  activate_pf_multiplier_shot:
     switch: s_newton_ball_target
     profile: flashing_profile
     show_tokens:
       led: led_newton_ball_pf_multiplier
       color: FF0000
     enable_events: pf_multiplier_is_lit
-    disable_events: active_pf_multiplier_shot_hit
+    disable_events: activate_pf_multiplier_shot_hit
     hit_events: start_pf_multiplier
 
 timers:
@@ -17,7 +17,7 @@ timers:
     tick_interval: 5s
     control_events:
       - action: restart
-        event: active_pf_multiplier_shot_hit
+        event: activate_pf_multiplier_shot_hit
 
 variable_player:
   timer_pf_multiplier_timer_started:

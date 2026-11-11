@@ -68,3 +68,14 @@ diverters:
     - sw_orbits_active{mode.gold_saint_5.active}
     enable_events:
      - mode_base_started
+
+servos:
+  door:
+    positions:
+      0.1: close_the_door
+      0.9: open_the_door
+    reset_position: 0.0
+    reset_events: reset_the_door
+    speed_limit: 0.5
+    number:
+    platform: virtual

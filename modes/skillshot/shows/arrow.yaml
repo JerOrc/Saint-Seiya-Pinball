@@ -1,0 +1,201 @@
+#show_version=6
+- time: 0
+  lights:
+    led_temple: '000000'
+    led_temple_cosmo: '000000'
+    led_temple_jackpot: '000000'
+    led_temple_lock_is_lit: '000000'
+    led_temple_start_battle: '000000'
+    
+- time: '+1'
+  lights:
+    led_temple_cosmo: 'AFA300'
+    
+- time: '+1'
+  lights:
+    led_temple_cosmo: 'AC9B00'
+    
+- time: '+1'
+  lights:
+    led_temple_cosmo: 'AB9500'
+    
+- time: '+1'
+  lights:
+    led_temple_cosmo: 'A48900'
+    led_temple_jackpot: 'DEBA00'
+    
+- time: '+1'
+  lights:
+    led_temple_cosmo: 'A38300'
+    led_temple_jackpot: 'DEB300'
+    
+- time: '+1'
+  lights:
+    led_temple_cosmo: '9D7A00'
+    led_temple_jackpot: 'D9A800'
+    
+- time: '+1'
+  lights:
+    led_temple_cosmo: '987100'
+    led_temple_jackpot: 'D19B00'
+    
+- time: '+1'
+  lights:
+    led_temple_cosmo: '8E6400'
+    led_temple_jackpot: 'C48B00'
+    
+- time: '+1'
+  lights:
+    led_temple: 'FBAA00'
+    led_temple_cosmo: '8A5D00'
+    led_temple_jackpot: 'BD7F00'
+    
+- time: '+1'
+  lights:
+    led_temple: 'F59E00'
+    led_temple_cosmo: '865600'
+    led_temple_jackpot: 'B57500'
+    
+- time: '+1'
+  lights:
+    led_temple: 'EC9000'
+    led_temple_cosmo: '804E00'
+    led_temple_jackpot: 'AC6900'
+    
+- time: '+1'
+  lights:
+    led_temple: 'E58500'
+    led_temple_cosmo: '7D4800'
+    led_temple_jackpot: 'A76100'
+    
+- time: '+1'
+  lights:
+    led_temple: 'DC7800'
+    led_temple_cosmo: '774100'
+    led_temple_jackpot: 'A05700'
+    
+- time: '+1'
+  lights:
+    led_temple: 'D66E00'
+    led_temple_cosmo: '753C00'
+    led_temple_jackpot: '9B5000'
+    
+- time: '+1'
+  lights:
+    led_temple: 'CE6300'
+    led_temple_cosmo: '713700'
+    led_temple_jackpot: '954800'
+    
+- time: '+1'
+  lights:
+    led_temple: 'C95A00'
+    led_temple_cosmo: '703200'
+    led_temple_jackpot: '924200'
+    
+- time: '+1'
+  lights:
+    led_temple: 'C25100'
+    led_temple_cosmo: '6C2D00'
+    led_temple_jackpot: '8D3B00'
+    led_temple_start_battle: 'FB6800'
+    
+- time: '+1'
+  lights:
+    led_temple: 'BE4900'
+    led_temple_cosmo: '6B2900'
+    led_temple_jackpot: '8A3500'
+    led_temple_start_battle: 'F75F00'
+    
+- time: '+1'
+  lights:
+    led_temple: 'B74100'
+    led_temple_cosmo: '682500'
+    led_temple_jackpot: '862F00'
+    led_temple_start_battle: 'F15500'
+    
+- time: '+1'
+  lights:
+    led_temple: 'B33A00'
+    led_temple_cosmo: '672100'
+    led_temple_jackpot: '832A00'
+    led_temple_start_battle: 'ED4C00'
+    
+- time: '+1'
+  lights:
+    led_temple: 'AF3300'
+    led_temple_cosmo: '661E00'
+    led_temple_jackpot: '822600'
+    led_temple_start_battle: 'E84300'
+    
+- time: '+1'
+  lights:
+    led_temple: 'AB2B00'
+    led_temple_cosmo: '631900'
+    led_temple_jackpot: '7E2000'
+    led_temple_lock_is_lit: 'FB4000'
+    led_temple_start_battle: 'E33A00'
+    
+- time: '+1'
+  lights:
+    led_temple: 'A72500'
+    led_temple_cosmo: '631600'
+    led_temple_jackpot: '7C1C00'
+    led_temple_lock_is_lit: 'F83700'
+    led_temple_start_battle: 'DE3200'
+    
+- time: '+1'
+  lights:
+    led_temple: 'A31F00'
+    led_temple_cosmo: '611300'
+    led_temple_jackpot: '791700'
+    led_temple_lock_is_lit: 'F32F00'
+    led_temple_start_battle: 'D92A00'
+    
+- time: '+1'
+  lights:
+    led_temple: 'A11A00'
+    led_temple_cosmo: '611000'
+    led_temple_jackpot: '781300'
+    led_temple_lock_is_lit: 'F02700'
+    led_temple_start_battle: 'D52200'
+    
+- time: '+1'
+  lights:
+    led_temple: '9C1400'
+    led_temple_cosmo: '5F0C00'
+    led_temple_jackpot: '750F00'
+    led_temple_lock_is_lit: 'EB1E00'
+    led_temple_start_battle: 'D01A00'
+    
+- time: '+1'
+  lights:
+    led_temple: '9A0F00'
+    led_temple_cosmo: '5F0900'
+    led_temple_jackpot: '740B00'
+    led_temple_lock_is_lit: 'E81600'
+    led_temple_start_battle: 'CD1300'
+    
+- time: '+1'
+  lights:
+    led_temple: '960900'
+    led_temple_cosmo: '5C0600'
+    led_temple_jackpot: '710700'
+    led_temple_lock_is_lit: 'E30E00'
+    led_temple_start_battle: 'C80D00'
+    
+- time: '+1'
+  lights:
+    led_temple: '940500'
+    led_temple_cosmo: '5C0300'
+    led_temple_jackpot: '700300'
+    led_temple_lock_is_lit: 'E00700'
+    led_temple_start_battle: 'C50600'
+    
+- time: '+1'
+  lights:
+    led_temple: '930000'
+    led_temple_cosmo: '5C0000'
+    led_temple_jackpot: '700000'
+    led_temple_lock_is_lit: 'DC0000'
+    led_temple_start_battle: 'C20000'
+    

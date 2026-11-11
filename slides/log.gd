@@ -56,7 +56,11 @@ func log_text(_settings, _kwargs):
       instance.get_node("Labels/Label1/Label1-1").text = _evaluate(_settings.tokens.text1)
       instance.get_node("Labels/Label1").visible = true  
   else:
+      print("* LOG * ", _settings.tokens.text)  
       instance.get_node("Label").text = _evaluate(_settings.tokens.text)
+      instance.get_node("Label").label_settings.set("font_color", Color.html('000000'))
+
+      
   
   if style == "default" and _settings.tokens.has("background"):
     match _settings.tokens.background:
