@@ -130,3 +130,13 @@ sound_player:
     Anime_Realization_Sound:
       bus: effects
       volume: 0.5
+
+
+sequences:
+  mega_skill_complete_random_gold_saint:
+    events:
+      - mega_skill_success
+      - mode_global_started
+    persist_state: true
+    disable_on_complete: false
+    events_when_complete: complete_random_gold_saint

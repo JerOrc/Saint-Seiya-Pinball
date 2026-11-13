@@ -127,7 +127,7 @@ slide_player:
       action: method
       method: log_text
       tokens:
-        text: GK extraball is lit
+        text: Gold Saint extraball is lit
   extra_ball_gold_saint_extraball_awarded:
     log:
       action: method
@@ -227,3 +227,9 @@ slide_player:
       method: effect
       tokens:
         style: double_circle
+  complete_random_gold_saint:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: 1 Gold Saint completed

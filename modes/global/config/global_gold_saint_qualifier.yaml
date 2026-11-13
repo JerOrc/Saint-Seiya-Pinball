@@ -6,6 +6,15 @@
 # When not in a battle, hitting the captive ball will change the selected battle.
 # You can't select again a finished battle until all battles are finished or a new game is started.
 
+# sequences:
+#   gold_saint_wokflow:
+#     events:
+#       - mode_gold_saint_started
+#       - mode_gold_saint_stopped
+#     persist_state: true
+#     disable_on_complete: false
+#     events_when_complete: gold_saint_completed
+
 shots:
   select_saint:
     switch: s_newton_ball_target
@@ -148,8 +157,20 @@ achievement_groups:
     allow_selection_change_while_disabled: false
     start_selected_events: enter_saint_temple_hit
     enable_events: initialize_saints
-    disable_events: mode_field_will_stop
+    disable_events: mode_global_will_stop, mode_gold_saint_started
     debug: true
 
 event_player:
-  mode_field_started: initialize_saints
+  mode_global_started: initialize_saints
+  mode_gold_saint_stopped: initialize_saints
+  complete_random_gold_saint:
+    - enter_saint_temple_hit
+    - stop_mode_gold_saint|100ms # A FAIRE : remplacer ce delai par un queue event ?
+# queue_event_player:
+#   stop_mode_gold_saint:
+#     queue_event: mode_gold_saint_stopped
+#     events_when_finished: my_queue_done
+# queue_relay_player:
+#   stop_mode_gold_saint:
+#     post: stop_mode_gold_saint_ready
+#     wait_for: mode_gold_saint_started
