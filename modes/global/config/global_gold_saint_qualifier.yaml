@@ -155,7 +155,7 @@ achievement_groups:
     show_when_enabled: flash
     select_random_achievement_events: select_saint_hit
     allow_selection_change_while_disabled: false
-    start_selected_events: enter_saint_temple_hit
+    start_selected_events: enter_saint_temple_hit, complete_random_gold_saint # DEBUT complete_random_gold_saint : 1. On démarre le gold saint
     enable_events: initialize_saints
     disable_events: mode_global_will_stop, mode_gold_saint_started
     debug: true
@@ -163,10 +163,8 @@ achievement_groups:
 event_player:
   mode_global_started: initialize_saints
   mode_gold_saint_stopped: initialize_saints
-  # DEBUT complete_random_gold_saint : 1. On démarre le gold saint
-  complete_random_gold_saint: enter_saint_temple_hit
 
-# 2. On stoppe aussitôt qu'il a démarré le mode
+# SUITE complete_random_gold_saint 2. On stoppe aussitôt qu'il a démarré le mode
 queue_event_player:
   complete_random_gold_saint:
     queue_event: mode_gold_saint_started_queue
