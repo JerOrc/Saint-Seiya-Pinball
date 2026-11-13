@@ -64,29 +64,29 @@ variable_player:
   super_skill_success:
     skillshot_count: 1
     skill_score:
-      int: 20_000 * current_player.skillshot_count * current_player.pf_multiplier
+      int: 15_000 * current_player.skillshot_count * current_player.pf_multiplier
       action: set
   super_skill_door_1:
     skill_door_count: 1
     skill_score:
-      int: 20_000 * current_player.skillshot_count * current_player.pf_multiplier
+      int: 15_000 * current_player.skillshot_count * current_player.pf_multiplier
       action: set
   super_skill_door_2:
     skill_door_count: 1
     skill_score:
-      int: 20_000 * current_player.skillshot_count * current_player.pf_multiplier
+      int: 15_000 * current_player.skillshot_count * current_player.pf_multiplier
       action: set
   mega_skill_success:
     skill_door_count:
       int: 0
       action: set
     skill_score:
-      int: 20_000 * current_player.skillshot_count * current_player.pf_multiplier
+      int: 15_000 * current_player.skillshot_count * current_player.pf_multiplier
       action: set
   super_secret_skill_success:
     skillshot_count: 1
     skill_score:
-      int: 30_000 * current_player.skillshot_count * current_player.pf_multiplier
+      int: 20_000 * current_player.skillshot_count * current_player.pf_multiplier
       action: set
     ballsave_bonus_time: 5
   skill_success_score:
@@ -119,7 +119,10 @@ event_player:
     - skill_success_score|1s
     - super_secret_skill_success_log1|2s
     - super_secret_skill_success_log2|3.5s
+    - bd_scoop_eject_ok|4.5s
     - stop_mode_skillshot|4.5s
+  bd_scoop_ready_to_eject{device.state_machines.skillshot_workflow.state <> "super_secret_skill_success"}:
+    - bd_scoop_eject_ok
 
 random_event_player:
   enable_skill:
@@ -130,7 +133,7 @@ random_event_player:
 queue_relay_player:
   balldevice_bd_scoop_ball_eject_attempt: # add scoop eject ball delay in case of a secret skillshot
     post: bd_scoop_ready_to_eject
-    wait_for: stop_mode_skillshot
+    wait_for: bd_scoop_eject_ok
 
 timers:
   skillshots_timeout:
@@ -160,7 +163,7 @@ timers:
         value: 3
 
 state_machines:
-  skillshots_success:
+  skillshot_workflow:
     debug: true
     states:
       start:
