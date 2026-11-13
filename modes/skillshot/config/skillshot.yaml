@@ -121,7 +121,7 @@ event_player:
     - super_secret_skill_success_log2|3.5s
     - bd_scoop_eject_ok|4.5s
     - stop_mode_skillshot|4.5s
-  bd_scoop_ready_to_eject{device.state_machines.skillshot_workflow.state <> "super_secret_skill_success"}:
+  bd_scoop_ready_to_eject{device.state_machines.skillshot_workflow.state != 'super_secret_skill_success'}:
     - bd_scoop_eject_ok
 
 random_event_player:
