@@ -206,7 +206,7 @@ slide_player:
       action: method
       method: log_text
       tokens:
-        text: Shoot the temple 2 times
+        text: Shoot the temple twice more
   super_skill_door_2:
     log:
       action: method

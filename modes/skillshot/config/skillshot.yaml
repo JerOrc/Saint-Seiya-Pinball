@@ -66,6 +66,23 @@ variable_player:
     skill_score:
       int: 20_000 * current_player.skillshot_count * current_player.pf_multiplier
       action: set
+  super_skill_door_1:
+    skill_door_count: 1
+    skill_score:
+      int: 20_000 * current_player.skillshot_count * current_player.pf_multiplier
+      action: set
+  super_skill_door_2:
+    skill_door_count: 1
+    skill_score:
+      int: 20_000 * current_player.skillshot_count * current_player.pf_multiplier
+      action: set
+  mega_skill_success:
+    skill_door_count:
+      int: 0
+      action: set
+    skill_score:
+      int: 20_000 * current_player.skillshot_count * current_player.pf_multiplier
+      action: set
   super_secret_skill_success:
     skillshot_count: 1
     skill_score:
@@ -89,17 +106,20 @@ event_player:
     - start_pf_multiplier|1s
     - open_the_door|1s
     - start_arrow_show|1s
-  super_skill_end:
-    - stop_mode_skillshot|2s
+  super_skill_door_1:
+    - skill_success_score|1s
+  super_skill_door_2:
+    - skill_success_score|1s
   mega_skill_success:
+    - skill_success_score|1s
+    - stop_mode_skillshot|2s
+  super_skill_end:
     - stop_mode_skillshot|2s
   super_secret_skill_success:
     - skill_success_score|1s
     - super_secret_skill_success_log1|2s
     - super_secret_skill_success_log2|3.5s
     - stop_mode_skillshot|4.5s
-  s_orbit_left_active:
-    - s_orbit_left_active_during_skillshot
 
 random_event_player:
   enable_skill:
@@ -184,7 +204,13 @@ state_machines:
         events: skillshots_unlit_hit, timer_skillshots_timeout_complete, mode_skillshot_will_stop, s_spinner_right_active, sw_ramps_active, s_temple_out_active, sw_blue_targets_active, sw_red_targets_active, s_scoop_active, s_kickout_active, sw_bumpers_active
       - source: super_skill_success
         target: super_skill_door_1
-        events: s_temple_in_active
+        events: s_temple_in_active{current_player.skill_door_count==0}
+      - source: super_skill_success
+        target: super_skill_door_2
+        events: s_temple_in_active{current_player.skill_door_count==1}
+      - source: super_skill_success
+        target: mega_skill_success
+        events: s_temple_in_active{current_player.skill_door_count==2}
       - source: super_skill_door_1
         target: super_skill_door_2
         events: s_temple_in_active
@@ -193,7 +219,7 @@ state_machines:
         events: s_temple_in_active
       - source: super_skill_success, super_skill_door_1, super_skill_door_2
         target: super_skill_end
-        events: timer_doors_timeout_complete, mode_skillshot_will_stop
+        events: timer_doors_timeout_complete, mode_skillshot_will_stop, sw_lanes_active, sw_bumpers_active, sw_orbits_active, sw_spinners_active, sw_ramps_active, s_newton_ball_target_active, s_kickout_active, sw_blue_targets_active, sw_red_targets_active
 
 timed_switches:
   flipper_super_skill:
