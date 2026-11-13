@@ -163,14 +163,16 @@ achievement_groups:
 event_player:
   mode_global_started: initialize_saints
   mode_gold_saint_stopped: initialize_saints
+  # DEBUT complete_random_gold_saint : 1. On démarre le gold saint
+  complete_random_gold_saint: enter_saint_temple_hit
+
+# 2. On stoppe aussitôt qu'il a démarré le mode
+queue_event_player:
   complete_random_gold_saint:
-    - enter_saint_temple_hit
-    - stop_mode_gold_saint|100ms # A FAIRE : remplacer ce delai par un queue event ?
-# queue_event_player:
-#   stop_mode_gold_saint:
-#     queue_event: mode_gold_saint_stopped
-#     events_when_finished: my_queue_done
-# queue_relay_player:
-#   stop_mode_gold_saint:
-#     post: stop_mode_gold_saint_ready
-#     wait_for: mode_gold_saint_started
+    queue_event: mode_gold_saint_started_queue
+    events_when_finished: stop_mode_gold_saint
+queue_relay_player:
+  mode_gold_saint_started_queue:
+    post: mode_gold_saint_started_ok
+    wait_for: mode_gold_saint_started
+# FIN complete_random_gold_saint
