@@ -232,4 +232,4 @@ slide_player:
       action: method
       method: log_text
       tokens:
-        text: 1 Gold Saint completed
+        text: 1 random Gold Saint completed
