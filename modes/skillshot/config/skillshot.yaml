@@ -101,10 +101,11 @@ event_player:
     - cosmo_up|2s
     - stop_mode_skillshot|3s
   super_skill_success:
+    - open_the_door
     - skill_success_score|1s
     - pf_multiplier_is_lit|1s
     - start_pf_multiplier|1s
-    - open_the_door|1s
+    - open_the_door_log|1s
     - start_arrow_show|1s
   super_skill_door_1:
     - skill_success_score|1s
@@ -114,7 +115,8 @@ event_player:
     - skill_success_score|1s
     - stop_mode_skillshot|2s
   super_skill_end:
-    - stop_mode_skillshot|2s
+    - close_the_door
+    - stop_mode_skillshot
   super_secret_skill_success:
     - skill_success_score|1s
     - super_secret_skill_success_log1|2s

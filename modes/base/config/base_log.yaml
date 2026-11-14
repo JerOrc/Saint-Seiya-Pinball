@@ -195,7 +195,7 @@ slide_player:
       method: effect
       tokens:
         style: circle
-  open_the_door:
+  open_the_door_log:
     log:
       action: method
       method: log_text
