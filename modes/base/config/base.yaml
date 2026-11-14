@@ -130,7 +130,14 @@ sound_player:
     Anime_Realization_Sound:
       bus: effects
       volume: 0.5
-
+  s_temple_in_active:
+    Anime_Dramatic_Shock_Sound_(The_Genie_Family_variant):
+      bus: effects
+      volume: 0.1
+  close_the_door:
+    fx_thunder1:
+      bus: effects
+      volume: 0.5
 
 sequences:
   mega_skill_complete_random_gold_saint:
