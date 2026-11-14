@@ -3,8 +3,9 @@
 ball_saves:
   skillshot_ballsave:
     enable_events: mode_skillshot_started
+    disable_events: mode_skillshot_stopped
     auto_launch: true
-    balls_to_save: 1  # for unlimited saves set -1
+    balls_to_save: -1  # for unlimited saves set -1
     early_ball_save_events: s_outlane_left_active, s_outlane_right_active
   start_ballsave:
     active_time: 20 + current_player.ballsave_bonus_time
@@ -24,7 +25,7 @@ ball_saves:
     early_ball_save_events: s_outlane_left_active, s_outlane_right_active
 
 show_player:
-  ball_save_skillshot_ballsave_timer_start:
+  ball_save_skillshot_ballsave_enabled:
     ball_save_show:
       action: play
       speed: 5
