@@ -164,7 +164,7 @@ event_player:
   mode_global_started: initialize_saints
   mode_gold_saint_stopped: initialize_saints
 
-# SUITE complete_random_gold_saint 2. On stoppe aussitôt qu'il a démarré le mode
+# SUITE complete_random_gold_saint 2. On stoppe le mode aussitôt qu'il a fini de démarrer
 queue_event_player:
   complete_random_gold_saint:
     queue_event: mode_gold_saint_started_queue
