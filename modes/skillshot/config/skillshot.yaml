@@ -259,3 +259,7 @@ sound_player:
     Anime_Pose_Sound_(low_pitched):
       bus: effects
       volume: 0.5
+  mega_skill_success:
+    fx_cannon:
+      bus: effects
+      volume: 0.7
