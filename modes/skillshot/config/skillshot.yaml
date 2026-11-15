@@ -105,8 +105,8 @@ event_player:
     - skill_success_score|1s
     - pf_multiplier_is_lit|1s
     - start_pf_multiplier|1s
-    - open_the_door_log|1s
-    - start_arrow_show|1s
+    - open_the_door_log|2s
+    - start_arrow_show|2s
   super_skill_door_1:
     - skill_success_score|1s
   super_skill_door_2:

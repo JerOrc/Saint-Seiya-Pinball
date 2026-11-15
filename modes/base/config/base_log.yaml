@@ -27,8 +27,10 @@ slide_player:
       action: method
       method: log_text
       tokens:
-        text: Super skill !
-        background: black
+        text1: Super skill !
+        text2: = "+" + format_big_number([skill_score])
+        text3: PF multiplier active
+        style: lightning
   super_secret_skill_success:
     log:
       action: method
