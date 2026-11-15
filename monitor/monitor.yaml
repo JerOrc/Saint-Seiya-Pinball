@@ -43,32 +43,32 @@ light:
     x: 0.7694926820085651
     y: 0.26937738246505716
   led_cosmo_c:
-    rotation: 50
-    shape: SQUARE
+    rotation: 90
+    shape: RECTANGLE
     size: 0.03
-    x: 0.30915101887147634
-    y: 0.8233799237611181
+    x: 0.38587462939432443
+    y: 0.8449809402795426
   led_cosmo_m:
-    rotation: 40
-    shape: SQUARE
+    rotation: 90
+    shape: RECTANGLE
     size: 0.03
-    x: 0.5438350040001882
-    y: 0.8373570520965692
+    x: 0.5032166219586804
+    y: 0.8449809402795426
   led_cosmo_o1:
-    rotation: 50
-    shape: SQUARE
+    rotation: 90
+    shape: RECTANGLE
     size: 0.03
-    x: 0.3813614758341569
-    y: 0.8373570520965692
+    x: 0.4219798578756648
+    y: 0.8449809402795426
   led_cosmo_o2:
-    rotation: 30
-    shape: SQUARE
+    rotation: 90
+    shape: RECTANGLE
     size: 0.03
-    x: 0.6183020377429527
-    y: 0.8233799237611181
+    x: 0.5415784272201045
+    y: 0.8449809402795426
   led_cosmo_s:
-    rotation: 320
-    shape: SQUARE
+    rotation: 90
+    shape: RECTANGLE
     size: 0.03
     x: 0.4625982399171726
     y: 0.8449809402795426
