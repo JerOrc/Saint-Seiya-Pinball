@@ -17,7 +17,7 @@ shot_groups:
     shots: bumper_left_shot, bumper_right_shot, bumper_bottom_shot
 
 slide_player:
-  mode_base_started: bumpers
+  start_base_bumpers: bumpers
   bumpers_shots_hit:
     bumpers:
       action: method
