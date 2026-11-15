@@ -1,0 +1,148 @@
+#config_version=6
+
+# 7. LIBRA - Free Hyoga
+# In this order (each step score 200.000 points):
+# - 1 blue target
+# - enter temple
+# - 1 left ramp
+# - 10 bumpers
+# - 1 right ramp
+# - 1 orbit
+
+mode:
+  start_events: start_mode_gold_saint_7
+  stop_events: stop_mode_gold_saint, stop_missions
+  events_when_started: mode_type_mission_started, mode_gold_saint_started
+  events_when_stopped: mode_type_mission_stopped, mode_gold_saint_stopped
+  priority: 400
+
+shots:
+  libra_blue_target_left:
+    switch: s_blue_target_left
+    profile: manual_advance_shots_profile
+    control_events:
+      - events: mode_gold_saint_7_started
+        state: 1
+      - events: libra_blue_targets_flashing_hit
+        state: 0
+    show_tokens:
+      led: led_blue_target_left
+      color: 0000ff
+  libra_blue_target_right:
+    switch: s_blue_target_right
+    profile: manual_advance_shots_profile
+    control_events:
+      - events: mode_gold_saint_7_started
+        state: 1
+      - events: libra_blue_targets_flashing_hit
+        state: 0
+    show_tokens:
+      led: led_blue_target_right
+      color: 0000ff
+
+  libra_enter_temple:
+    switch: s_temple_in
+    profile: manual_advance_shots_profile
+    advance_events: lit_libra_temple
+    restart_events: mode_gold_saint_7_started, libra_enter_temple_flashing_hit
+    show_tokens:
+      led: led_temple
+      color: ffff00
+
+  libra_left_ramp:
+    switch: s_ramp_left
+    profile: manual_advance_shots_profile
+    advance_events: lit_libra_left_ramp
+    restart_events: mode_gold_saint_7_started, libra_left_ramp_flashing_hit
+    show_tokens:
+      led: led_ramp_left
+      color: ffffff
+  libra_right_ramp:
+    switch: s_ramp_right
+    profile: manual_advance_shots_profile
+    advance_events: lit_libra_right_ramp
+    restart_events: mode_gold_saint_7_started, libra_right_ramp_flashing_hit
+    show_tokens:
+      led: led_ramp_right
+      color: ffffff
+
+  libra_left_orbit:
+    switch: s_orbit_left
+    profile: manual_advance_shots_profile
+    advance_events: lit_libra_orbits
+    restart_events: mode_gold_saint_7_started, libra_orbits_flashing_hit
+    show_tokens:
+      led: led_orbit_left
+      color: ffffff
+  libra_right_orbit:
+    switch: s_orbit_right
+    profile: manual_advance_shots_profile
+    advance_events: lit_libra_orbits, libra_orbits_flashing_hit
+    restart_events: mode_gold_saint_7_started, libra_orbits_flashing_hit
+    show_tokens:
+      led: led_orbit_right
+      color: ffffff
+
+shot_groups:
+  libra_blue_targets:
+    shots: libra_blue_target_left, libra_blue_target_right
+  libra_orbits:
+    shots: libra_left_orbit, libra_right_orbit
+
+counters:
+  libra_bumpers_hits_counter:
+    count_events: bumpers_shots_hit
+    count_complete_value: 10
+    enable_events: lit_libra_bumpers
+    disable_events: mode_gold_saint_7_stopping
+    disable_on_complete: true
+    reset_on_complete: true
+
+sequences:
+  beat_gold_saint_7:
+    events:
+      - libra_blue_targets_flashing_hit
+      - libra_enter_temple_flashing_hit
+      - libra_left_ramp_flashing_hit
+      - logicblock_libra_bumpers_hits_counter_complete
+      - libra_right_ramp_flashing_hit
+      - libra_orbits_flashing_hit
+    events_when_complete: stop_mode_gold_saint
+
+event_player:
+  libra_blue_targets_flashing_hit: lit_libra_temple
+  libra_enter_temple_flashing_hit: lit_libra_left_ramp
+  libra_left_ramp_flashing_hit: lit_libra_bumpers
+  logicblock_libra_bumpers_hits_counter_complete: lit_libra_right_ramp
+  libra_right_ramp_flashing_hit: lit_libra_orbits
+
+variable_player:
+  libra_blue_targets_flashing_hit:
+    score: 200_000 * current_player.pf_multiplier
+  libra_enter_temple_flashing_hit:
+    score: 200_000 * current_player.pf_multiplier
+  libra_left_ramp_flashing_hit:
+    score: 200_000 * current_player.pf_multiplier
+  logicblock_libra_bumpers_hits_counter_complete:
+    score: 200_000 * current_player.pf_multiplier
+  libra_right_ramp_flashing_hit:
+    score: 200_000 * current_player.pf_multiplier
+  libra_orbits_flashing_hit:
+    score: 200_000 * current_player.pf_multiplier
+
+
+show_player:
+  mode_gold_saint_7_started:
+    flashing_show:
+      show_tokens:
+        led: led_gold_saint_7
+        color: ffffff
+  lit_libra_bumpers:
+    flashing_show_bis:
+      speed: 5
+      show_tokens:
+        led: led_bumper_left, led_bumper_right, led_bumper_bottom
+        color: green
+  logicblock_libra_bumpers_hits_counter_complete:
+    flashing_show_bis:
+      action: stop

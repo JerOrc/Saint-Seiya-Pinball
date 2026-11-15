@@ -22,7 +22,7 @@ slide_player:
     bumpers:
       action: method
       method: top_down_text
-  stop_base_bumpers:
+  mode_base_will_stop:
     bumpers:
       action: remove
 

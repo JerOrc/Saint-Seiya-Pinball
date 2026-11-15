@@ -2,12 +2,12 @@
 
 
 shots:
-  gold_knights_extraballs_shot:
+  gold_saints_extraballs_shot:
     switch: s_scoop
     profile: quick_flashing_profile
-    enable_events: gold_knights_extraballs_shot_is_lit
-    disable_events: gold_knights_extraballs_shot_flashing_hit
-    restart_events: gold_knights_extraballs_shot_flashing_hit
+    enable_events: gold_saints_extraballs_shot_is_lit
+    disable_events: gold_saints_extraballs_shot_flashing_hit
+    restart_events: gold_saints_extraballs_shot_flashing_hit
     show_tokens:
       led: led_kickout_extraball
       color: FF0000
@@ -23,9 +23,9 @@ shots:
 
 
 extra_balls:
-  gold_knight_extraball:
+  gold_saint_extraball:
     max_per_game: 100
-    award_events: gold_knights_extraballs_shot_flashing_hit
+    award_events: gold_saints_extraballs_shot_flashing_hit
   zodiac_ramps_extraball:
     award_events: zodiac_extraball_shot_flashing_hit
   mystery_extraball:
@@ -41,14 +41,14 @@ light_player:
 
 
 sequences:
-  gold_knights_extraballs_sequence:
+  gold_saints_extraballs_sequence:
     events:
-      - gold_knights_extraballs_is_lit
-      - mode_gold_knight_stopped, mode_base_started
+      - gold_saints_extraballs_is_lit
+      - mode_gold_saint_stopped, mode_base_started
     persist_state: true
     disable_on_complete: false
-    events_when_complete: gold_knights_extraballs_shot_is_lit
+    events_when_complete: gold_saints_extraballs_shot_is_lit
 
 event_player:
-  mode_gold_knight_started{current_player.knights_confronted_total_count % 3 == 0}: gold_knights_extraballs_is_lit
+  mode_gold_saint_started{current_player.saints_confronted_total_count % 3 == 0}: gold_saints_extraballs_is_lit
   zodiac_validation_shot_flashing_hit{current_player.zodiac_total_count == 3}: zodiac_extraball_shot_is_lit

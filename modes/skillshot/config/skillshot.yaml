@@ -1,16 +1,13 @@
 #config_version=6
-
-# There are 2 skill shots at the start of this game:
-# The light on at the top of the bumpers.
-# Press the left flipper and dunk a stronger ball then hit the captive ball within 10 seconds.
-# Skillshot value starts at 500,000 points and increases by 250,000 for each skillshot rolled.
-# Super skillshot value starts at 1,000,000 points and increases by 500,000 for each super skillshot rolled.
+# 3 skillshots :
+#   1. random 1 des 2 lanes au niveau des bumpers -> points + augmente son cosmos
+#   Si on appuie sur le flipper gauche durant le lancé :
+#     2. secret skillshot derrière la rampe gauche -> points + Bonus +5s pour les ball save sur cette bille
+#
 
 mode:
   start_events: start_mode_skillshot
   stop_events:
-    - skill_success
-    - super_skill_success
     - skill_failed
     - stop_mode_skillshot
     - stop_wizards
@@ -52,24 +49,93 @@ shot_groups:
     enable_events: enable_skill
     disable_events: enable_super_skill, mode_skillshot_will_stop
     rotate_left_events: s_flipper_left_active
-    rotate_right_events: s_flipper_right_active
+    rotate_right_events: s_flipper_right_active, random_right_lane
   super_skillshot:
     shots: super_skill_target
     enable_events: enable_super_skill
-    disable_events: enable_skill, mode_skillshot_will_stop
+    disable_events: enable_skill, mode_skillshot_will_stop, open_the_door
 
 variable_player:
   skill_success:
     skillshot_count: 1
-    score: (500_000 + current_player.nb_skillshot * 250_000) * current_player.pf_multiplier
+    skill_score:
+      int: 10_000 * current_player.skillshot_count * current_player.pf_multiplier
+      action: set
   super_skill_success:
-    super_skillshot_count: 1
-    score: (1_000_000 + current_player.nb_super_skillshot * 500_000) * current_player.pf_multiplier
+    skillshot_count: 1
+    skill_score:
+      int: 15_000 * current_player.skillshot_count * current_player.pf_multiplier
+      action: set
+  super_skill_door_1:
+    skill_door_count: 1
+    skill_score:
+      int: 15_000 * current_player.skillshot_count * current_player.pf_multiplier
+      action: set
+  super_skill_door_2:
+    skill_door_count: 1
+    skill_score:
+      int: 15_000 * current_player.skillshot_count * current_player.pf_multiplier
+      action: set
+  mega_skill_success:
+    skill_door_count:
+      int: 0
+      action: set
+    skill_score:
+      int: 15_000 * current_player.skillshot_count * current_player.pf_multiplier
+      action: set
+  super_secret_skill_success:
+    skillshot_count: 1
+    skill_score:
+      int: 20_000 * current_player.skillshot_count * current_player.pf_multiplier
+      action: set
+    ballsave_bonus_time: 5
+  skill_success_score:
+      score: current_player.skill_score
 
 event_player:
   mode_skillshot_started: enable_skill
   flipper_super_skill_active{device.switches.s_plunger_lane.state == 1}: enable_super_skill
   flipper_super_skill_released{device.switches.s_plunger_lane.state == 1}: enable_skill
+  skill_success:
+    - skill_success_score|1s
+    - cosmo_up|2s
+    - stop_mode_skillshot|3s
+  super_skill_success:
+    - open_the_door
+    - skill_success_score|1s
+    - pf_multiplier_is_lit|1s
+    - start_pf_multiplier|1s
+    - open_the_door_log|2s
+    - start_arrow_show|2s
+  super_skill_door_1:
+    - skill_success_score|1s
+  super_skill_door_2:
+    - skill_success_score|1s
+  mega_skill_success:
+    - skill_success_score|1s
+    - stop_mode_skillshot|2s
+  super_skill_end:
+    - close_the_door
+    - stop_mode_skillshot
+  super_secret_skill_success:
+    - skill_success_score|1s
+    - super_secret_skill_success_log1|2s
+    - super_secret_skill_success_log2|3.5s
+    - bd_scoop_eject_ok|4.5s
+    - stop_mode_skillshot|4.5s
+  bd_scoop_ready_to_eject{device.state_machines.skillshot_workflow.state != 'super_secret_skill_success'}:
+    - bd_scoop_eject_ok
+
+random_event_player:
+  enable_skill:
+    events:
+      - random_left_lane
+      - random_right_lane
+
+queue_relay_player:
+  balldevice_bd_scoop_ball_eject_attempt: # add scoop eject ball delay in case of a secret skillshot
+    post: bd_scoop_ready_to_eject
+    wait_for: bd_scoop_eject_ok
 
 timers:
   skillshots_timeout:
@@ -81,9 +147,25 @@ timers:
     control_events:
       - action: start
         event: balldevice_bd_plunger_ball_eject_success
+  doors_timeout:
+    start_value: 10
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    start_running: false
+    control_events:
+      - action: restart
+        event: super_skill_success
+      - action: restart
+        event: super_skill_door_1
+      - action: restart
+        event: super_skill_door_2
+      - action: add   # add 3s in order to let time to eject ball
+        event: balldevice_bd_lock_ball_eject_success
+        value: 3
 
 state_machines:
-  skillshots_success:
+  skillshot_workflow:
     debug: true
     states:
       start:
@@ -94,6 +176,21 @@ state_machines:
       super_skill_success:
         label: Super skill successful
         events_when_started: super_skill_success
+      super_skill_door_1:
+        label: Super skill door 1 successful
+        events_when_started: super_skill_door_1
+      super_skill_door_2:
+        label: Super skill door 2 successful
+        events_when_started: super_skill_door_2
+      mega_skill_success:
+        label: MEGA skill success
+        events_when_started: mega_skill_success
+      super_skill_end:
+        label: Super skill end
+        events_when_started: super_skill_end
+      super_secret_skill_success:
+        label: Super secret skill successful
+        events_when_started: super_secret_skill_success
       failed:
         label: Skill failed
         events_when_started: skill_failed
@@ -105,8 +202,29 @@ state_machines:
         target: super_skill_success
         events: super_skillshot_hit
       - source: start
+        target: super_secret_skill_success
+        events: s_temple_secret_active
+      - source: start
         target: failed
         events: skillshots_unlit_hit, timer_skillshots_timeout_complete, mode_skillshot_will_stop, s_spinner_right_active, sw_ramps_active, s_temple_out_active, sw_blue_targets_active, sw_red_targets_active, s_scoop_active, s_kickout_active, sw_bumpers_active
+      - source: super_skill_success
+        target: super_skill_door_1
+        events: s_temple_in_active{current_player.skill_door_count==0}
+      - source: super_skill_success
+        target: super_skill_door_2
+        events: s_temple_in_active{current_player.skill_door_count==1}
+      - source: super_skill_success
+        target: mega_skill_success
+        events: s_temple_in_active{current_player.skill_door_count==2}
+      - source: super_skill_door_1
+        target: super_skill_door_2
+        events: s_temple_in_active
+      - source: super_skill_door_2
+        target: mega_skill_success
+        events: s_temple_in_active
+      - source: super_skill_success, super_skill_door_1, super_skill_door_2
+        target: super_skill_end
+        events: timer_doors_timeout_complete, mode_skillshot_will_stop, sw_lanes_active, sw_bumpers_active, sw_orbits_active, sw_spinners_active, sw_ramps_active, s_newton_ball_target_active, s_kickout_active, sw_blue_targets_active, sw_red_targets_active
 
 timed_switches:
   flipper_super_skill:
@@ -117,9 +235,31 @@ light_player:
   mode_skillshot_started:
     led_kickout_extraball: off
     led_scoop_mystery: off
-    led_red_target_1: off
-    led_red_target_2: off
-    led_red_target_3: off
-    led_red_target_4: off
-    led_red_target_5: off
-    led_red_target_6: off
+    leds_red_target: off
+
+show_player:
+  super_skill_success:
+    disc:
+      loops: 0
+      speed: 50
+  start_arrow_show:
+    arrow:
+      speed: 30
+
+sound_player:
+  skill_failed:
+    Anime_Glass_Break_1_(alt)_low_pitch.mp3:
+      bus: effects
+      volume: 0.5
+  skill_success:
+    Anime_Pose_Sound:
+      bus: effects
+      volume: 0.5
+  super_skill_success:
+    Anime_Pose_Sound_(low_pitched):
+      bus: effects
+      volume: 0.5
+  mega_skill_success:
+    fx_cannon:
+      bus: effects
+      volume: 0.7

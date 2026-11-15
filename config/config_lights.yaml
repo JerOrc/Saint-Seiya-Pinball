@@ -190,91 +190,69 @@ lights:
     type: grb
 
 
-  # pf_multiplier
-  led_pf_multiplier_x2:
+  # gold saints
+  led_gold_saint_1:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_pf_multiplier_x3:
+  led_gold_saint_2:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_pf_multiplier_x4:
+  led_gold_saint_3:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_pf_multiplier_x5:
+  led_gold_saint_4:
     number:
     platform: virtual
     subtype: led
     type: grb
-
-  # gold knights
-  led_gold_knight_1:
+  led_gold_saint_5:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_2:
+  led_gold_saint_6:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_3:
+  led_gold_saint_7:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_4:
+  led_gold_saint_8:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_5:
+  led_gold_saint_9:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_6:
+  led_gold_saint_10:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_7:
+  led_gold_saint_11:
     number:
     platform: virtual
     subtype: led
     type: grb
-  led_gold_knight_8:
-    number:
-    platform: virtual
-    subtype: led
-    type: grb
-  led_gold_knight_9:
-    number:
-    platform: virtual
-    subtype: led
-    type: grb
-  led_gold_knight_10:
-    number:
-    platform: virtual
-    subtype: led
-    type: grb
-  led_gold_knight_11:
-    number:
-    platform: virtual
-    subtype: led
-    type: grb
-  led_gold_knight_12:
+  led_gold_saint_12:
     number:
     platform: virtual
     subtype: led
     type: grb
 
-  # bronze knights
+  # bronze saints
   led_andromede:
     number:
     platform: virtual
@@ -301,31 +279,37 @@ lights:
     platform: virtual
     subtype: led
     type: grb
+    tags: leds_red_target
   led_red_target_2:
     number:
     platform: virtual
     subtype: led
     type: grb
+    tags: leds_red_target
   led_red_target_3:
     number:
     platform: virtual
     subtype: led
     type: grb
+    tags: leds_red_target
   led_red_target_4:
     number:
     platform: virtual
     subtype: led
     type: grb
+    tags: leds_red_target
   led_red_target_5:
     number:
     platform: virtual
     subtype: led
     type: grb
+    tags: leds_red_target
   led_red_target_6:
     number:
     platform: virtual
     subtype: led
     type: grb
+    tags: leds_red_target
 
   led_blue_target_left:
     number:

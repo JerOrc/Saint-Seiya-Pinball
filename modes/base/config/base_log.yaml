@@ -1,158 +1,239 @@
 #config_version=6
 
 slide_player:
-  priority: 1_000
   start_base_log: log
-  stop_base_log:
+  mode_base_will_stop:
     log:
       action: remove
+  #DEBUT Skillshot
   skill_failed:
     log:
       action: method
       method: log_text
       tokens:
-        text: "skill failed"
+        text: Skill failed
+        background: red
   skill_success:
     log:
       action: method
       method: log_text
       tokens:
-        text: "skill success"
+        text1: skill shot
+        text2: = "+" + format_big_number([skill_score])
+        text3: +1 Cosmo
+        style: lightning
   super_skill_success:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Super skill success"
-#  auto_launch_plunger:
-#    log:
-#      action: method
-#      method: log_text
-#      tokens:
-#        text: "Auto launch"
+        text1: Super skill !
+        text2: = "+" + format_big_number([skill_score])
+        text3: PF multiplier active
+        style: lightning
+  super_secret_skill_success:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: Your seven sense is awakening...
+        background: black
+  super_secret_skill_success_log1:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: Ballsaves +5s
+        background: black
+  super_secret_skill_success_log2:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: = "+" + format_big_number([skill_score])
+        background: black
+  open_the_door_log:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: Shoot the temple
+  super_skill_door_1:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: Shoot the temple twice more
+  super_skill_door_2:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: Shoot the temple 1 more time
+  mega_skill_success.1:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text1: MEGA
+        text2: skillshot !
+        style: lightning
+  mega_skill_success.2:
+    log:
+      action: method
+      method: effect
+      tokens:
+        style: double_circle
+  complete_random_gold_saint:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: 1 random Gold Saint completed
+  #FIN Skillshot
+
   shot_ramps_combo_hit:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Ramps Combo !"
+        text: Ramps Combo !
   bm_lanes_lit_complete:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Bonus increased"
+        text: Bonus increased
   super_bumpers_restart:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Super Bumpers"
+        text: Super Bumpers
   pf_multiplier_start:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Pf multiplier flashing"
+        text: Pf multiplier flashing
   logicblock_zodiac_sequence_hit{step==1}:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Zodiac"
+        text: Zodiac
   logicblock_zodiac_sequence_hit{step==2}:
     log:
       action: method
       method: log_text
       tokens:
-        text: "ZOdiac"
+        text: ZOdiac
   logicblock_zodiac_sequence_hit{step==3}:
     log:
       action: method
       method: log_text
       tokens:
-        text: "ZODiac"
+        text: ZODiac
   logicblock_zodiac_sequence_hit{step==4}:
     log:
       action: method
       method: log_text
       tokens:
-        text: "ZODIac"
+        text: ZODIac
   logicblock_zodiac_sequence_hit{step==5}:
     log:
       action: method
       method: log_text
       tokens:
-        text: "ZODIAc"
+        text: ZODIAc
   logicblock_zodiac_sequence_hit{step==6}:
     log:
       action: method
       method: log_text
       tokens:
-        text: "ZODIAC"
+        text: ZODIAC
   zodiac_validation_shot_hit:
     log:
       action: method
       method: log_text
       tokens:
-        text: "ZODIAC !!!"
+        text: ZODIAC !!!
   zodiac_extraball_shot_is_lit:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Zodiac extraball is lit"
-  gold_knights_extraballs_shot_is_lit:
+        text: Zodiac extraball is lit
+  gold_saints_extraballs_shot_is_lit:
     log:
       action: method
       method: log_text
       tokens:
-        text: "GK extraball is lit"
-  extra_ball_gold_knight_extraball_awarded:
+        text: Gold Saint extraball is lit
+  extra_ball_gold_saint_extraball_awarded:
     log:
       action: method
       method: log_text
       tokens:
-        text: "EXTRABALL !"
+        text: EXTRABALL !
   extra_ball_zodiac_ramps_extraball_awarded:
     log:
       action: method
       method: log_text
       tokens:
-        text: "ZODIAC EXTRABALL !"
+        text: ZODIAC EXTRABALL !
   logicblock_leos_hits_counter_hit:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Orbit"
+        text: Orbit
   ikki_lock_enabled:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Lock is lit"
+        text: Lock is lit
   ikki_dummy_lock_enabled:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Lock is lit"
+        text: Lock is lit
   ikki_locked:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Ball locked"
+        text: Ball locked
   ikki_dummy_locked:
     log:
       action: method
       method: log_text
       tokens:
-        text: "Ball locked"
+        text: Ball locked
   multiball_ikki_multiball_started:
     log:
       action: method
       method: log_text
       tokens:
-        text: "IKKI MULTIBALL !"
+        text: IKKI MULTIBALL !
+  logicblock_cosmo_counter_hit:
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text1: Cosmo up !
+        style: lightning
+  s_plunger_lane_inactive:
+    log:
+      action: method
+      method: effect
+      tokens:
+        style: double_circle
+  bumpers_shots_hit:
+    log:
+      action: method
+      method: effect
+      tokens:
+        style: circle

@@ -1,0 +1,53 @@
+#config_version=6
+
+# 6. SHAKA DE VIRGO
+# All targets score 100.000 points during this mode.
+# Hit 6 red targets to defeat the gold saint
+
+mode:
+  start_events: start_mode_gold_saint_6
+  stop_events: stop_mode_gold_saint, stop_missions
+  events_when_started: mode_type_mission_started, mode_gold_saint_started
+  events_when_stopped: mode_type_mission_stopped, mode_gold_saint_stopped
+  priority: 400
+
+shots:
+  virgo_red_target_1:
+    switch: s_red_target_1
+  virgo_red_target_2:
+    switch: s_red_target_2
+  virgo_red_target_3:
+    switch: s_red_target_3
+  virgo_red_target_4:
+    switch: s_red_target_4
+  virgo_red_target_5:
+    switch: s_red_target_5
+  virgo_red_target_6:
+    switch: s_red_target_6
+
+shot_groups:
+  virgo_targets:
+    shots: virgo_red_target_1, virgo_red_target_2, virgo_red_target_3, virgo_red_target_4, virgo_red_target_5, virgo_red_target_6
+
+counters:
+  virgo_targets_hits_counter:
+    starting_count: 6
+    count_complete_value: 0
+    direction: down
+    count_events: virgo_targets_hit
+    events_when_complete: stop_mode_gold_saint
+
+variable_player:
+  virgo_targets_hit:
+    score: 100_000 * current_player.pf_multiplier
+
+show_player:
+  mode_gold_saint_6_started:
+    flashing_show:
+      show_tokens:
+        led: led_gold_saint_6
+        color: ffffff
+    flashing_show_bis:
+      show_tokens:
+        led: led_red_target_1, led_red_target_2, led_red_target_3, led_red_target_4, led_red_target_5, led_red_target_6
+        color: ff00ff

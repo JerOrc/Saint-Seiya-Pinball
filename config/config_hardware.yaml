@@ -50,8 +50,8 @@ diverters:
     - s_plunger_lane_inactive{mode.skillshot.active and device.shots.super_skill_target.state == 1}
     # activate when a new ball is launched, for multiballs, for ball locks, ...
     - s_plunger_lane_inactive{not mode.skillshot.active}
-    # activate on orbit shot during gold knight 5
-    - sw_orbits_active{mode.gold_knight_5.active}
+    # activate on orbit shot during gold saint 5
+    - sw_orbits_active{mode.gold_saint_5.active}
     enable_events:
      - mode_base_started
 
@@ -64,7 +64,18 @@ diverters:
     - s_plunger_lane_inactive{mode.skillshot.active and device.shots.super_skill_target.state == 1}
     # activate when a new ball is launched, for multiballs, for ball locks, ...
     - s_plunger_lane_inactive{not mode.skillshot.active}
-    # activate on orbit shot during gold knight 5
-    - sw_orbits_active{mode.gold_knight_5.active}
+    # activate on orbit shot during gold saint 5
+    - sw_orbits_active{mode.gold_saint_5.active}
     enable_events:
      - mode_base_started
+
+servos:
+  door:
+    positions:
+      0.1: close_the_door
+      0.9: open_the_door
+    reset_position: 0.0
+    reset_events: reset_the_door
+    speed_limit: 0.5
+    number:
+    platform: virtual

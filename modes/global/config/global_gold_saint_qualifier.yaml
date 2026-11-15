@@ -1,0 +1,176 @@
+#config_version=6
+
+# When you start a game, a random saint is selected and its light starts blinking.
+# Hit the center temple to start the battle. The door can be opened by hitting it once or by hitting the 2
+# cygnus lock targets, located one on each side of the table.
+# When not in a battle, hitting the captive ball will change the selected battle.
+# You can't select again a finished battle until all battles are finished or a new game is started.
+
+# sequences:
+#   gold_saint_wokflow:
+#     events:
+#       - mode_gold_saint_started
+#       - mode_gold_saint_stopped
+#     persist_state: true
+#     disable_on_complete: false
+#     events_when_complete: gold_saint_completed
+
+shots:
+  select_saint:
+    switch: s_newton_ball_target
+  enter_saint_temple:
+    switch: s_temple_in
+
+achievements:
+  saint_1:
+    show_tokens:
+      lights: led_gold_saint_1
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: start_mode_gold_saint_1  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_1_started
+    reset_events: reset_saints
+  saint_2:
+    show_tokens:
+      lights: led_gold_saint_2
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: start_mode_gold_saint_2  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_2_started
+    reset_events: reset_saints
+  saint_3:
+    show_tokens:
+      lights: led_gold_saint_3
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: start_mode_gold_saint_3  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_3_started
+    reset_events: reset_saints
+  saint_4:
+    show_tokens:
+      lights: led_gold_saint_4
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: start_mode_gold_saint_4  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_4_started
+    reset_events: reset_saints
+  saint_5:
+    show_tokens:
+      lights: led_gold_saint_5
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: start_mode_gold_saint_5  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_5_started
+    reset_events: reset_saints
+  saint_6:
+    show_tokens:
+      lights: led_gold_saint_6
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: start_mode_gold_saint_6  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_6_started
+    reset_events: reset_saints
+  saint_7:
+    show_tokens:
+      lights: led_gold_saint_7
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: start_mode_gold_saint_7  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_7_started
+    reset_events: reset_saints
+  saint_8:
+    show_tokens:
+      lights: led_gold_saint_8
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: start_mode_gold_saint_8  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_8_started
+    reset_events: reset_saints
+  saint_9:
+    show_tokens:
+      lights: led_gold_saint_9
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: start_mode_gold_saint_9  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_9_started
+    reset_events: reset_saints
+  saint_10:
+    show_tokens:
+      lights: led_gold_saint_10
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: start_mode_gold_saint_10  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_10_started
+    reset_events: reset_saints
+  saint_11:
+    show_tokens:
+      lights: led_gold_saint_11
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: start_mode_gold_saint_11  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_11_started
+    reset_events: reset_saints
+  saint_12:
+    show_tokens:
+      lights: led_gold_saint_12
+    show_when_selected: flash # probably want to create a custom version of the "flash" show
+    show_when_completed: on
+    events_when_started: start_mode_gold_saint_12  # instant points award & plays shows
+    enable_events: initialize_saints, reset_saints
+    complete_events: mode_gold_saint_12_started
+    reset_events: reset_saints
+
+achievement_groups:
+  saints_awards:
+    achievements:
+      - saint_1
+      - saint_2
+      - saint_3
+      - saint_4
+      - saint_5
+      - saint_6
+      - saint_7
+      - saint_8
+      - saint_9
+      - saint_10
+      - saint_11
+      - saint_12
+    show_tokens:
+      lights: led_temple_start_battle
+    auto_select: true
+    events_when_all_completed: saints_wizard_is_lit
+    enable_while_no_achievement_started: false
+    disable_while_achievement_started: true
+    show_when_enabled: flash
+    select_random_achievement_events: select_saint_hit
+    allow_selection_change_while_disabled: false
+    start_selected_events: enter_saint_temple_hit, complete_random_gold_saint # DEBUT complete_random_gold_saint : 1. On démarre le gold saint
+    enable_events: initialize_saints
+    disable_events: mode_global_will_stop, mode_gold_saint_started
+    debug: true
+
+event_player:
+  mode_global_started: initialize_saints
+  mode_gold_saint_stopped: initialize_saints
+
+# SUITE complete_random_gold_saint 2. On stoppe le mode aussitôt qu'il a fini de démarrer
+queue_event_player:
+  complete_random_gold_saint:
+    queue_event: mode_gold_saint_started_queue
+    events_when_finished: stop_mode_gold_saint
+queue_relay_player:
+  mode_gold_saint_started_queue:
+    post: mode_gold_saint_started_ok
+    wait_for: mode_gold_saint_started
+# FIN complete_random_gold_saint

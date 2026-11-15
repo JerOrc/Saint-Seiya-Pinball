@@ -14,30 +14,28 @@ mode:
   priority: 100
 
 config:
-  - base_bumpers.yaml
-  - base_red_targets.yaml
-  - base_log.yaml
   - base_ballsave.yaml
+  - base_bumpers.yaml
+  - base_cosmo.yaml
   - base_extraball.yaml
+  - base_log.yaml
+  - base_pf_multiplier.yaml
   - base_ramps_combo.yaml
+  - base_red_targets.yaml
   - base_shot_profiles.yaml
 
 event_player:
   mode_base_started:
+    - start_base_bumpers    # bug si on utilise mode_base_started
+    - start_base_log        # bug si on utilise mode_base_started
     - start_mode_skillshot
-    - start_base_bumpers
-    - start_base_log
-    - pf_multiplier_light_refresh
   mode_base_will_stop:
-    - stop_mode_global
     - stop_mode_skillshot
-    - stop_base_bumpers
-    - stop_base_log
+    - stop_mode_global
   mode_type_wizard_started:
     - stop_mode_global
   mode_type_wizard_stopped{not mode["base"].stopping}:
     - start_mode_global
-  kickout_left_hit: start_mode_hurryup
 
 variable_player:
   mode_base_started{not is_extra_ball}:
@@ -47,13 +45,15 @@ variable_player:
     bonus_multiplier:
       int: 1
       action: set
+    ballsave_bonus_time:
+      int: 0
+      action: set
 
 shots:
   kickout_left:
     switches: s_kickout
 
 slide_player:
-  priority: 100
   mode_base_started: base
 
 # Hook to bd_trough jam - START
@@ -113,12 +113,33 @@ shows:
           color: (color2)
 
 
-light_player:
-  pf_multiplier_light_refresh{current_player.pf_multiplier >= 2}:
-    led_pf_multiplier_x2: blue
-  pf_multiplier_light_refresh{current_player.pf_multiplier >= 3}:
-    led_pf_multiplier_x3: blue
-  pf_multiplier_light_refresh{current_player.pf_multiplier >= 4}:
-    led_pf_multiplier_x4: blue
-  pf_multiplier_light_refresh{current_player.pf_multiplier >= 5}:
-    led_pf_multiplier_x5: blue
+sound_player:
+  mode_base_started:
+    base_playlist:
+      bus: music
+      volume: 0.05
+  s_plunger_lane_inactive:
+    Anime_Sword_Slice_Sound_(echoey):
+      bus: effects
+      volume: 0.5
+  s_temple_secret_active:
+    Anime_Realization_Sound:
+      bus: effects
+      volume: 0.5
+  s_temple_in_active:
+    Anime_Dramatic_Shock_Sound_(The_Genie_Family_variant):
+      bus: effects
+      volume: 0.1
+  close_the_door:
+    fx_thunder1:
+      bus: effects
+      volume: 0.5
+
+sequences:
+  mega_skill_complete_random_gold_saint:
+    events:
+      - mega_skill_success
+      - mode_global_started
+    persist_state: true
+    disable_on_complete: false
+    events_when_complete: complete_random_gold_saint
