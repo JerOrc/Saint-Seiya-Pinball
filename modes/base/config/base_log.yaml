@@ -2,8 +2,8 @@
 
 slide_player:
   priority: 1_000
-  start_base_log: log
-  stop_base_log:
+  mode_base_started: log
+  mode_base_will_stop:
     log:
       action: remove
   shot_ramps_combo_hit:

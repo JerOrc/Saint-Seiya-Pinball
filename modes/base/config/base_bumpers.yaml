@@ -17,12 +17,12 @@ shot_groups:
     shots: bumper_left_shot, bumper_right_shot, bumper_bottom_shot
 
 slide_player:
-  start_base_bumpers: bumpers
+  mode_base_started: bumpers
   bumpers_shots_hit:
     bumpers:
       action: method
       method: top_down_text
-  stop_base_bumpers:
+  mode_base_will_stop:
     bumpers:
       action: remove
 
