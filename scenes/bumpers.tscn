@@ -1,38 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctiot6sewkfg8"]
+[gd_scene load_steps=6 format=3 uid="uid://ctiot6sewkfg8"]
 
-[ext_resource type="FontFile" uid="uid://l5geiqonhqi0" path="res://fonts/SG10-8-5.ttf" id="1_4ue3i"]
-
-[sub_resource type="Gradient" id="Gradient_yma7y"]
-colors = PackedColorArray(0, 1, 0, 1, 1, 0, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_3kqss"]
-gradient = SubResource("Gradient_yma7y")
+[ext_resource type="FontFile" uid="uid://glnky1hkoqlf" path="res://fonts/CutePixel-16-8.ttf" id="2_nx7we"]
+[ext_resource type="Script" uid="uid://cbshb1h2ul6mb" path="res://scenes/circle.gd" id="2_pdjm1"]
 
 [sub_resource type="Animation" id="Animation_16oun"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("bumper_text:position")
+tracks/0/path = NodePath("Control/bumper_text:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -23)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("bumper_text:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"values": [Vector2(1e-05, 1e-05)]
 }
 
 [sub_resource type="Animation" id="Animation_2aa53"]
@@ -41,26 +24,14 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("bumper_text:visible")
+tracks/0/path = NodePath("Control/bumper_text:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("bumper_text:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.5),
+"times": PackedFloat32Array(0, 0.366667, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -50), Vector2(0, 15), Vector2(0, 0)]
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yi0gm"]
@@ -71,26 +42,33 @@ _data = {
 
 [node name="Bumpers" type="Node"]
 
-[node name="bumper_text" type="RichTextLabel" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+pivot_offset = Vector2(64, 16)
+
+[node name="CIrcle" type="Node2D" parent="Control"]
+position = Vector2(-3.8147e-05, -2.00272e-05)
+script = ExtResource("2_pdjm1")
+metadata/Color = Color(1, 1, 1, 1)
+
+[node name="bumper_text" type="RichTextLabel" parent="Control"]
 clip_children = 2
-offset_top = -23.0
+layout_mode = 0
+offset_top = 4.0
 offset_right = 128.0
-offset_bottom = 31.0
-theme_override_fonts/normal_font = ExtResource("1_4ue3i")
-theme_override_font_sizes/normal_font_size = 8
+offset_bottom = 28.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(64, 12)
+theme_override_fonts/normal_font = ExtResource("2_nx7we")
+theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "[center]Bumper [outline_size=4][outline_color=#00da99][pulse freq=5 color=#ffffff40 ease=-2.0][wave]hit[/wave][/pulse][/outline_color][/outline_size][/center]"
+text = " [outline_size=4][outline_color=#bc0b27][pulse freq=5 color=#fffffff ease=+3.0]+00.000[/pulse][/outline_color][/outline_size]"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="bumper_text"]
-offset_left = 71.0
-offset_top = 1.0
-offset_right = 77.0
-offset_bottom = 33.0
-rotation = 1.57019
-texture = SubResource("GradientTexture1D_3kqss")
-expand_mode = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_yi0gm")
 }

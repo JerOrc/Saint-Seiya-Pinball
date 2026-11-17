@@ -21,7 +21,9 @@ slide_player:
   bumpers_shots_hit:
     bumpers:
       action: method
-      method: top_down_text
+      method: random_post
+      tokens:
+        text: = "+" + format_big_number([bumpers_score]*[pf_multiplier])
   mode_base_will_stop:
     bumpers:
       action: remove

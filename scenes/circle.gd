@@ -10,4 +10,4 @@ func _process(delta : float):
   queue_redraw()
   
 func _draw():
-  draw_circle(Vector2(64, 16), _radius, Color.html("fff85b"), false, 3)
+  draw_circle(Vector2(64, 16), _radius, self.get_meta("Color"), false, 3)
