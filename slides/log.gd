@@ -16,6 +16,10 @@ func _ready() -> void:
         "preload": preload("res://scenes/lightning_log.tscn"),
         "duration": 2.5 
     },
+    "earthquake": {
+        "preload": preload("res://scenes/log.tscn"),
+        "duration": 2 
+    },
   }
 
   effect_scenes = {
@@ -38,41 +42,48 @@ func log_text(_settings, _kwargs):
   var style = _settings.tokens.style if _settings.tokens.has("style") else "default"
   var scene = log_scenes[style].preload
   var instance = scene.instantiate()
-  
-  if _settings.tokens.has("text1"):
-    print("* LOG * ", _settings.tokens.text1)  
-
-    if _settings.tokens.has("text2"):
-      if _settings.tokens.has("text3"):
-        instance.get_node("Labels/Label3/Label3-1").text = _evaluate(_settings.tokens.text1)
-        instance.get_node("Labels/Label3/Label3-2").text = _evaluate(_settings.tokens.text2)
-        instance.get_node("Labels/Label3/Label3-3").text = _evaluate(_settings.tokens.text3)
-        instance.get_node("Labels/Label3").visible = true
-      else:
-        instance.get_node("Labels/Label2/Label2-1").text = _evaluate(_settings.tokens.text1)
-        instance.get_node("Labels/Label2/Label2-2").text = _evaluate(_settings.tokens.text2)
-        instance.get_node("Labels/Label2").visible = true
+ 
+  if style == "lightning" :
+    if _settings.tokens.has("text3"):
+      print("* LOG * ", _settings.tokens.text1, " - ", _settings.tokens.text2, " - ", _settings.tokens.text3)  
+      instance.get_node("Labels/Label3/Label3-1").text = _evaluate(_settings.tokens.text1)
+      instance.get_node("Labels/Label3/Label3-2").text = _evaluate(_settings.tokens.text2)
+      instance.get_node("Labels/Label3/Label3-3").text = _evaluate(_settings.tokens.text3)
+      instance.get_node("Labels/Label3").visible = true
     else:
-      instance.get_node("Labels/Label1/Label1-1").text = _evaluate(_settings.tokens.text1)
-      instance.get_node("Labels/Label1").visible = true  
-  else:
+      if _settings.tokens.has("text2"):
+          print("* LOG * ", _settings.tokens.text1, " - ", _settings.tokens.text2)  
+          instance.get_node("Labels/Label2/Label2-1").text = _evaluate(_settings.tokens.text1)
+          instance.get_node("Labels/Label2/Label2-2").text = _evaluate(_settings.tokens.text2)
+          instance.get_node("Labels/Label2").visible = true
+      else:
+        print("* LOG * ", _settings.tokens.text1)  
+        instance.get_node("Labels/Label1/Label1-1").text = _evaluate(_settings.tokens.text1)
+        instance.get_node("Labels/Label1").visible = true        
+  else: 
+    if style == "default" or style == "earthquake":
       print("* LOG * ", _settings.tokens.text)  
       instance.get_node("Label").text = _evaluate(_settings.tokens.text)
-      instance.get_node("Label").label_settings.set("font_color", Color.html('000000'))
 
-      
-  
-  if style == "default" and _settings.tokens.has("background"):
-    match _settings.tokens.background:
-      'red': 
-        instance.get_node("ColorRect").set("color", Color.html('c72227'))
-        instance.get_node("Label").label_settings.set("font", load( "res://fonts/VerminVibes1989Regular-m77m.ttf"))
-        instance.get_node("Label").label_settings.set("font_color", Color.html('000000'))
-      'black':
-        instance.get_node("ColorRect").set("color", Color.html('000000'))
+      if  _settings.tokens.has("background"):
+        match _settings.tokens.background:
+          'red': 
+            instance.get_node("ColorRect").set("color", Color.html('c72227'))
+            instance.get_node("Label").label_settings.set("font", load( "res://fonts/VerminVibes1989Regular-m77m.ttf"))
+            instance.get_node("Label").label_settings.set("font_color", Color.html('000000'))
+          'black':
+            instance.get_node("ColorRect").set("color", Color.html('000000'))
+            instance.get_node("Label").label_settings.set("font", load( "res://fonts/CutePixel-16-8.ttf"))
+            instance.get_node("Label").label_settings.set("font_color", Color.html('edcb11'))
+      else: 
+        instance.get_node("ColorRect").set("color", Color.html('edcb11'))
         instance.get_node("Label").label_settings.set("font", load( "res://fonts/CutePixel-16-8.ttf"))
-        instance.get_node("Label").label_settings.set("font_color", Color.html('edcb11'))
-      
+        instance.get_node("Label").label_settings.set("font_color", Color.html('000000'))
+
+      if style == "earthquake":
+        instance.get_node("AnimationPlayer").play("earthquake")
+
+          
   $zedmd.add_child(instance)
   await get_tree().create_timer(log_scenes[style].duration).timeout
   instance.queue_free()

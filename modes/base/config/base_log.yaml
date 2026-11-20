@@ -12,6 +12,7 @@ slide_player:
       method: log_text
       tokens:
         text: Skill failed
+        style: earthquake
         background: red
   skill_success:
     log:
@@ -75,9 +76,9 @@ slide_player:
       action: method
       method: log_text
       tokens:
-        text1: MEGA
-        text2: skillshot !
-        style: lightning
+        text: MEGA skillshot !
+        background: black
+        style: earthquake
   mega_skill_success.2:
     log:
       action: method

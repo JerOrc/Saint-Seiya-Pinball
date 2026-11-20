@@ -1,11 +1,48 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgx6rfjt41bjg"]
+[gd_scene load_steps=7 format=3 uid="uid://dgx6rfjt41bjg"]
 
 [ext_resource type="FontFile" uid="uid://glnky1hkoqlf" path="res://fonts/CutePixel-16-8.ttf" id="1_spugk"]
+[ext_resource type="Script" uid="uid://hx17i77og02m" path="res://scenes/earthquake.gd" id="2_pt1ea"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pt1ea"]
 line_spacing = -3.0
 font = ExtResource("1_spugk")
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_pt1ea"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_k0uux"]
+resource_name = "earthquake"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.566667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vx63x"]
+_data = {
+&"RESET": SubResource("Animation_pt1ea"),
+&"earthquake": SubResource("Animation_k0uux")
+}
 
 [node name="Log" type="Node2D"]
 
@@ -23,3 +60,10 @@ label_settings = SubResource("LabelSettings_pt1ea")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+script = ExtResource("2_pt1ea")
+active = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vx63x")
+}
