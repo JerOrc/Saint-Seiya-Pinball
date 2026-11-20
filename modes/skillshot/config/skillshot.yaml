@@ -112,8 +112,8 @@ event_player:
   super_skill_door_2:
     - skill_success_score|1s
   mega_skill_success:
-    - skill_success_score|1s
-    - stop_mode_skillshot|2s
+    - skill_success_score|500ms
+    - stop_mode_skillshot|1s
   super_skill_end:
     - close_the_door
     - stop_mode_skillshot

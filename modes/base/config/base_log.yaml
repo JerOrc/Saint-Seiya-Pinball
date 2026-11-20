@@ -71,7 +71,7 @@ slide_player:
       method: log_text
       tokens:
         text: Shoot the temple 1 more time
-  mega_skill_success.1:
+  mega_skill_success:
     log:
       action: method
       method: log_text
@@ -79,18 +79,19 @@ slide_player:
         text: MEGA skillshot !
         background: black
         style: earthquake
-  mega_skill_success.2:
-    log:
-      action: method
-      method: effect
-      tokens:
-        style: double_circle
-  complete_random_gold_saint:
+  complete_random_gold_saint.1:
     log:
       action: method
       method: log_text
       tokens:
         text: 1 random Gold Saint completed
+        background: black
+  complete_random_gold_saint.2:
+    log:
+      action: method
+      method: effect
+      tokens:
+        style: double_circle
   #FIN Skillshot
 
   shot_ramps_combo_hit:
