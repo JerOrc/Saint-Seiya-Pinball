@@ -56,5 +56,5 @@ show_player:
       loops: 0
       speed: 8
       show_tokens:
-        led: led_bumper_right
+        led: led_bumper_bottom
         color: green
