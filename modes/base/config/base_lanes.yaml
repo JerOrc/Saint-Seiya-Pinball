@@ -4,36 +4,42 @@ shots:
   outlane_left:
     switch: s_outlane_left
     reset_events: reset_lanes
+    profile: color_profile
     show_tokens:
       led: led_outlane_left
       color: FD5DA8
   inlane_left:
     switch: s_inlane_left
     reset_events: reset_lanes
+    profile: color_profile
     show_tokens:
       led: led_inlane_left
       color: FD5DA8
   dragon_lane_left:
     switch: s_dragon_lane_left
     reset_events: reset_lanes
+    profile: color_profile
     show_tokens:
       led: led_dragon_lane_left
       color: FD5DA8
   dragon_lane_right:
     switch: s_dragon_lane_right
     reset_events: reset_lanes
+    profile: color_profile
     show_tokens:
       led: led_dragon_lane_right
       color: FD5DA8
   inlane_right:
     switch: s_inlane_right
     reset_events: reset_lanes
+    profile: color_profile
     show_tokens:
       led: led_inlane_right
       color: FD5DA8
   outlane_right:
     switch: s_outlane_right
     reset_events: reset_lanes
+    profile: color_profile
     show_tokens:
       led: led_outlane_right
       color: FD5DA8

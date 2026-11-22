@@ -24,108 +24,120 @@ shots:
 achievements:
   saint_1:
     show_tokens:
-      lights: led_gold_saint_1
-    show_when_selected: flash # probably want to create a custom version of the "flash" show
-    show_when_completed: on
+      color: yellow
+      led: led_gold_saint_1
+    show_when_selected: flashing_show # probably want to create a custom version of the "flash" show
+    show_when_completed: led_color
     events_when_started: start_mode_gold_saint_1  # instant points award & plays shows
     enable_events: initialize_saints, reset_saints
     complete_events: mode_gold_saint_1_started
     reset_events: reset_saints
   saint_2:
     show_tokens:
-      lights: led_gold_saint_2
-    show_when_selected: flash # probably want to create a custom version of the "flash" show
-    show_when_completed: on
+      color: yellow
+      led: led_gold_saint_2
+    show_when_selected: flashing_show # probably want to create a custom version of the "flash" show
+    show_when_completed: led_color
     events_when_started: start_mode_gold_saint_2  # instant points award & plays shows
     enable_events: initialize_saints, reset_saints
     complete_events: mode_gold_saint_2_started
     reset_events: reset_saints
   saint_3:
     show_tokens:
-      lights: led_gold_saint_3
-    show_when_selected: flash # probably want to create a custom version of the "flash" show
-    show_when_completed: on
+      color: yellow
+      led: led_gold_saint_3
+    show_when_selected: flashing_show # probably want to create a custom version of the "flash" show
+    show_when_completed: led_color
     events_when_started: start_mode_gold_saint_3  # instant points award & plays shows
     enable_events: initialize_saints, reset_saints
     complete_events: mode_gold_saint_3_started
     reset_events: reset_saints
   saint_4:
     show_tokens:
-      lights: led_gold_saint_4
-    show_when_selected: flash # probably want to create a custom version of the "flash" show
-    show_when_completed: on
+      color: yellow
+      led: led_gold_saint_4
+    show_when_selected: flashing_show # probably want to create a custom version of the "flash" show
+    show_when_completed: led_color
     events_when_started: start_mode_gold_saint_4  # instant points award & plays shows
     enable_events: initialize_saints, reset_saints
     complete_events: mode_gold_saint_4_started
     reset_events: reset_saints
   saint_5:
     show_tokens:
-      lights: led_gold_saint_5
-    show_when_selected: flash # probably want to create a custom version of the "flash" show
-    show_when_completed: on
+      color: yellow
+      led: led_gold_saint_5
+    show_when_selected: flashing_show # probably want to create a custom version of the "flash" show
+    show_when_completed: led_color
     events_when_started: start_mode_gold_saint_5  # instant points award & plays shows
     enable_events: initialize_saints, reset_saints
     complete_events: mode_gold_saint_5_started
     reset_events: reset_saints
   saint_6:
     show_tokens:
-      lights: led_gold_saint_6
-    show_when_selected: flash # probably want to create a custom version of the "flash" show
-    show_when_completed: on
+      color: yellow
+      led: led_gold_saint_6
+    show_when_selected: flashing_show # probably want to create a custom version of the "flash" show
+    show_when_completed: led_color
     events_when_started: start_mode_gold_saint_6  # instant points award & plays shows
     enable_events: initialize_saints, reset_saints
     complete_events: mode_gold_saint_6_started
     reset_events: reset_saints
   saint_7:
     show_tokens:
-      lights: led_gold_saint_7
-    show_when_selected: flash # probably want to create a custom version of the "flash" show
-    show_when_completed: on
+      color: yellow
+      led: led_gold_saint_7
+    show_when_selected: flashing_show # probably want to create a custom version of the "flash" show
+    show_when_completed: led_color
     events_when_started: start_mode_gold_saint_7  # instant points award & plays shows
     enable_events: initialize_saints, reset_saints
     complete_events: mode_gold_saint_7_started
     reset_events: reset_saints
   saint_8:
     show_tokens:
-      lights: led_gold_saint_8
-    show_when_selected: flash # probably want to create a custom version of the "flash" show
-    show_when_completed: on
+      color: yellow
+      led: led_gold_saint_8
+    show_when_selected: flashing_show # probably want to create a custom version of the "flash" show
+    show_when_completed: led_color
     events_when_started: start_mode_gold_saint_8  # instant points award & plays shows
     enable_events: initialize_saints, reset_saints
     complete_events: mode_gold_saint_8_started
     reset_events: reset_saints
   saint_9:
     show_tokens:
-      lights: led_gold_saint_9
-    show_when_selected: flash # probably want to create a custom version of the "flash" show
-    show_when_completed: on
+      color: yellow
+      led: led_gold_saint_9
+    show_when_selected: flashing_show # probably want to create a custom version of the "flash" show
+    show_when_completed: led_color
     events_when_started: start_mode_gold_saint_9  # instant points award & plays shows
     enable_events: initialize_saints, reset_saints
     complete_events: mode_gold_saint_9_started
     reset_events: reset_saints
   saint_10:
     show_tokens:
-      lights: led_gold_saint_10
-    show_when_selected: flash # probably want to create a custom version of the "flash" show
-    show_when_completed: on
+      color: yellow
+      led: led_gold_saint_10
+    show_when_selected: flashing_show # probably want to create a custom version of the "flash" show
+    show_when_completed: led_color
     events_when_started: start_mode_gold_saint_10  # instant points award & plays shows
     enable_events: initialize_saints, reset_saints
     complete_events: mode_gold_saint_10_started
     reset_events: reset_saints
   saint_11:
     show_tokens:
-      lights: led_gold_saint_11
-    show_when_selected: flash # probably want to create a custom version of the "flash" show
-    show_when_completed: on
+      color: yellow
+      led: led_gold_saint_11
+    show_when_selected: flashing_show # probably want to create a custom version of the "flash" show
+    show_when_completed: led_color
     events_when_started: start_mode_gold_saint_11  # instant points award & plays shows
     enable_events: initialize_saints, reset_saints
     complete_events: mode_gold_saint_11_started
     reset_events: reset_saints
   saint_12:
     show_tokens:
-      lights: led_gold_saint_12
-    show_when_selected: flash # probably want to create a custom version of the "flash" show
-    show_when_completed: on
+      color: yellow
+      led: led_gold_saint_12
+    show_when_selected: flashing_show # probably want to create a custom version of the "flash" show
+    show_when_completed: led_color
     events_when_started: start_mode_gold_saint_12  # instant points award & plays shows
     enable_events: initialize_saints, reset_saints
     complete_events: mode_gold_saint_12_started
@@ -147,12 +159,13 @@ achievement_groups:
       - saint_11
       - saint_12
     show_tokens:
-      lights: led_temple_start_battle
+      led: led_temple_start_battle
+      color: yellow
     auto_select: true
     events_when_all_completed: saints_wizard_is_lit
     enable_while_no_achievement_started: false
     disable_while_achievement_started: true
-    show_when_enabled: flash
+    show_when_enabled: flashing_show
     select_random_achievement_events: select_saint_hit
     allow_selection_change_while_disabled: false
     start_selected_events: enter_saint_temple_hit, complete_random_gold_saint # DEBUT complete_random_gold_saint : 1. On démarre le gold saint

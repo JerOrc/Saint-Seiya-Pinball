@@ -8,8 +8,12 @@ shot_profiles:
       - name: flashing
         show: flash_color
         speed: 2
+        show_tokens:
+          color: (color)
       - name: lit
-        show: on
+        show: led_color
+        show_tokens:
+          color: (color)
     loop: true
 
   manual_advance_shots_profile:
@@ -19,14 +23,20 @@ shot_profiles:
       - name: flashing
         show: flash_color
         speed: 2
+        show_tokens:
+          color: (color)
       - name: lit
-        show: on
+        show: led_color
+        show_tokens:
+          color: (color)
     advance_on_hit: false
 
   flashing_profile:
     states:
       - name: flashing
         show: flash_color
+        show_tokens:
+          color: (color)
         speed: 2
     advance_on_hit: false
 
@@ -34,6 +44,8 @@ shot_profiles:
     states:
       - name: flashing
         show: flash_color
+        show_tokens:
+          color: (color)
         speed: 4
     advance_on_hit: false
 
@@ -41,6 +53,8 @@ shot_profiles:
     states:
       - name: flashing
         show: flash_color
+        show_tokens:
+          color: (color)
         speed: 3
       - name: unlit
         show: off
