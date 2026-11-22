@@ -62,3 +62,9 @@ shows:
       lights:
         led_ballsave:
           color: orange
+
+variable_player:
+  mode_base_started{not is_extra_ball}:
+    ballsave_bonus_time:
+      int: 0
+      action: set
