@@ -1,0 +1,60 @@
+#config_version=6
+
+shots:
+  outlane_left:
+    switch: s_outlane_left
+    reset_events: reset_lanes
+    show_tokens:
+      led: led_outlane_left
+      color: FD5DA8
+  inlane_left:
+    switch: s_inlane_left
+    reset_events: reset_lanes
+    show_tokens:
+      led: led_inlane_left
+      color: FD5DA8
+  dragon_lane_left:
+    switch: s_dragon_lane_left
+    reset_events: reset_lanes
+    show_tokens:
+      led: led_dragon_lane_left
+      color: FD5DA8
+  dragon_lane_right:
+    switch: s_dragon_lane_right
+    reset_events: reset_lanes
+    show_tokens:
+      led: led_dragon_lane_right
+      color: FD5DA8
+  inlane_right:
+    switch: s_inlane_right
+    reset_events: reset_lanes
+    show_tokens:
+      led: led_inlane_right
+      color: FD5DA8
+  outlane_right:
+    switch: s_outlane_right
+    reset_events: reset_lanes
+    show_tokens:
+      led: led_outlane_right
+      color: FD5DA8
+
+shot_groups:
+  bm_lanes:
+    shots: outlane_left, inlane_left, dragon_lane_left, dragon_lane_right, inlane_right, outlane_right
+    reset_events:
+      bm_lanes_lit_complete: 1s
+    rotate_right_events: s_flipper_right_active
+
+variable_player:
+  bm_lanes_lit_complete{current_player.bonus_multiplier<5}:
+    bonus_multiplier: 1
+  bm_lanes_lit_complete:
+    score: 100_000 * current_player.pf_multiplier
+  mode_base_started{not is_extra_ball}:
+    bonus_multiplier:
+      int: 1
+      action: set
+
+
+event_player:
+  ball_will_end{current_player.extra_balls==0}: reset_lanes

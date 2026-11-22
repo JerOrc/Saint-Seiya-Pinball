@@ -18,6 +18,7 @@ config:
   - base_bumpers.yaml
   - base_cosmo.yaml
   - base_extraball.yaml
+  - base_lanes.yaml
   - base_log.yaml
   - base_pf_multiplier.yaml
   - base_ramps_combo.yaml
@@ -36,18 +37,6 @@ event_player:
     - stop_mode_global
   mode_type_wizard_stopped{not mode["base"].stopping}:
     - start_mode_global
-
-variable_player:
-  mode_base_started{not is_extra_ball}:
-    pf_multiplier:
-      int: 1
-      action: set
-    bonus_multiplier:
-      int: 1
-      action: set
-    ballsave_bonus_time:
-      int: 0
-      action: set
 
 shots:
   kickout_left:
