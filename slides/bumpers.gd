@@ -28,8 +28,8 @@ func _evaluate(command: String, variable_names = [], variable_values = []) -> St
   if command.begins_with('='):
     command = command.substr(1)
     if command.contains('['): 
-      command = command.replace('[', "_MPF.game.player.get('") # ~current_player.variables
-      command = command.replace(']', "')")
+      command = command.replace('[', "str(_MPF.game.player.get('") # ~current_player.variables
+      command = command.replace(']', "'))")
       
     var expression = Expression.new()
     var error = expression.parse(command, variable_names)
@@ -42,8 +42,7 @@ func _evaluate(command: String, variable_names = [], variable_values = []) -> St
   return command
 
 
-func format_big_number(number: int)-> String:
-  var num_str: String = str(number)
+func format_big_number(num_str: String)-> String:
   var result: String = ""
   var count: int = 0
   
@@ -53,4 +52,3 @@ func format_big_number(number: int)-> String:
     if count % 3 == 0 and i != 0:
       result = "." + result
   return result
-  

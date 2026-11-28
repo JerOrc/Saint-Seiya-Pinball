@@ -125,8 +125,8 @@ func _evaluate(command: String, variable_names = [], variable_values = []) -> St
         #var_clean_name = var_name.substr(1, var_name.length() - 2)
         #var_value = _MPF.game.player.get(var_clean_name)
         #variable_values.append(var_value)
-      command = command.replace('[', "_MPF.game.player.get('") # ~current_player.variables
-      command = command.replace(']', "')")
+      command = command.replace('[', "str(_MPF.game.player.get('") # ~current_player.variables
+      command = command.replace(']', "'))")
       
     var expression = Expression.new()
     var error = expression.parse(command, variable_names)
@@ -139,8 +139,7 @@ func _evaluate(command: String, variable_names = [], variable_values = []) -> St
   return command
 
 
-func format_big_number(number: int)-> String:
-  var num_str: String = str(number)
+func format_big_number(num_str: String)-> String:
   var result: String = ""
   var count: int = 0
   
