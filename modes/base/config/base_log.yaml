@@ -100,12 +100,6 @@ slide_player:
       method: log_text
       tokens:
         text: Ramps Combo !
-  bm_lanes_lit_complete:
-    log:
-      action: method
-      method: log_text
-      tokens:
-        text: Bonus increased
   super_bumpers_restart:
     log:
       action: method
@@ -233,3 +227,17 @@ slide_player:
       method: effect
       tokens:
         style: double_circle
+  pf_multiplier_is_lit :
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: = "Playfield multiplier is lit"
+  activate_pf_multiplier_shot_hit :
+    log:
+      action: method
+      method: log_text
+      tokens:
+        text: = "PLAYFIELD MULTIPLIER X" + [missions_pf_multiplier]
+        background: black
+        style: earthquake

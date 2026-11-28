@@ -52,15 +52,12 @@ shot_groups:
     rotate_right_events: s_flipper_right_active
 
 variable_player:
-  bm_lanes_lit_complete{current_player.bonus_multiplier<5}:
-    bonus_multiplier: 1
+  bm_lanes_hit:
+    score: 200 * current_player.pf_multiplier
   bm_lanes_lit_complete:
     score: 100_000 * current_player.pf_multiplier
-  mode_base_started{not is_extra_ball}:
-    bonus_multiplier:
-      int: 1
-      action: set
 
 
 event_player:
   ball_will_end{current_player.extra_balls==0}: reset_lanes
+  bm_lanes_lit_complete: pf_multiplier_is_lit
